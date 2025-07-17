@@ -242,6 +242,16 @@ INPUT ./capitulos/glosario.tex
 INPUT ./capitulos/glosario.tex
 INPUT capitulos/glosario.tex
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
+INPUT ./capitulos/siglas.tex
+INPUT ./capitulos/siglas.tex
+INPUT capitulos/siglas.tex
+INPUT ./capitulos/objetivos.tex
+INPUT ./capitulos/objetivos.tex
+INPUT capitulos/objetivos.tex
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
+INPUT ./capitulos/justificacion.tex
+INPUT ./capitulos/justificacion.tex
+INPUT capitulos/justificacion.tex
 INPUT ./capitulos/cap2_marco.tex
 INPUT ./capitulos/cap2_marco.tex
 INPUT capitulos/cap2_marco.tex
