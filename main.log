@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  16 JUL 2025 21:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  16 JUL 2025 21:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -549,7 +549,7 @@ LaTeX Info: Redefining \% on input line 1.
 
 ]) (./capitulos/siglas.tex
 
-[9]) (./capitulos/objetivos.tex) (./capitulos/justificacion.tex) (./capitulos/cap2_marco.tex
+[9]) (./capitulos/objetivos.tex) (./capitulos/justificacion.tex) (./capitulos/metodologia.tex
 
 [10
 
@@ -557,19 +557,19 @@ LaTeX Info: Redefining \% on input line 1.
 
 [11]
 Cap\'{\i }tulo 1.
-) (./capitulos/cap3_metodologia.tex
+) (./capitulos/marcoConceptual.tex
 
 [12
 
 ]
 Cap\'{\i }tulo 2.
-) (./capitulos/cap4_resultados.tex
+) (./capitulos/marcoTeorico.tex
 
 [13
 
 ]
 Cap\'{\i }tulo 3.
-) (./capitulos/cap5_conclusiones.tex
+) (./capitulos/desarrolloMetodologico.tex
 
 [14
 
@@ -600,21 +600,21 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DC03B3C67309052BC0708C53D33FB2EB;581.
+(rerunfilecheck)             Checksum: 051FA0549BA84217EFB392B5EB3D629D;675.
  ) 
 Here is how much of TeX's memory you used:
- 14177 strings out of 473190
- 224782 string characters out of 5715801
+ 14179 strings out of 473190
+ 224816 string characters out of 5715801
  631957 words of memory out of 5000000
  37133 multiletter control sequences out of 15000+600000
  609444 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,6n,82p,1355b,587s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on main.pdf (19 pages, 171208 bytes).
+Output written on main.pdf (19 pages, 171643 bytes).
 PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
- 184 compressed objects within 2 object streams
- 56 named destinations out of 1000 (max. 500000)
+ 221 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
+ 58 named destinations out of 1000 (max. 500000)
  54 words of extra memory for PDF output out of 10000 (max. 10000000)
 
