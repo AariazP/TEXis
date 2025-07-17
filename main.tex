@@ -1,16 +1,21 @@
 \documentclass[12pt]{report}
 \input{config/paquetes.tex}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{babel}
+\usepackage{lmodern}
+\usepackage{iflang}
 
 \begin{document}
 
 \input{portada.tex}
+\input{indice.tex}
 \input{resumen.tex}
 
-\tableofcontents
 \listoffigures
 \listoftables
 
-\input{capitulos/cap1_introduccion.tex}
+\input{capitulos/introduccion.tex}
+\input{capitulos/glosario.tex} 
 \input{capitulos/cap2_marco.tex}
 \input{capitulos/cap3_metodologia.tex}
 \input{capitulos/cap4_resultados.tex}

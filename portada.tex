@@ -1,9 +1,34 @@
-
+\input{config/variables.tex}  % <-- Carga los datos definidos arriba
 \begin{titlepage}
-\centering
-{\Large \textbf{Título de la Tesis}}\\[1cm]
-Autor: Tu Nombre\\
-Universidad del Ejemplo\\
-Facultad de Ingeniería\\
-Julio de 2025
+    \begin{center}
+        \includegraphics[width=0.25\textwidth]{logos/uq-logo.png} % Logo de la UQ
+
+        \vspace*{1.5cm}
+
+        {\LARGE\bfseries \mytitle \par} % Se redujo de \Huge a \LARGE
+
+        \vspace{1.2cm}
+        {\Large \mytype \par}
+
+        \vspace{0.3cm}
+        {\large Autores: \par}
+        {\normalsize \myname \par}
+        {\small Cc: \matricle \par}
+
+        \vspace{0.3cm}
+        {\normalsize \mynameb \par}
+        {\small Cc: \matricleb \par}
+
+        \vspace{0.8cm}
+        {\normalsize \myinstitute \par}
+
+        \vspace{1.2cm}
+        \begin{tabular}{rl}
+            Revisor: & \reviewerone \\
+            Asesor: & \advisor \\
+        \end{tabular}
+
+        \vspace{1.5cm}
+        {\normalsize \timeend}
+    \end{center}
 \end{titlepage}

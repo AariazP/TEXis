@@ -1,8 +1,63 @@
 \begin{thebibliography}{}
 
-\bibitem[Apellido, 2020]{ejemplo}
-Apellido, N. (2020).
-\newblock {\em Título del libro}.
-\newblock Editorial Ejemplo.
+\bibitem[Ahmadi, 2024]{Ahmadi2024}
+Ahmadi, S. (2024).
+\newblock {Systematic Literature Review on Cloud Computing Security: Threats and Mitigation Strategies}.
+\newblock {\em Journal of Information Security}, 15(02):148--167.
+
+\bibitem[Alonso et~al., 2023]{Alonso2023}
+Alonso, J., Orue-Echevarria, L., Casola, V., Torre, A.~I., Huarte, M., Osaba, E., and Lobo, J.~L. (2023).
+\newblock {\em {Understanding the challenges and novel architectural models of multi-cloud native applications – a systematic literature review}}, volume~12.
+\newblock Springer Berlin Heidelberg.
+
+\bibitem[Cinque et~al., 2024]{Cinque2024}
+Cinque, M., {De Simone}, L., and Ottaviano, D. (2024).
+\newblock {Temporal isolation assessment in virtualized safety-critical mixed-criticality systems: A case study on Xen hypervisor}.
+\newblock {\em Journal of Systems and Software}, 216:112147.
+
+\bibitem[Collins, 2016]{Collins2016}
+Collins, L. (2016).
+\newblock {Virtual Private Cloud}.
+
+\bibitem[Docker, 2021]{Docker2021}
+Docker (2021).
+\newblock {Developers Bring Their Ideas to Life with Docker}.
+
+\bibitem[Docker, 2024]{Docker2024}
+Docker (2024).
+\newblock {Docker Index: Dramatic Growth in Docker Usage Affirms the Continued Rising Power of Developers}.
+
+\bibitem[Jain and Choudhary, 2016]{Jain2016}
+Jain, N. and Choudhary, S. (2016).
+\newblock {Overview of virtualization in cloud computing}.
+\newblock {\em 2016 Symposium on Colossal Data Analysis and Networking, CDAN 2016}, (November).
+
+\bibitem[Jayaweera et~al., 2024]{Jayaweera2024}
+Jayaweera, M., Kithulwatta, W., and Rathnayaka, R. (2024).
+\newblock {An Approach to Examine and Recognize Anomalies on Cloud Computing Platforms with Machine}.
+
+\bibitem[Meena and {Kumar Banyal}, 2021]{Meena2021}
+Meena, J.~K. and {Kumar Banyal}, R. (2021).
+\newblock {Efficient Virtualization in Cloud Computing}.
+\newblock In {\em Proceedings - 5th International Conference on Computing Methodologies and Communication, ICCMC 2021}, pages 227--232.
+
+\bibitem[Mell, 2011]{Mell2011}
+Mell, P.~G. (2011).
+\newblock {The NIST Definition of Cloud Computing}.
+\newblock {\em National institute of standart and technology}.
+
+\bibitem[{Peter Wootton}, 2024]{PeterWootton2024}
+{Peter Wootton} (2024).
+\newblock {Benchmarking}.
+
+\bibitem[Ries, 2020]{Ries2020}
+Ries, E. (2020).
+\newblock {Minimum Viable Product: a guide. August 3, 2009}.
+\newblock {\em Retrieved July}, 29.
+
+\bibitem[Tari et~al., 2024]{TARI2024100650}
+Tari, M., Ghobaei-Arani, M., Pouramini, J., and Ghorbian, M. (2024).
+\newblock {Auto-scaling mechanisms in serverless computing: A comprehensive review}.
+\newblock {\em Computer Science Review}, 53:100650.
 
 \end{thebibliography}
