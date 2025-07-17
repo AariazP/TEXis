@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1752715548.31209 "main.aux" "main.bbl" "main" 1752715549.5963 0
-  "./bibliografia.bib" 1752715493.63616 87183 cb4692d4cd33cb44fe06cc6cc305e404 ""
+["bibtex main"] 1752715716.23605 "main.aux" "main.bbl" "main" 1752716161.00003 0
+  "./bibliografia.bib" 1752715716.05945 87133 439713cd5940de00df217824a3879957 ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "main.aux" 1752715549.32972 2577 4a65c4cfe74a5d3ed5ab3cc293775439 "pdflatex"
+  "main.aux" 1752716160.76585 2577 4a65c4cfe74a5d3ed5ab3cc293775439 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1752715548.44409 "/Users/aariaz/Desktop/tesis/main.tex" "main.pdf" "main" 1752715549.59651 0
+["pdflatex"] 1752716160.16011 "/Users/aariaz/Desktop/tesis/main.tex" "main.pdf" "main" 1752716161.00018 0
   "/Users/aariaz/Desktop/tesis/main.tex" 1752715036.64745 592 cba5706f646c2241b843fa96b3d89557 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -119,19 +119,19 @@
   "capitulos/cap4_resultados.tex" 1752709015.32315 45 47ed95835327ed7b6ccc9c42cdcfea9f ""
   "capitulos/cap5_conclusiones.tex" 1752709020.74173 49 7593a7148b72160b7415c6d8beed75f5 ""
   "capitulos/glosario.tex" 1752715545.44168 2557 bc25262ebbe31065491ccab27bdc190d ""
-  "capitulos/introduccion.tex" 1752714682.22282 4090 b6e0a22aae9480a8d3df181af055c8b0 ""
-  "config/paquetes.tex" 1752710870.33677 353 cc8392f340804048cd7e5a1e1f9f29d8 ""
+  "capitulos/introduccion.tex" 1752716159.93396 4092 88f0761b89d3f73ad7fe358621a053f8 ""
+  "config/paquetes.tex" 1752715841.63018 350 caeaa8112b38be60c969de348514e43d ""
   "config/variables.tex" 1752711685.5628 717 5750869bda6b75ab401faac791e8e666 ""
   "indice.tex" 1752712358.07959 25 cc7547b926d80f5fba09fce8f9b6ee6e ""
   "logos/uq-logo.png" 1752710910.90834 21237 e88a2a0e41840be588c77e96845b876b ""
-  "main.aux" 1752715549.32972 2577 4a65c4cfe74a5d3ed5ab3cc293775439 "pdflatex"
-  "main.bbl" 1752715548.44142 2679 2a893338eaf1ed2bb62a3556a7bb1534 "bibtex main"
-  "main.lof" 1752715549.33213 150 3a6ad1353bb13c43205b8c09ae5230e4 "pdflatex"
-  "main.lot" 1752715549.33215 150 3a6ad1353bb13c43205b8c09ae5230e4 "pdflatex"
-  "main.out" 1752715549.33184 687 067372d8860c3d2254aa636d79af22d2 "pdflatex"
+  "main.aux" 1752716160.76585 2577 4a65c4cfe74a5d3ed5ab3cc293775439 "pdflatex"
+  "main.bbl" 1752715716.37226 2656 cdc52dc9593804fd8c9702c58ba848a1 "bibtex main"
+  "main.lof" 1752716160.76707 150 3a6ad1353bb13c43205b8c09ae5230e4 "pdflatex"
+  "main.lot" 1752716160.76709 150 3a6ad1353bb13c43205b8c09ae5230e4 "pdflatex"
+  "main.out" 1752716160.76687 687 067372d8860c3d2254aa636d79af22d2 "pdflatex"
   "main.tex" 1752715036.64745 592 cba5706f646c2241b843fa96b3d89557 ""
-  "main.toc" 1752715549.3321 494 a9eff3623e067f83d0fc0992af6cbda8 "pdflatex"
-  "portada.tex" 1752711836.89176 859 ce64501e2ece3065466a2eccb8d771b1 ""
+  "main.toc" 1752716160.76705 494 a9eff3623e067f83d0fc0992af6cbda8 "pdflatex"
+  "portada.tex" 1752715650.05817 850 df1421712d392c27976ef8d78fdd522f ""
   "resumen.tex" 1752725562 151 708cf7fdb490298dec6cdacce714d129 ""
   (generated)
   "main.aux"
