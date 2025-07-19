@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  16 JUL 2025 21:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  19 JUL 2025 15:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -303,7 +303,18 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibsep=\skip56
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count306
-)) (/usr/local/texlive/2025/texmf-dist/tex/latex/textpos/textpos.sty
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/acronym/acronym.sty
+Package: acronym 2025/01/17 v1.50 Support for acronyms (Tobias Oetiker)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/bigfoot/suffix.sty
+Package: suffix 2006/07/15 1.5a Variant command support
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/xstring/xstring.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/xstring/xstring.tex
+\xs_counta=\count307
+\xs_countb=\count308
+)
+Package: xstring 2023/08/22 v1.86 String manipulations (CT)
+)
+\AC@clearlist=\toks29
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/textpos/textpos.sty
 Package: textpos 2022/07/23 v1.10.1
 Package textpos Info: choosing support for LaTeX3 on input line 60.
 \TP@textbox=\box56
@@ -317,7 +328,7 @@ Grid set 16 x 16 = 37.34424pt x 52.81541pt
 \TPboxrulesize=\dimen178
 \TP@ox=\dimen179
 \TP@oy=\dimen180
-\TP@tbargs=\toks29
+\TP@tbargs=\toks30
 TextBlockOrigin set to 0pt x 0pt
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
@@ -357,39 +368,39 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 Package: iflang 2018/01/21 v1.7 Checks for the current language (HO)
 Package iflang Info: Naming convention for patterns: babel.
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 8.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 7.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count307
+\l__color_backend_stack_int=\count309
 \l__pdf_internal_box=\box58
 ) (./main.aux
-LaTeX Info: Redefining \. on input line 11.
-LaTeX Info: Redefining \% on input line 11.
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Info: Redefining \. on input line 7.
+LaTeX Info: Redefining \% on input line 7.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -427,17 +438,17 @@ LaTeX Info: Redefining \% on input line 8.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count308
+\scratchcounter=\count310
 \scratchdimen=\dimen181
 \scratchbox=\box59
-\nofMPsegments=\count309
-\nofMParguments=\count310
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count311
+\nofMPsegments=\count311
+\nofMParguments=\count312
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count313
 \MPscratchDim=\dimen182
-\MPnumerator=\count312
-\makeMPintoPDFobject=\count313
-\everyMPtoPDFconversion=\toks31
+\MPnumerator=\count314
+\makeMPintoPDFobject=\count315
+\everyMPtoPDFconversion=\toks32
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -447,13 +458,13 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 8.
+Package hyperref Info: Link coloring OFF on input line 7.
  (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
  (./portada.tex (./config/variables.tex)
-<logos/uq-logo.png, id=28, 451.6875pt x 563.10374pt>
+<logos/uq-logo.png, id=32, 451.6875pt x 563.10374pt>
 File: logos/uq-logo.png Graphic file (type png)
 <use logos/uq-logo.png>
 Package pdftex.def Info: logos/uq-logo.png  used on input line 4.
@@ -491,7 +502,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [1
 
-{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./logos/uq-logo.png>]) (./indice.tex (./main.toc
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./logos/uq-logo.png>]) (./capitulos/dedicatoria.tex) (./indice.tex
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \tableofcontents
+                     [1
+
+] (./main.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
@@ -500,20 +520,15 @@ LaTeX Info: Redefining \% on input line 1.
 
 
 
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2 \newpage
-             [1
+[2
 
 ]) (./resumen.tex
 
-[2
+[3
 
 ])
 
-[3
+[4
 
 ] (./main.lof
 LaTeX Info: Redefining \. on input line 1.
@@ -524,7 +539,7 @@ LaTeX Info: Redefining \% on input line 1.
 
 
 
-[4
+[5
 
 ] (./main.lot
 LaTeX Info: Redefining \. on input line 1.
@@ -535,86 +550,139 @@ LaTeX Info: Redefining \% on input line 1.
 
  (./capitulos/introduccion.tex
 
-[5
+[6
 
 ]
 
-[6
+[7
 
 ]) (./capitulos/glosario.tex
 
-[7]
+[8]
 
-[8
+[9
 
 ]) (./capitulos/siglas.tex
 
-[9]) (./capitulos/objetivos.tex) (./capitulos/justificacion.tex) (./capitulos/metodologia.tex
+[10]
 
-[10
+LaTeX Warning: Hyper reference `acro:API' on page 11 undefined on input line 5.
+
+
+LaTeX Warning: Hyper reference `acro:API' on page 11 undefined on input line 5.
+
+
+LaTeX Warning: Hyper reference `acro:CMMI' on page 11 undefined on input line 6.
+
+
+LaTeX Warning: Hyper reference `acro:CMMI' on page 11 undefined on input line 6.
+
+
+LaTeX Warning: Hyper reference `acro:CPU' on page 11 undefined on input line 7.
+
+
+LaTeX Warning: Hyper reference `acro:CPU' on page 11 undefined on input line 7.
+
+
+LaTeX Warning: Hyper reference `acro:DAR' on page 11 undefined on input line 8.
+
+
+LaTeX Warning: Hyper reference `acro:DAR' on page 11 undefined on input line 8.
+
+
+LaTeX Warning: Hyper reference `acro:GRID' on page 11 undefined on input line 9.
+
+
+LaTeX Warning: Hyper reference `acro:GRID' on page 11 undefined on input line 9.
+
+
+LaTeX Warning: Hyper reference `acro:IT' on page 11 undefined on input line 10.
+
+
+LaTeX Warning: Hyper reference `acro:IT' on page 11 undefined on input line 10.
+
+
+LaTeX Warning: Hyper reference `acro:SMS' on page 11 undefined on input line 11.
+
+
+LaTeX Warning: Hyper reference `acro:SMS' on page 11 undefined on input line 11.
+
+
+LaTeX Warning: Hyper reference `acro:VBC' on page 11 undefined on input line 12.
+
+
+LaTeX Warning: Hyper reference `acro:VBC' on page 11 undefined on input line 12.
+
+
+
+[11
+
+]) (./capitulos/objetivos.tex) (./capitulos/justificacion.tex) (./capitulos/metodologia.tex
+
+[12
 
 ]
-
-[11]
 Cap\'{\i }tulo 1.
 ) (./capitulos/marcoConceptual.tex
 
-[12
+[13
 
 ]
 Cap\'{\i }tulo 2.
 ) (./capitulos/marcoTeorico.tex
 
-[13
+[14
 
 ]
 Cap\'{\i }tulo 3.
 ) (./capitulos/desarrolloMetodologico.tex
 
-[14
-
-]
-Cap\'{\i }tulo 4.
-) (./main.bbl
-
 [15
 
-]
+]) (./main.bbl
 
 [16
 
+]
+
+[17
+
 ]) (./anexos/anexoA.tex
 
-[17]
+[18]
 Ap\'{e}ndice A.
 )
 
-[18
+[19
 
 ] (./main.aux
-LaTeX Info: Redefining \. on input line 11.
-LaTeX Info: Redefining \% on input line 11.
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
 )
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 051FA0549BA84217EFB392B5EB3D629D;675.
+(rerunfilecheck)             Checksum: 57E8EE6A8F8597E76229B99FA91E2C39;766.
  ) 
 Here is how much of TeX's memory you used:
- 14179 strings out of 473190
- 224816 string characters out of 5715801
- 631957 words of memory out of 5000000
- 37133 multiletter control sequences out of 15000+600000
+ 14820 strings out of 473190
+ 233798 string characters out of 5715801
+ 644652 words of memory out of 5000000
+ 37747 multiletter control sequences out of 15000+600000
  609444 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,6n,82p,1355b,587s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,6n,82p,1355b,648s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on main.pdf (19 pages, 171643 bytes).
+Output written on main.pdf (20 pages, 175464 bytes).
 PDF statistics:
- 221 PDF objects out of 1000 (max. 8388607)
- 186 compressed objects within 2 object streams
- 58 named destinations out of 1000 (max. 500000)
- 54 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 242 PDF objects out of 1000 (max. 8388607)
+ 205 compressed objects within 3 object streams
+ 69 named destinations out of 1000 (max. 500000)
+ 62 words of extra memory for PDF output out of 10000 (max. 10000000)
 

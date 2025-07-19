@@ -1,0 +1,224 @@
+\glsdefs@newdocentry{api}%
+{%
+name={\acronymfont {\glsentryshort {api}}},%
+sort={API},%
+type={acronym},%
+first={API},%
+firstplural={APIs},%
+text={API},%
+plural={APIs},%
+description={Interfaz de Programación de Aplicaciones},%
+descriptionplural={Interfaz de Programación de Aplicaciones},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Interfaz de Programación de Aplicaciones},%
+longplural={Interfaz de Programación de Aplicacioness},%
+short={API},%
+shortplural={APIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{cmmi}%
+{%
+name={\acronymfont {\glsentryshort {cmmi}}},%
+sort={CMMI},%
+type={acronym},%
+first={CMMI},%
+firstplural={CMMIs},%
+text={CMMI},%
+plural={CMMIs},%
+description={Capability Maturity Model Integration},%
+descriptionplural={Capability Maturity Model Integration},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Capability Maturity Model Integration},%
+longplural={Capability Maturity Model Integrations},%
+short={CMMI},%
+shortplural={CMMIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{cpu}%
+{%
+name={\acronymfont {\glsentryshort {cpu}}},%
+sort={CPU},%
+type={acronym},%
+first={CPU},%
+firstplural={CPUs},%
+text={CPU},%
+plural={CPUs},%
+description={Unidad Central de Procesamiento},%
+descriptionplural={Unidad Central de Procesamiento},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Unidad Central de Procesamiento},%
+longplural={Unidad Central de Procesamientos},%
+short={CPU},%
+shortplural={CPUs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{dar}%
+{%
+name={\acronymfont {\glsentryshort {dar}}},%
+sort={DAR},%
+type={acronym},%
+first={DAR},%
+firstplural={DARs},%
+text={DAR},%
+plural={DARs},%
+description={Decision Analysis and Resolution},%
+descriptionplural={Decision Analysis and Resolution},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Decision Analysis and Resolution},%
+longplural={Decision Analysis and Resolutions},%
+short={DAR},%
+shortplural={DARs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{grid}%
+{%
+name={\acronymfont {\glsentryshort {grid}}},%
+sort={GRID},%
+type={acronym},%
+first={GRID},%
+firstplural={GRIDs},%
+text={GRID},%
+plural={GRIDs},%
+description={Grupo de Investigación en Redes, Información y Distribución},%
+descriptionplural={Grupo de Investigación en Redes, Información y Distribución},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Grupo de Investigación en Redes, Información y Distribución},%
+longplural={Grupo de Investigación en Redes, Información y Distribucións},%
+short={GRID},%
+shortplural={GRIDs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{it}%
+{%
+name={\acronymfont {\glsentryshort {it}}},%
+sort={IT},%
+type={acronym},%
+first={IT},%
+firstplural={ITs},%
+text={IT},%
+plural={ITs},%
+description={Tecnologías de la Información},%
+descriptionplural={Tecnologías de la Información},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Tecnologías de la Información},%
+longplural={Tecnologías de la Informacións},%
+short={IT},%
+shortplural={ITs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{sms}%
+{%
+name={\acronymfont {\glsentryshort {sms}}},%
+sort={SMS},%
+type={acronym},%
+first={SMS},%
+firstplural={SMSs},%
+text={SMS},%
+plural={SMSs},%
+description={Systematic Mapping Study},%
+descriptionplural={Systematic Mapping Study},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Systematic Mapping Study},%
+longplural={Systematic Mapping Studys},%
+short={SMS},%
+shortplural={SMSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{vbc}%
+{%
+name={\acronymfont {\glsentryshort {vbc}}},%
+sort={VBC},%
+type={acronym},%
+first={VBC},%
+firstplural={VBCs},%
+text={VBC},%
+plural={VBCs},%
+description={Virtualización Basada en Contenedores},%
+descriptionplural={Virtualización Basada en Contenedores},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Virtualización Basada en Contenedores},%
+longplural={Virtualización Basada en Contenedoress},%
+short={VBC},%
+shortplural={VBCs},%
+counter={page},%
+parent={},%
+%
+}%
+

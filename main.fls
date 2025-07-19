@@ -130,6 +130,13 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/natbib/natbib.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/natbib/natbib.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/acronym/acronym.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/acronym/acronym.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/bigfoot/suffix.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/bigfoot/suffix.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/xstring/xstring.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/xstring/xstring.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/xstring/xstring.tex
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/textpos/textpos.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/textpos/textpos.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/lmodern.sty
@@ -214,6 +221,10 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
+INPUT ./capitulos/dedicatoria.tex
+INPUT ./capitulos/dedicatoria.tex
+INPUT capitulos/dedicatoria.tex
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT ./indice.tex
 INPUT ./indice.tex
 INPUT indice.tex
@@ -267,7 +278,6 @@ INPUT capitulos/desarrolloMetodologico.tex
 INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT ./anexos/anexoA.tex
 INPUT ./anexos/anexoA.tex
 INPUT anexos/anexoA.tex
