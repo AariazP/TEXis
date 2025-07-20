@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  19 JUL 2025 15:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  19 JUL 2025 19:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -464,7 +464,7 @@ Package hyperref Info: Link coloring OFF on input line 7.
 \openout3 = `main.out'.
 
  (./portada.tex (./config/variables.tex)
-<logos/uq-logo.png, id=32, 451.6875pt x 563.10374pt>
+<logos/uq-logo.png, id=20, 451.6875pt x 563.10374pt>
 File: logos/uq-logo.png Graphic file (type png)
 <use logos/uq-logo.png>
 Package pdftex.def Info: logos/uq-logo.png  used on input line 4.
@@ -624,43 +624,60 @@ LaTeX Warning: Hyper reference `acro:VBC' on page 11 undefined on input line 12.
 
 [11
 
-]) (./capitulos/objetivos.tex) (./capitulos/justificacion.tex) (./capitulos/metodologia.tex
+]) (./capitulos/objetivos.tex) (./capitulos/justificacion.tex
 
 [12
 
-]
-Cap\'{\i }tulo 1.
-) (./capitulos/marcoConceptual.tex
+
+]) (./capitulos/metodologia.tex
 
 [13
 
-]
-Cap\'{\i }tulo 2.
-) (./capitulos/marcoTeorico.tex
+]) (./capitulos/marcoConceptual.tex
 
 [14
 
-]
-Cap\'{\i }tulo 3.
-) (./capitulos/desarrolloMetodologico.tex
+]) (./capitulos/marcoTeorico.tex
 
 [15
 
-]) (./main.bbl
+]
+
+Package natbib Warning: Citation `CNCFF2023' on page 16 undefined on input line 5.
+
+
+Package natbib Warning: Citation `Combelles2020' on page 16 undefined on input line 6.
+
+
+Package natbib Warning: Citation `ISOIEC25010' on page 16 undefined on input line 8.
+
+) (./capitulos/desarrolloMetodologico.tex
 
 [16
 
 ]
 
-[17
+[17]
+
+[18]) (./main.bbl
+
+[19
+
+]
+
+[20
 
 ]) (./anexos/anexoA.tex
 
-[18]
+[21]
 Ap\'{e}ndice A.
 )
 
-[19
+Package natbib Warning: There were undefined citations.
+
+
+
+[22
 
 ] (./main.aux
 LaTeX Info: Redefining \. on input line 12.
@@ -675,21 +692,21 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 57E8EE6A8F8597E76229B99FA91E2C39;766.
+(rerunfilecheck)             Checksum: C71B1838686D59A899891CC568D365E4;425.
  ) 
 Here is how much of TeX's memory you used:
- 14855 strings out of 473190
- 234167 string characters out of 5715801
- 644698 words of memory out of 5000000
- 37769 multiletter control sequences out of 15000+600000
+ 14883 strings out of 473190
+ 234635 string characters out of 5715801
+ 651870 words of memory out of 5000000
+ 37788 multiletter control sequences out of 15000+600000
  630449 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,8n,82p,1355b,648s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,8n,82p,1373b,646s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on main.pdf (20 pages, 217418 bytes).
+Output written on main.pdf (23 pages, 224835 bytes).
 PDF statistics:
- 255 PDF objects out of 1000 (max. 8388607)
- 214 compressed objects within 3 object streams
- 70 named destinations out of 1000 (max. 500000)
- 62 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 276 PDF objects out of 1000 (max. 8388607)
+ 232 compressed objects within 3 object streams
+ 79 named destinations out of 1000 (max. 500000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

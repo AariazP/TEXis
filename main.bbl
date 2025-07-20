@@ -27,6 +27,16 @@ Docker (2021).
 Docker (2024).
 \newblock {Docker Index: Dramatic Growth in Docker Usage Affirms the Continued Rising Power of Developers}.
 
+\bibitem[Gray et~al., 2022]{Gray2022}
+Gray, J., Ross, J., and Badrick, T. (2022).
+\newblock {The path to continual improvement and business excellence: compliance to ISO standards versus a business excellence approach}.
+\newblock {\em Accreditation and Quality Assurance}, 27(4):195--203.
+
+\bibitem[Institute, 2017]{project2017guia}
+Institute, P.~M. (2017).
+\newblock {\em {Guia de los Fundamentos Para la Direccion de Proyectos: Guia del Pmbok}}.
+\newblock Project Management Institute.
+
 \bibitem[Jain and Choudhary, 2016]{Jain2016}
 Jain, N. and Choudhary, S. (2016).
 \newblock {Overview of virtualization in cloud computing}.
@@ -47,14 +57,31 @@ Mell, P.~G. (2011).
 \newblock {The NIST Definition of Cloud Computing}.
 \newblock {\em National institute of standart and technology}.
 
+\bibitem[Monday, 2022]{Monday2022}
+Monday (2022).
+\newblock {The PMBOK and How It's Used in Project Management}.
+
+\bibitem[Mumtaza et~al., 2025]{Mumtaza2025}
+Mumtaza, F.~F., Mulyana, R., and Mukti, I.~Y. (2025).
+\newblock {Utilizing TOGAF 10 to Design an Enterprise Architecture for BPRBCo SME Digital Transformation}.
+
 \bibitem[{Peter Wootton}, 2024]{PeterWootton2024}
 {Peter Wootton} (2024).
 \newblock {Benchmarking}.
+
+\bibitem[Porfert, 1986]{ISO9001}
+Porfert, J. (1986).
+\newblock {Quality Management Systems.}
+\newblock Standard, International Organization for Standardization, Ginebra, Suiza.
 
 \bibitem[Ries, 2020]{Ries2020}
 Ries, E. (2020).
 \newblock {Minimum Viable Product: a guide. August 3, 2009}.
 \newblock {\em Retrieved July}, 29.
+
+\bibitem[Spray, 2023]{Spray2023}
+Spray, J.~R. (2023).
+\newblock {Abstraction Layered Architecture}.
 
 \bibitem[Tari et~al., 2024]{TARI2024100650}
 Tari, M., Ghobaei-Arani, M., Pouramini, J., and Ghorbian, M. (2024).
