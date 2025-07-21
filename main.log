@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  19 JUL 2025 20:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  21 JUL 2025 11:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -314,21 +314,39 @@ Package: suffix 2006/07/15 1.5a Variant command support
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 )
 \AC@clearlist=\toks29
-)) (/usr/local/texlive/2025/texmf-dist/tex/latex/textpos/textpos.sty
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen174
+\ar@mcellbox=\box56
+\extrarowheight=\dimen175
+\NC@list=\toks30
+\extratabsurround=\skip57
+\backup@length=\skip58
+\ar@cellbox=\box57
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+\TX@col@width=\dimen176
+\TX@old@table=\dimen177
+\TX@old@col=\dimen178
+\TX@target=\dimen179
+\TX@delta=\dimen180
+\TX@cols=\count309
+\TX@ftn=\toks31
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/textpos/textpos.sty
 Package: textpos 2022/07/23 v1.10.1
 Package textpos Info: choosing support for LaTeX3 on input line 60.
-\TP@textbox=\box56
-\TP@holdbox=\box57
-\TPHorizModule=\dimen174
-\TPVertModule=\dimen175
-\TP@margin=\dimen176
-\TP@absmargin=\dimen177
+\TP@textbox=\box58
+\TP@holdbox=\box59
+\TPHorizModule=\dimen181
+\TPVertModule=\dimen182
+\TP@margin=\dimen183
+\TP@absmargin=\dimen184
 
 Grid set 16 x 16 = 37.34424pt x 52.81541pt
-\TPboxrulesize=\dimen178
-\TP@ox=\dimen179
-\TP@oy=\dimen180
-\TP@tbargs=\toks30
+\TPboxrulesize=\dimen185
+\TP@ox=\dimen186
+\TP@oy=\dimen187
+\TP@tbargs=\toks32
 TextBlockOrigin set to 0pt x 0pt
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
@@ -373,8 +391,8 @@ LaTeX Font Info:    Trying to load font information for T1+lmr on input line 7.
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count309
-\l__pdf_internal_box=\box58
+\l__color_backend_stack_int=\count310
+\l__pdf_internal_box=\box60
 ) (./main.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
@@ -438,17 +456,17 @@ LaTeX Info: Redefining \% on input line 7.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count310
-\scratchdimen=\dimen181
-\scratchbox=\box59
-\nofMPsegments=\count311
-\nofMParguments=\count312
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count313
-\MPscratchDim=\dimen182
-\MPnumerator=\count314
-\makeMPintoPDFobject=\count315
-\everyMPtoPDFconversion=\toks32
+\scratchcounter=\count311
+\scratchdimen=\dimen188
+\scratchbox=\box61
+\nofMPsegments=\count312
+\nofMParguments=\count313
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count314
+\MPscratchDim=\dimen189
+\MPnumerator=\count315
+\makeMPintoPDFobject=\count316
+\everyMPtoPDFconversion=\toks34
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -464,7 +482,7 @@ Package hyperref Info: Link coloring OFF on input line 7.
 \openout3 = `main.out'.
 
  (./portada.tex (./config/variables.tex)
-<logos/uq-logo.png, id=20, 451.6875pt x 563.10374pt>
+<logos/uq-logo.png, id=32, 451.6875pt x 563.10374pt>
 File: logos/uq-logo.png Graphic file (type png)
 <use logos/uq-logo.png>
 Package pdftex.def Info: logos/uq-logo.png  used on input line 4.
@@ -659,17 +677,41 @@ Package natbib Warning: Citation `ISOIEC25010' on page 16 undefined on input lin
 
 [17]
 
-[18]) (./main.bbl
+[18]
 
 [19
 
-]
+]) (./capitulos/desarrolloMetodologico/caracterizacionGRID.tex
 
-[20
+[20] (./tablas/cp1/definicionStakeholders.tex
+<tablas/cp1/definicionStakeholders.png, id=238, 1143.27126pt x 425.59pt>
+File: tablas/cp1/definicionStakeholders.png Graphic file (type png)
+<use tablas/cp1/definicionStakeholders.png>
+Package pdftex.def Info: tablas/cp1/definicionStakeholders.png  used on input line 3.
+(pdftex.def)             Requested size: 426.79135pt x 158.87502pt.
+)
+
+[21
+
+ <./tablas/cp1/definicionStakeholders.png>] (./tablas/cp1/priorizacionStakeholders.tex
+<tablas/cp1/priorizacionStakeholders.png, id=247, 1094.0875pt x 772.8875pt>
+File: tablas/cp1/priorizacionStakeholders.png Graphic file (type png)
+<use tablas/cp1/priorizacionStakeholders.png>
+Package pdftex.def Info: tablas/cp1/priorizacionStakeholders.png  used on input line 3.
+(pdftex.def)             Requested size: 426.79135pt x 301.49567pt.
+)
+
+[22 <./tablas/cp1/priorizacionStakeholders.png>]
+
+[23] (./tablas/cp1/caracterizacionInfraestructura.tex)) (./main.bbl
+
+[24]
+
+[25
 
 ]) (./anexos/anexoA.tex
 
-[21]
+[26]
 Ap\'{e}ndice A.
 )
 
@@ -677,7 +719,7 @@ Package natbib Warning: There were undefined citations.
 
 
 
-[22
+[27
 
 ] (./main.aux
 LaTeX Info: Redefining \. on input line 12.
@@ -692,21 +734,21 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C71B1838686D59A899891CC568D365E4;425.
+(rerunfilecheck)             Checksum: 1B272DCDE28EA238EF48F597C4DD7AC6;1000.
  ) 
 Here is how much of TeX's memory you used:
- 14883 strings out of 473190
- 234635 string characters out of 5715801
- 651870 words of memory out of 5000000
- 37788 multiletter control sequences out of 15000+600000
+ 15085 strings out of 473190
+ 238862 string characters out of 5715801
+ 654424 words of memory out of 5000000
+ 37950 multiletter control sequences out of 15000+600000
  630449 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,8n,82p,1373b,646s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on main.pdf (23 pages, 225714 bytes).
+Output written on main.pdf (28 pages, 858122 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
- 232 compressed objects within 3 object streams
- 79 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 342 PDF objects out of 1000 (max. 8388607)
+ 289 compressed objects within 3 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 72 words of extra memory for PDF output out of 10000 (max. 10000000)
 
