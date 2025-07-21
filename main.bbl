@@ -79,6 +79,11 @@ Ries, E. (2020).
 \newblock {Minimum Viable Product: a guide. August 3, 2009}.
 \newblock {\em Retrieved July}, 29.
 
+\bibitem[Sep{\'{u}}lveda-Rodr{\'{i}}guez et~al., 2022]{Sepulveda-Rodriguez2022}
+Sep{\'{u}}lveda-Rodr{\'{i}}guez, L.~E., Chavarro-Porras, J.~C., Sanabria-Ordo{\~{n}}ez, J.~A., Castro, H.~E., and Matthews, J. (2022).
+\newblock {A Survey of Virtualization Technologies: Towards a New Taxonomic Proposal}.
+\newblock {\em Ingenieria e Investigacion}, 42(3):1--14.
+
 \bibitem[Spray, 2023]{Spray2023}
 Spray, J.~R. (2023).
 \newblock {Abstraction Layered Architecture}.
@@ -87,5 +92,10 @@ Spray, J.~R. (2023).
 Tari, M., Ghobaei-Arani, M., Pouramini, J., and Ghorbian, M. (2024).
 \newblock {Auto-scaling mechanisms in serverless computing: A comprehensive review}.
 \newblock {\em Computer Science Review}, 53:100650.
+
+\bibitem[Xavier et~al., 2013]{Xavier2013}
+Xavier, M.~G., Neves, M.~V., Rossi, F.~D., Ferreto, T.~C., Lange, T., and {De Rose}, C.~A. (2013).
+\newblock {Performance evaluation of container-based virtualization for high performance computing environments}.
+\newblock In {\em Proceedings of the 2013 21st Euromicro International Conference on Parallel, Distributed, and Network-Based Processing, PDP 2013}, pages 233--240.
 
 \end{thebibliography}

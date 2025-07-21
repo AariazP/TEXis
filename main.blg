@@ -7,45 +7,45 @@ Warning--I didn't find a database entry for "CNCFF2023"
 Warning--I didn't find a database entry for "Combelles2020"
 Warning--I didn't find a database entry for "ISOIEC25010"
 Warning--empty journal in Spray2023
-You've used 19 entries,
+You've used 21 entries,
             1935 wiz_defined-function locations,
-            595 strings with 6961 characters,
-and the built_in function-call counts, 6109 in all, are:
-= -- 593
-> -- 236
-< -- 14
-+ -- 76
-- -- 76
-* -- 463
-:= -- 1131
-add.period$ -- 50
-call.type$ -- 19
-change.case$ -- 132
-chr.to.int$ -- 19
-cite$ -- 20
-duplicate$ -- 247
-empty$ -- 413
-format.name$ -- 99
-if$ -- 1161
+            609 strings with 7652 characters,
+and the built_in function-call counts, 7213 in all, are:
+= -- 700
+> -- 297
+< -- 15
++ -- 98
+- -- 98
+* -- 560
+:= -- 1313
+add.period$ -- 56
+call.type$ -- 21
+change.case$ -- 153
+chr.to.int$ -- 21
+cite$ -- 22
+duplicate$ -- 288
+empty$ -- 482
+format.name$ -- 123
+if$ -- 1382
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 14
-newline$ -- 91
-num.names$ -- 57
-pop$ -- 114
+missing$ -- 16
+newline$ -- 101
+num.names$ -- 63
+pop$ -- 137
 preamble$ -- 1
-purify$ -- 133
+purify$ -- 154
 quote$ -- 0
-skip$ -- 200
+skip$ -- 231
 stack$ -- 0
-substring$ -- 346
-swap$ -- 20
-text.length$ -- 1
+substring$ -- 418
+swap$ -- 31
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 110
+type$ -- 122
 warning$ -- 1
-while$ -- 47
+while$ -- 56
 width$ -- 0
-write$ -- 224
+write$ -- 250
 (There were 4 warnings)
