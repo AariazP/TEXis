@@ -26,7 +26,7 @@
 \contentsline {section}{Descripción de la oportunidad}{41}{section*.61}%
 \contentsline {section}{Resumen de la entrevista con el cliente}{42}{section*.62}%
 \contentsline {chapter}{Revisión sistemática de la literatura}{44}{chapter*.71}%
-\contentsline {section}{1. Construcción de la bitácora}{44}{section*.72}%
+\contentsline {section}{Construcción de la bitácora}{44}{section*.72}%
 \contentsline {subsection}{Planeación}{44}{section*.73}%
 \contentsline {subsubsection}{Definición de metas para el SMS}{44}{section*.74}%
 \contentsline {subsubsection}{Definición de preguntas de investigación}{45}{section*.76}%
@@ -35,5 +35,6 @@
 \contentsline {subsection}{Estrategia de búsqueda}{46}{section*.81}%
 \contentsline {subsection}{Búsqueda en bases de datos}{46}{section*.82}%
 \contentsline {subsubsection}{Identificación de estudios mediante búsqueda en bases de datos}{46}{section*.83}%
-\contentsline {chapter}{\numberline {A}Ficha técnica del recurso tecnológico}{49}{appendix.Alph1}%
-\contentsline {chapter}{\numberline {B}Ficha técnica de servicios}{51}{appendix.Alph2}%
+\contentsline {paragraph}{2.2.1.1 Búsqueda en bases de datos}{47}{section*.88}%
+\contentsline {chapter}{\numberline {A}Ficha técnica del recurso tecnológico}{50}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Ficha técnica de servicios}{52}{appendix.Alph2}%
