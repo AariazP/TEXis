@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 JUL 2025 11:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  24 JUL 2025 16:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -323,7 +323,7 @@ Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
 \extratabsurround=\skip57
 \backup@length=\skip58
 \ar@cellbox=\box57
-)) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@col@width=\dimen176
 \TX@old@table=\dimen177
@@ -332,21 +332,325 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@delta=\dimen180
 \TX@cols=\count309
 \TX@ftn=\toks31
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2024/10/22 version 6.4.1 text color boxes
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks32
+\pgfutil@tempdima=\dimen181
+\pgfutil@tempdimb=\dimen182
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box58
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks33
+\pgfkeys@temptoks=\toks34
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks35
+))
+\pgf@x=\dimen183
+\pgf@y=\dimen184
+\pgf@xa=\dimen185
+\pgf@ya=\dimen186
+\pgf@xb=\dimen187
+\pgf@yb=\dimen188
+\pgf@xc=\dimen189
+\pgf@yc=\dimen190
+\pgf@xd=\dimen191
+\pgf@yd=\dimen192
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count310
+\c@pgf@countb=\count311
+\c@pgf@countc=\count312
+\c@pgf@countd=\count313
+\t@pgf@toka=\toks36
+\t@pgf@tokb=\toks37
+\t@pgf@tokc=\toks38
+\pgf@sys@id@count=\count314
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count315
+\pgfsyssoftpath@bigbuffer@items=\count316
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen193
+\pgfmath@count=\count317
+\pgfmath@box=\box59
+\pgfmath@toks=\toks39
+\pgfmath@stack@operand=\toks40
+\pgfmath@stack@operation=\toks41
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count318
+)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen194
+\pgf@picmaxx=\dimen195
+\pgf@picminy=\dimen196
+\pgf@picmaxy=\dimen197
+\pgf@pathminx=\dimen198
+\pgf@pathmaxx=\dimen199
+\pgf@pathminy=\dimen256
+\pgf@pathmaxy=\dimen257
+\pgf@xx=\dimen258
+\pgf@xy=\dimen259
+\pgf@yx=\dimen260
+\pgf@yy=\dimen261
+\pgf@zx=\dimen262
+\pgf@zy=\dimen263
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen264
+\pgf@path@lasty=\dimen265
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen266
+\pgf@shorten@start@additional=\dimen267
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box60
+\pgf@hbox=\box61
+\pgf@layerbox@main=\box62
+\pgf@picture@serial@count=\count319
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen268
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen269
+\pgf@pt@y=\dimen270
+\pgf@pt@temp=\dimen271
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen272
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen273
+\pgf@sys@shading@range@num=\count320
+\pgf@shadingcount=\count321
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box63
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box64
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen274
+\pgf@nodesepend=\dimen275
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen276
+\pgffor@skip=\dimen277
+\pgffor@stack=\toks42
+\pgffor@toks=\toks43
+)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count322
+\pgfplotmarksize=\dimen278
+)
+\tikz@lastx=\dimen279
+\tikz@lasty=\dimen280
+\tikz@lastxsaved=\dimen281
+\tikz@lastysaved=\dimen282
+\tikz@lastmovetox=\dimen283
+\tikz@lastmovetoy=\dimen284
+\tikzleveldistance=\dimen285
+\tikzsiblingdistance=\dimen286
+\tikz@figbox=\box65
+\tikz@figbox@bg=\box66
+\tikz@tempbox=\box67
+\tikz@tempbox@bg=\box68
+\tikztreelevel=\count323
+\tikznumberofchildren=\count324
+\tikznumberofcurrentchild=\count325
+\tikz@fig@count=\count326
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count327
+\pgfmatrixcurrentcolumn=\count328
+\pgf@matrix@numberofcolumns=\count329
+)
+\tikz@expandcount=\count330
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks44
+\verbatim@line=\toks45
+\verbatim@in@stream=\read4
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box69
+\tcb@upperbox=\box70
+\tcb@lowerbox=\box71
+\tcb@phantombox=\box72
+\c@tcbbreakpart=\count331
+\c@tcblayer=\count332
+\c@tcolorbox@number=\count333
+\l__tcobox_tmpa_box=\box73
+\l__tcobox_tmpa_dim=\dimen287
+\tcb@temp=\box74
+\tcb@temp=\box75
+\tcb@temp=\box76
+\tcb@temp=\box77
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '6.4.1'
+\c@tcbrastercolumn=\count334
+\c@tcbrasterrow=\count335
+\c@tcbrasternum=\count336
+\c@tcbraster=\count337
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.4.1'
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
+Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty
+Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.tex
+File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
+\l__tikzfill_img_box=\box78
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.4.1'
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.4.1'
+(/usr/local/texlive/2025/texmf-dist/tex/latex/pdfcol/pdfcol.sty
+Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
+)
+Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
+\tcb@testbox=\box79
+\tcb@totalupperbox=\box80
+\tcb@totallowerbox=\box81
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.4.1'
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.4.1'
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '6.4.1'
+\tcbfitdim=\dimen288
+\tcb@lowerfitdim=\dimen289
+\tcb@upperfitdim=\dimen290
+\tcb@cur@hbadness=\count338
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.4.1'
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '6.4.1'
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count339
+\lst@gtempboxa=\box82
+\lst@token=\toks46
+\lst@length=\count340
+\lst@currlwidth=\dimen291
+\lst@column=\count341
+\lst@pos=\count342
+\lst@lostspace=\dimen292
+\lst@width=\dimen293
+\lst@newlines=\count343
+\lst@lineno=\count344
+\lst@maxwidth=\dimen294
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count345
+\lst@skipnumbers=\count346
+\lst@framebox=\box83
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/09/23 1.10c listings configuration
+))
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '6.4.1'
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '6.4.1'
+)
+\c@tcblisting=\count347
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/listingsutf8/listingsutf8.sty
+Package: listingsutf8 2019-12-10 v1.5 Allow UTF-8 in listings input (HO)
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '6.4.1'
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbmagazine.code.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '6.4.1'
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbvignette.code.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '6.4.1'
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '6.4.1'
+))) (/usr/local/texlive/2025/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/textpos/textpos.sty
 Package: textpos 2022/07/23 v1.10.1
 Package textpos Info: choosing support for LaTeX3 on input line 60.
-\TP@textbox=\box58
-\TP@holdbox=\box59
-\TPHorizModule=\dimen181
-\TPVertModule=\dimen182
-\TP@margin=\dimen183
-\TP@absmargin=\dimen184
+\TP@textbox=\box84
+\TP@holdbox=\box85
+\TPHorizModule=\dimen295
+\TPVertModule=\dimen296
+\TP@margin=\dimen297
+\TP@absmargin=\dimen298
 
 Grid set 16 x 16 = 37.34424pt x 52.81541pt
-\TPboxrulesize=\dimen185
-\TP@ox=\dimen186
-\TP@oy=\dimen187
-\TP@tbargs=\toks32
+\TPboxrulesize=\dimen299
+\TP@ox=\dimen300
+\TP@oy=\dimen301
+\TP@tbargs=\toks47
 TextBlockOrigin set to 0pt x 0pt
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
@@ -391,11 +695,18 @@ LaTeX Font Info:    Trying to load font information for T1+lmr on input line 7.
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count310
-\l__pdf_internal_box=\box60
+\l__color_backend_stack_int=\count348
+\l__pdf_internal_box=\box86
 ) (./main.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
+
+
+LaTeX Warning: Label `tab:tabla-resumen' multiply defined.
+
+
+LaTeX Warning: Label `fig:tabla-resumen-busqueda' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -456,17 +767,17 @@ LaTeX Info: Redefining \% on input line 7.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count311
-\scratchdimen=\dimen188
-\scratchbox=\box61
-\nofMPsegments=\count312
-\nofMParguments=\count313
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count314
-\MPscratchDim=\dimen189
-\MPnumerator=\count315
-\makeMPintoPDFobject=\count316
-\everyMPtoPDFconversion=\toks34
+\scratchcounter=\count349
+\scratchdimen=\dimen302
+\scratchbox=\box87
+\nofMPsegments=\count350
+\nofMParguments=\count351
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count352
+\MPscratchDim=\dimen303
+\MPnumerator=\count353
+\makeMPintoPDFobject=\count354
+\everyMPtoPDFconversion=\toks49
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -475,14 +786,16 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 7.
  (./main.out) (./main.out)
-\@outlinefile=\write3
-\openout3 = `main.out'.
+\@outlinefile=\write4
+\openout4 = `main.out'.
 
+\c@lstlisting=\count355
  (./portada.tex (./config/variables.tex)
-<logos/uq-logo.png, id=140, 451.6875pt x 563.10374pt>
+<logos/uq-logo.png, id=191, 451.6875pt x 563.10374pt>
 File: logos/uq-logo.png Graphic file (type png)
 <use logos/uq-logo.png>
 Package pdftex.def Info: logos/uq-logo.png  used on input line 4.
@@ -537,8 +850,8 @@ LaTeX Info: Redefining \% on input line 1.
 [2
 
 ])
-\tf@toc=\write4
-\openout4 = `main.toc'.
+\tf@toc=\write5
+\openout5 = `main.toc'.
 
 
 
@@ -553,405 +866,32 @@ LaTeX Info: Redefining \% on input line 1.
 ] (./main.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
-\tf@lof=\write5
-\openout5 = `main.lof'.
-
 
 
 [6
 
-] (./main.lot
+])
+\tf@lof=\write6
+\openout6 = `main.lof'.
+
+
+
+[7]
+
+[8] (./main.lot
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
-\tf@lot=\write6
-\openout6 = `main.lot'.
+\tf@lot=\write7
+\openout7 = `main.lot'.
 
  (./capitulos/introduccion.tex
 
-[7
+[9
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 5.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 5.
-
-
-[8
-
-]) (./capitulos/glosario.tex
-
-[9]
-
-[10
-
-]) (./capitulos/siglas.tex
-
-[11]
-
-LaTeX Warning: Hyper reference `acro:API' on page 12 undefined on input line 5.
-
-
-LaTeX Warning: Hyper reference `acro:API' on page 12 undefined on input line 5.
-
-
-LaTeX Warning: Hyper reference `acro:CMMI' on page 12 undefined on input line 6.
-
-
-LaTeX Warning: Hyper reference `acro:CMMI' on page 12 undefined on input line 6.
-
-
-LaTeX Warning: Hyper reference `acro:CPU' on page 12 undefined on input line 7.
-
-
-LaTeX Warning: Hyper reference `acro:CPU' on page 12 undefined on input line 7.
-
-
-LaTeX Warning: Hyper reference `acro:DAR' on page 12 undefined on input line 8.
-
-
-LaTeX Warning: Hyper reference `acro:DAR' on page 12 undefined on input line 8.
-
-
-LaTeX Warning: Hyper reference `acro:GRID' on page 12 undefined on input line 9.
-
-
-LaTeX Warning: Hyper reference `acro:GRID' on page 12 undefined on input line 9.
-
-
-LaTeX Warning: Hyper reference `acro:IT' on page 12 undefined on input line 10.
-
-
-LaTeX Warning: Hyper reference `acro:IT' on page 12 undefined on input line 10.
-
-
-LaTeX Warning: Hyper reference `acro:SMS' on page 12 undefined on input line 11.
-
-
-LaTeX Warning: Hyper reference `acro:SMS' on page 12 undefined on input line 11.
-
-
-LaTeX Warning: Hyper reference `acro:VBC' on page 12 undefined on input line 12.
-
-
-LaTeX Warning: Hyper reference `acro:VBC' on page 12 undefined on input line 12.
-
-
-
-[12
-
-]) (./capitulos/objetivos.tex) (./capitulos/justificacion.tex
-
-[13
-
-
-]) (./capitulos/metodologia.tex
-
-[14
-
-]) (./capitulos/marcoConceptual.tex
-
-[15
-
-]) (./capitulos/marcoTeorico.tex
-
-[16
-
-]
-
-Package natbib Warning: Citation `CNCFF2023' on page 17 undefined on input line 6.
-
-
-Package natbib Warning: Citation `Combelles2020' on page 17 undefined on input line 7.
-
-
-Package natbib Warning: Citation `ISOIEC25010' on page 17 undefined on input line 9.
-
-) (./capitulos/desarrolloMetodologico.tex
-
-[17
-
-]
-
-[18]
-
-[19]
-
-[20
-
-]) (./capitulos/desarrolloMetodologico/caracterizacionGRID.tex
-
-[21] (./tablas-images/cp1/definicionStakeholders.tex
-<tablas-images/cp1/definicionStakeholders.png, id=425, 1143.27126pt x 425.59pt>
-File: tablas-images/cp1/definicionStakeholders.png Graphic file (type png)
-<use tablas-images/cp1/definicionStakeholders.png>
-Package pdftex.def Info: tablas-images/cp1/definicionStakeholders.png  used on input line 3.
-(pdftex.def)             Requested size: 426.79135pt x 158.87502pt.
-)
-
-[22
-
- <./tablas-images/cp1/definicionStakeholders.png>] (./tablas-images/cp1/priorizacionStakeholders.tex
-<tablas-images/cp1/priorizacionStakeholders.png, id=431, 1094.0875pt x 772.8875pt>
-File: tablas-images/cp1/priorizacionStakeholders.png Graphic file (type png)
-<use tablas-images/cp1/priorizacionStakeholders.png>
-Package pdftex.def Info: tablas-images/cp1/priorizacionStakeholders.png  used on input line 3.
-(pdftex.def)             Requested size: 426.79135pt x 301.49567pt.
-)
-
-[23 <./tablas-images/cp1/priorizacionStakeholders.png>]
-
-[24] (./tablas-images/cp1/caracterizacionInfraestructura.tex
-<tablas-images/cp1/torres/torre-1.png, id=451, 512.91624pt x 702.625pt>
-File: tablas-images/cp1/torres/torre-1.png Graphic file (type png)
-<use tablas-images/cp1/torres/torre-1.png>
-Package pdftex.def Info: tablas-images/cp1/torres/torre-1.png  used on input line 3.
-(pdftex.def)             Requested size: 426.79135pt x 584.6474pt.
-
-
-[25]
-<tablas-images/cp1/torres/torre-2.png, id=457, 510.90875pt x 555.07375pt>
-File: tablas-images/cp1/torres/torre-2.png Graphic file (type png)
-<use tablas-images/cp1/torres/torre-2.png>
-Package pdftex.def Info: tablas-images/cp1/torres/torre-2.png  used on input line 9.
-(pdftex.def)             Requested size: 426.79135pt x 463.68396pt.
-
-
-[26 <./tablas-images/cp1/torres/torre-1.png>]
-<tablas-images/cp1/torres/torre-3.png, id=463, 514.92375pt x 556.0775pt>
-File: tablas-images/cp1/torres/torre-3.png Graphic file (type png)
-<use tablas-images/cp1/torres/torre-3.png>
-Package pdftex.def Info: tablas-images/cp1/torres/torre-3.png  used on input line 15.
-(pdftex.def)             Requested size: 426.79135pt x 460.90782pt.
-
-
-[27 <./tablas-images/cp1/torres/torre-2.png>]
-<tablas-images/cp1/torres/torre-4.png, id=469, 512.91624pt x 558.085pt>
-File: tablas-images/cp1/torres/torre-4.png Graphic file (type png)
-<use tablas-images/cp1/torres/torre-4.png>
-Package pdftex.def Info: tablas-images/cp1/torres/torre-4.png  used on input line 21.
-(pdftex.def)             Requested size: 426.79135pt x 464.37709pt.
-
-
-[28 <./tablas-images/cp1/torres/torre-3.png>]
-<tablas-images/cp1/torres/torre-5.png, id=475, 510.90875pt x 576.1525pt>
-File: tablas-images/cp1/torres/torre-5.png Graphic file (type png)
-<use tablas-images/cp1/torres/torre-5.png>
-Package pdftex.def Info: tablas-images/cp1/torres/torre-5.png  used on input line 27.
-(pdftex.def)             Requested size: 426.79135pt x 481.2922pt.
-
-
-[29 <./tablas-images/cp1/torres/torre-4.png>]
-<tablas-images/cp1/torres/torre-6.png, id=481, 515.9275pt x 608.2725pt>
-File: tablas-images/cp1/torres/torre-6.png Graphic file (type png)
-<use tablas-images/cp1/torres/torre-6.png>
-Package pdftex.def Info: tablas-images/cp1/torres/torre-6.png  used on input line 33.
-(pdftex.def)             Requested size: 426.79135pt x 503.19539pt.
-
-
-[30 <./tablas-images/cp1/torres/torre-5.png>]
-<tablas-images/cp1/torres/torre-7.png, id=488, 512.91624pt x 578.16pt>
-File: tablas-images/cp1/torres/torre-7.png Graphic file (type png)
-<use tablas-images/cp1/torres/torre-7.png>
-Package pdftex.def Info: tablas-images/cp1/torres/torre-7.png  used on input line 39.
-(pdftex.def)             Requested size: 426.79135pt x 481.08128pt.
-
-
-[31 <./tablas-images/cp1/torres/torre-6.png>]
-<tablas-images/cp1/racks/rack-1.png, id=494, 628.3475pt x 816.04875pt>
-File: tablas-images/cp1/racks/rack-1.png Graphic file (type png)
-<use tablas-images/cp1/racks/rack-1.png>
-Package pdftex.def Info: tablas-images/cp1/racks/rack-1.png  used on input line 45.
-(pdftex.def)             Requested size: 426.79135pt x 554.28322pt.
-
-
-[32 <./tablas-images/cp1/torres/torre-7.png>]
-<tablas-images/cp1/racks/rack-2.png, id=500, 627.34375pt x 493.845pt>
-File: tablas-images/cp1/racks/rack-2.png Graphic file (type png)
-<use tablas-images/cp1/racks/rack-2.png>
-Package pdftex.def Info: tablas-images/cp1/racks/rack-2.png  used on input line 51.
-(pdftex.def)             Requested size: 426.79135pt x 335.98346pt.
-
-
-[33 <./tablas-images/cp1/racks/rack-1.png>]
-<tablas-images/cp1/racks/rack-3.png, id=506, 566.115pt x 811.03pt>
-File: tablas-images/cp1/racks/rack-3.png Graphic file (type png)
-<use tablas-images/cp1/racks/rack-3.png>
-Package pdftex.def Info: tablas-images/cp1/racks/rack-3.png  used on input line 57.
-(pdftex.def)             Requested size: 426.79135pt x 611.45146pt.
-
-
-[34 <./tablas-images/cp1/racks/rack-2.png>]
-<tablas-images/cp1/racks/rack-4.png, id=512, 562.1pt x 717.68124pt>
-File: tablas-images/cp1/racks/rack-4.png Graphic file (type png)
-<use tablas-images/cp1/racks/rack-4.png>
-Package pdftex.def Info: tablas-images/cp1/racks/rack-4.png  used on input line 63.
-(pdftex.def)             Requested size: 426.79135pt x 544.91777pt.
-
-
-[35 <./tablas-images/cp1/racks/rack-3.png>]
-<tablas-images/cp1/racks/rack-5.png, id=518, 565.11125pt x 701.62125pt>
-File: tablas-images/cp1/racks/rack-5.png Graphic file (type png)
-<use tablas-images/cp1/racks/rack-5.png>
-Package pdftex.def Info: tablas-images/cp1/racks/rack-5.png  used on input line 69.
-(pdftex.def)             Requested size: 426.79135pt x 529.89745pt.
-
-
-[36 <./tablas-images/cp1/racks/rack-4.png>]
-<tablas-images/cp1/NAS/nas-1.png, id=525, 624.3325pt x 729.72626pt>
-File: tablas-images/cp1/NAS/nas-1.png Graphic file (type png)
-<use tablas-images/cp1/NAS/nas-1.png>
-Package pdftex.def Info: tablas-images/cp1/NAS/nas-1.png  used on input line 75.
-(pdftex.def)             Requested size: 426.79135pt x 498.84622pt.
-
-
-[37 <./tablas-images/cp1/racks/rack-5.png>]
-<tablas-images/cp1/firewall/firewall.png, id=531, 596.2275pt x 733.74126pt>
-File: tablas-images/cp1/firewall/firewall.png Graphic file (type png)
-<use tablas-images/cp1/firewall/firewall.png>
-Package pdftex.def Info: tablas-images/cp1/firewall/firewall.png  used on input line 82.
-(pdftex.def)             Requested size: 426.79135pt x 525.22562pt.
-)
-
-[38 <./tablas-images/cp1/NAS/nas-1.png>]
-
-[39 <./tablas-images/cp1/firewall/firewall.png>]
-<tablas-images/cp1/servicios-actuales/servicios-actuales.png, id=542, 485.815pt x 463.7325pt>
-File: tablas-images/cp1/servicios-actuales/servicios-actuales.png Graphic file (type png)
-<use tablas-images/cp1/servicios-actuales/servicios-actuales.png>
-Package pdftex.def Info: tablas-images/cp1/servicios-actuales/servicios-actuales.png  used on input line 104.
-(pdftex.def)             Requested size: 426.79135pt x 407.3924pt.
-<tablas-images/cp1/servicios-esperados/servicios-esperados.png, id=543, 620.3175pt x 288.07625pt>
-File: tablas-images/cp1/servicios-esperados/servicios-esperados.png Graphic file (type png)
-<use tablas-images/cp1/servicios-esperados/servicios-esperados.png>
-Package pdftex.def Info: tablas-images/cp1/servicios-esperados/servicios-esperados.png  used on input line 115.
-(pdftex.def)             Requested size: 426.79135pt x 198.20137pt.
-
-
-[40 <./tablas-images/cp1/servicios-actuales/servicios-actuales.png>]
-
-[41 <./tablas-images/cp1/servicios-esperados/servicios-esperados.png>]
-
-[42]) (./capitulos/desarrolloMetodologico/mapeoSMS.tex
-
-[43] (./tablas-images/cp2/definicionMetas.tex
-<tablas-images/cp2/definicionMetas.png, id=574, 439.6425pt x 125.46875pt>
-File: tablas-images/cp2/definicionMetas.png Graphic file (type png)
-<use tablas-images/cp2/definicionMetas.png>
-Package pdftex.def Info: tablas-images/cp2/definicionMetas.png  used on input line 3.
-(pdftex.def)             Requested size: 426.79135pt x 121.80408pt.
-) (./tablas-images/cp2/preguntasInvestigacion.tex
-<tablas-images/cp2/preguntasInvestigacion.png, id=575, 627.34375pt x 255.95625pt>
-File: tablas-images/cp2/preguntasInvestigacion.png Graphic file (type png)
-<use tablas-images/cp2/preguntasInvestigacion.png>
-Package pdftex.def Info: tablas-images/cp2/preguntasInvestigacion.png  used on input line 3.
-(pdftex.def)             Requested size: 426.79135pt x 174.13776pt.
-)
-
-[44
-
- <./tablas-images/cp2/definicionMetas.png>] (./tablas-images/cp2/definicionMetricas.tex
-<tablas-images/cp2/definicionMetricas.png, id=583, 392.46625pt x 110.4125pt>
-File: tablas-images/cp2/definicionMetricas.png Graphic file (type png)
-<use tablas-images/cp2/definicionMetricas.png>
-Package pdftex.def Info: tablas-images/cp2/definicionMetricas.png  used on input line 3.
-(pdftex.def)             Requested size: 426.79135pt x 120.07765pt.
-)
-
-[45 <./tablas-images/cp2/preguntasInvestigacion.png> <./tablas-images/cp2/definicionMetricas.png>] (./tablas-images/cp2/modelo-PICOC.tex
-<tablas-images/cp2/modelo-PICOC.png, id=596, 876.27374pt x 137.51375pt>
-File: tablas-images/cp2/modelo-PICOC.png Graphic file (type png)
-<use tablas-images/cp2/modelo-PICOC.png>
-Package pdftex.def Info: tablas-images/cp2/modelo-PICOC.png  used on input line 3.
-(pdftex.def)             Requested size: 426.79135pt x 66.97736pt.
-) (./tablas-images/cp2/keywords-PICOC.tex
-<tablas-images/cp2/keywords-PICOC.png, id=597, 511.9125pt x 93.34875pt>
-File: tablas-images/cp2/keywords-PICOC.png Graphic file (type png)
-<use tablas-images/cp2/keywords-PICOC.png>
-Package pdftex.def Info: tablas-images/cp2/keywords-PICOC.png  used on input line 3.
-(pdftex.def)             Requested size: 426.79135pt x 77.82698pt.
-) (./tablas-images/cp2/keywords.tex
-<tablas-images/cp2/keywords.png, id=598, 508.90125pt x 107.40125pt>
-File: tablas-images/cp2/keywords.png Graphic file (type png)
-<use tablas-images/cp2/keywords.png>
-Package pdftex.def Info: tablas-images/cp2/keywords.png  used on input line 3.
-(pdftex.def)             Requested size: 426.79135pt x 90.07547pt.
-) (./tablas-images/cp2/criterios.tex
-<tablas-images/cp2/criterios.png, id=599, 712.6625pt x 139.52126pt>
-File: tablas-images/cp2/criterios.png Graphic file (type png)
-<use tablas-images/cp2/criterios.png>
-Package pdftex.def Info: tablas-images/cp2/criterios.png  used on input line 3.
-(pdftex.def)             Requested size: 426.79135pt x 83.55371pt.
-)
-
-[46 <./tablas-images/cp2/modelo-PICOC.png> <./tablas-images/cp2/keywords-PICOC.png> <./tablas-images/cp2/keywords.png>]) (./main.bbl
-
-[47 <./tablas-images/cp2/criterios.png>]
-
-[48
-
-]) (./apendices/apendices.tex
-
-[49]
-Ap\'{e}ndice A.
-<apendices/caracterizacionInfraestructura.png, id=624, 621.32124pt x 778.91pt>
-File: apendices/caracterizacionInfraestructura.png Graphic file (type png)
-<use apendices/caracterizacionInfraestructura.png>
-Package pdftex.def Info: apendices/caracterizacionInfraestructura.png  used on input line 6.
-(pdftex.def)             Requested size: 426.78757pt x 535.0358pt.
-
-
-[50
-
-]
-
-[51 <./apendices/caracterizacionInfraestructura.png>]
-Ap\'{e}ndice B.
-<apendices/caracterizacionServicios.png, id=634, 489.83pt x 421.575pt>
-File: apendices/caracterizacionServicios.png Graphic file (type png)
-<use apendices/caracterizacionServicios.png>
-Package pdftex.def Info: apendices/caracterizacionServicios.png  used on input line 14.
-(pdftex.def)             Requested size: 426.7989pt x 367.32692pt.
-)
-
-Package natbib Warning: There were undefined citations.
-
-
-
-[52
-
- <./apendices/caracterizacionServicios.png>] (./main.aux
-LaTeX Info: Redefining \. on input line 12.
-LaTeX Info: Redefining \% on input line 12.
-)
- ***********
-LaTeX2e <2024-11-01> patch level 2
-L3 programming layer <2025-01-18>
- ***********
-
-
-LaTeX Warning: There were undefined references.
-
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 160B778341E7D6B462669D39BA1C3374;5954.
- ) 
-Here is how much of TeX's memory you used:
- 15485 strings out of 473190
- 251381 string characters out of 5715801
- 657304 words of memory out of 5000000
- 38244 multiletter control sequences out of 15000+600000
- 630449 words of font info for 84 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 80i,8n,82p,1222b,840s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on main.pdf (53 pages, 4367516 bytes).
-PDF statistics:
- 713 PDF objects out of 1000 (max. 8388607)
- 582 compressed objects within 6 object streams
- 180 named destinations out of 1000 (max. 500000)
- 413 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+LaTeX Font In
