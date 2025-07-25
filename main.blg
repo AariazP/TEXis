@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: apalike.bst
+Database file #1: bibliografia.bib
+Warning--I didn't find a database entry for "CNCFF2023"
+Warning--I didn't find a database entry for "Combelles2020"
+Warning--I didn't find a database entry for "ISOIEC25010"
+Warning--empty journal in Spray2023
+You've used 21 entries,
+            1935 wiz_defined-function locations,
+            609 strings with 7652 characters,
+and the built_in function-call counts, 7213 in all, are:
+= -- 700
+> -- 297
+< -- 15
++ -- 98
+- -- 98
+* -- 560
+:= -- 1313
+add.period$ -- 56
+call.type$ -- 21
+change.case$ -- 153
+chr.to.int$ -- 21
+cite$ -- 22
+duplicate$ -- 288
+empty$ -- 482
+format.name$ -- 123
+if$ -- 1382
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 16
+newline$ -- 101
+num.names$ -- 63
+pop$ -- 137
+preamble$ -- 1
+purify$ -- 154
+quote$ -- 0
+skip$ -- 231
+stack$ -- 0
+substring$ -- 418
+swap$ -- 31
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 122
+warning$ -- 1
+while$ -- 56
+width$ -- 0
+write$ -- 250
+(There were 4 warnings)

@@ -434,4 +434,54 @@ La eliminación de duplicados se realizó haciendo uso de la herramienta de gest
 \section*{4 Priorización de estudios}
 \addcontentsline{toc}{section}{Priorización de estudios}\label{sec:priorizacionEstudios}
 
+Luego de la selección inicial de los artículos, se procedió a revisar el \textit{title}, \textit{abstract} y \textit{keywords} de cada uno. Como resultado de esta revisión, se generaron métricas de calidad para cada artículo, con el fin de priorizar aquellos más relevantes para la investigación. Las métricas utilizadas fueron las siguientes:
 
+\begin{itemize}
+    \item \textbf{SCI} (Science Citation Index)
+    \item \textbf{CVI} (Core Value Index)
+    \item \textbf{IRRQ} (Index Relation Research Question)
+\end{itemize}
+
+Este proceso inició con un total de 771 artículos, los cuales fueron evaluados según su alineamiento con los objetivos de la investigación. La evaluación temática permitió identificar un total de 110 artículos con una relación directa con el enfoque planteado.
+
+\section*{5 Estrategia de búsqueda usando bola de nieve}
+\addcontentsline{toc}{section}{Estrategia de búsqueda usando bola de nieve}\label{sec:bolaDeNieve}
+
+En esta etapa, se seleccionó el primer cuartil según el índice \textbf{IRRQ}, lo que resultó en un total de 24 artículos. Adicionalmente, se incluyeron dos artículos por criterio de inclusión directa, estableciendo así una línea base de \textbf{26 artículos}. 
+
+Sobre esta base, se aplicó la estrategia de \textit{bola de nieve} en ambas direcciones: hacia adelante y hacia atrás. Como resultado, se obtuvieron \textbf{87 artículos} mediante la técnica hacia atrás y \textbf{495 artículos} mediante la técnica hacia adelante. 
+
+Esto definió un nuevo conjunto de artículos para un proceso de selección adicional (\textit{screening}). En esta fase, se eliminaron \textbf{14 duplicados} y \textbf{452 artículos} fueron descartados por no estar alineados con la investigación. 
+
+Finalmente, se obtuvo un total de \textbf{116 artículos} mediante esta estrategia de búsqueda ampliada.
+
+\section*{6 Diagrama de búsqueda}
+\addcontentsline{toc}{section}{Diagrama de búsqueda}\label{sec:diagramaBusqueda}
+
+\subsection*{6.1 Usando cadenas de búsqueda}
+\addcontentsline{toc}{subsection}{Usando cadenas de búsqueda}\label{subsec:cadenaBusqueda}
+\input{tablas-images/cp2/diagrama-cadena-busqueda.tex}
+
+\subsection*{6.2 Usando bola de nieve}
+\addcontentsline{toc}{subsection}{Usando bola de nieve}\label{subsec:bolaNieveBusqueda}
+\input{tablas-images/cp2/diagrama-bola-nieve-busqueda.tex}
+
+\section*{7 Identificación de estudios}
+\addcontentsline{toc}{section}{Identificación de estudios}\label{sec:identificacionEstudios}
+
+\subsection*{7.1 Artículos por año y métricas}
+\addcontentsline{toc}{subsection}{Artículos por año y métricas}\label{subsec:articulosPorAnoYMetrica}
+\input{tablas-images/cp2/estudios.tex}
+
+\section*{8 Información de la herramienta}
+\addcontentsline{toc}{subsection}{Información de la herramienta}\label{subsec:informacionHerramienta}
+
+\noindent
+La herramienta utilizada para este proceso de revisión de la literatura fue \textbf{SMS-BUILDER}, la cual se encuentra disponible en \textit{Docker Hub}. El estudio realizado puede consultarse en el siguiente enlace:
+
+\begin{center}
+\href{https://sms-vbc.iti.grid.uniquindio.edu.co/}{\texttt{https://sms-vbc.iti.grid.uniquindio.edu.co/}}
+\end{center}
+
+\noindent
+Adicionalmente, se implementaron procesos de respaldo como medida de seguridad. Estos \textit{backups} fueron almacenados en ubicaciones diferentes, siguiendo la estrategia de respaldo \textbf{3-2-1}.
