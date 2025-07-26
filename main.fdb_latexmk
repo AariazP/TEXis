@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1753547490.83088 "main.aux" "main.bbl" "main" 1753547499.16419 0
+["bibtex main"] 1753548116.50798 "main.aux" "main.bbl" "main" 1753548194.61456 0
   "./bibliografia.bib" 1753547490.65141 120756 abb4c9c7281e815075c56658c5ddeec6 ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "main.aux" 1753547498.84885 38677 ec8e737cdc58fcc58de72f044f6db0da "pdflatex"
+  "main.aux" 1753548194.29599 38677 ec8e737cdc58fcc58de72f044f6db0da "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1753547490.97171 "/Users/aariaz/Desktop/tesis/main.tex" "main.pdf" "main" 1753547499.16441 0
+["pdflatex"] 1753548186.41426 "/Users/aariaz/Desktop/tesis/main.tex" "main.pdf" "main" 1753548194.61482 0
   "/Users/aariaz/Desktop/tesis/main.tex" 1753479375.34279 905 5c91fbbc8aad74fe7f0f3723e5da901d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -281,18 +281,18 @@
   "capitulos/marcoTeorico.tex" 1753546964.83771 5722 3c574030e01bfb89bd4928fad388ed28 ""
   "capitulos/metodologia.tex" 1753126444.34236 117 c79a8c50388d9fff840c30b8236c74af ""
   "capitulos/objetivos.tex" 1753120821.66107 1383 dddba1b16b75a32cd24d52b127514623 ""
-  "capitulos/siglas.tex" 1752957451.8911 718 1f8d2e911bcd93e8f1e9138823a7f7fc ""
-  "config/paquetes.tex" 1753544681.49853 636 9eb785eced9faae888108fcbabe54f03 ""
+  "capitulos/siglas.tex" 1753547742.93729 717 746662a7d121601452e6f25ec069692b ""
+  "config/paquetes.tex" 1753548185.94042 630 06c7e2b52f08391a38fda150318d56e3 ""
   "config/variables.tex" 1752973581.97211 717 47de1fd8280c29c7c8f521cb089cba60 ""
   "indice.tex" 1752712358.07959 25 cc7547b926d80f5fba09fce8f9b6ee6e ""
   "logos/uq-logo.png" 1752710910.90834 21237 e88a2a0e41840be588c77e96845b876b ""
-  "main.aux" 1753547498.84885 38677 ec8e737cdc58fcc58de72f044f6db0da "pdflatex"
-  "main.bbl" 1753547490.94433 12291 3298b25854b22feb12792264ef1bc0ad "bibtex main"
-  "main.lof" 1753547498.85479 7369 375858949b9cdcf0608d8e6512539ed2 "pdflatex"
-  "main.lot" 1753547498.85483 4128 8165f27fc33a095784f5f08621689421 "pdflatex"
-  "main.out" 1753547498.85431 8326 8b3f72507bf96e7dbaf2ac62b72eb9e4 "pdflatex"
+  "main.aux" 1753548194.29599 38677 ec8e737cdc58fcc58de72f044f6db0da "pdflatex"
+  "main.bbl" 1753548116.61472 12291 3298b25854b22feb12792264ef1bc0ad "bibtex main"
+  "main.lof" 1753548194.30152 7369 375858949b9cdcf0608d8e6512539ed2 "pdflatex"
+  "main.lot" 1753548194.30156 4128 8165f27fc33a095784f5f08621689421 "pdflatex"
+  "main.out" 1753548194.30111 8326 8b3f72507bf96e7dbaf2ac62b72eb9e4 "pdflatex"
   "main.tex" 1753479375.34279 905 5c91fbbc8aad74fe7f0f3723e5da901d ""
-  "main.toc" 1753547498.85473 3747 234afc36cba662e16cf1459fdf508374 "pdflatex"
+  "main.toc" 1753548194.30149 3747 234afc36cba662e16cf1459fdf508374 "pdflatex"
   "portada.tex" 1752715650.05817 850 df1421712d392c27976ef8d78fdd522f ""
   "resumen.tex" 1753126418.19289 209 35b3679eb359a1e019f2272cc82e1e9d ""
   "tablas-images/cp1/NAS/nas-1.png" 1753118694.33085 230895 82782373014be2533be6e71f824542d1 ""

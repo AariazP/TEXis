@@ -3,24 +3,26 @@
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
 \geometry{a4paper, margin=3cm}
+
 \usepackage{setspace}
 \onehalfspacing\usepackage{graphicx}
 \usepackage{float}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{amsmath, amssymb}
-\usepackage{hyperref}
-\usepackage{natbib}
-\usepackage{graphicx}
-\usepackage{acronym}
-\usepackage{hyperref}
 \usepackage{array}
 \usepackage{tabularx}
-\usepackage[most]{tcolorbox}
-\usepackage{verbatim} 
-\usepackage{placeins}
-\usepackage[utf8]{inputenc}
 \usepackage{booktabs}
 \usepackage[table,xcdraw]{xcolor}
-\usepackage{tabularx}
+\usepackage[most]{tcolorbox}
+\usepackage{verbatim}
+\usepackage{placeins}
+
+% Citas
+\usepackage{natbib}
+
+% Hyperlinks: siempre debe ir antes de acronym
 \usepackage{hyperref}
+
+% Acrónimos (Después de hyperref)
+\usepackage[printonlyused]{acronym}
