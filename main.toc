@@ -47,5 +47,5 @@
 \contentsline {section}{Identificación de estudios}{60}{section*.104}%
 \contentsline {subsection}{Artículos por año y métricas}{60}{section*.105}%
 \contentsline {subsection}{Información de la herramienta}{62}{section*.110}%
-\contentsline {chapter}{\numberline {A}Fichas técnicas y búsqueda en bases de datos}{65}{appendix.Alph1}%
-\contentsline {chapter}{\numberline {B}Búsquedas en bases de datos}{68}{appendix.Alph2}%
+\contentsline {chapter}{\numberline {A}Fichas técnicas y búsqueda en bases de datos}{74}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Búsquedas en bases de datos}{77}{appendix.Alph2}%
