@@ -20,6 +20,12 @@ B, L.~B., Cruz, F.~A., Madonna, A., and Mariotti, K. (2020).
 \newblock {\em {Sarus : Highly Scalable Docker Containers for HPC Systems}}.
 \newblock Springer International Publishing.
 
+\bibitem[BSI, 2011]{ISO25010}
+BSI (2011).
+\newblock {BSI Standards Publication: Systems and Software Engineering — Systems and Software Quality Requirements and Evaluation (SQuaRE) — System and Software Quality Models}.
+\newblock \url{https://bsol-bsigroup-com.lcproxy.shu.ac.uk/Bibliographic/BibliographicInfoData/000000000030215101}.
+\newblock BS ISO/IEC 25010:2011.
+
 \bibitem[Campos and Gomes, 2017]{Campos2017}
 Campos, I. and Gomes, J. (2017).
 \newblock {Researchers Advance User-Level Container Solution for HPC}.
@@ -37,9 +43,18 @@ Clark, S. (2024).
 CNCF (2019).
 \newblock {CNCF to host CRI-O}.
 
+\bibitem[CNCF, 2023]{CNCF2023}
+CNCF (2023).
+\newblock {Who we are}.
+
 \bibitem[Collins, 2016]{Collins2016}
 Collins, L. (2016).
 \newblock {Virtual Private Cloud}.
+
+\bibitem[{Combelles C. Lucena P.}, 2020]{CombellesC.LucenaP.2020}
+{Combelles C. Lucena P.}, A.~E. (2020).
+\newblock {\em {Design Thinking 디자인 사고 ( Design Thinking )}}.
+\newblock ALA Neal-Schuman, Chicago.
 
 \bibitem[Docker, 2021]{Docker2021}
 Docker (2021).
