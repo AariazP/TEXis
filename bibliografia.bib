@@ -503,12 +503,6 @@ url = {https://www.imf.org/en/Publications/fandd/issues/2018/06/impact-of-digita
 volume = {17},
 year = {2023}
 }
-@standard{25010:2011,
-author = {{ISO/IEC 25010}},
-keywords = {ISO Softwarequalit{\"{a}}t},
-title = {{{ISO}/{IEC} 25010:2011, Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models}},
-year = {2011}
-}
 @article{Kaiser2022,
 abstract = {Container technology is becoming increasingly popular as an alternative to traditional virtual machines because it provides a faster, lighter, and more portable runtime environment for the applications. A container bundles the application and its binary code, libraries, and configuration files together while sharing the host operating system image. Accordingly, containers efficiently share resources and operate small micro-services, software programs, and even more extensive applications with less overhead than virtual machines. There are many container technologies available with Docker being the most popular and many technologies support multiple architectures, including the ARM architecture. Due to its energy efficiency and high-performance, which are crucial parameters in containerization, ARM architecture is becoming prevalent in container technologies. In this paper, we explore various container technologies that support ARM architecture and investigate the pros and cons of each technology. Moreover, we provide a comparative analysis of both container orchestrators and container runtimes that are most prominent competitors of Docker. We also consider security of container technologies with particular focus on the image scanning tools that supports ARM architecture. Our survey reveals that ARM technology is gaining popularity in containerization and almost all recent technologies support ARM architecture.},
 author = {Kaiser, Shahidullah and Haq, Md Sadun and Tosun, Ali Saman and Korkmaz, Turgay},
@@ -526,7 +520,7 @@ volume = {10},
 year = {2022}
 }
 @article{KellerTesser2023,
-abstract = {OS-level virtualization (containers) has become a popular alternative to hypervisor-based virtualization. From a system-administration point-of-view, containers enable support for user-defined software stacks, thus freeing users of restrictions imposed by the host's pre-configured software environment. In high performance computing (HPC), containers inspire special interest due to their potentially low overheads on performance. Moreover, they also bring benefits in portability and scientific reproducibility. Despite the potential advantages, the adoption of containers in HPC has been relatively slow, mainly due to specific requirements of the field. These requirements gave rise to various HPC-focused container implementations. Besides unprivileged container execution, they offer different degrees of automation of system-specific optimizations, which are necessary for optimal performance. When we looked into the scientific literature on containers applied to HPC, we were unable to find an up-to-date overview of the state-of-the-art. For this reason, we developed this extensive survey, including 93 carefully selected works. Overall, based on our survey, we argue that issues related to performance overhead are mostly solved. There is, however, a clear trade-off between performance and portability, since optimal performance often depends on host-specific optimizations. A few works propose solutions to mitigate this issue, but there is still room for improvement. Besides, we found surprisingly few works that deal with portability between dedicated HPC systems and public cloud platforms.},
+abstract = {OS-level virtualization(containers) has become a popular alternative to hypervisor-based virtualization. From a system-administration point-of-view, containers enable support for user-defined software stacks, thus freeing users of restrictions imposed by the host's pre-configured software environment. In high performance computing (HPC), containers inspire special interest due to their potentially low overheads on performance. Moreover, they also bring benefits in portability and scientific reproducibility. Despite the potential advantages, the adoption of containers in HPC has been relatively slow, mainly due to specific requirements of the field. These requirements gave rise to various HPC-focused container implementations. Besides unprivileged container execution, they offer different degrees of automation of system-specific optimizations, which are necessary for optimal performance. When we looked into the scientific literature on containers applied to HPC, we were unable to find an up-to-date overview of the state-of-the-art. For this reason, we developed this extensive survey, including 93 carefully selected works. Overall, based on our survey, we argue that issues related to performance overhead are mostly solved. There is, however, a clear trade-off between performance and portability, since optimal performance often depends on host-specific optimizations. A few works propose solutions to mitigate this issue, but there is still room for improvement. Besides, we found surprisingly few works that deal with portability between dedicated HPC systems and public cloud platforms.},
 author = {{Keller Tesser}, Rafael and Borin, Edson},
 doi = {10.1007/s11227-022-04848-y},
 issn = {15730484},
@@ -545,7 +539,8 @@ year = {2023}
 author = {Spray, John R},
 title = {{Abstraction Layered Architecture}},
 url = {http://abstractionlayeredarchitecture.com/},
-year = {2023}
+year = {2023},
+journal = {Abstraction Layered Architecture}
 }
 @inproceedings{Meena2021,
 abstract = {In the era of Internet technology, Cloud Computing plays a vital role in research. The main purpose of cloud computing is to transport the resources and services on the user's demand. To run an organization successfully, it provides flexible infrastructure and easy method of handling a massive data. To improve the efficiency of cloud computing virtualization role is crucial. Firstly, this survey has studied the introduction and cloud computing evolution with fundamental properties. Section three describes the service and deployment-based models and section four shows virtualization and its approaches. Section five focuses on advantages and disadvantages of cloud computing. After all section six concludes the article.},
@@ -631,7 +626,7 @@ language = {eng},
 month = {jan},
 pages = {21--24},
 publisher = {ALA Neal-Schuman},
-title = {{Design Thinking 디자인 사고 ( Design Thinking )}},
+title = {{Design Thinking ( Design Thinking )}},
 url = {https://library.wu.ac.th/km/design-thinking-คืออะไร-และทำไมเราต้อ/},
 year = {2020}
 }
@@ -884,7 +879,8 @@ author = {{Lopez Falcon}, Gerardo},
 mendeley-groups = {FASE 3},
 title = {{Por qu{\'{e}} las Empresas y Desarrolladores Deber{\'{i}}an Adoptar Tecnolog{\'{i}}as como gVisor para Aumentar la Seguridad de sus Contenedores}},
 url = {https://www.cncf.io/blog/2024/09/19/por-que-las-empresas-y-desarrolladores-deberian-adoptar-tecnologias-como-gvisor-para-aumentar-la-seguridad-de-sus-contenedores/},
-year = {2024}
+year = {2024},
+journal = {CNCF Blog}
 }
 @article{Viktorsson2020,
 abstract = {The extreme adoption rate of container technologies along with raised security concerns have resulted in the development of multiple alternative container runtimes targeting security through additional layers of indirection. In an apples-to-apples comparison, we deploy three runtimes in the same Kubernetes cluster, the security focused Kata and gVisor, as well as the default Kubernetes runtime runC. Our evaluation based on three real applications demonstrate that runC outperforms the more secure alternatives up to 5x, that gVisor deploys containers up to 2x faster than Kata, but that Kata executes container up to 1.6x faster than gVisor. Our work illustrates that alternative, more secure, runtimes can be used in a plug-and-play manner in Kubernetes, but at a significant performance penalty. Our study is useful both to practitioners - to understand the current state of the technology in order to make the right decision in the selection, operation and/or design of platforms - and to scholars to illustrate how these technologies evolved over time.},

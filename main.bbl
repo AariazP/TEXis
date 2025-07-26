@@ -53,7 +53,7 @@ Collins, L. (2016).
 
 \bibitem[{Combelles C. Lucena P.}, 2020]{CombellesC.LucenaP.2020}
 {Combelles C. Lucena P.}, A.~E. (2020).
-\newblock {\em {Design Thinking 디자인 사고 ( Design Thinking )}}.
+\newblock {\em {Design Thinking ( Design Thinking )}}.
 \newblock ALA Neal-Schuman, Chicago.
 
 \bibitem[Docker, 2021]{Docker2021}
@@ -144,6 +144,7 @@ LinuxVirt (2017).
 \bibitem[{Lopez Falcon}, 2024]{LopezFalcon2024}
 {Lopez Falcon}, G. (2024).
 \newblock {Por qu{\'{e}} las Empresas y Desarrolladores Deber{\'{i}}an Adoptar Tecnolog{\'{i}}as como gVisor para Aumentar la Seguridad de sus Contenedores}.
+\newblock {\em CNCF Blog}.
 
 \bibitem[Mag, 2025]{Mag2025}
 Mag, A. (2025).
@@ -220,6 +221,7 @@ Soltesz, S., P{\"{o}}tzl, H., Fiuczynski, M.~E., Bavier, A., and Peterson, L. (2
 \bibitem[Spray, 2023]{Spray2023}
 Spray, J.~R. (2023).
 \newblock {Abstraction Layered Architecture}.
+\newblock {\em Abstraction Layered Architecture}.
 
 \bibitem[Surendhar, 2024]{Surendhar2024}
 Surendhar, M. (2024).
