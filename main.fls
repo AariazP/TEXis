@@ -1,8 +1,8 @@
-PWD /Users/aariaz/Desktop/tesis
+PWD /Users/aariaz/Desktop/TEXis
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/aariaz/Desktop/tesis/main.tex
+INPUT /Users/aariaz/Desktop/TEXis/main.tex
 OUTPUT main.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/report.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/report.cls
@@ -307,6 +307,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/lmodern.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/lmodern.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/oberdiek/iflang.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/oberdiek/iflang.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tools/xspace.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tools/xspace.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
@@ -461,11 +463,7 @@ INPUT capitulos/desarrolloMetodologico/caracterizacionGRID.tex
 INPUT ./tablas-images/cp1/definicionStakeholders.tex
 INPUT ./tablas-images/cp1/definicionStakeholders.tex
 INPUT tablas-images/cp1/definicionStakeholders.tex
-INPUT ./tablas-images/cp1/definicionStakeholders.png
-INPUT ./tablas-images/cp1/definicionStakeholders.png
-INPUT ./tablas-images/cp1/definicionStakeholders.png
-INPUT ./tablas-images/cp1/definicionStakeholders.png
-INPUT ./tablas-images/cp1/definicionStakeholders.png
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx8.tfm
 INPUT ./tablas-images/cp1/priorizacionStakeholders.tex
 INPUT ./tablas-images/cp1/priorizacionStakeholders.tex
 INPUT tablas-images/cp1/priorizacionStakeholders.tex
@@ -965,6 +963,7 @@ INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx8.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb

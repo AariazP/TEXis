@@ -4,6 +4,31 @@
 \usepackage{babel}
 \usepackage{lmodern}
 \usepackage{iflang}
+\usepackage{xspace}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{array}
+
+% Marcador para la sección de Siglas
+\newcommand{\siglaref}{\hyperref[sec:siglas]{\nameref{sec:siglas}}}
+
+% Ahora definimos cada sigla con enlace hacia la lista
+\newcommand{\API}{\hyperref[sec:siglas]{API}\xspace}
+\newcommand{\CMMI}{\hyperref[sec:siglas]{CMMI}\xspace}
+\newcommand{\CPU}{\hyperref[sec:siglas]{CPU}\xspace}
+\newcommand{\DAR}{\hyperref[sec:siglas]{DAR}\xspace}
+\newcommand{\GRID}{\hyperref[sec:siglas]{GRID}\xspace}
+\newcommand{\IT}{\hyperref[sec:siglas]{IT}\xspace}
+\newcommand{\SMS}{\hyperref[sec:siglas]{SMS}\xspace}
+\newcommand{\VBC}{\hyperref[sec:siglas]{VBC}\xspace}
+\newcommand{\TI}{\hyperref[sec:siglas]{TI}\xspace}
+\newcommand{\PMV}{\hyperref[sec:siglas]{PMV}\xspace}
+\newcommand{\PMBOK}{\hyperref[sec:siglas]{PMBOK}\xspace}
+\newcommand{\ISO}{\hyperref[sec:siglas]{ISO}\xspace}
+\newcommand{\CNCF}{\hyperref[sec:siglas]{CNCF}\xspace}
+\newcommand{\TOGAF}{\hyperref[sec:siglas]{TOGAF}\xspace}
+\newcommand{\IEC}{\hyperref[sec:siglas]{IEC}\xspace}
+
 \begin{document}
 
 \input{portada.tex}

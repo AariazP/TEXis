@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  27 JUL 2025 11:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  15 SEP 2025 16:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/aariaz/Desktop/tesis/main.tex
-(/Users/aariaz/Desktop/tesis/main.tex
+**/Users/aariaz/Desktop/TEXis/main.tex
+(/Users/aariaz/Desktop/TEXis/main.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/report.cls
@@ -712,8 +712,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/oberdiek/iflang.sty
 Package: iflang 2018/01/21 v1.7 Checks for the current language (HO)
 Package iflang Info: Naming convention for patterns: babel.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 7.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 32.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -726,26 +728,26 @@ LaTeX Info: Redefining \% on input line 12.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Info: Redefining \. on input line 7.
-LaTeX Info: Redefining \% on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Info: Redefining \. on input line 32.
+LaTeX Info: Redefining \% on input line 32.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -805,13 +807,13 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count360
-Package hyperref Info: Link coloring OFF on input line 7.
+Package hyperref Info: Link coloring OFF on input line 32.
  (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
  (./portada.tex (./config/variables.tex)
-<logos/uq-logo.png, id=264, 451.6875pt x 563.10374pt>
+<logos/uq-logo.png, id=268, 451.6875pt x 563.10374pt>
 File: logos/uq-logo.png Graphic file (type png)
 <use logos/uq-logo.png>
 Package pdftex.def Info: logos/uq-logo.png  used on input line 4.
@@ -911,16 +913,21 @@ LaTeX Info: Redefining \% on input line 1.
 
 [11]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 5.
+(Font)              <10> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 5.
+(Font)              <7> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 5.
+(Font)              <5> on input line 4.
+) (./capitulos/glosario.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--1
+
+ []
+
 
 
 [12
 
-]) (./capitulos/glosario.tex
+]
 
 [13]
 
@@ -928,14 +935,13 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ]) (./capitulos/siglas.tex
 
-[15]
+[15]) (./capitulos/objetivos.tex
 
 [16
 
-]) (./capitulos/objetivos.tex) (./capitulos/justificacion.tex
+]) (./capitulos/justificacion.tex
 
 [17
-
 
 ]) (./capitulos/metodologia.tex
 
@@ -950,6 +956,41 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [20
 
 ]) (./capitulos/desarrolloMetodologico.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--1
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--1
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--1
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--1
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--1
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--1
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--1
+
+ []
+
+
 
 [21
 
@@ -961,229 +1002,239 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 [24
 
-]) (./capitulos/desarrolloMetodologico/caracterizacionGRID.tex
+]
 
-[25] (./tablas-images/cp1/definicionStakeholders.tex
-<tablas-images/cp1/definicionStakeholders.png, id=731, 1143.27126pt x 425.59pt>
-File: tablas-images/cp1/definicionStakeholders.png Graphic file (type png)
-<use tablas-images/cp1/definicionStakeholders.png>
-Package pdftex.def Info: tablas-images/cp1/definicionStakeholders.png  used on input line 3.
-(pdftex.def)             Requested size: 426.79135pt x 158.87502pt.
+[25]) (./capitulos/desarrolloMetodologico/caracterizacionGRID.tex
+
+[26] (./tablas-images/cp1/definicionStakeholders.tex
+Overfull \hbox (5.22421pt too wide) in paragraph at lines 30--30
+[]|\T1/lmr/bx/n/8 Compromiso|  
+ []
+
+
+Overfull \hbox (3.54056pt too wide) in paragraph at lines 30--30
+[]|\T1/lmr/m/n/8 Investigadores 
+ []
+
 )
 
-[26
+[27
 
- <./tablas-images/cp1/definicionStakeholders.png>] (./tablas-images/cp1/priorizacionStakeholders.tex
-<tablas-images/cp1/priorizacionStakeholders.png, id=737, 1094.0875pt x 772.8875pt>
+] (./tablas-images/cp1/priorizacionStakeholders.tex
+<tablas-images/cp1/priorizacionStakeholders.png, id=804, 1094.0875pt x 772.8875pt>
 File: tablas-images/cp1/priorizacionStakeholders.png Graphic file (type png)
 <use tablas-images/cp1/priorizacionStakeholders.png>
 Package pdftex.def Info: tablas-images/cp1/priorizacionStakeholders.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 301.49567pt.
 )
 
-[27 <./tablas-images/cp1/priorizacionStakeholders.png>]
+[28 <./tablas-images/cp1/priorizacionStakeholders.png>]
 
-[28] (./tablas-images/cp1/caracterizacionInfraestructura.tex
-<tablas-images/cp1/torres/torre-1.png, id=755, 512.91624pt x 702.625pt>
+[29]
+
+[30]
+
+[31] (./tablas-images/cp1/caracterizacionInfraestructura.tex
+<tablas-images/cp1/torres/torre-1.png, id=833, 512.91624pt x 702.625pt>
 File: tablas-images/cp1/torres/torre-1.png Graphic file (type png)
 <use tablas-images/cp1/torres/torre-1.png>
 Package pdftex.def Info: tablas-images/cp1/torres/torre-1.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 584.6474pt.
 
 
-[29]
-<tablas-images/cp1/torres/torre-2.png, id=761, 510.90875pt x 555.07375pt>
+[32]
+<tablas-images/cp1/torres/torre-2.png, id=839, 510.90875pt x 555.07375pt>
 File: tablas-images/cp1/torres/torre-2.png Graphic file (type png)
 <use tablas-images/cp1/torres/torre-2.png>
 Package pdftex.def Info: tablas-images/cp1/torres/torre-2.png  used on input line 9.
 (pdftex.def)             Requested size: 426.79135pt x 463.68396pt.
 
 
-[30 <./tablas-images/cp1/torres/torre-1.png>]
-<tablas-images/cp1/torres/torre-3.png, id=768, 514.92375pt x 556.0775pt>
+[33 <./tablas-images/cp1/torres/torre-1.png>]
+<tablas-images/cp1/torres/torre-3.png, id=845, 514.92375pt x 556.0775pt>
 File: tablas-images/cp1/torres/torre-3.png Graphic file (type png)
 <use tablas-images/cp1/torres/torre-3.png>
 Package pdftex.def Info: tablas-images/cp1/torres/torre-3.png  used on input line 15.
 (pdftex.def)             Requested size: 426.79135pt x 460.90782pt.
 
 
-[31 <./tablas-images/cp1/torres/torre-2.png>]
-<tablas-images/cp1/torres/torre-4.png, id=774, 512.91624pt x 558.085pt>
+[34 <./tablas-images/cp1/torres/torre-2.png>]
+<tablas-images/cp1/torres/torre-4.png, id=851, 512.91624pt x 558.085pt>
 File: tablas-images/cp1/torres/torre-4.png Graphic file (type png)
 <use tablas-images/cp1/torres/torre-4.png>
 Package pdftex.def Info: tablas-images/cp1/torres/torre-4.png  used on input line 21.
 (pdftex.def)             Requested size: 426.79135pt x 464.37709pt.
 
 
-[32 <./tablas-images/cp1/torres/torre-3.png>]
-<tablas-images/cp1/torres/torre-5.png, id=780, 510.90875pt x 576.1525pt>
+[35 <./tablas-images/cp1/torres/torre-3.png>]
+<tablas-images/cp1/torres/torre-5.png, id=857, 510.90875pt x 576.1525pt>
 File: tablas-images/cp1/torres/torre-5.png Graphic file (type png)
 <use tablas-images/cp1/torres/torre-5.png>
 Package pdftex.def Info: tablas-images/cp1/torres/torre-5.png  used on input line 27.
 (pdftex.def)             Requested size: 426.79135pt x 481.2922pt.
 
 
-[33 <./tablas-images/cp1/torres/torre-4.png>]
-<tablas-images/cp1/torres/torre-6.png, id=787, 515.9275pt x 608.2725pt>
+[36 <./tablas-images/cp1/torres/torre-4.png>]
+<tablas-images/cp1/torres/torre-6.png, id=864, 515.9275pt x 608.2725pt>
 File: tablas-images/cp1/torres/torre-6.png Graphic file (type png)
 <use tablas-images/cp1/torres/torre-6.png>
 Package pdftex.def Info: tablas-images/cp1/torres/torre-6.png  used on input line 33.
 (pdftex.def)             Requested size: 426.79135pt x 503.19539pt.
 
 
-[34 <./tablas-images/cp1/torres/torre-5.png>]
-<tablas-images/cp1/torres/torre-7.png, id=793, 512.91624pt x 578.16pt>
+[37 <./tablas-images/cp1/torres/torre-5.png>]
+<tablas-images/cp1/torres/torre-7.png, id=870, 512.91624pt x 578.16pt>
 File: tablas-images/cp1/torres/torre-7.png Graphic file (type png)
 <use tablas-images/cp1/torres/torre-7.png>
 Package pdftex.def Info: tablas-images/cp1/torres/torre-7.png  used on input line 39.
 (pdftex.def)             Requested size: 426.79135pt x 481.08128pt.
 
 
-[35 <./tablas-images/cp1/torres/torre-6.png>]
-<tablas-images/cp1/racks/rack-1.png, id=799, 628.3475pt x 816.04875pt>
+[38 <./tablas-images/cp1/torres/torre-6.png>]
+<tablas-images/cp1/racks/rack-1.png, id=876, 628.3475pt x 816.04875pt>
 File: tablas-images/cp1/racks/rack-1.png Graphic file (type png)
 <use tablas-images/cp1/racks/rack-1.png>
 Package pdftex.def Info: tablas-images/cp1/racks/rack-1.png  used on input line 45.
 (pdftex.def)             Requested size: 426.79135pt x 554.28322pt.
 
 
-[36 <./tablas-images/cp1/torres/torre-7.png>]
-<tablas-images/cp1/racks/rack-2.png, id=806, 627.34375pt x 493.845pt>
+[39 <./tablas-images/cp1/torres/torre-7.png>]
+<tablas-images/cp1/racks/rack-2.png, id=882, 627.34375pt x 493.845pt>
 File: tablas-images/cp1/racks/rack-2.png Graphic file (type png)
 <use tablas-images/cp1/racks/rack-2.png>
 Package pdftex.def Info: tablas-images/cp1/racks/rack-2.png  used on input line 51.
 (pdftex.def)             Requested size: 426.79135pt x 335.98346pt.
 
 
-[37 <./tablas-images/cp1/racks/rack-1.png>]
-<tablas-images/cp1/racks/rack-3.png, id=812, 566.115pt x 811.03pt>
+[40 <./tablas-images/cp1/racks/rack-1.png>]
+<tablas-images/cp1/racks/rack-3.png, id=888, 566.115pt x 811.03pt>
 File: tablas-images/cp1/racks/rack-3.png Graphic file (type png)
 <use tablas-images/cp1/racks/rack-3.png>
 Package pdftex.def Info: tablas-images/cp1/racks/rack-3.png  used on input line 57.
 (pdftex.def)             Requested size: 426.79135pt x 611.45146pt.
 
 
-[38 <./tablas-images/cp1/racks/rack-2.png>]
-<tablas-images/cp1/racks/rack-4.png, id=818, 562.1pt x 717.68124pt>
+[41 <./tablas-images/cp1/racks/rack-2.png>]
+<tablas-images/cp1/racks/rack-4.png, id=894, 562.1pt x 717.68124pt>
 File: tablas-images/cp1/racks/rack-4.png Graphic file (type png)
 <use tablas-images/cp1/racks/rack-4.png>
 Package pdftex.def Info: tablas-images/cp1/racks/rack-4.png  used on input line 63.
 (pdftex.def)             Requested size: 426.79135pt x 544.91777pt.
 
 
-[39 <./tablas-images/cp1/racks/rack-3.png>]
-<tablas-images/cp1/racks/rack-5.png, id=824, 565.11125pt x 701.62125pt>
+[42 <./tablas-images/cp1/racks/rack-3.png>]
+<tablas-images/cp1/racks/rack-5.png, id=901, 565.11125pt x 701.62125pt>
 File: tablas-images/cp1/racks/rack-5.png Graphic file (type png)
 <use tablas-images/cp1/racks/rack-5.png>
 Package pdftex.def Info: tablas-images/cp1/racks/rack-5.png  used on input line 69.
 (pdftex.def)             Requested size: 426.79135pt x 529.89745pt.
 
 
-[40 <./tablas-images/cp1/racks/rack-4.png>]
-<tablas-images/cp1/NAS/nas-1.png, id=830, 624.3325pt x 729.72626pt>
+[43 <./tablas-images/cp1/racks/rack-4.png>]
+<tablas-images/cp1/NAS/nas-1.png, id=908, 624.3325pt x 729.72626pt>
 File: tablas-images/cp1/NAS/nas-1.png Graphic file (type png)
 <use tablas-images/cp1/NAS/nas-1.png>
 Package pdftex.def Info: tablas-images/cp1/NAS/nas-1.png  used on input line 75.
 (pdftex.def)             Requested size: 426.79135pt x 498.84622pt.
 
 
-[41 <./tablas-images/cp1/racks/rack-5.png>]
-<tablas-images/cp1/firewall/firewall.png, id=836, 596.2275pt x 733.74126pt>
+[44 <./tablas-images/cp1/racks/rack-5.png>]
+<tablas-images/cp1/firewall/firewall.png, id=914, 596.2275pt x 733.74126pt>
 File: tablas-images/cp1/firewall/firewall.png Graphic file (type png)
 <use tablas-images/cp1/firewall/firewall.png>
 Package pdftex.def Info: tablas-images/cp1/firewall/firewall.png  used on input line 82.
 (pdftex.def)             Requested size: 426.79135pt x 525.22562pt.
 )
 
-[42 <./tablas-images/cp1/NAS/nas-1.png>]
+[45 <./tablas-images/cp1/NAS/nas-1.png>]
 
-[43 <./tablas-images/cp1/firewall/firewall.png>]
-<tablas-images/cp1/servicios-actuales/servicios-actuales.png, id=848, 485.815pt x 463.7325pt>
+[46 <./tablas-images/cp1/firewall/firewall.png>]
+<tablas-images/cp1/servicios-actuales/servicios-actuales.png, id=925, 485.815pt x 463.7325pt>
 File: tablas-images/cp1/servicios-actuales/servicios-actuales.png Graphic file (type png)
 <use tablas-images/cp1/servicios-actuales/servicios-actuales.png>
-Package pdftex.def Info: tablas-images/cp1/servicios-actuales/servicios-actuales.png  used on input line 104.
+Package pdftex.def Info: tablas-images/cp1/servicios-actuales/servicios-actuales.png  used on input line 107.
 (pdftex.def)             Requested size: 426.79135pt x 407.3924pt.
-<tablas-images/cp1/servicios-esperados/servicios-esperados.png, id=849, 620.3175pt x 288.07625pt>
+<tablas-images/cp1/servicios-esperados/servicios-esperados.png, id=926, 620.3175pt x 288.07625pt>
 File: tablas-images/cp1/servicios-esperados/servicios-esperados.png Graphic file (type png)
 <use tablas-images/cp1/servicios-esperados/servicios-esperados.png>
-Package pdftex.def Info: tablas-images/cp1/servicios-esperados/servicios-esperados.png  used on input line 115.
+Package pdftex.def Info: tablas-images/cp1/servicios-esperados/servicios-esperados.png  used on input line 118.
 (pdftex.def)             Requested size: 426.79135pt x 198.20137pt.
 
 
-[44 <./tablas-images/cp1/servicios-actuales/servicios-actuales.png>]
+[47 <./tablas-images/cp1/servicios-actuales/servicios-actuales.png>]
 
-[45 <./tablas-images/cp1/servicios-esperados/servicios-esperados.png>]
+[48 <./tablas-images/cp1/servicios-esperados/servicios-esperados.png>]
 
-[46]) (./capitulos/desarrolloMetodologico/mapeoSMS.tex
+[49]) (./capitulos/desarrolloMetodologico/mapeoSMS.tex
 
-[47] (./tablas-images/cp2/definicionMetas.tex
-<tablas-images/cp2/definicionMetas.png, id=879, 439.6425pt x 125.46875pt>
+[50] (./tablas-images/cp2/definicionMetas.tex
+<tablas-images/cp2/definicionMetas.png, id=957, 439.6425pt x 125.46875pt>
 File: tablas-images/cp2/definicionMetas.png Graphic file (type png)
 <use tablas-images/cp2/definicionMetas.png>
 Package pdftex.def Info: tablas-images/cp2/definicionMetas.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 121.80408pt.
 ) (./tablas-images/cp2/preguntasInvestigacion.tex
-<tablas-images/cp2/preguntasInvestigacion.png, id=880, 627.34375pt x 255.95625pt>
+<tablas-images/cp2/preguntasInvestigacion.png, id=958, 627.34375pt x 255.95625pt>
 File: tablas-images/cp2/preguntasInvestigacion.png Graphic file (type png)
 <use tablas-images/cp2/preguntasInvestigacion.png>
 Package pdftex.def Info: tablas-images/cp2/preguntasInvestigacion.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 174.13776pt.
 )
 
-[48
+[51
 
  <./tablas-images/cp2/definicionMetas.png>] (./tablas-images/cp2/definicionMetricas.tex
-<tablas-images/cp2/definicionMetricas.png, id=888, 392.46625pt x 110.4125pt>
+<tablas-images/cp2/definicionMetricas.png, id=965, 392.46625pt x 110.4125pt>
 File: tablas-images/cp2/definicionMetricas.png Graphic file (type png)
 <use tablas-images/cp2/definicionMetricas.png>
 Package pdftex.def Info: tablas-images/cp2/definicionMetricas.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 120.07765pt.
 )
 
-[49 <./tablas-images/cp2/preguntasInvestigacion.png> <./tablas-images/cp2/definicionMetricas.png>] (./tablas-images/cp2/modelo-PICOC.tex
-<tablas-images/cp2/modelo-PICOC.png, id=901, 876.27374pt x 137.51375pt>
+[52 <./tablas-images/cp2/preguntasInvestigacion.png> <./tablas-images/cp2/definicionMetricas.png>] (./tablas-images/cp2/modelo-PICOC.tex
+<tablas-images/cp2/modelo-PICOC.png, id=978, 876.27374pt x 137.51375pt>
 File: tablas-images/cp2/modelo-PICOC.png Graphic file (type png)
 <use tablas-images/cp2/modelo-PICOC.png>
 Package pdftex.def Info: tablas-images/cp2/modelo-PICOC.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 66.97736pt.
 ) (./tablas-images/cp2/keywords-PICOC.tex
-<tablas-images/cp2/keywords-PICOC.png, id=902, 511.9125pt x 93.34875pt>
+<tablas-images/cp2/keywords-PICOC.png, id=979, 511.9125pt x 93.34875pt>
 File: tablas-images/cp2/keywords-PICOC.png Graphic file (type png)
 <use tablas-images/cp2/keywords-PICOC.png>
 Package pdftex.def Info: tablas-images/cp2/keywords-PICOC.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 77.82698pt.
 ) (./tablas-images/cp2/keywords.tex
-<tablas-images/cp2/keywords.png, id=903, 508.90125pt x 107.40125pt>
+<tablas-images/cp2/keywords.png, id=980, 508.90125pt x 107.40125pt>
 File: tablas-images/cp2/keywords.png Graphic file (type png)
 <use tablas-images/cp2/keywords.png>
 Package pdftex.def Info: tablas-images/cp2/keywords.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 90.07547pt.
 ) (./tablas-images/cp2/criterios.tex
-<tablas-images/cp2/criterios.png, id=904, 712.6625pt x 139.52126pt>
+<tablas-images/cp2/criterios.png, id=981, 712.6625pt x 139.52126pt>
 File: tablas-images/cp2/criterios.png Graphic file (type png)
 <use tablas-images/cp2/criterios.png>
 Package pdftex.def Info: tablas-images/cp2/criterios.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 83.55371pt.
 )
 
-[50 <./tablas-images/cp2/modelo-PICOC.png> <./tablas-images/cp2/keywords-PICOC.png> <./tablas-images/cp2/keywords.png>]
+[53 <./tablas-images/cp2/modelo-PICOC.png> <./tablas-images/cp2/keywords-PICOC.png> <./tablas-images/cp2/keywords.png>]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 74.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[51 <./tablas-images/cp2/criterios.png>]
+[54 <./tablas-images/cp2/criterios.png>]
 Overfull \hbox (4.00659pt too wide) in paragraph at lines 160--160
 []\T1/lmtt/m/n/8 OR "Abstract":"Docker" OR "Abstract":"Lightweight Virtualization") AND ("Abstract":"Education"[] 
  []
 
 
 
-[52]
+[55]
 
-[53]
+[56]
 
-[54]
+[57]
 Overfull \hbox (12.50659pt too wide) in paragraph at lines 373--373
 []\T1/lmtt/m/n/8 ("Application virtualization" OR "Docker" OR "Lightweight Virtualization" OR "Docker Container") 
  []
@@ -1204,194 +1255,194 @@ Overfull \hbox (12.50659pt too wide) in paragraph at lines 403--403
  []
 
 (./tablas-images/cp2/resumen-sin-criterios.tex
-<tablas-images/cp2/resumen-sin-criterios.png, id=934, 652.4375pt x 87.32625pt>
+<tablas-images/cp2/resumen-sin-criterios.png, id=1010, 652.4375pt x 87.32625pt>
 File: tablas-images/cp2/resumen-sin-criterios.png Graphic file (type png)
 <use tablas-images/cp2/resumen-sin-criterios.png>
 Package pdftex.def Info: tablas-images/cp2/resumen-sin-criterios.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 57.12648pt.
 ) (./tablas-images/cp2/bases-sin-criterio.tex
-<tablas-images/cp2/bases-sin-criterio.png, id=935, 315.1775pt x 171.64125pt>
+<tablas-images/cp2/bases-sin-criterio.png, id=1011, 315.1775pt x 171.64125pt>
 File: tablas-images/cp2/bases-sin-criterio.png Graphic file (type png)
 <use tablas-images/cp2/bases-sin-criterio.png>
 Package pdftex.def Info: tablas-images/cp2/bases-sin-criterio.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 232.43898pt.
 )
 
-[55 <./tablas-images/cp2/resumen-sin-criterios.png>] (./tablas-images/cp2/resumen-con-criterios.tex
-<tablas-images/cp2/resumen-con-criterios.png, id=942, 778.91pt x 81.30376pt>
+[58 <./tablas-images/cp2/resumen-sin-criterios.png>] (./tablas-images/cp2/resumen-con-criterios.tex
+<tablas-images/cp2/resumen-con-criterios.png, id=1018, 778.91pt x 81.30376pt>
 File: tablas-images/cp2/resumen-con-criterios.png Graphic file (type png)
 <use tablas-images/cp2/resumen-con-criterios.png>
 Package pdftex.def Info: tablas-images/cp2/resumen-con-criterios.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 44.54846pt.
 ) (./tablas-images/cp2/bases-con-criterio.tex
-<tablas-images/cp2/bases-con-criterio.png, id=943, 268.00125pt x 144.54pt>
+<tablas-images/cp2/bases-con-criterio.png, id=1019, 268.00125pt x 144.54pt>
 File: tablas-images/cp2/bases-con-criterio.png Graphic file (type png)
 <use tablas-images/cp2/bases-con-criterio.png>
 Package pdftex.def Info: tablas-images/cp2/bases-con-criterio.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 230.17917pt.
 )
 
-[56 <./tablas-images/cp2/bases-sin-criterio.png> <./tablas-images/cp2/resumen-con-criterios.png>]
+[59 <./tablas-images/cp2/bases-sin-criterio.png> <./tablas-images/cp2/resumen-con-criterios.png>]
 
-[57 <./tablas-images/cp2/bases-con-criterio.png>] (./tablas-images/cp2/diagrama-cadena-busqueda.tex
-<tablas-images/cp2/diagrama-cadena-busqueda.png, id=956, 271.0125pt x 374.39874pt>
+[60 <./tablas-images/cp2/bases-con-criterio.png>] (./tablas-images/cp2/diagrama-cadena-busqueda.tex
+<tablas-images/cp2/diagrama-cadena-busqueda.png, id=1034, 271.0125pt x 374.39874pt>
 File: tablas-images/cp2/diagrama-cadena-busqueda.png Graphic file (type png)
 <use tablas-images/cp2/diagrama-cadena-busqueda.png>
 Package pdftex.def Info: tablas-images/cp2/diagrama-cadena-busqueda.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 589.62973pt.
 )
 
-[58]
+[61]
 Overfull \vbox (7.57068pt too high) has occurred while \output is active []
 
 
 
-[59 <./tablas-images/cp2/diagrama-cadena-busqueda.png>] (./tablas-images/cp2/diagrama-bola-nieve-busqueda.tex
-<tablas-images/cp2/diagrama-bola-nieve-busqueda.png, id=966, 484.81125pt x 591.20876pt>
+[62 <./tablas-images/cp2/diagrama-cadena-busqueda.png>] (./tablas-images/cp2/diagrama-bola-nieve-busqueda.tex
+<tablas-images/cp2/diagrama-bola-nieve-busqueda.png, id=1044, 484.81125pt x 591.20876pt>
 File: tablas-images/cp2/diagrama-bola-nieve-busqueda.png Graphic file (type png)
 <use tablas-images/cp2/diagrama-bola-nieve-busqueda.png>
 Package pdftex.def Info: tablas-images/cp2/diagrama-bola-nieve-busqueda.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 520.48181pt.
 ) (./tablas-images/cp2/estudios.tex
-<tablas-images/cp2/diagrama-articulos-ano-metrica.png, id=967, 477.785pt x 247.92625pt>
+<tablas-images/cp2/diagrama-articulos-ano-metrica.png, id=1045, 477.785pt x 247.92625pt>
 File: tablas-images/cp2/diagrama-articulos-ano-metrica.png Graphic file (type png)
 <use tablas-images/cp2/diagrama-articulos-ano-metrica.png>
 Package pdftex.def Info: tablas-images/cp2/diagrama-articulos-ano-metrica.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 221.46324pt.
 
 
-[60 <./tablas-images/cp2/diagrama-bola-nieve-busqueda.png>]
-<tablas-images/cp2/tipos-articulos.png, id=974, 469.755pt x 254.9525pt>
+[63 <./tablas-images/cp2/diagrama-bola-nieve-busqueda.png>]
+<tablas-images/cp2/tipos-articulos.png, id=1051, 469.755pt x 254.9525pt>
 File: tablas-images/cp2/tipos-articulos.png Graphic file (type png)
 <use tablas-images/cp2/tipos-articulos.png>
 Package pdftex.def Info: tablas-images/cp2/tipos-articulos.png  used on input line 9.
 (pdftex.def)             Requested size: 426.79135pt x 231.63365pt.
-<tablas-images/cp2/estrategia-busqueda-articulos.png, id=975, 469.755pt x 250.9375pt>
+<tablas-images/cp2/estrategia-busqueda-articulos.png, id=1052, 469.755pt x 250.9375pt>
 File: tablas-images/cp2/estrategia-busqueda-articulos.png Graphic file (type png)
 <use tablas-images/cp2/estrategia-busqueda-articulos.png>
 Package pdftex.def Info: tablas-images/cp2/estrategia-busqueda-articulos.png  used on input line 15.
 (pdftex.def)             Requested size: 426.79135pt x 227.98589pt.
 
 
-[61 <./tablas-images/cp2/diagrama-articulos-ano-metrica.png> <./tablas-images/cp2/tipos-articulos.png>]
-<tablas-images/cp2/diagrama-red-busqueda.png, id=982, 353.32pt x 287.0725pt>
+[64 <./tablas-images/cp2/diagrama-articulos-ano-metrica.png> <./tablas-images/cp2/tipos-articulos.png>]
+<tablas-images/cp2/diagrama-red-busqueda.png, id=1059, 353.32pt x 287.0725pt>
 File: tablas-images/cp2/diagrama-red-busqueda.png Graphic file (type png)
 <use tablas-images/cp2/diagrama-red-busqueda.png>
 Package pdftex.def Info: tablas-images/cp2/diagrama-red-busqueda.png  used on input line 21.
 (pdftex.def)             Requested size: 426.79135pt x 346.77182pt.
 )
 
-[62 <./tablas-images/cp2/diagrama-red-busqueda.png> <./tablas-images/cp2/estrategia-busqueda-articulos.png>]) (./capitulos/desarrolloMetodologico/caracterizacionVBC.tex
+[65 <./tablas-images/cp2/diagrama-red-busqueda.png> <./tablas-images/cp2/estrategia-busqueda-articulos.png>]) (./capitulos/desarrolloMetodologico/caracterizacionVBC.tex
 
-[63]
+[66]
 
-[64]
+[67]
 
-[65] (./tablas-images/cp3/interfaz-uso.tex
-<tablas-images/cp3/interfaz-uso.png, id=1166, 694.595pt x 531.9875pt>
+[68] (./tablas-images/cp3/interfaz-uso.tex
+<tablas-images/cp3/interfaz-uso.png, id=1244, 694.595pt x 531.9875pt>
 File: tablas-images/cp3/interfaz-uso.png Graphic file (type png)
 <use tablas-images/cp3/interfaz-uso.png>
 Package pdftex.def Info: tablas-images/cp3/interfaz-uso.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 326.89032pt.
 ) (./tablas-images/cp3/integracion-cloud.tex
-<tablas-images/cp3/integracion-cloud.png, id=1167, 580.1675pt x 698.61pt>
+<tablas-images/cp3/integracion-cloud.png, id=1245, 580.1675pt x 698.61pt>
 File: tablas-images/cp3/integracion-cloud.png Graphic file (type png)
 <use tablas-images/cp3/integracion-cloud.png>
 Package pdftex.def Info: tablas-images/cp3/integracion-cloud.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 513.92523pt.
 
 
-[66]
+[69]
 
-[67]) (./tablas-images/cp3/medicion-gartner.tex
-<tablas-images/cp3/medicion-gartner.png, id=1192, 482.80376pt x 375.4025pt>
+[70]) (./tablas-images/cp3/medicion-gartner.tex
+<tablas-images/cp3/medicion-gartner.png, id=1269, 482.80376pt x 375.4025pt>
 File: tablas-images/cp3/medicion-gartner.png Graphic file (type png)
 <use tablas-images/cp3/medicion-gartner.png>
 Package pdftex.def Info: tablas-images/cp3/medicion-gartner.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 331.86172pt.
 
 
-[68 <./tablas-images/cp3/interfaz-uso.png>]) (./tablas-images/cp3/cuadrante-gartner.tex
-<tablas-images/cp3/cuadrante-gartner.png, id=1198, 494.84875pt x 507.8975pt>
+[71 <./tablas-images/cp3/interfaz-uso.png>]) (./tablas-images/cp3/cuadrante-gartner.tex
+<tablas-images/cp3/cuadrante-gartner.png, id=1275, 494.84875pt x 507.8975pt>
 File: tablas-images/cp3/cuadrante-gartner.png Graphic file (type png)
 <use tablas-images/cp3/cuadrante-gartner.png>
 Package pdftex.def Info: tablas-images/cp3/cuadrante-gartner.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 438.04657pt.
 
 
-[69 <./tablas-images/cp3/integracion-cloud.png>]) (./tablas-images/cp3/entorno-ejecucion.tex
-<tablas-images/cp3/entorno-ejecucion.png, id=1204, 687.56876pt x 637.38126pt>
+[72 <./tablas-images/cp3/integracion-cloud.png>]) (./tablas-images/cp3/entorno-ejecucion.tex
+<tablas-images/cp3/entorno-ejecucion.png, id=1282, 687.56876pt x 637.38126pt>
 File: tablas-images/cp3/entorno-ejecucion.png Graphic file (type png)
 <use tablas-images/cp3/entorno-ejecucion.png>
 Package pdftex.def Info: tablas-images/cp3/entorno-ejecucion.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 395.63913pt.
 
 
-[70 <./tablas-images/cp3/medicion-gartner.png>]) (./tablas-images/cp3/matriz-dofa.tex
-<tablas-images/cp3/matriz-dofa.png, id=1211, 656.4525pt x 484.81125pt>
+[73 <./tablas-images/cp3/medicion-gartner.png>]) (./tablas-images/cp3/matriz-dofa.tex
+<tablas-images/cp3/matriz-dofa.png, id=1288, 656.4525pt x 484.81125pt>
 File: tablas-images/cp3/matriz-dofa.png Graphic file (type png)
 <use tablas-images/cp3/matriz-dofa.png>
 Package pdftex.def Info: tablas-images/cp3/matriz-dofa.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 315.20494pt.
 
 
-[71 <./tablas-images/cp3/cuadrante-gartner.png>])
+[74 <./tablas-images/cp3/cuadrante-gartner.png>])
 
-[72 <./tablas-images/cp3/entorno-ejecucion.png>]) (./capitulos/benchmarking.tex
+[75 <./tablas-images/cp3/entorno-ejecucion.png>]) (./capitulos/benchmarking.tex
 
-[73 <./tablas-images/cp3/matriz-dofa.png>]
+[76 <./tablas-images/cp3/matriz-dofa.png>]
 
-[74
+[77
 
 ] (./tablas-images/cp4/cpu.tex
-<tablas-images/cp4/cpu.png, id=1288, 469.755pt x 290.08376pt>
+<tablas-images/cp4/cpu.png, id=1365, 469.755pt x 290.08376pt>
 File: tablas-images/cp4/cpu.png Graphic file (type png)
 <use tablas-images/cp4/cpu.png>
 Package pdftex.def Info: tablas-images/cp4/cpu.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 263.5517pt.
 ) (./tablas-images/cp4/ram.tex
-<tablas-images/cp4/ram.png, id=1289, 469.755pt x 290.08376pt>
+<tablas-images/cp4/ram.png, id=1366, 469.755pt x 290.08376pt>
 File: tablas-images/cp4/ram.png Graphic file (type png)
 <use tablas-images/cp4/ram.png>
 Package pdftex.def Info: tablas-images/cp4/ram.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 263.5517pt.
 
 
-[75]) (./tablas-images/cp4/io.tex
-<tablas-images/cp4/io.png, id=1294, 469.755pt x 290.08376pt>
+[78]) (./tablas-images/cp4/io.tex
+<tablas-images/cp4/io.png, id=1372, 469.755pt x 290.08376pt>
 File: tablas-images/cp4/io.png Graphic file (type png)
 <use tablas-images/cp4/io.png>
 Package pdftex.def Info: tablas-images/cp4/io.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 263.5517pt.
 ) (./tablas-images/cp4/throughtput.tex
-<tablas-images/cp4/THROUGHTPUT.png, id=1295, 469.755pt x 290.08376pt>
+<tablas-images/cp4/THROUGHTPUT.png, id=1373, 469.755pt x 290.08376pt>
 File: tablas-images/cp4/THROUGHTPUT.png Graphic file (type png)
 <use tablas-images/cp4/THROUGHTPUT.png>
 Package pdftex.def Info: tablas-images/cp4/THROUGHTPUT.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 263.5517pt.
 
 
-[76 <./tablas-images/cp4/cpu.png> <./tablas-images/cp4/ram.png>])
+[79 <./tablas-images/cp4/cpu.png> <./tablas-images/cp4/ram.png>])
 
-[77 <./tablas-images/cp4/io.png> <./tablas-images/cp4/THROUGHTPUT.png>]) (./capitulos/DAR.tex
+[80 <./tablas-images/cp4/io.png> <./tablas-images/cp4/THROUGHTPUT.png>]) (./capitulos/DAR.tex
 
-[78] (./tablas-images/cp5/dar.tex
-<tablas-images/cp5/DAR.png, id=1315, 1389.19pt x 730.73pt>
+[81] (./tablas-images/cp5/dar.tex
+<tablas-images/cp5/DAR.png, id=1392, 1389.19pt x 730.73pt>
 File: tablas-images/cp5/DAR.png Graphic file (type png)
 <use tablas-images/cp5/DAR.png>
 Package pdftex.def Info: tablas-images/cp5/DAR.png  used on input line 3.
 (pdftex.def)             Requested size: 426.79135pt x 224.49464pt.
 )
 
-[79
+[82
 
 ]
 
-[80 <./tablas-images/cp5/DAR.png>]
+[83 <./tablas-images/cp5/DAR.png>]
 
-[81]) (./main.bbl
+[84]) (./main.bbl
 
-[82]
+[85]
 Underfull \hbox (badness 4805) in paragraph at lines 24--28
 \T1/lmtt/m/n/12 ac . uk / Bibliographic / BibliographicInfoData / 000000000030215101$[]\T1/lmr/m/n/12 .  BS
  []
@@ -1401,274 +1452,280 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 44
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[83
+[86
 
 ]
 
-[84{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+[87{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
 
-[85]
+[88]
 
-[86]) (./apendices/apendices.tex
+[89]) (./apendices/apendices.tex
 
-[87]
+[90]
 Ap\'{e}ndice A.
-<apendices/caracterizacionInfraestructura.png, id=1372, 621.32124pt x 778.91pt>
+<apendices/caracterizacionInfraestructura.png, id=1450, 621.32124pt x 778.91pt>
 File: apendices/caracterizacionInfraestructura.png Graphic file (type png)
 <use apendices/caracterizacionInfraestructura.png>
 Package pdftex.def Info: apendices/caracterizacionInfraestructura.png  used on input line 8.
 (pdftex.def)             Requested size: 426.78757pt x 535.0358pt.
 
 
-[88
+[91
 
 ]
 
-[89 <./apendices/caracterizacionInfraestructura.png>]
-<apendices/caracterizacionServicios.png, id=1383, 496.85625pt x 435.6275pt>
+[92 <./apendices/caracterizacionInfraestructura.png>]
+<apendices/caracterizacionServicios.png, id=1461, 496.85625pt x 435.6275pt>
 File: apendices/caracterizacionServicios.png Graphic file (type png)
 <use apendices/caracterizacionServicios.png>
 Package pdftex.def Info: apendices/caracterizacionServicios.png  used on input line 15.
 (pdftex.def)             Requested size: 426.79524pt x 374.20029pt.
 
 
-[90 <./apendices/caracterizacionServicios.png>]
+[93 <./apendices/caracterizacionServicios.png>]
 Ap\'{e}ndice B.
-<apendices/BD/sin-criterios/ACM-ed.png, id=1391, 469.755pt x 269.005pt>
+<apendices/BD/sin-criterios/ACM-ed.png, id=1468, 469.755pt x 269.005pt>
 File: apendices/BD/sin-criterios/ACM-ed.png Graphic file (type png)
 <use apendices/BD/sin-criterios/ACM-ed.png>
 Package pdftex.def Info: apendices/BD/sin-criterios/ACM-ed.png  used on input line 25.
 (pdftex.def)             Requested size: 426.79135pt x 244.40088pt.
-<apendices/BD/sin-criterios/ACM-inv.png, id=1392, 469.755pt x 271.0125pt>
+<apendices/BD/sin-criterios/ACM-inv.png, id=1469, 469.755pt x 271.0125pt>
 File: apendices/BD/sin-criterios/ACM-inv.png Graphic file (type png)
 <use apendices/BD/sin-criterios/ACM-inv.png>
 Package pdftex.def Info: apendices/BD/sin-criterios/ACM-inv.png  used on input line 32.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
 
 
-[91
+[94
 
 
  <./apendices/BD/sin-criterios/ACM-ed.png>]
-<apendices/BD/sin-criterios/ACM-ind.png, id=1399, 469.755pt x 271.0125pt>
+<apendices/BD/sin-criterios/ACM-ind.png, id=1476, 469.755pt x 271.0125pt>
 File: apendices/BD/sin-criterios/ACM-ind.png Graphic file (type png)
 <use apendices/BD/sin-criterios/ACM-ind.png>
 Package pdftex.def Info: apendices/BD/sin-criterios/ACM-ind.png  used on input line 39.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
 
 
-[92 <./apendices/BD/sin-criterios/ACM-inv.png> <./apendices/BD/sin-criterios/ACM-ind.png>]
-<apendices/BD/sin-criterios/IEEE-ed.png, id=1406, 469.755pt x 272.01625pt>
+[95 <./apendices/BD/sin-criterios/ACM-inv.png> <./apendices/BD/sin-criterios/ACM-ind.png>]
+<apendices/BD/sin-criterios/IEEE-ed.png, id=1483, 469.755pt x 272.01625pt>
 File: apendices/BD/sin-criterios/IEEE-ed.png Graphic file (type png)
 <use apendices/BD/sin-criterios/IEEE-ed.png>
 Package pdftex.def Info: apendices/BD/sin-criterios/IEEE-ed.png  used on input line 46.
 (pdftex.def)             Requested size: 426.79135pt x 247.1367pt.
-<apendices/BD/sin-criterios/IEEE-inv.png, id=1407, 469.755pt x 271.0125pt>
+<apendices/BD/sin-criterios/IEEE-inv.png, id=1484, 469.755pt x 271.0125pt>
 File: apendices/BD/sin-criterios/IEEE-inv.png Graphic file (type png)
 <use apendices/BD/sin-criterios/IEEE-inv.png>
 Package pdftex.def Info: apendices/BD/sin-criterios/IEEE-inv.png  used on input line 53.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
 
 
-[93
+[96
 
  <./apendices/BD/sin-criterios/IEEE-ed.png>]
-<apendices/BD/sin-criterios/IEEE-ind.png, id=1413, 469.755pt x 271.0125pt>
+<apendices/BD/sin-criterios/IEEE-ind.png, id=1491, 469.755pt x 271.0125pt>
 File: apendices/BD/sin-criterios/IEEE-ind.png Graphic file (type png)
 <use apendices/BD/sin-criterios/IEEE-ind.png>
 Package pdftex.def Info: apendices/BD/sin-criterios/IEEE-ind.png  used on input line 60.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
 
 
-[94 <./apendices/BD/sin-criterios/IEEE-inv.png> <./apendices/BD/sin-criterios/IEEE-ind.png>]
-<apendices/BD/sin-criterios/Springer-ed.png, id=1420, 469.755pt x 271.0125pt>
+[97 <./apendices/BD/sin-criterios/IEEE-inv.png> <./apendices/BD/sin-criterios/IEEE-ind.png>]
+<apendices/BD/sin-criterios/Springer-ed.png, id=1498, 469.755pt x 271.0125pt>
 File: apendices/BD/sin-criterios/Springer-ed.png Graphic file (type png)
 <use apendices/BD/sin-criterios/Springer-ed.png>
 Package pdftex.def Info: apendices/BD/sin-criterios/Springer-ed.png  used on input line 67.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
-<apendices/BD/sin-criterios/Springer-inv.png, id=1421, 469.755pt x 271.0125pt>
+<apendices/BD/sin-criterios/Springer-inv.png, id=1499, 469.755pt x 271.0125pt>
 File: apendices/BD/sin-criterios/Springer-inv.png Graphic file (type png)
 <use apendices/BD/sin-criterios/Springer-inv.png>
 Package pdftex.def Info: apendices/BD/sin-criterios/Springer-inv.png  used on input line 74.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
 
 
-[95
+[98
 
  <./apendices/BD/sin-criterios/Springer-ed.png>]
-<apendices/BD/sin-criterios/Springer-ind.png, id=1428, 469.755pt x 271.0125pt>
+<apendices/BD/sin-criterios/Springer-ind.png, id=1505, 469.755pt x 271.0125pt>
 File: apendices/BD/sin-criterios/Springer-ind.png Graphic file (type png)
 <use apendices/BD/sin-criterios/Springer-ind.png>
 Package pdftex.def Info: apendices/BD/sin-criterios/Springer-ind.png  used on input line 81.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
 
 
-[96 <./apendices/BD/sin-criterios/Springer-inv.png> <./apendices/BD/sin-criterios/Springer-ind.png>]
-<apendices/BD/sin-criterios/SD-ed.png, id=1436, 469.755pt x 272.01625pt>
+[99 <./apendices/BD/sin-criterios/Springer-inv.png> <./apendices/BD/sin-criterios/Springer-ind.png>]
+<apendices/BD/sin-criterios/SD-ed.png, id=1512, 469.755pt x 272.01625pt>
 File: apendices/BD/sin-criterios/SD-ed.png Graphic file (type png)
 <use apendices/BD/sin-criterios/SD-ed.png>
 Package pdftex.def Info: apendices/BD/sin-criterios/SD-ed.png  used on input line 87.
 (pdftex.def)             Requested size: 426.79135pt x 247.1367pt.
-<apendices/BD/sin-criterios/SD-inv.png, id=1437, 469.755pt x 271.0125pt>
+<apendices/BD/sin-criterios/SD-inv.png, id=1513, 469.755pt x 271.0125pt>
 File: apendices/BD/sin-criterios/SD-inv.png Graphic file (type png)
 <use apendices/BD/sin-criterios/SD-inv.png>
 Package pdftex.def Info: apendices/BD/sin-criterios/SD-inv.png  used on input line 93.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
 
 
-[97
+[100
 
  <./apendices/BD/sin-criterios/SD-ed.png>]
-<apendices/BD/sin-criterios/SD-ind.png, id=1443, 469.755pt x 272.01625pt>
+<apendices/BD/sin-criterios/SD-ind.png, id=1519, 469.755pt x 272.01625pt>
 File: apendices/BD/sin-criterios/SD-ind.png Graphic file (type png)
 <use apendices/BD/sin-criterios/SD-ind.png>
 Package pdftex.def Info: apendices/BD/sin-criterios/SD-ind.png  used on input line 99.
 (pdftex.def)             Requested size: 426.79135pt x 247.1367pt.
 
 
-[98 <./apendices/BD/sin-criterios/SD-inv.png> <./apendices/BD/sin-criterios/SD-ind.png>]
-<apendices/BD/sin-criterios/TF-ed.png, id=1450, 469.755pt x 271.0125pt>
+[101 <./apendices/BD/sin-criterios/SD-inv.png> <./apendices/BD/sin-criterios/SD-ind.png>]
+<apendices/BD/sin-criterios/TF-ed.png, id=1526, 469.755pt x 271.0125pt>
 File: apendices/BD/sin-criterios/TF-ed.png Graphic file (type png)
 <use apendices/BD/sin-criterios/TF-ed.png>
 Package pdftex.def Info: apendices/BD/sin-criterios/TF-ed.png  used on input line 105.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
-<apendices/BD/sin-criterios/TF-inv.png, id=1451, 374.39874pt x 215.80624pt>
+<apendices/BD/sin-criterios/TF-inv.png, id=1527, 374.39874pt x 215.80624pt>
 File: apendices/BD/sin-criterios/TF-inv.png Graphic file (type png)
 <use apendices/BD/sin-criterios/TF-inv.png>
 Package pdftex.def Info: apendices/BD/sin-criterios/TF-inv.png  used on input line 111.
 (pdftex.def)             Requested size: 426.79135pt x 246.01837pt.
 
 
-[99
+[102
 
  <./apendices/BD/sin-criterios/TF-ed.png>]
-<apendices/BD/sin-criterios/TF-ind.png, id=1457, 469.755pt x 271.0125pt>
+<apendices/BD/sin-criterios/TF-ind.png, id=1534, 469.755pt x 271.0125pt>
 File: apendices/BD/sin-criterios/TF-ind.png Graphic file (type png)
 <use apendices/BD/sin-criterios/TF-ind.png>
 Package pdftex.def Info: apendices/BD/sin-criterios/TF-ind.png  used on input line 118.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
 
 
-[100 <./apendices/BD/sin-criterios/TF-inv.png> <./apendices/BD/sin-criterios/TF-ind.png>]
-<apendices/BD/criterios/ACM-ed.png, id=1464, 469.755pt x 271.0125pt>
+[103 <./apendices/BD/sin-criterios/TF-inv.png> <./apendices/BD/sin-criterios/TF-ind.png>]
+<apendices/BD/criterios/ACM-ed.png, id=1541, 469.755pt x 271.0125pt>
 File: apendices/BD/criterios/ACM-ed.png Graphic file (type png)
 <use apendices/BD/criterios/ACM-ed.png>
 Package pdftex.def Info: apendices/BD/criterios/ACM-ed.png  used on input line 126.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
-<apendices/BD/criterios/ACM-inv.png, id=1465, 469.755pt x 271.0125pt>
+<apendices/BD/criterios/ACM-inv.png, id=1542, 469.755pt x 271.0125pt>
 File: apendices/BD/criterios/ACM-inv.png Graphic file (type png)
 <use apendices/BD/criterios/ACM-inv.png>
 Package pdftex.def Info: apendices/BD/criterios/ACM-inv.png  used on input line 133.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
 
 
-[101
+[104
 
  <./apendices/BD/criterios/ACM-ed.png>]
-<apendices/BD/criterios/ACM-ind.png, id=1472, 469.755pt x 271.0125pt>
+<apendices/BD/criterios/ACM-ind.png, id=1550, 469.755pt x 271.0125pt>
 File: apendices/BD/criterios/ACM-ind.png Graphic file (type png)
 <use apendices/BD/criterios/ACM-ind.png>
 Package pdftex.def Info: apendices/BD/criterios/ACM-ind.png  used on input line 140.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
 
 
-[102 <./apendices/BD/criterios/ACM-inv.png> <./apendices/BD/criterios/ACM-ind.png>]
-<apendices/BD/criterios/IEEE-ed.png, id=1480, 469.755pt x 272.01625pt>
+[105 <./apendices/BD/criterios/ACM-inv.png> <./apendices/BD/criterios/ACM-ind.png>]
+<apendices/BD/criterios/IEEE-ed.png, id=1557, 469.755pt x 272.01625pt>
 File: apendices/BD/criterios/IEEE-ed.png Graphic file (type png)
 <use apendices/BD/criterios/IEEE-ed.png>
 Package pdftex.def Info: apendices/BD/criterios/IEEE-ed.png  used on input line 147.
 (pdftex.def)             Requested size: 426.79135pt x 247.1367pt.
-<apendices/BD/criterios/IEEE-ind.png, id=1481, 469.755pt x 271.0125pt>
+<apendices/BD/criterios/IEEE-ind.png, id=1558, 469.755pt x 271.0125pt>
 File: apendices/BD/criterios/IEEE-ind.png Graphic file (type png)
 <use apendices/BD/criterios/IEEE-ind.png>
-Package pdftex.def Info: apendices/BD/criterios/IEEE-ind.png  used on input line 157.
+Package pdftex.def Info: apendices/BD/criterios/IEEE-ind.png  used on input line 154.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
 
 
-[103
+[106
 
  <./apendices/BD/criterios/IEEE-ed.png>]
-<apendices/BD/criterios/Springer-ed.png, id=1487, 469.755pt x 268.00125pt>
+<apendices/BD/criterios/Springer-ed.png, id=1564, 469.755pt x 268.00125pt>
 File: apendices/BD/criterios/Springer-ed.png Graphic file (type png)
 <use apendices/BD/criterios/Springer-ed.png>
-Package pdftex.def Info: apendices/BD/criterios/Springer-ed.png  used on input line 164.
+Package pdftex.def Info: apendices/BD/criterios/Springer-ed.png  used on input line 161.
 (pdftex.def)             Requested size: 426.79135pt x 243.48892pt.
 
 
-[104 <./apendices/BD/criterios/IEEE-ind.png> <./apendices/BD/criterios/Springer-ed.png>]
-<apendices/BD/criterios/Springer-inv.png, id=1494, 469.755pt x 271.0125pt>
+[107 <./apendices/BD/criterios/IEEE-ind.png> <./apendices/BD/criterios/Springer-ed.png>]
+<apendices/BD/criterios/Springer-inv.png, id=1571, 469.755pt x 271.0125pt>
 File: apendices/BD/criterios/Springer-inv.png Graphic file (type png)
 <use apendices/BD/criterios/Springer-inv.png>
-Package pdftex.def Info: apendices/BD/criterios/Springer-inv.png  used on input line 171.
+Package pdftex.def Info: apendices/BD/criterios/Springer-inv.png  used on input line 168.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
-<apendices/BD/criterios/Springer-ind.png, id=1495, 469.755pt x 271.0125pt>
+<apendices/BD/criterios/Springer-ind.png, id=1572, 469.755pt x 271.0125pt>
 File: apendices/BD/criterios/Springer-ind.png Graphic file (type png)
 <use apendices/BD/criterios/Springer-ind.png>
-Package pdftex.def Info: apendices/BD/criterios/Springer-ind.png  used on input line 178.
+Package pdftex.def Info: apendices/BD/criterios/Springer-ind.png  used on input line 175.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
 
 
-[105
+[108
 
  <./apendices/BD/criterios/Springer-inv.png>]
-<apendices/BD/criterios/SD-ed.png, id=1501, 469.755pt x 271.0125pt>
+<apendices/BD/criterios/SD-ed.png, id=1579, 469.755pt x 271.0125pt>
 File: apendices/BD/criterios/SD-ed.png Graphic file (type png)
 <use apendices/BD/criterios/SD-ed.png>
-Package pdftex.def Info: apendices/BD/criterios/SD-ed.png  used on input line 185.
+Package pdftex.def Info: apendices/BD/criterios/SD-ed.png  used on input line 182.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
 
 
-[106 <./apendices/BD/criterios/Springer-ind.png> <./apendices/BD/criterios/SD-ed.png>]
-<apendices/BD/criterios/SD-inv.png, id=1508, 469.755pt x 271.0125pt>
+[109 <./apendices/BD/criterios/Springer-ind.png> <./apendices/BD/criterios/SD-ed.png>]
+<apendices/BD/criterios/SD-inv.png, id=1586, 469.755pt x 271.0125pt>
 File: apendices/BD/criterios/SD-inv.png Graphic file (type png)
 <use apendices/BD/criterios/SD-inv.png>
-Package pdftex.def Info: apendices/BD/criterios/SD-inv.png  used on input line 192.
+Package pdftex.def Info: apendices/BD/criterios/SD-inv.png  used on input line 189.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
-<apendices/BD/criterios/SD-ind.png, id=1509, 469.755pt x 271.0125pt>
+<apendices/BD/criterios/SD-ind.png, id=1587, 469.755pt x 271.0125pt>
 File: apendices/BD/criterios/SD-ind.png Graphic file (type png)
 <use apendices/BD/criterios/SD-ind.png>
-Package pdftex.def Info: apendices/BD/criterios/SD-ind.png  used on input line 199.
+Package pdftex.def Info: apendices/BD/criterios/SD-ind.png  used on input line 196.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
 
 
-[107
+[110
 
  <./apendices/BD/criterios/SD-inv.png>]
-<apendices/BD/criterios/TF-ed.png, id=1515, 469.755pt x 271.0125pt>
+<apendices/BD/criterios/TF-ed.png, id=1593, 469.755pt x 271.0125pt>
 File: apendices/BD/criterios/TF-ed.png Graphic file (type png)
 <use apendices/BD/criterios/TF-ed.png>
-Package pdftex.def Info: apendices/BD/criterios/TF-ed.png  used on input line 206.
+Package pdftex.def Info: apendices/BD/criterios/TF-ed.png  used on input line 203.
 (pdftex.def)             Requested size: 426.79135pt x 246.22476pt.
 
 
-[108 <./apendices/BD/criterios/SD-ind.png> <./apendices/BD/criterios/TF-ed.png>]
-<apendices/BD/criterios/TF-inv.png, id=1523, 469.755pt x 269.005pt>
+[111 <./apendices/BD/criterios/SD-ind.png> <./apendices/BD/criterios/TF-ed.png>]
+<apendices/BD/criterios/TF-inv.png, id=1600, 469.755pt x 269.005pt>
 File: apendices/BD/criterios/TF-inv.png Graphic file (type png)
 <use apendices/BD/criterios/TF-inv.png>
-Package pdftex.def Info: apendices/BD/criterios/TF-inv.png  used on input line 213.
+Package pdftex.def Info: apendices/BD/criterios/TF-inv.png  used on input line 210.
 (pdftex.def)             Requested size: 426.79135pt x 244.40088pt.
-<apendices/BD/criterios/TF-ind.png, id=1524, 469.755pt x 269.005pt>
+<apendices/BD/criterios/TF-ind.png, id=1601, 469.755pt x 269.005pt>
 File: apendices/BD/criterios/TF-ind.png Graphic file (type png)
 <use apendices/BD/criterios/TF-ind.png>
-Package pdftex.def Info: apendices/BD/criterios/TF-ind.png  used on input line 220.
+Package pdftex.def Info: apendices/BD/criterios/TF-ind.png  used on input line 217.
 (pdftex.def)             Requested size: 426.79135pt x 244.40088pt.
 
 
-[109
+[112
 
  <./apendices/BD/criterios/TF-inv.png>]
 
-[110 <./apendices/BD/criterios/TF-ind.png>]
-<apendices/plantilla-DAR.png, id=1535, 1268.74pt x 253.94875pt>
+[113 <./apendices/BD/criterios/TF-ind.png>]
+<apendices/plantilla-DAR.png, id=1612, 1268.74pt x 253.94875pt>
 File: apendices/plantilla-DAR.png Graphic file (type png)
 <use apendices/plantilla-DAR.png>
-Package pdftex.def Info: apendices/plantilla-DAR.png  used on input line 230.
+Package pdftex.def Info: apendices/plantilla-DAR.png  used on input line 227.
 (pdftex.def)             Requested size: 426.79707pt x 85.42694pt.
+
+
+[114
+
+ <./apendices/plantilla-DAR.png>]
+Ap\'{e}ndice C.
 )
 
-[111
+[115
 
- <./apendices/plantilla-DAR.png>] (./main.aux
+] (./main.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
 )
@@ -1677,21 +1734,21 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 43B39D7283D3E1F499C9D98D5A06FF8F;10682.
+(rerunfilecheck)             Checksum: 8EA86BE4D8B28AF6536106E2FF6AFF98;10802.
  ) 
 Here is how much of TeX's memory you used:
- 33547 strings out of 473190
- 675842 string characters out of 5715801
- 1080776 words of memory out of 5000000
- 55711 multiletter control sequences out of 15000+600000
- 631463 words of font info for 87 fonts, out of 8000000 for 9000
+ 33582 strings out of 473190
+ 676166 string characters out of 5715801
+ 1081099 words of memory out of 5000000
+ 55734 multiletter control sequences out of 15000+600000
+ 634458 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,11n,104p,1222b,868s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
-Output written on main.pdf (112 pages, 10336002 bytes).
+ 103i,12n,104p,1553b,869s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
+Output written on main.pdf (116 pages, 10169347 bytes).
 PDF statistics:
- 1672 PDF objects out of 1728 (max. 8388607)
- 1272 compressed objects within 13 object streams
- 380 named destinations out of 1000 (max. 500000)
- 992 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1764 PDF objects out of 2073 (max. 8388607)
+ 1359 compressed objects within 14 object streams
+ 390 named destinations out of 1000 (max. 500000)
+ 995 words of extra memory for PDF output out of 10000 (max. 10000000)
 
