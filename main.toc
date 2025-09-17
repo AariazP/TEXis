@@ -1,63 +1,78 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{Dedicatoria}{1}{section*.1}%
-\contentsline {chapter}{Resumen}{5}{chapter*.3}%
-\contentsline {chapter}{Introducción}{12}{chapter*.7}%
-\contentsline {chapter}{Glosario}{14}{chapter*.8}%
-\contentsline {chapter}{Siglas y Abreviaturas}{16}{chapter*.15}%
-\contentsline {chapter}{Objetivos}{17}{chapter*.16}%
-\contentsline {section}{Objetivo general}{17}{section*.17}%
-\contentsline {section}{Objetivos específicos}{17}{section*.18}%
-\contentsline {chapter}{Justificación}{18}{chapter*.19}%
-\contentsline {chapter}{Metodología}{19}{chapter*.20}%
-\contentsline {chapter}{Marco Conceptual}{20}{chapter*.21}%
-\contentsline {chapter}{Marco Teórico}{21}{chapter*.22}%
-\contentsline {chapter}{Desarrollo Metodológico}{24}{chapter*.23}%
-\contentsline {chapter}{Caracterización del GRID}{27}{chapter*.32}%
-\contentsline {section}{Análisis de stakeholders del GRID}{27}{section*.33}%
-\contentsline {section}{Priorización de stakeholders}{28}{section*.35}%
-\contentsline {section}{Integrantes y áreas de trabajo del GRID}{30}{section*.37}%
-\contentsline {section}{Misión del GRID}{30}{section*.38}%
-\contentsline {section}{Visión del GRID}{31}{section*.39}%
-\contentsline {section}{Impacto del proyecto en el GRID}{32}{section*.40}%
-\contentsline {section}{Caracterización de la infraestructura tecnológica del GRID}{32}{section*.41}%
-\contentsline {section}{Caracterización de servicios del GRID}{46}{section*.56}%
-\contentsline {subsection}{Servicios actuales}{47}{section*.57}%
-\contentsline {subsection}{Servicios esperados}{47}{section*.59}%
-\contentsline {section}{Descripción de la oportunidad}{48}{section*.61}%
-\contentsline {section}{Resumen de la entrevista con el cliente}{49}{section*.62}%
-\contentsline {chapter}{Revisión sistemática de la literatura}{51}{chapter*.71}%
-\contentsline {section}{Construcción de la bitácora}{51}{section*.72}%
-\contentsline {subsection}{Planeación}{51}{section*.73}%
-\contentsline {subsubsection}{Definición de metas para el SMS}{51}{section*.74}%
-\contentsline {subsubsection}{Definición de preguntas de investigación}{52}{section*.76}%
-\contentsline {subsubsection}{Definición de métricas}{52}{section*.78}%
-\contentsline {section}{Búsqueda de estudios}{52}{section*.80}%
-\contentsline {subsection}{Estrategia de búsqueda}{53}{section*.81}%
-\contentsline {subsection}{Búsqueda en bases de datos}{53}{section*.82}%
-\contentsline {subsubsection}{Identificación de estudios mediante búsqueda en bases de datos}{53}{section*.83}%
-\contentsline {paragraph}{2.2.1.1 Búsqueda en bases de datos}{54}{section*.88}%
-\contentsline {subsubsection}{Resumen de la búsqueda en bases de datos sin criterios de inclusión/exclusión}{58}{section*.89}%
-\contentsline {subsection}{Resumen de la búsqueda en bases de datos con criterios de inclusión/exclusión}{59}{section*.93}%
-\contentsline {section}{Eliminación de duplicados}{60}{section*.96}%
-\contentsline {section}{Priorización de estudios}{60}{section*.97}%
-\contentsline {section}{Estrategia de búsqueda usando bola de nieve}{61}{section*.98}%
-\contentsline {section}{Diagrama de búsqueda}{62}{section*.99}%
-\contentsline {subsection}{Usando cadenas de búsqueda}{62}{section*.100}%
-\contentsline {subsection}{Usando bola de nieve}{63}{section*.102}%
-\contentsline {section}{Identificación de estudios}{64}{section*.104}%
-\contentsline {subsection}{Artículos por año y métricas}{64}{section*.105}%
-\contentsline {subsection}{Información de la herramienta}{66}{section*.110}%
-\contentsline {chapter}{Pruebas de Benchmarking}{77}{chapter*.138}%
-\contentsline {section}{1. Definición de las pruebas}{77}{section*.139}%
-\contentsline {section}{2. Construcción de las pruebas}{77}{section*.140}%
-\contentsline {section}{3. Resultados de las pruebas}{78}{section*.141}%
-\contentsline {section}{4. Métricas de rendimiento}{78}{section*.142}%
-\contentsline {section}{5. Análisis de los resultados}{81}{section*.147}%
-\contentsline {chapter}{Análisis de Decisiones y Resolución (DAR)}{82}{chapter*.148}%
-\contentsline {section}{1. Metodología de evaluación}{82}{section*.149}%
-\contentsline {section}{2. Resultados de la evaluación}{83}{section*.150}%
-\contentsline {section}{3. Criterios de evaluación}{83}{section*.152}%
-\contentsline {section}{4. Tecnología VBC ganadora}{85}{section*.165}%
-\contentsline {chapter}{\numberline {A}Fichas técnicas y búsqueda en bases de datos}{91}{appendix.Alph1}%
-\contentsline {chapter}{\numberline {B}Búsquedas en bases de datos}{94}{appendix.Alph2}%
-\contentsline {chapter}{\numberline {C}Eventos de difusión}{115}{appendix.Alph3}%
+\contentsline {section}{\numberline {9.1}Objetivo general}{17}{section.9.1}%
+\contentsline {section}{Objetivo general}{17}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Objetivos específicos}{17}{section.9.2}%
+\contentsline {section}{Objetivos específicos}{17}{section.9.2}%
+\contentsline {section}{\numberline {14.1}Caracterización del GRID}{24}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Mapeo sistemático de estudios (SMS)}{24}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Identificación y caracterización de tecnologías VBC}{24}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Benchmarking de tecnologías VBC}{25}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Análisis de Decisión y Resolución (DAR)}{25}{section.14.5}%
+\contentsline {section}{\numberline {14.6}Diseño de la solución arquitectónica}{25}{section.14.6}%
+\contentsline {section}{\numberline {14.7}Implementación de la solución}{25}{section.14.7}%
+\contentsline {section}{\numberline {14.8}Validación de la solución}{26}{section.14.8}%
+\contentsline {section}{\numberline {15.1}Análisis de stakeholders del GRID}{27}{section.15.1}%
+\contentsline {section}{Análisis de stakeholders del GRID}{27}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Priorización de stakeholders}{28}{section.15.2}%
+\contentsline {section}{Priorización de stakeholders}{28}{section.15.2}%
+\contentsline {section}{\numberline {15.3}Integrantes y áreas de trabajo del GRID}{28}{section.15.3}%
+\contentsline {section}{Integrantes y áreas de trabajo del GRID}{28}{section.15.3}%
+\contentsline {section}{Misión del GRID}{30}{section.15.3}%
+\contentsline {section}{Visión del GRID}{31}{section.15.3}%
+\contentsline {section}{Impacto del proyecto en el GRID}{32}{section.15.3}%
+\contentsline {section}{Caracterización de la infraestructura tecnológica del GRID}{32}{section.15.3}%
+\contentsline {section}{Caracterización de servicios del GRID}{46}{table.caption.18}%
+\contentsline {subsection}{Servicios actuales}{47}{section*.19}%
+\contentsline {subsection}{Servicios esperados}{47}{table.caption.20}%
+\contentsline {section}{Descripción de la oportunidad}{48}{table.caption.21}%
+\contentsline {section}{Resumen de la entrevista con el cliente}{49}{table.caption.21}%
+\contentsline {section}{Construcción de la bitácora}{51}{chapter*.22}%
+\contentsline {subsection}{Planeación}{51}{section*.23}%
+\contentsline {subsubsection}{Definición de metas para el SMS}{51}{section*.23}%
+\contentsline {subsubsection}{Definición de preguntas de investigación}{52}{table.caption.24}%
+\contentsline {subsubsection}{Definición de métricas}{52}{table.caption.25}%
+\contentsline {section}{Búsqueda de estudios}{52}{table.caption.26}%
+\contentsline {subsection}{Estrategia de búsqueda}{53}{Item.4}%
+\contentsline {subsection}{Búsqueda en bases de datos}{53}{Item.4}%
+\contentsline {subsubsection}{Identificación de estudios mediante búsqueda en bases de datos}{53}{Item.4}%
+\contentsline {paragraph}{2.2.1.1 Búsqueda en bases de datos}{54}{table.caption.30}%
+\contentsline {subsubsection}{Resumen de la búsqueda en bases de datos sin criterios de inclusión/exclusión}{58}{table.caption.30}%
+\contentsline {subsection}{Resumen de la búsqueda en bases de datos con criterios de inclusión/exclusión}{59}{figure.caption.32}%
+\contentsline {section}{Eliminación de duplicados}{60}{figure.caption.34}%
+\contentsline {section}{Priorización de estudios}{60}{figure.caption.34}%
+\contentsline {section}{Estrategia de búsqueda usando bola de nieve}{61}{figure.caption.34}%
+\contentsline {section}{Diagrama de búsqueda}{62}{figure.caption.34}%
+\contentsline {subsection}{Usando cadenas de búsqueda}{62}{section*.35}%
+\contentsline {subsection}{Usando bola de nieve}{63}{table.caption.36}%
+\contentsline {section}{Identificación de estudios}{64}{table.caption.37}%
+\contentsline {subsection}{Artículos por año y métricas}{64}{section*.38}%
+\contentsline {subsection}{Información de la herramienta}{66}{figure.caption.42}%
+\contentsline {section}{\numberline {16.1}Definición de las pruebas}{77}{section.16.1}%
+\contentsline {section}{\numberline {16.2}Construcción de las pruebas}{77}{section.16.2}%
+\contentsline {section}{\numberline {16.3}Resultados de las pruebas}{78}{section.16.3}%
+\contentsline {section}{\numberline {16.4}Métricas de rendimiento}{78}{section.16.4}%
+\contentsline {section}{\numberline {16.5}Análisis de los resultados}{81}{section.16.5}%
+\contentsline {section}{\numberline {17.1}Metodología de evaluación}{82}{section.17.1}%
+\contentsline {section}{1. Metodología de evaluación}{82}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Resultados de la evaluación}{82}{section.17.2}%
+\contentsline {section}{2. Resultados de la evaluación}{82}{section.17.2}%
+\contentsline {section}{\numberline {17.3}Criterios de evaluación}{83}{section.17.3}%
+\contentsline {section}{3. Criterios de evaluación}{83}{section.17.3}%
+\contentsline {subsection}{\numberline {17.3.1}VBC (¿Es una tecnología basada en contenedores?)}{83}{subsection.17.3.1}%
+\contentsline {subsection}{\numberline {17.3.2}Tipo de licencia}{83}{subsection.17.3.2}%
+\contentsline {subsection}{\numberline {17.3.3}Posibilidad de orquestación}{83}{subsection.17.3.3}%
+\contentsline {subsection}{\numberline {17.3.4}Compatibilidad con imágenes de Docker Hub}{83}{subsection.17.3.4}%
+\contentsline {subsection}{\numberline {17.3.5}Soporte para redes personalizadas}{83}{subsection.17.3.5}%
+\contentsline {subsection}{\numberline {17.3.6}Persistencia de datos / volúmenes}{83}{subsection.17.3.6}%
+\contentsline {subsection}{\numberline {17.3.7}Documentación}{84}{subsection.17.3.7}%
+\contentsline {subsection}{\numberline {17.3.8}Soporte al proyecto}{84}{subsection.17.3.8}%
+\contentsline {subsection}{\numberline {17.3.9}Popularidad}{84}{subsection.17.3.9}%
+\contentsline {subsection}{\numberline {17.3.10}Consumo de recursos}{84}{subsection.17.3.10}%
+\contentsline {subsection}{\numberline {17.3.11}Compatibilidad de orquestación}{84}{subsection.17.3.11}%
+\contentsline {subsection}{\numberline {17.3.12}Costo de implementación y operación en ambientes productivos}{84}{subsection.17.3.12}%
+\contentsline {section}{\numberline {17.4}Tecnología VBC ganadora}{85}{section.17.4}%
+\contentsline {section}{4. Tecnología VBC ganadora}{85}{section.17.4}%
+\contentsline {chapter}{\numberline {A}Fichas técnicas y búsqueda en bases de datos}{92}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Búsquedas en bases de datos}{95}{appendix.Alph2}%
+\contentsline {chapter}{\numberline {C}Eventos de difusión}{116}{appendix.Alph3}%

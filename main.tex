@@ -8,6 +8,15 @@
 \usepackage{hyperref}
 \usepackage{tabularx}
 \usepackage{array}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+
+
+\input{config/paquetes.tex}
+\input{config/variables.tex} % 
 
 % Marcador para la sección de Siglas
 \newcommand{\siglaref}{\hyperref[sec:siglas]{\nameref{sec:siglas}}}
@@ -29,15 +38,57 @@
 \newcommand{\TOGAF}{\hyperref[sec:siglas]{TOGAF}\xspace}
 \newcommand{\IEC}{\hyperref[sec:siglas]{IEC}\xspace}
 
+\newcommand{\ChapterImageStar}[3][]{%
+  \cleardoublepage
+  \thispagestyle{empty}%
+  \refstepcounter{chapter}%
+  \begingroup
+    \begin{tikzpicture}[remember picture,overlay]
+      % Imagen de fondo al ancho de la página
+      \node[inner sep=0pt, anchor=north west] at (current page.north west)
+        {\includegraphics[width=\paperwidth]{#3}};
+      % Caja blanca que se adapta al ancho del texto
+      \node[
+        anchor=north west,
+        xshift=1.5cm, yshift=-1.0cm,
+        text=black,
+        fill=white, fill opacity=0.8,
+        rounded corners=6pt,
+        inner xsep=10pt, inner ysep=6pt
+      ] at (current page.north west)
+        {\Huge\bfseries \thechapter\quad #2\strut};
+    \end{tikzpicture}
+  \endgroup
+}
+
+\newcommand\BackgroundPic{%
+    \put(-25,-2){%
+        \parbox[b][\paperheight]{\paperwidth}{%
+            \vfill
+            \centering
+            \includegraphics[scale=1,height=\paperheight]{./images/fondo-anteportada.png}%
+            \vfill
+}}}
+
+\newcommand\PortadaPic{%
+    \put(0,0){%
+        \parbox[b][\paperheight]{\paperwidth}{%
+            \vfill
+            \centering
+            \includegraphics[width=\paperwidth,height=\paperheight]{images/portada.png}%
+            \vfill
+}}}
+
 \begin{document}
 
+\input{anteportada.tex}
 \input{portada.tex}
 \input{capitulos/dedicatoria.tex}
 \input{indice.tex}
 \input{resumen.tex}
 
-\listoffigures
-\listoftables
+\input{capitulos/listaFiguras.tex}
+\input{capitulos/listaTablas.tex}
 
 \input{capitulos/introduccion.tex}
 \input{capitulos/glosario.tex} 
@@ -56,6 +107,8 @@
 \input{capitulos/desarrolloMetodologico/caracterizacionVBC.tex}
 \input{capitulos/benchmarking.tex}
 \input{capitulos/DAR.tex}
+
+\input{capitulos/cumplimientoObjetivos.tex}
 
 \bibliographystyle{apalike}
 \bibliography{bibliografia}

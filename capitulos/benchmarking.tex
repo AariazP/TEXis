@@ -1,15 +1,12 @@
-\chapter*{Pruebas de Benchmarking}
-\addcontentsline{toc}{chapter}{Pruebas de Benchmarking}\label{cap:benchmarking}
+\ChapterImageStar[cap:benchmarking]{Benchmarking}{./images/fondo.png}\label{cap:benchmarking}
 
-\section*{1. Definición de las pruebas}
-\addcontentsline{toc}{section}{1. Definición de las pruebas}
+\section{Definición de las pruebas}
 
 Para evaluar el rendimiento de distintas tecnologías de contenerización —específicamente Docker, Podman, LXC, LXD y Containerd— se diseñó un conjunto de pruebas orientadas a medir aspectos clave del desempeño en entornos controlados. Las pruebas incluyeron el consumo de CPU y memoria RAM, el tiempo de arranque de los contenedores, el \textit{throughput} de red y la latencia de acceso a disco. 
 
 Para garantizar la repetibilidad y objetividad de los resultados, se desarrollaron scripts en \textit{Bash} que automatizan la ejecución de cada métrica en condiciones homogéneas. Estas pruebas permiten comparar las tecnologías evaluadas bajo criterios cuantificables y facilitar un análisis técnico de sus capacidades en escenarios reales de uso.
 
-\section*{2. Construcción de las pruebas}
-\addcontentsline{toc}{section}{2. Construcción de las pruebas}
+\section{Construcción de las pruebas}
 
 La construcción de las pruebas se llevó a cabo mediante el desarrollo de scripts automatizados en \textit{Bash}, diseñados para ejecutarse de forma uniforme sobre cada tecnología de contenerización evaluada. Cada script fue responsable de iniciar contenedores, ejecutar cargas de trabajo específicas y recolectar métricas de rendimiento relevantes.
 
@@ -19,8 +16,7 @@ Para evaluar el \textit{throughput} de red se emplearon herramientas como \textt
 
 En el repositorio \underline{\href{https://github.com/Anubis-1001/benchmark-tecnologias-de-contenerizacion} {\texttt{ GitHub benchmarking}}} se pueden encontrar los scripts resultantes de este proceso.
 
-\section*{3. Resultados de las pruebas}
-\addcontentsline{toc}{section}{3. Resultados de las pruebas}
+\section{Resultados de las pruebas}
 
 Los resultados obtenidos a partir de las pruebas evidencian diferencias significativas en el rendimiento entre las tecnologías de contenerización evaluadas. Estos se pueden consultar en el archivo de Excel \underline{\href{https://docs.google.com/spreadsheets/d/1Ce37Sm3Swyfa88Ur1yQbLarq_D86obUIAGGJocgQbUE/edit?usp=sharing} {\texttt{benchmarking\_tecnologias}}}.
 
@@ -30,8 +26,7 @@ Para el \textit{throughput} de red, todas las tecnologías mostraron un desempe�
 
 Estos resultados permiten establecer un panorama claro de fortalezas y debilidades de cada solución, según el tipo de carga o entorno de ejecución esperado.
 
-\section*{4. Métricas de rendimiento}
-\addcontentsline{toc}{section}{4. Métricas de rendimiento}
+\section{Métricas de rendimiento}
 
 De la ejecución de las pruebas se obtuvieron las siguientes métricas de rendimiento:
 
@@ -40,8 +35,7 @@ De la ejecución de las pruebas se obtuvieron las siguientes métricas de rendim
 \input{tablas-images/cp4/io.tex}
 \input{tablas-images/cp4/throughtput.tex}
 
-\section*{5. Análisis de los resultados}
-\addcontentsline{toc}{section}{5. Análisis de los resultados}
+\section{Análisis de los resultados}
 
 Los resultados obtenidos a partir de las pruebas permiten identificar comportamientos diferenciados entre las tecnologías de contenerización evaluadas. \textbf{Containerd} se posiciona como una de las soluciones más equilibradas, con excelente tiempo de arranque, bajo uso de CPU y buena latencia de disco, lo que lo hace ideal para entornos donde la eficiencia es prioritaria.
 

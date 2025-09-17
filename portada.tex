@@ -1,34 +1,36 @@
-\input{config/variables.tex}  % <-- Carga los datos definidos arriba
+\AddToShipoutPicture*{\PortadaPic} % agrega la imagen de fondo
 \begin{titlepage}
-    \begin{center}
-        \includegraphics[width=0.25\textwidth]{logos/uq-logo.png} % Logo de la UQ
+    \thispagestyle{empty} % sin encabezado ni pie
 
-        \vspace*{1.5cm}
+    % Usamos TikZ para colocar texto en posiciones absolutas
+    \begin{tikzpicture}[remember picture,overlay]
 
-        {\LARGE\bfseries \mytitle\par} % Se redujo de \Huge a \LARGE
+        % Logo en (x,y) desde esquina superior izquierda
 
-        \vspace{1.2cm}
-        {\Large \mytype\par}
+        % Título en coordenadas absolutas
+        
 
-        \vspace{0.3cm}
-        {\large Autores: \par}
-        {\normalsize \myname\par}
-        {\small Cc: \matricle\par}
+        % Tipo de trabajo
+        \node[anchor=west] at ([xshift=3cm,yshift=-9.5cm]current page.north west)
+            {\Large \mytype};
 
-        \vspace{0.3cm}
-        {\normalsize \mynameb\par}
-        {\small Cc: \matricleb\par}
 
-        \vspace{0.8cm}
-        {\normalsize \myinstitute\par}
+        % Instituto
+        \node[anchor=west] at ([xshift=10cm,yshift=-16cm]current page.north west)
+            {\normalsize \myinstitute};
 
-        \vspace{1.2cm}
-        \begin{tabular}{rl}
-            Revisor: & \reviewerone\\
-            Asesor: & \advisor\\
-        \end{tabular}
+        % Revisor y asesor
+        \node[anchor=west] at ([xshift=3cm,yshift=-18.5cm]current page.north west)
+            {\begin{tabular}{rl}
+                Revisor: & \reviewerone \\
+                Asesor: & \advisor
+              \end{tabular}};
 
-        \vspace{1.5cm}
-        {\normalsize \timeend}
-    \end{center}
+        % Fecha
+        \node[anchor=west] at ([xshift=3cm,yshift=-21cm]current page.north west)
+            {\normalsize \timeend};
+
+    \end{tikzpicture}
+
 \end{titlepage}
+\ClearShipoutPicture
