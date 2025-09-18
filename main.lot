@@ -14,27 +14,27 @@
 \contentsline {table}{\numberline {15.13}{\ignorespaces Caracterización rack 5}}{44}{table.caption.16}%
 \contentsline {table}{\numberline {15.14}{\ignorespaces Caracterización NAS 1}}{45}{table.caption.17}%
 \contentsline {table}{\numberline {15.15}{\ignorespaces Caracterización firewall 1}}{46}{table.caption.18}%
-\contentsline {table}{\numberline {15.16}{\ignorespaces Caracterización de los servicios actuales del GRID}}{47}{table.caption.20}%
-\contentsline {table}{\numberline {15.17}{\ignorespaces Caracterización de los servicios esperados del GRID}}{48}{table.caption.21}%
-\contentsline {table}{\numberline {15.18}{\ignorespaces Definición de metas del SMS}}{51}{table.caption.24}%
-\contentsline {table}{\numberline {15.19}{\ignorespaces Definición de preguntas de investigación del SMS}}{52}{table.caption.25}%
-\contentsline {table}{\numberline {15.20}{\ignorespaces Definición de métricas del SMS}}{52}{table.caption.26}%
-\contentsline {table}{\numberline {15.21}{\ignorespaces Modelo PICOC}}{53}{table.caption.27}%
-\contentsline {table}{\numberline {15.22}{\ignorespaces Palabras clave identificadas usando el modelo PICOC}}{53}{table.caption.28}%
-\contentsline {table}{\numberline {15.23}{\ignorespaces Palabras clave para la búsqueda en base de datos}}{53}{table.caption.29}%
-\contentsline {table}{\numberline {15.24}{\ignorespaces Criterios de Inclusión/Exclusión}}{54}{table.caption.30}%
-\contentsline {table}{\numberline {15.25}{\ignorespaces Resumen de la búsqueda en bases de datos sin criterios de inclusión/exclusión}}{58}{table.caption.31}%
-\contentsline {table}{\numberline {15.26}{\ignorespaces Resumen de la búsqueda en bases de datos con criterios de inclusión/exclusión}}{59}{table.caption.33}%
-\contentsline {table}{\numberline {15.27}{\ignorespaces Diagrama de la cadena de búsqueda}}{62}{table.caption.36}%
-\contentsline {table}{\numberline {15.28}{\ignorespaces Diagrama de la búsqueda en bola de nieve}}{63}{table.caption.37}%
-\contentsline {table}{\numberline {15.29}{\ignorespaces Comparativa de tecnologías de contenerización, licencias, términos de uso y costos}}{70}{table.caption.43}%
-\contentsline {table}{\numberline {15.30}{\ignorespaces Interfaz de uso de cada VBC}}{71}{table.caption.44}%
-\contentsline {table}{\numberline {15.31}{\ignorespaces Integración cloud de cada VBC}}{72}{table.caption.45}%
-\contentsline {table}{\numberline {15.32}{\ignorespaces Tabla de medición para el cuadrante gartner}}{73}{table.caption.46}%
-\contentsline {table}{\numberline {15.33}{\ignorespaces Entornos de ejecución de cada VBC}}{75}{table.caption.48}%
-\contentsline {table}{\numberline {15.34}{\ignorespaces Tabla de matriz DOFA para el cuadrante gartner}}{76}{table.caption.49}%
-\contentsline {table}{\numberline {15.35}{\ignorespaces Enlaces a la documentación de tecnologías de contenerización}}{76}{table.caption.50}%
-\contentsline {table}{\numberline {17.1}{\ignorespaces Análisis de Decisiones y Resolución (DAR) aplicado a la selección de VBC}}{82}{table.caption.55}%
+\contentsline {table}{\numberline {15.16}{\ignorespaces Caracterización de los servicios actuales del GRID}}{47}{table.caption.19}%
+\contentsline {table}{\numberline {15.17}{\ignorespaces Caracterización de los servicios esperados del GRID}}{48}{table.caption.20}%
+\contentsline {table}{\numberline {15.18}{\ignorespaces Definición de metas del SMS}}{51}{table.caption.22}%
+\contentsline {table}{\numberline {15.19}{\ignorespaces Definición de preguntas de investigación del SMS}}{52}{table.caption.23}%
+\contentsline {table}{\numberline {15.20}{\ignorespaces Definición de métricas del SMS}}{52}{table.caption.24}%
+\contentsline {table}{\numberline {15.21}{\ignorespaces Modelo PICOC}}{53}{table.caption.25}%
+\contentsline {table}{\numberline {15.22}{\ignorespaces Palabras clave identificadas usando el modelo PICOC}}{53}{table.caption.26}%
+\contentsline {table}{\numberline {15.23}{\ignorespaces Palabras clave para la búsqueda en base de datos}}{53}{table.caption.27}%
+\contentsline {table}{\numberline {15.24}{\ignorespaces Criterios de Inclusión/Exclusión}}{54}{table.caption.28}%
+\contentsline {table}{\numberline {15.25}{\ignorespaces Resumen de la búsqueda en bases de datos sin criterios de inclusión/exclusión}}{58}{table.caption.29}%
+\contentsline {table}{\numberline {15.26}{\ignorespaces Resumen de la búsqueda en bases de datos con criterios de inclusión/exclusión}}{59}{table.caption.31}%
+\contentsline {table}{\numberline {15.27}{\ignorespaces Diagrama de la cadena de búsqueda}}{62}{table.caption.33}%
+\contentsline {table}{\numberline {15.28}{\ignorespaces Diagrama de la búsqueda en bola de nieve}}{63}{table.caption.34}%
+\contentsline {table}{\numberline {15.29}{\ignorespaces Comparativa de tecnologías de contenerización, licencias, términos de uso y costos}}{70}{table.caption.39}%
+\contentsline {table}{\numberline {15.30}{\ignorespaces Interfaz de uso de cada VBC}}{71}{table.caption.40}%
+\contentsline {table}{\numberline {15.31}{\ignorespaces Integración cloud de cada VBC}}{72}{table.caption.41}%
+\contentsline {table}{\numberline {15.32}{\ignorespaces Tabla de medición para el cuadrante gartner}}{73}{table.caption.42}%
+\contentsline {table}{\numberline {15.33}{\ignorespaces Entornos de ejecución de cada VBC}}{75}{table.caption.44}%
+\contentsline {table}{\numberline {15.34}{\ignorespaces Tabla de matriz DOFA para el cuadrante gartner}}{76}{table.caption.45}%
+\contentsline {table}{\numberline {15.35}{\ignorespaces Enlaces a la documentación de tecnologías de contenerización}}{76}{table.caption.46}%
+\contentsline {table}{\numberline {17.1}{\ignorespaces Análisis de Decisiones y Resolución (DAR) aplicado a la selección de VBC}}{82}{table.caption.51}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
