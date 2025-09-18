@@ -9,38 +9,33 @@
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{titlesec}
-\usepackage{xcolor}
-\usepackage{tikz}
-\usepackage{graphicx}
 \usepackage{eso-pic}
-
 
 \input{config/paquetes.tex}
 \input{config/variables.tex} % 
 
 % Marcador para la sección de Siglas
-\newcommand{\siglaref}{\hyperref[sec:siglas]{\nameref{sec:siglas}}}
+\newcommand{\siglaref}{\hyperref[cap:siglas]{\nameref{cap:siglas}}}
 
 % Ahora definimos cada sigla con enlace hacia la lista
-\newcommand{\API}{\hyperref[sec:siglas]{API}\xspace}
-\newcommand{\CMMI}{\hyperref[sec:siglas]{CMMI}\xspace}
-\newcommand{\CPU}{\hyperref[sec:siglas]{CPU}\xspace}
-\newcommand{\DAR}{\hyperref[sec:siglas]{DAR}\xspace}
-\newcommand{\GRID}{\hyperref[sec:siglas]{GRID}\xspace}
-\newcommand{\IT}{\hyperref[sec:siglas]{IT}\xspace}
-\newcommand{\SMS}{\hyperref[sec:siglas]{SMS}\xspace}
-\newcommand{\VBC}{\hyperref[sec:siglas]{VBC}\xspace}
-\newcommand{\TI}{\hyperref[sec:siglas]{TI}\xspace}
-\newcommand{\PMV}{\hyperref[sec:siglas]{PMV}\xspace}
-\newcommand{\PMBOK}{\hyperref[sec:siglas]{PMBOK}\xspace}
-\newcommand{\ISO}{\hyperref[sec:siglas]{ISO}\xspace}
-\newcommand{\CNCF}{\hyperref[sec:siglas]{CNCF}\xspace}
-\newcommand{\TOGAF}{\hyperref[sec:siglas]{TOGAF}\xspace}
-\newcommand{\IEC}{\hyperref[sec:siglas]{IEC}\xspace}
+\newcommand{\API}{\hyperref[cap:siglas]{API}\xspace}
+\newcommand{\CMMI}{\hyperref[cap:siglas]{CMMI}\xspace}
+\newcommand{\CPU}{\hyperref[cap:siglas]{CPU}\xspace}
+\newcommand{\DAR}{\hyperref[cap:siglas]{DAR}\xspace}
+\newcommand{\GRID}{\hyperref[cap:siglas]{GRID}\xspace}
+\newcommand{\IT}{\hyperref[cap:siglas]{IT}\xspace}
+\newcommand{\SMS}{\hyperref[cap:siglas]{SMS}\xspace}
+\newcommand{\VBC}{\hyperref[cap:siglas]{VBC}\xspace}
+\newcommand{\TI}{\hyperref[cap:siglas]{TI}\xspace}
+\newcommand{\PMV}{\hyperref[cap:siglas]{PMV}\xspace}
+\newcommand{\PMBOK}{\hyperref[cap:siglas]{PMBOK}\xspace}
+\newcommand{\ISO}{\hyperref[cap:siglas]{ISO}\xspace}
+\newcommand{\CNCF}{\hyperref[cap:siglas]{CNCF}\xspace}
+\newcommand{\TOGAF}{\hyperref[cap:siglas]{TOGAF}\xspace}
+\newcommand{\IEC}{\hyperref[cap:siglas]{IEC}\xspace}
 
 \newcommand{\ChapterImageStar}[3][]{%
-  \cleardoublepage
-  \thispagestyle{empty}%
+  \cleardoublepage\thispagestyle{empty}%
   \refstepcounter{chapter}%
   \begingroup
     \begin{tikzpicture}[remember picture,overlay]
@@ -81,6 +76,7 @@
 
 \begin{document}
 
+
 \input{anteportada.tex}
 \input{portada.tex}
 \input{capitulos/dedicatoria.tex}
@@ -99,8 +95,6 @@
 \input{capitulos/marcoConceptual.tex}
 \input{capitulos/marcoTeorico.tex}
 \input{capitulos/desarrolloMetodologico.tex}
-
-
 
 \input{capitulos/desarrolloMetodologico/caracterizacionGRID.tex}
 \input{capitulos/desarrolloMetodologico/mapeoSMS.tex}
