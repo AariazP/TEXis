@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1758212297.76661 "main.aux" "main.bbl" "main" 1758212318.86975 0
+["bibtex main"] 1758212736.04822 "main.aux" "main.bbl" "main" 1758212778.33995 0
   "./bibliografia.bib" 1758159734.29285 120756 abb4c9c7281e815075c56658c5ddeec6 ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "main.aux" 1758212318.5211 58466 d63d83e8fb6c9698a98cefa1d2993ff2 "pdflatex"
+  "main.aux" 1758212777.98575 58470 704a9b0fb1021f44884d0cc3ddcb33f8 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1758212297.89012 "/Users/aariaz/Desktop/TEXis/main.tex" "main.pdf" "main" 1758212318.87002 0
+["pdflatex"] 1758212757.39614 "/Users/aariaz/Desktop/TEXis/main.tex" "main.pdf" "main" 1758212778.34021 0
   "/Users/aariaz/Desktop/TEXis/main.tex" 1758210201.04619 5040 685c5c0415b44730ff16810e4e03de07 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc" 1254269338 3031 6c4d3515bf7115d8518af1c9ab97ca44 ""
@@ -323,8 +323,8 @@
   "capitulos/cumplimientoObjetivos.tex" 1758158358.90397 126 375fdf54feaa98e79af18b7e8d1d8f31 ""
   "capitulos/dedicatoria.tex" 1758158358.90405 999 7edb908dc7fd0c0f73fc2ad20ee1cd18 ""
   "capitulos/desarrolloMetodologico.tex" 1758206352.37203 4741 a73c7bf8ab91d39d3e82ae9b3e2f8cf3 ""
-  "capitulos/desarrolloMetodologico/caracterizacionGRID.tex" 1758209137.84626 17458 d63fffb9445f96ba8d62f9c19aa589f0 ""
-  "capitulos/desarrolloMetodologico/caracterizacionVBC.tex" 1758212127.81873 11312 557cefcb573de5728b06fa93d89099a3 ""
+  "capitulos/desarrolloMetodologico/caracterizacionGRID.tex" 1758212612.09857 17412 0db103554f35ce4b5a7ee4f6fa899145 ""
+  "capitulos/desarrolloMetodologico/caracterizacionVBC.tex" 1758212450.04852 11312 557cefcb573de5728b06fa93d89099a3 ""
   "capitulos/desarrolloMetodologico/mapeoSMS.tex" 1758162868.35974 19735 415d4e8aa2ca76d978ea5e16910b639e ""
   "capitulos/glosario.tex" 1758158358.90482 2578 5b8469f16ab971b999cc9b50267b5be1 ""
   "capitulos/introduccion.tex" 1758160407.16049 4476 8ef8a31a3491bf21112e334381dd117a ""
@@ -344,17 +344,17 @@
   "images/portada.png" 1758158358.90887 638553 e333068f4d06d280833c10f607e9f349 ""
   "images/referencias.png" 1758167216.3474 477680 c23ff593d3f3c321073d8ac220c002a1 ""
   "indice.tex" 1758163533.70855 416 1ee368fbd5389370ce4734c57bcdf917 ""
-  "main.aux" 1758212318.5211 58466 d63d83e8fb6c9698a98cefa1d2993ff2 "pdflatex"
-  "main.bbl" 1758212297.88464 12488 8e598faa02595e163c3e625a53e1fd02 "bibtex main"
-  "main.lof" 1758212318.52769 11793 6b5da1e69413a0f81dad3a2004f0d276 "pdflatex"
-  "main.lot" 1758212318.52777 4416 d853dfe21a4782249188532ed689d9f0 "pdflatex"
-  "main.out" 1758212318.52732 19137 8b20e86f1903f2319006572c7d5d39e5 "pdflatex"
+  "main.aux" 1758212777.98575 58470 704a9b0fb1021f44884d0cc3ddcb33f8 "pdflatex"
+  "main.bbl" 1758212736.14821 12488 8e598faa02595e163c3e625a53e1fd02 "bibtex main"
+  "main.lof" 1758212777.99245 11793 6b5da1e69413a0f81dad3a2004f0d276 "pdflatex"
+  "main.lot" 1758212777.99253 4418 0d2b88949279cf647168438e356c47c7 "pdflatex"
+  "main.out" 1758212777.99177 19137 8b20e86f1903f2319006572c7d5d39e5 "pdflatex"
   "main.tex" 1758210201.04619 5040 685c5c0415b44730ff16810e4e03de07 ""
-  "main.toc" 1758212318.52758 10536 9ba71b084b3c6bd31cb272145c8552ac "pdflatex"
+  "main.toc" 1758212777.99237 10536 9ba71b084b3c6bd31cb272145c8552ac "pdflatex"
   "portada.tex" 1758158407.22276 942 7e5eca99b29c63fade53fe7c40159090 ""
   "resumen.tex" 1758158531.86033 291 ce9b1d4f2db7a639d18988968d589caa ""
   "tablas-images/cp1/NAS/nas-1.png" 1758158358.94694 230895 82782373014be2533be6e71f824542d1 ""
-  "tablas-images/cp1/caracterizacionInfraestructura.tex" 1758212275.68347 14515 2dfa9ed1d2ff4481c3c9b83ad6993d1f ""
+  "tablas-images/cp1/caracterizacionInfraestructura.tex" 1758212747.37305 14516 04e59d3af0874eab56a5cefd203cbbe3 ""
   "tablas-images/cp1/definicionStakeholders.tex" 1758212145.1812 2863 e3b07ed85fb63759fbe78b20f2170975 ""
   "tablas-images/cp1/firewall/firewall.png" 1758158358.94974 203824 eb10f0a634de0f42115eb0c05bf5f1fe ""
   "tablas-images/cp1/priorizacionStakeholders.png" 1758158927.7861 239020 1dd86b8d82b22a6d5b0bce64f9293a4d ""
