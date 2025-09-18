@@ -98,6 +98,7 @@
 \contentsline {subsection}{\numberline {17.3.12}Costo de implementación y operación en ambientes productivos}{84}{subsection.17.3.12}%
 \contentsline {section}{\numberline {17.4}Tecnología VBC ganadora}{85}{section.17.4}%
 \contentsline {section}{4. Tecnología VBC ganadora}{85}{section.17.4}%
-\contentsline {chapter}{\numberline {A}Fichas técnicas y búsqueda en bases de datos}{92}{appendix.Alph1}%
-\contentsline {chapter}{\numberline {B}Búsquedas en bases de datos}{95}{appendix.Alph2}%
-\contentsline {chapter}{\numberline {C}Eventos de difusión}{116}{appendix.Alph3}%
+\contentsline {chapter}{Referencias}{87}{section*.52}%
+\contentsline {chapter}{\numberline {A}Fichas técnicas y búsqueda en bases de datos}{93}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Búsquedas en bases de datos}{96}{appendix.Alph2}%
+\contentsline {chapter}{\numberline {C}Eventos de difusión}{117}{appendix.Alph3}%

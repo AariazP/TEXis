@@ -294,6 +294,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/acronym/acronym.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/acronym/acronym.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/bigfoot/suffix.sty
@@ -886,9 +888,17 @@ INPUT ./images/fondo.png
 INPUT ./images/fondo.png
 INPUT ./images/fondo.png
 INPUT ./images/fondo.png
+INPUT ./capitulos/referencias.tex
+INPUT ./capitulos/referencias.tex
+INPUT capitulos/referencias.tex
 INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl
+INPUT ./images/referencias.png
+INPUT ./images/referencias.png
+INPUT ./images/referencias.png
+INPUT ./images/referencias.png
+INPUT ./images/referencias.png
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd

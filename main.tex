@@ -14,6 +14,13 @@
 \input{config/paquetes.tex}
 \input{config/variables.tex} % 
 
+% Configuración de encabezados y pies de página
+\pagestyle{fancy}
+\fancyhf{} % Limpia todos los encabezados y pies
+\fancyfoot[R]{\thepage} % Número de página abajo a la derecha
+\renewcommand{\headrulewidth}{0pt} % Sin línea en el encabezado
+\renewcommand{\footrulewidth}{0pt} % Sin línea en el pie
+
 % Marcador para la sección de Siglas
 \newcommand{\siglaref}{\hyperref[cap:siglas]{\nameref{cap:siglas}}}
 
@@ -34,8 +41,32 @@
 \newcommand{\TOGAF}{\hyperref[cap:siglas]{TOGAF}\xspace}
 \newcommand{\IEC}{\hyperref[cap:siglas]{IEC}\xspace}
 
-\newcommand{\ChapterImageStar}[3][]{%
+% Comando para capítulos SIN numeración de página (páginas especiales)
+\newcommand{\ChapterImageEmpty}[3][]{%
   \cleardoublepage\thispagestyle{empty}%
+  \refstepcounter{chapter}%
+  \begingroup
+    \begin{tikzpicture}[remember picture,overlay]
+      % Imagen de fondo al ancho de la página
+      \node[inner sep=0pt, anchor=north west] at (current page.north west)
+        {\includegraphics[width=\paperwidth]{#3}};
+      % Caja blanca que se adapta al ancho del texto
+      \node[
+        anchor=north west,
+        xshift=1.5cm, yshift=-1.0cm,
+        text=black,
+        fill=white, fill opacity=0.8,
+        rounded corners=6pt,
+        inner xsep=10pt, inner ysep=6pt
+      ] at (current page.north west)
+        {\Huge\bfseries \thechapter\quad #2\strut};
+    \end{tikzpicture}
+  \endgroup
+}
+
+% Comando para capítulos CON numeración de página (capítulos normales)
+\newcommand{\ChapterImageStar}[3][]{%
+  \cleardoublepage%
   \refstepcounter{chapter}%
   \begingroup
     \begin{tikzpicture}[remember picture,overlay]
@@ -104,8 +135,9 @@
 
 \input{capitulos/cumplimientoObjetivos.tex}
 
-\bibliographystyle{apalike}
-\bibliography{bibliografia}
+\input{capitulos/referencias.tex}
+
+
 
 \input{apendices/apendices.tex}
 
