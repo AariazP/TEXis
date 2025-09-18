@@ -110,7 +110,29 @@
 
 \input{anteportada.tex}
 \input{portada.tex}
+
+% Página en blanco antes de la dedicatoria
+\cleardoublepage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+\small\textit{Página en blanco intencionalmente}
+\end{center}
+\vspace*{\fill}
+\newpage
+
 \input{capitulos/dedicatoria.tex}
+
+% Página en blanco después de la dedicatoria
+\cleardoublepage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+\small\textit{Página en blanco intencionalmente}
+\end{center}
+\vspace*{\fill}
+\newpage
+
 \input{indice.tex}
 \input{resumen.tex}
 

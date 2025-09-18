@@ -1,104 +1,114 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{Dedicatoria}{1}{section*.1}%
-\contentsline {section}{\numberline {9.1}Objetivo general}{17}{section.9.1}%
-\contentsline {section}{Objetivo general}{17}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Objetivos específicos}{17}{section.9.2}%
-\contentsline {section}{Objetivos específicos}{17}{section.9.2}%
-\contentsline {section}{\numberline {14.1}Caracterización del GRID}{24}{section.14.1}%
-\contentsline {section}{\numberline {14.2}Mapeo sistemático de estudios (SMS)}{24}{section.14.2}%
-\contentsline {section}{\numberline {14.3}Identificación y caracterización de tecnologías VBC}{24}{section.14.3}%
-\contentsline {section}{\numberline {14.4}Benchmarking de tecnologías VBC}{25}{section.14.4}%
-\contentsline {section}{\numberline {14.5}Análisis de Decisión y Resolución (DAR)}{25}{section.14.5}%
-\contentsline {section}{\numberline {14.6}Diseño de la solución arquitectónica}{25}{section.14.6}%
-\contentsline {section}{\numberline {14.7}Implementación de la solución}{25}{section.14.7}%
-\contentsline {section}{\numberline {14.8}Validación de la solución}{26}{section.14.8}%
-\contentsline {section}{\numberline {15.1}Análisis de stakeholders del GRID}{27}{section.15.1}%
-\contentsline {section}{\numberline {15.2}Priorización de stakeholders}{28}{section.15.2}%
-\contentsline {section}{\numberline {15.3}Integrantes y áreas de trabajo del GRID}{28}{section.15.3}%
-\contentsline {section}{\numberline {15.4}Misión del GRID}{30}{section.15.4}%
-\contentsline {section}{\numberline {15.5}Visión del GRID}{31}{section.15.5}%
-\contentsline {section}{\numberline {15.6}Impacto del proyecto en el GRID}{32}{section.15.6}%
-\contentsline {section}{\numberline {15.7}Caracterización de la infraestructura tecnológica del GRID}{32}{section.15.7}%
-\contentsline {section}{\numberline {15.8}Caracterización de servicios del GRID}{46}{section.15.8}%
-\contentsline {subsection}{\numberline {15.8.1}Servicios actuales}{47}{subsection.15.8.1}%
-\contentsline {subsection}{\numberline {15.8.2}Servicios esperados}{47}{subsection.15.8.2}%
-\contentsline {subsection}{Servicios esperados}{47}{subsection.15.8.2}%
-\contentsline {section}{\numberline {15.9}Descripción de la oportunidad}{48}{section.15.9}%
-\contentsline {section}{\numberline {15.10}Resumen de la entrevista con el cliente}{49}{section.15.10}%
-\contentsline {subsubsection}{Misión del grupo GRID (Minuto 1:01)}{49}{section.15.10}%
-\contentsline {subsubsection}{Actividades del grupo de investigación (Minuto 1:10)}{49}{section.15.10}%
-\contentsline {subsubsection}{La virtualización basada en contenedores como una oportunidad (Minuto 3:01)}{49}{section.15.10}%
-\contentsline {subsubsection}{El problema de la multitud de herramientas (Minuto 3:44)}{50}{section.15.10}%
-\contentsline {subsubsection}{Difusión para apoyar a otros grupos e instituciones (Minuto 5:32)}{50}{section.15.10}%
-\contentsline {subsubsection}{Restricción en los recursos (Minuto 7:08)}{50}{section.15.10}%
-\contentsline {subsubsection}{Impacto del proyecto en los campos de estudio del GRID (Minuto 14:50)}{50}{section.15.10}%
-\contentsline {subsubsection}{Necesidad de orquestación entre máquinas virtuales y contenedores}{50}{section.15.10}%
-\contentsline {section}{Construcción de la bitácora}{51}{chapter*.21}%
-\contentsline {subsection}{\numberline {15.10.1}Planeación}{51}{subsection.15.10.1}%
-\contentsline {subsubsection}{Definición de metas para el SMS}{51}{subsection.15.10.1}%
-\contentsline {subsubsection}{Definición de preguntas de investigación}{52}{table.caption.22}%
-\contentsline {subsubsection}{Definición de métricas}{52}{table.caption.23}%
-\contentsline {section}{\numberline {15.11}Búsqueda de estudios}{52}{section.15.11}%
-\contentsline {subsection}{\numberline {15.11.1}Estrategia de búsqueda}{53}{subsection.15.11.1}%
-\contentsline {subsection}{Búsqueda en bases de datos}{53}{subsection.15.11.1}%
-\contentsline {subsubsection}{Identificación de estudios mediante búsqueda en bases de datos}{53}{subsection.15.11.1}%
-\contentsline {paragraph}{2.2.1.1 Búsqueda en bases de datos}{54}{table.caption.28}%
-\contentsline {subsubsection}{Resumen de la búsqueda en bases de datos sin criterios de inclusión/exclusión}{58}{table.caption.28}%
-\contentsline {subsection}{Resumen de la búsqueda en bases de datos con criterios de inclusión/exclusión}{59}{figure.caption.30}%
-\contentsline {section}{Eliminación de duplicados}{60}{figure.caption.32}%
-\contentsline {section}{Priorización de estudios}{60}{figure.caption.32}%
-\contentsline {section}{Estrategia de búsqueda usando bola de nieve}{61}{figure.caption.32}%
-\contentsline {section}{Diagrama de búsqueda}{62}{figure.caption.32}%
-\contentsline {subsection}{\numberline {15.11.2}Usando cadenas de búsqueda}{62}{subsection.15.11.2}%
-\contentsline {subsection}{\numberline {15.11.3}Usando bola de nieve}{63}{subsection.15.11.3}%
-\contentsline {section}{\numberline {15.12}Identificación de estudios}{64}{section.15.12}%
-\contentsline {subsection}{\numberline {15.12.1}Artículos por año y métricas}{64}{subsection.15.12.1}%
-\contentsline {section}{\numberline {15.13}Información de la herramienta}{66}{section.15.13}%
-\contentsline {section}{\numberline {15.14}Nichos de mercado}{66}{section.15.14}%
-\contentsline {subsection}{\numberline {15.14.1}Docker}{66}{subsection.15.14.1}%
-\contentsline {subsection}{\numberline {15.14.2}Podman}{66}{subsection.15.14.2}%
-\contentsline {subsection}{\numberline {15.14.3}Udocker}{66}{subsection.15.14.3}%
-\contentsline {subsection}{\numberline {15.14.4}Wasm (WebAssembly)}{67}{subsection.15.14.4}%
-\contentsline {subsection}{\numberline {15.14.5}LXC (Linux Containers)}{67}{subsection.15.14.5}%
-\contentsline {subsection}{\numberline {15.14.6}Containerd}{67}{subsection.15.14.6}%
-\contentsline {subsection}{\numberline {15.14.7}LXD}{67}{subsection.15.14.7}%
-\contentsline {subsection}{\numberline {15.14.8}Rkt}{67}{subsection.15.14.8}%
-\contentsline {subsection}{\numberline {15.14.9}Singularity}{68}{subsection.15.14.9}%
-\contentsline {subsection}{\numberline {15.14.10}runC}{68}{subsection.15.14.10}%
-\contentsline {subsection}{\numberline {15.14.11}CRI-O}{68}{subsection.15.14.11}%
-\contentsline {subsection}{\numberline {15.14.12}Hyper-V Containers}{68}{subsection.15.14.12}%
-\contentsline {subsection}{\numberline {15.14.13}OpenVZ}{68}{subsection.15.14.13}%
-\contentsline {subsection}{\numberline {15.14.14}Linux VServer}{69}{subsection.15.14.14}%
-\contentsline {subsection}{\numberline {15.14.15}Google gVisor}{69}{subsection.15.14.15}%
-\contentsline {subsection}{\numberline {15.14.16}Kata Containers}{69}{subsection.15.14.16}%
-\contentsline {subsection}{\numberline {15.14.17}Firecracker}{69}{subsection.15.14.17}%
-\contentsline {subsection}{\numberline {15.14.18}Sarus}{69}{subsection.15.14.18}%
-\contentsline {section}{\numberline {16.1}Definición de las pruebas}{77}{section.16.1}%
-\contentsline {section}{\numberline {16.2}Construcción de las pruebas}{77}{section.16.2}%
-\contentsline {section}{\numberline {16.3}Resultados de las pruebas}{78}{section.16.3}%
-\contentsline {section}{\numberline {16.4}Métricas de rendimiento}{78}{section.16.4}%
-\contentsline {section}{\numberline {16.5}Análisis de los resultados}{81}{section.16.5}%
-\contentsline {section}{\numberline {17.1}Metodología de evaluación}{82}{section.17.1}%
-\contentsline {section}{1. Metodología de evaluación}{82}{section.17.1}%
-\contentsline {section}{\numberline {17.2}Resultados de la evaluación}{82}{section.17.2}%
-\contentsline {section}{2. Resultados de la evaluación}{82}{section.17.2}%
-\contentsline {section}{\numberline {17.3}Criterios de evaluación}{83}{section.17.3}%
-\contentsline {section}{3. Criterios de evaluación}{83}{section.17.3}%
-\contentsline {subsection}{\numberline {17.3.1}VBC (¿Es una tecnología basada en contenedores?)}{83}{subsection.17.3.1}%
-\contentsline {subsection}{\numberline {17.3.2}Tipo de licencia}{83}{subsection.17.3.2}%
-\contentsline {subsection}{\numberline {17.3.3}Posibilidad de orquestación}{83}{subsection.17.3.3}%
-\contentsline {subsection}{\numberline {17.3.4}Compatibilidad con imágenes de Docker Hub}{83}{subsection.17.3.4}%
-\contentsline {subsection}{\numberline {17.3.5}Soporte para redes personalizadas}{83}{subsection.17.3.5}%
-\contentsline {subsection}{\numberline {17.3.6}Persistencia de datos / volúmenes}{83}{subsection.17.3.6}%
-\contentsline {subsection}{\numberline {17.3.7}Documentación}{84}{subsection.17.3.7}%
-\contentsline {subsection}{\numberline {17.3.8}Soporte al proyecto}{84}{subsection.17.3.8}%
-\contentsline {subsection}{\numberline {17.3.9}Popularidad}{84}{subsection.17.3.9}%
-\contentsline {subsection}{\numberline {17.3.10}Consumo de recursos}{84}{subsection.17.3.10}%
-\contentsline {subsection}{\numberline {17.3.11}Compatibilidad de orquestación}{84}{subsection.17.3.11}%
-\contentsline {subsection}{\numberline {17.3.12}Costo de implementación y operación en ambientes productivos}{84}{subsection.17.3.12}%
-\contentsline {section}{\numberline {17.4}Tecnología VBC ganadora}{85}{section.17.4}%
-\contentsline {section}{4. Tecnología VBC ganadora}{85}{section.17.4}%
-\contentsline {chapter}{Referencias}{87}{section*.52}%
-\contentsline {chapter}{\numberline {A}Fichas técnicas y búsqueda en bases de datos}{93}{appendix.Alph1}%
-\contentsline {chapter}{\numberline {B}Búsquedas en bases de datos}{96}{appendix.Alph2}%
-\contentsline {chapter}{\numberline {C}Eventos de difusión}{117}{appendix.Alph3}%
+\contentsline {chapter}{Dedicatoria}{2}{section*.1}%
+\contentsline {section}{\numberline {9.1}Objetivo general}{20}{section.9.1}%
+\contentsline {section}{Objetivo general}{20}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Objetivos específicos}{20}{section.9.2}%
+\contentsline {section}{Objetivos específicos}{20}{section.9.2}%
+\contentsline {section}{\numberline {14.1}Caracterización del GRID}{27}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Revisión de la literatura}{27}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Identificación y caracterización de tecnologías VBC}{27}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Benchmarking de tecnologías VBC}{28}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Análisis de Decisión y Resolución (DAR)}{28}{section.14.5}%
+\contentsline {section}{\numberline {14.6}Diseño de la solución arquitectónica}{28}{section.14.6}%
+\contentsline {section}{\numberline {14.7}Implementación de la solución}{28}{section.14.7}%
+\contentsline {section}{\numberline {14.8}Validación de la solución}{29}{section.14.8}%
+\contentsline {section}{\numberline {15.1}Análisis de stakeholders del GRID}{30}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Priorización de stakeholders}{31}{section.15.2}%
+\contentsline {section}{\numberline {15.3}Integrantes y áreas de trabajo del GRID}{31}{section.15.3}%
+\contentsline {section}{\numberline {15.4}Misión del GRID}{33}{section.15.4}%
+\contentsline {section}{\numberline {15.5}Visión del GRID}{34}{section.15.5}%
+\contentsline {section}{\numberline {15.6}Impacto del proyecto en el GRID}{35}{section.15.6}%
+\contentsline {section}{\numberline {15.7}Caracterización de la infraestructura tecnológica del GRID}{35}{section.15.7}%
+\contentsline {section}{\numberline {15.8}Caracterización de servicios del GRID}{49}{section.15.8}%
+\contentsline {subsection}{\numberline {15.8.1}Servicios actuales}{50}{subsection.15.8.1}%
+\contentsline {subsection}{\numberline {15.8.2}Servicios esperados}{50}{subsection.15.8.2}%
+\contentsline {section}{\numberline {15.9}Descripción de la oportunidad}{51}{section.15.9}%
+\contentsline {section}{\numberline {15.10}Resumen de la entrevista con el cliente}{52}{section.15.10}%
+\contentsline {subsubsection}{Misión del grupo GRID (Minuto 1:01)}{52}{section.15.10}%
+\contentsline {subsubsection}{Actividades del grupo de investigación (Minuto 1:10)}{52}{section.15.10}%
+\contentsline {subsubsection}{La virtualización basada en contenedores como una oportunidad (Minuto 3:01)}{52}{section.15.10}%
+\contentsline {subsubsection}{El problema de la multitud de herramientas (Minuto 3:44)}{53}{section.15.10}%
+\contentsline {subsubsection}{Difusión para apoyar a otros grupos e instituciones (Minuto 5:32)}{53}{section.15.10}%
+\contentsline {subsubsection}{Restricción en los recursos (Minuto 7:08)}{53}{section.15.10}%
+\contentsline {subsubsection}{Impacto del proyecto en los campos de estudio del \hyperref [cap:siglas]{GRID}\xspace \ (Minuto 14:50)}{53}{section.15.10}%
+\contentsline {subsubsection}{Necesidad de orquestación entre máquinas virtuales y contenedores}{53}{section.15.10}%
+\contentsline {section}{Construcción de la bitácora}{54}{chapter*.21}%
+\contentsline {subsection}{\numberline {15.10.1}Planeación}{54}{subsection.15.10.1}%
+\contentsline {subsubsection}{Definición de metas para el SMS}{54}{subsection.15.10.1}%
+\contentsline {subsubsection}{Definición de preguntas de investigación}{55}{table.caption.22}%
+\contentsline {subsubsection}{Definición de métricas}{55}{table.caption.23}%
+\contentsline {section}{\numberline {15.11}Búsqueda de estudios}{55}{section.15.11}%
+\contentsline {subsection}{\numberline {15.11.1}Estrategia de búsqueda}{56}{subsection.15.11.1}%
+\contentsline {subsection}{Búsqueda en bases de datos}{56}{subsection.15.11.1}%
+\contentsline {subsubsection}{Identificación de estudios mediante búsqueda en bases de datos}{56}{subsection.15.11.1}%
+\contentsline {paragraph}{2.2.1.1 Búsqueda en bases de datos}{57}{table.caption.28}%
+\contentsline {subsubsection}{Resumen de la búsqueda en bases de datos sin criterios de inclusión/exclusión}{61}{table.caption.28}%
+\contentsline {subsection}{Resumen de la búsqueda en bases de datos con criterios de inclusión/exclusión}{62}{figure.caption.30}%
+\contentsline {section}{Eliminación de duplicados}{63}{figure.caption.32}%
+\contentsline {section}{Priorización de estudios}{63}{figure.caption.32}%
+\contentsline {section}{Estrategia de búsqueda usando bola de nieve}{64}{figure.caption.32}%
+\contentsline {section}{Diagrama de búsqueda}{65}{figure.caption.32}%
+\contentsline {subsection}{\numberline {15.11.2}Usando cadenas de búsqueda}{65}{subsection.15.11.2}%
+\contentsline {subsection}{\numberline {15.11.3}Usando bola de nieve}{66}{subsection.15.11.3}%
+\contentsline {section}{\numberline {15.12}Identificación de estudios}{67}{section.15.12}%
+\contentsline {subsection}{\numberline {15.12.1}Artículos por año y métricas}{67}{subsection.15.12.1}%
+\contentsline {section}{\numberline {15.13}Información de la herramienta}{69}{section.15.13}%
+\contentsline {section}{\numberline {15.14}Nichos de mercado}{69}{section.15.14}%
+\contentsline {subsection}{\numberline {15.14.1}Docker}{69}{subsection.15.14.1}%
+\contentsline {subsection}{\numberline {15.14.2}Podman}{69}{subsection.15.14.2}%
+\contentsline {subsection}{\numberline {15.14.3}Udocker}{69}{subsection.15.14.3}%
+\contentsline {subsection}{\numberline {15.14.4}Wasm (WebAssembly)}{70}{subsection.15.14.4}%
+\contentsline {subsection}{\numberline {15.14.5}LXC (Linux Containers)}{70}{subsection.15.14.5}%
+\contentsline {subsection}{\numberline {15.14.6}Containerd}{70}{subsection.15.14.6}%
+\contentsline {subsection}{\numberline {15.14.7}LXD}{70}{subsection.15.14.7}%
+\contentsline {subsection}{\numberline {15.14.8}Rkt}{70}{subsection.15.14.8}%
+\contentsline {subsection}{\numberline {15.14.9}Singularity}{71}{subsection.15.14.9}%
+\contentsline {subsection}{\numberline {15.14.10}runC}{71}{subsection.15.14.10}%
+\contentsline {subsection}{\numberline {15.14.11}CRI-O}{71}{subsection.15.14.11}%
+\contentsline {subsection}{\numberline {15.14.12}Hyper-V Containers}{71}{subsection.15.14.12}%
+\contentsline {subsection}{\numberline {15.14.13}OpenVZ}{71}{subsection.15.14.13}%
+\contentsline {subsection}{\numberline {15.14.14}Linux VServer}{72}{subsection.15.14.14}%
+\contentsline {subsection}{\numberline {15.14.15}Google gVisor}{72}{subsection.15.14.15}%
+\contentsline {subsection}{\numberline {15.14.16}Kata Containers}{72}{subsection.15.14.16}%
+\contentsline {subsection}{\numberline {15.14.17}Firecracker}{72}{subsection.15.14.17}%
+\contentsline {subsection}{\numberline {15.14.18}Sarus}{72}{subsection.15.14.18}%
+\contentsline {section}{\numberline {16.1}Definición de las pruebas}{80}{section.16.1}%
+\contentsline {section}{\numberline {16.2}Construcción de las pruebas}{80}{section.16.2}%
+\contentsline {section}{\numberline {16.3}Resultados de las pruebas}{81}{section.16.3}%
+\contentsline {section}{\numberline {16.4}Métricas de rendimiento}{81}{section.16.4}%
+\contentsline {section}{\numberline {16.5}Análisis de los resultados}{84}{section.16.5}%
+\contentsline {section}{\numberline {17.1}Metodología de evaluación}{85}{section.17.1}%
+\contentsline {section}{1. Metodología de evaluación}{85}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Resultados de la evaluación}{85}{section.17.2}%
+\contentsline {section}{2. Resultados de la evaluación}{85}{section.17.2}%
+\contentsline {section}{\numberline {17.3}Criterios de evaluación}{86}{section.17.3}%
+\contentsline {section}{3. Criterios de evaluación}{86}{section.17.3}%
+\contentsline {subsection}{\numberline {17.3.1}VBC (¿Es una tecnología basada en contenedores?)}{86}{subsection.17.3.1}%
+\contentsline {subsection}{\numberline {17.3.2}Tipo de licencia}{86}{subsection.17.3.2}%
+\contentsline {subsection}{\numberline {17.3.3}Posibilidad de orquestación}{86}{subsection.17.3.3}%
+\contentsline {subsection}{\numberline {17.3.4}Compatibilidad con imágenes de Docker Hub}{86}{subsection.17.3.4}%
+\contentsline {subsection}{\numberline {17.3.5}Soporte para redes personalizadas}{86}{subsection.17.3.5}%
+\contentsline {subsection}{\numberline {17.3.6}Persistencia de datos / volúmenes}{86}{subsection.17.3.6}%
+\contentsline {subsection}{\numberline {17.3.7}Documentación}{87}{subsection.17.3.7}%
+\contentsline {subsection}{\numberline {17.3.8}Soporte al proyecto}{87}{subsection.17.3.8}%
+\contentsline {subsection}{\numberline {17.3.9}Popularidad}{87}{subsection.17.3.9}%
+\contentsline {subsection}{\numberline {17.3.10}Consumo de recursos}{87}{subsection.17.3.10}%
+\contentsline {subsection}{\numberline {17.3.11}Compatibilidad de orquestación}{87}{subsection.17.3.11}%
+\contentsline {subsection}{\numberline {17.3.12}Costo de implementación y operación en ambientes productivos}{87}{subsection.17.3.12}%
+\contentsline {section}{\numberline {17.4}Tecnología VBC ganadora}{88}{section.17.4}%
+\contentsline {section}{4. Tecnología VBC ganadora}{88}{section.17.4}%
+\contentsline {chapter}{Referencias}{90}{section*.52}%
+\contentsline {chapter}{\numberline {A}Fichas técnicas y búsqueda en bases de datos}{96}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Ficha técnica del recurso tecnológico}{96}{section.Alph1.1}%
+\contentsline {chapter}{\numberline {B}Búsquedas en bases de datos}{99}{appendix.Alph2}%
+\contentsline {section}{\numberline {B.1}Búsqueda de artículos sin criterios de inclusión/exclusión}{99}{section.Alph2.1}%
+\contentsline {section}{\numberline {B.2}Búsqueda de artículos usando criterios de inclusión/exclusión}{109}{section.Alph2.2}%
+\contentsline {chapter}{\numberline {C}Plantilla del análisis DAR}{119}{appendix.Alph3}%
+\contentsline {section}{\numberline {C.1}Plantilla análisis DAR}{119}{section.Alph3.1}%
+\contentsline {chapter}{\numberline {D}Eventos de difusión}{120}{appendix.Alph4}%
+\contentsline {section}{\numberline {D.1}Seminario GRID 2024-II}{120}{section.Alph4.1}%
+\contentsline {section}{\numberline {D.2}Seminario GRID 2025-I}{120}{section.Alph4.2}%
+\contentsline {section}{\numberline {D.3}ACOFI 2025}{120}{section.Alph4.3}%
+\contentsline {section}{\numberline {D.4}CEIFI 2025}{120}{section.Alph4.4}%
+\contentsline {section}{\numberline {D.5}Artículo de revista}{120}{section.Alph4.5}%
+\contentsline {subsection}{\numberline {D.5.1}Páginas del artículo JISA}{120}{subsection.Alph4.5.1}%
