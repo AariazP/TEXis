@@ -7,21 +7,22 @@ se realizó una revisión del estado del arte. Esta revisión se completó en di
 
 \subsection{Planeación}
 
-Esta etapa consistió en establecer el propósito general que se buscaba alcanzar con el SMS (\textit{Systematic Mapping Study}). 
+Esta etapa consistió en establecer el propósito general que se buscaba alcanzar con el \SMS\ (\textit{Systematic Mapping Study}). 
 A su vez, definió aspectos como objetivos, preguntas de investigación y métricas. Para ello, se siguió el modelo 
-Objetivo-Pregunta-Métrica (\textit{Goal-Question-Metric}, GQM). A continuación, se definen los objetivos del SMS aplicado 
+Objetivo-Pregunta-Métrica (\textit{Goal-Question-Metric}, GQM). A continuación, se definen los objetivos del \SMS\ aplicado 
 a las tecnologías de virtualización basadas en contenedores.
 
-\subsubsection{Definición de metas para el SMS}
+\subsubsection{Definición de metas para el \SMS}
 
 \begin{table}[H]
 \centering
-\renewcommand{\arraystretch}{1.5} % Aumenta el alto de las filas
-\begin{tabular}{|c|p{11cm}|}
+\renewcommand{\arraystretch}{1.2} % Espaciado reducido
+\footnotesize % Texto más pequeño
+\begin{tabular}{|c|p{8cm}|}
 \hline
 \textbf{Meta} & \textbf{Descripción} \\ \hline
-G1 & Identificar trabajos relacionados con VBC en proyectos de docencia, investigación y extensión. \\ \hline
-G2 & Clasificar trabajos relacionados con VBC en los dominios de desarrollo de software, pensamiento computacional, computación paralela, análisis de datos, inteligencia artificial, redes computacionales, infraestructura de TI, HPC, entre otros. \\ \hline
+G1 & Identificar trabajos con \VBC\ en docencia, investigación y extensión. \\ \hline
+G2 & Clasificar trabajos con \VBC\ en dominios de \TI: desarrollo software, pensamiento computacional, computación paralela, análisis datos, IA, redes, infraestructura \TI, HPC, etc. \\ \hline
 \end{tabular}
 \caption{Definición de metas del SMS}
 \end{table}
@@ -29,20 +30,19 @@ G2 & Clasificar trabajos relacionados con VBC en los dominios de desarrollo de s
 \subsubsection{Definición de preguntas de investigación}
 \begin{table}[H]
 \centering
-\renewcommand{\arraystretch}{1.5} % Espaciado entre filas
-\begin{tabular}{|c|c|p{6cm}|p{6cm}|}
+\renewcommand{\arraystretch}{1.2} % Espaciado reducido
+\scriptsize % Texto más pequeño
+\begin{tabular}{|c|c|p{4.5cm}|p{4.5cm}|} % Columnas más estrechas
 \hline
 \textbf{Meta} & \textbf{Pregunta} & \textbf{Descripción} & \textbf{Motivación} \\ \hline
 
 G1 & Q1 &
-\textit{¿Cuáles son los trabajos relacionados con tecnologías de virtualización basadas en contenedores (VBC) que podrían impactar positivamente proyectos de docencia, investigación y extensión?} &
-La transversalidad que ofrece la VBC, gracias a su reproducibilidad de entornos, permite estimular diferentes aristas de la sociedad. \\
-& &
-& Su naturaleza facilita el transporte de soluciones de TI, entre diferentes entornos, generando que una innovación en cualquier dominio social impacte directamente en otro. \\ \hline
+\textit{¿Cuáles trabajos con \VBC\ impactan positivamente en docencia, investigación y extensión?} &
+\VBC\ ofrece transversalidad y reproducibilidad, facilitando transporte de soluciones TI entre dominios. \\ \hline
 
 G2 & Q2 &
-\textit{¿Cuáles son los principales trabajos relacionados con las tecnologías de virtualización basadas en contenedores (VBC) que podrían contribuir en los diversos dominios de TI, entre las que pueden ser desarrollo de software, pensamiento computacional, computación paralela, análisis de datos, inteligencia artificial, redes computacionales, infraestructura de TI, HPC, entre otros?} &
-Se busca proporcionar una base sólida para investigadores, docentes y profesionales interesados en comprender el estado del arte actual en relación con las VBC, además del alcance y las aplicaciones de estos trabajos sin necesidad de un análisis profundo. \\ \hline
+\textit{¿Cuáles trabajos con \VBC\ contribuyen en dominios de \TI?} &
+Proporcionar base sólida para comprender estado del arte de \VBC\ sin análisis profundo. \\ \hline
 
 \end{tabular}
 \caption{Definición de preguntas de investigación del SMS}
@@ -52,18 +52,18 @@ Se busca proporcionar una base sólida para investigadores, docentes y profesion
 
 \begin{table}[H]
 \centering
-\renewcommand{\arraystretch}{1.5} % Espaciado entre filas
-\begin{tabular}{|c|p{11cm}|}
+\renewcommand{\arraystretch}{1.2} % Menor espaciado entre filas
+\footnotesize % Texto más pequeño
+\begin{tabular}{|c|p{9cm}|} % Columna de descripción más estrecha
 \hline
 \textbf{Métrica} & \textbf{Descripción} \\ \hline
-M1 & Cantidad de trabajos identificados en cada dominio de TI. \\ \hline
-M2 & Cantidad de trabajos que están incluidos en educación. \\ \hline
-M3 & Cantidad de trabajos que están incluidos en investigación. \\ \hline
-M4 & Cantidad de trabajos que están incluidos en extensión. \\ \hline
+M1 & Cantidad de trabajos identificados en cada dominio de \TI. \\ \hline
+M2 & Cantidad de trabajos incluidos en educación. \\ \hline
+M3 & Cantidad de trabajos incluidos en investigación. \\ \hline
+M4 & Cantidad de trabajos incluidos en extensión. \\ \hline
 \end{tabular}
 \caption{Definición de métricas del SMS}
 \end{table}
-
 
 \section{Búsqueda de estudios}
 
@@ -89,26 +89,23 @@ Los términos consideran los elementos identificados en la etapa de planificaci�
 
 \begin{table}[H]
 \centering
-\renewcommand{\arraystretch}{1.5} % Espaciado entre filas
-\begin{tabularx}{\textwidth}{|c|X|}
+\renewcommand{\arraystretch}{1.2} % Espaciado reducido
+\footnotesize % Texto más pequeño
+\begin{tabularx}{\textwidth}{|p{0.18\textwidth}|X|} % Columna izquierda más estrecha
 \hline
 \textbf{Componente} & \textbf{Descripción} \\ \hline
 
-Población & Trabajos relacionados con la VBC aplicadas en diversos dominios de TI con un énfasis en la educación, investigación y extensión. \\ \hline
+Población & Trabajos sobre \VBC\ aplicadas en \TI, con énfasis en educación, investigación y extensión. \\ \hline
 
-Intervención & Identificación y clasificación de los trabajos en VBC en los dominios de TI establecidos. \\ \hline
+Intervención & Identificación y clasificación de trabajos \VBC\ en dominios de \TI. \\ \hline
 
 Comparación & 
-\begin{minipage}[t]{\linewidth}
-\vspace{2pt}
-1. Se comparan los proyectos que han hecho uso de la VBC para determinar cuáles han tenido mayor tasa de éxito expresado por los autores en cada dominio de TI.\\[6pt]
-2. Se analiza el impacto de la VBC en proyectos de docencia, investigación y extensión en comparación con otras soluciones tecnológicas.
-\vspace{2pt}
-\end{minipage} \\ \hline
+\textbf{1.} Comparación de proyectos \VBC\ por tasa de éxito en cada dominio \TI.\@        
+\textbf{2.} Análisis de impacto de \VBC\ vs. otras soluciones en docencia, investigación y extensión. \\ \hline
 
-Salida & Estructura de clasificación de los trabajos relacionados con las VBC en cada dominio de TI que han impactado en proyectos de docencia, investigación y extensión. \\ \hline
+Salida & Estructura de clasificación de trabajos \VBC\ que impactan en docencia, investigación y extensión. \\ \hline
 
-Contexto & Docencia, investigación y extensión con apropiación de los dominios de TI en forma de VBC. \\ \hline
+Contexto & Docencia, investigación y extensión con apropiación de \VBC\ en \TI. \\ \hline
 \end{tabularx}
 \caption{Modelo PICOC}
 \end{table}
