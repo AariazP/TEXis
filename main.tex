@@ -12,6 +12,13 @@
 \usepackage{titlesec}
 \usepackage{eso-pic}
 
+% Configuración del tamaño de secciones y subsecciones
+\titleformat{\section}
+  {\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}{\thesubsubsection}{1em}{}
 
 \input{config/paquetes.tex}
 \input{config/variables.tex} 
@@ -63,6 +70,8 @@
 \newcommand{\TOGAF}{\hyperref[cap:siglas]{TOGAF}\xspace}
 \newcommand{\IEC}{\hyperref[cap:siglas]{IEC}\xspace}
 \newcommand{\CS}{\hyperref[cap:siglas]{CS}\xspace}
+\newcommand{\CLI}{\hyperref[cap:siglas]{CLI}\xspace}
+\newcommand{\UI}{\hyperref[cap:siglas]{UI}\xspace}
 
 
 % Comando para capítulos SIN numeración de página (páginas especiales)

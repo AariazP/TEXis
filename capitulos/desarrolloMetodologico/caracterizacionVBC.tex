@@ -56,38 +56,105 @@ Sarus está dirigido a entornos de HPC y computación científica, donde los usu
 
 \begin{table}[H]
 \centering
-\rowcolors{2}{gray!10}{white}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X 
-                                  >{\raggedright\arraybackslash}X 
-                                  >{\raggedright\arraybackslash}X 
-                                  >{\raggedright\arraybackslash}X}
-\rowcolor{gray!30}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|>{\centering\arraybackslash}m{0.18\textwidth}| 
+                >{\centering\arraybackslash}m{0.25\textwidth}| 
+                >{\centering\arraybackslash}m{0.20\textwidth}| 
+                >{\centering\arraybackslash}m{0.25\textwidth}|}
+\hline
 \textbf{Tecnologías} & \textbf{Licencias} & \textbf{Términos de uso} & \textbf{Costo} \\
-
-Docker & Apache 2.0 (permisiva) & \href{https://www.docker.com/legal/docker-terms-service/}{link} & Desde los 11 a 24 dólares \\
-Podman & Apache 2.0 (permisiva) & \href{https://github.com/containers/podman/blob/main/LICENSE}{link} & Gratis \\
-Udocker & Apache 2.0 (permisiva) & \href{https://github.com/indigo-dc/udocker/blob/master/LICENSE}{link} & Gratis \\
-Wasm & Apache 2.0 (permisiva) & \href{https://github.com/WebAssembly/design/blob/main/LICENSE}{link} & Gratis \\
+\hline
+Docker & Apache 2.0 & \href{https://www.docker.com/legal/docker-terms-service/}{link} & \$11-\$24 \\
+\hline
+Podman & Apache 2.0 & \href{https://github.com/containers/podman/blob/main/LICENSE}{link} & Gratis \\
+\hline
+Udocker & Apache 2.0 & \href{https://github.com/indigo-dc/udocker/blob/master/LICENSE}{link} & Gratis \\
+\hline
+Wasm & Apache 2.0 & \href{https://github.com/WebAssembly/design/blob/main/LICENSE}{link} & Gratis \\
+\hline
 LXC & GNU LGPLv2.1+ & \href{https://linuxcontainers.org/lxc/introduction/}{link} & Gratis \\
-Containerd & Apache 2.0 (permisiva) & \href{https://github.com/containerd/containerd/blob/main/LICENSE}{link} & Gratis \\
-LXD & AGPL-3.0 license & \href{https://github.com/canonical/lxd}{link} & Gratis \\
-Rkt & Apache 2.0 (permisiva) & \href{https://github.com/rkt/rkt/blob/master/LICENSE}{link} & Descontinuado \\
-Singularity & BSD 3-Clause (permisiva) & \href{https://github.com/sylabs/singularity/blob/main/LICENSE.md}{link} & Singularity CE (Gratis), PRO (\$30/año) \\
-runC & Apache 2.0 (permisiva) & \href{https://github.com/opencontainers/runc/blob/main/LICENSE}{link} & Gratis \\
-CRI-O & Apache 2.0 (permisiva) & \href{https://github.com/cri-o/cri-o/blob/main/LICENSE}{link} & Gratis \\
-Hyper-V containers & Licencia Windows (Propietaria) & \href{https://learn.microsoft.com/es-es/virtualization/windowscontainers/images-eula}{link} & Windows Server 2025 (\$1,176 USD) \\
-OpenVZ & GPL v2 (permisiva) & \href{https://openvz.org/}{link} & Gratis \\
-Linux VServer & GPL v2 (permisiva) & \href{http://linux-vserver.org/}{link} & Gratis \\
-Google gVisor & Apache 2.0 (permisiva) & \href{https://github.com/google/gvisor}{link} & Gratis \\
-Kata Containers & Apache 2.0 (permisiva) & \href{https://github.com/kata-containers/kata-containers/blob/main/LICENSE}{link} & Gratis \\
-Firecracker & Apache 2.0 (permisiva) & \href{https://github.com/firecracker-microvm/firecracker}{link} & Gratis \\
-Sarus & BSD 3-Clause (permisiva) & \href{https://github.com/eth-cscs/sarus}{link} & Gratis \\
-
-\end{tabularx}
+\hline
+Containerd & Apache 2.0 & \href{https://github.com/containerd/containerd/blob/main/LICENSE}{link} & Gratis \\
+\hline
+LXD & AGPL-3.0 & \href{https://github.com/canonical/lxd}{link} & Gratis \\
+\hline
+Rkt & Apache 2.0 & \href{https://github.com/rkt/rkt/blob/master/LICENSE}{link} & Descontinuado \\
+\hline
+Singularity & BSD 3-Clause & \href{https://github.com/sylabs/singularity/blob/main/LICENSE.md}{link} & CE: Gratis, PRO: \$30/año \\
+\hline
+runC & Apache 2.0 & \href{https://github.com/opencontainers/runc/blob/main/LICENSE}{link} & Gratis \\
+\hline
+CRI-O & Apache 2.0 & \href{https://github.com/cri-o/cri-o/blob/main/LICENSE}{link} & Gratis \\
+\hline
+Hyper-V containers & Windows Propietaria & \href{https://learn.microsoft.com/es-es/virtualization/windowscontainers/images-eula}{link} & \$1,176 USD \\
+\hline
+OpenVZ & GPL v2 & \href{https://openvz.org/}{link} & Gratis \\
+\hline
+Linux VServer & GPL v2 & \href{http://linux-vserver.org/}{link} & Gratis \\
+\hline
+Google gVisor & Apache 2.0 & \href{https://github.com/google/gvisor}{link} & Gratis \\
+\hline
+Kata Containers & Apache 2.0 & \href{https://github.com/kata-containers/kata-containers/blob/main/LICENSE}{link} & Gratis \\
+\hline
+Firecracker & Apache 2.0 & \href{https://github.com/firecracker-microvm/firecracker}{link} & Gratis \\
+\hline
+Sarus & BSD 3-Clause & \href{https://github.com/eth-cscs/sarus}{link} & Gratis \\
+\hline
+\end{tabular}
 \caption{Comparativa de tecnologías de contenerización, licencias, términos de uso y costos}
 \end{table}
 
-\input{tablas-images/cp3/interfaz-uso.tex}
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{\textwidth}{|p{0.2\textwidth}|p{0.75\textwidth}|}
+\hline
+\textbf{Tecnología} & \textbf{Interfaz de Uso} \\
+\hline
+Docker & \CLI\ principalmente, con Docker Desktop para interfaz gráfica. \\
+\hline
+Podman & \CLI\ similar a Docker, sin daemon. Opcional Podman Desktop. \\
+\hline
+Udocker & \CLI\ específica para ejecutar contenedores sin privilegios root. \\
+\hline
+Wasm (WebAssembly) & Ejecución través de navegadores web, \API\@s de JavaScript. \\
+\hline
+LXC & \CLI\ mediante comando lxc, sin interfaz gráfica oficial. \\
+\hline
+Containerd & \CLI\ con herramientas como ctr, backend para otras herramientas. \\
+\hline
+LXD & \CLI\ mediante lxd/lxc, con interfaz web LXD Web \UI\. \\
+\hline
+Rkt & \CLI\ mediante comandos como rkt run (descontinuado). \\
+\hline
+Singularity & \CLI\ mediante comandos singularity para gestión de contenedores. \\
+\hline
+runC & \CLI\ mediante comandos runc, runtime bajo Docker y Kubernetes. \\
+\hline
+CRI-O & \CLI\, interactúa con Kubernetes, sin interfaz gráfica dedicada. \\
+\hline
+Hyper-V containers & \CLI\ (PowerShell) o Hyper-V Manager para VMs. \\
+\hline
+OpenVZ & \CLI\ mediante comandos vzctl, con interfaces gráficas de terceros. \\
+\hline
+Linux VServer & \CLI\ mediante comandos vserver para gestión. \\
+\hline
+Google gVisor & \CLI\ mediante comandos estándar de Docker con seguridad adicional. \\
+\hline
+Kata Containers & \CLI\ mediante kata-runtime, integración con Kubernetes. \\
+\hline
+Firecracker & \CLI\ mediante \API\ RESTful y herramientas firecracker. \\
+\hline
+Sarus & \CLI\ mediante comando sarus para entornos \HPC\. \\
+\hline
+\end{tabularx}
+\caption{Interfaz de uso de cada VBC}\label{tab:interfaz-vbc}
+\end{table}
+
 \input{tablas-images/cp3/integracion-cloud.tex}
 \input{tablas-images/cp3/medicion-gartner.tex}
 \input{tablas-images/cp3/cuadrante-gartner.tex}
