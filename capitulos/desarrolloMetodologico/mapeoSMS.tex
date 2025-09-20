@@ -18,7 +18,7 @@ a las tecnologías de virtualización basadas en contenedores.
 \centering
 \renewcommand{\arraystretch}{1.2} % Espaciado reducido
 \footnotesize % Texto más pequeño
-\begin{tabular}{|c|p{8cm}|}
+\begin{tabular}{|c|p{13cm}|}  % Columna más ancha (12cm)
 \hline
 \textbf{Meta} & \textbf{Descripción} \\ \hline
 G1 & Identificar trabajos con \VBC\ en docencia, investigación y extensión. \\ \hline
@@ -32,7 +32,7 @@ G2 & Clasificar trabajos con \VBC\ en dominios de \TI: desarrollo software, pens
 \centering
 \renewcommand{\arraystretch}{1.2} % Espaciado reducido
 \scriptsize % Texto más pequeño
-\begin{tabular}{|c|c|p{4.5cm}|p{4.5cm}|} % Columnas más estrechas
+\begin{tabular}{|c|c|p{6cm}|p{6cm}|} % Columnas más estrechas
 \hline
 \textbf{Meta} & \textbf{Pregunta} & \textbf{Descripción} & \textbf{Motivación} \\ \hline
 
@@ -110,9 +110,66 @@ Contexto & Docencia, investigación y extensión con apropiación de \VBC\ en \T
 \caption{Modelo PICOC}
 \end{table}
 
-\input{tablas-images/cp2/keywords-PICOC.tex}
-\input{tablas-images/cp2/keywords.tex}
-\input{tablas-images/cp2/criterios.tex}
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|p{3cm}|p{2.5cm}|p{2.5cm}|p{3cm}|p{3cm}|}
+\hline
+\textbf{Población} & \textbf{Intervención} & \textbf{Comparación} & \textbf{Salida} & \textbf{Contexto} \\
+\hline
+VBC \newline Dominios de \TI Educación Investigación Extensión & Identificación \newline Clasificación & Tasa de éxito \newline Evidencia de uso & Clasificación de trabajos \newline relacionados con VBC en cada dominio de \TI & Docencia Investigación Extensión \\
+\hline
+\end{tabular}
+\caption{Palabras clave identificadas usando el modelo PICOC}
+\label{tab:picoc}
+\end{table}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|p{5cm}|p{9.5cm}|}
+\hline
+\textbf{Palabras clave} & \textbf{Sinónimos} \\
+\hline
+Container-based virtualization & Application virtualization, Docker, Lightweight Virtualization \\
+\hline
+Education & Education System, Education Development, Higher Education \\
+\hline
+Research & Research Group, Research Proposal \\
+\hline
+Outreach & \IT\ Services, Technology Infrastructure, Cloud Computing \\
+\hline
+\end{tabular}
+\caption{Palabras clave para la búsqueda en base de datos}
+\label{tab:keywords}
+\end{table}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{4cm}|p{5cm}|p{5.5cm}|}
+\hline
+\textbf{Categoría} & \textbf{Inclusión} & \textbf{Exclusión} \\
+\hline
+Campos & Resumen & --- \\
+\hline
+Tipo de publicación & Artículos de revistas y conferencias & Tesis y capítulos de libros \\
+\hline
+Área/Disciplina & Management, \CS\, IT Management, engineering & Áreas no relacionadas con virtualización, \CS\ y \IT\ Management \\
+\hline
+Período & 2022 a 2024 & Antes de 2022 \\
+\hline
+Idioma & Inglés & --- \\
+\hline
+\end{tabular}
+\caption{Criterios de Inclusión/Exclusión}
+\label{tab:criterios-inclusion-exclusion}
+\end{table}
 
 \subsubsection{Búsqueda en bases de datos}\label{par:busquedaBasesDatos}
 
