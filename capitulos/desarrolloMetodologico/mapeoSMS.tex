@@ -1,7 +1,6 @@
-\chapter*{Revisión sistemática de la literatura}\label{cap:revisionLiteratura}
+\ChapterImageStar[cap:revisionLiteratura]{Revisión sistemática de la literatura}{./images/fondo.png}\label{cap:revisionLiteratura}
 
-\section*{1. Construcción de la bitácora}
-\addcontentsline{toc}{section}{Construcción de la bitácora}\label{sec:bitacora}
+\section{Construcción de la bitácora}
 
 En búsqueda de una base teórica para la elección de una tecnología de virtualización basada en contenedores, 
 se realizó una revisión del estado del arte. Esta revisión se completó en diferentes etapas:
@@ -15,15 +14,56 @@ a las tecnologías de virtualización basadas en contenedores.
 
 \subsubsection{Definición de metas para el SMS}
 
-\input{tablas-images/cp2/definicionMetas.tex}
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.5} % Aumenta el alto de las filas
+\begin{tabular}{|c|p{11cm}|}
+\hline
+\textbf{Meta} & \textbf{Descripción} \\ \hline
+G1 & Identificar trabajos relacionados con VBC en proyectos de docencia, investigación y extensión. \\ \hline
+G2 & Clasificar trabajos relacionados con VBC en los dominios de desarrollo de software, pensamiento computacional, computación paralela, análisis de datos, inteligencia artificial, redes computacionales, infraestructura de TI, HPC, entre otros. \\ \hline
+\end{tabular}
+\caption{Definición de metas del SMS}
+\end{table}
 
 \subsubsection{Definición de preguntas de investigación}
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.5} % Espaciado entre filas
+\begin{tabular}{|c|c|p{6cm}|p{6cm}|}
+\hline
+\textbf{Meta} & \textbf{Pregunta} & \textbf{Descripción} & \textbf{Motivación} \\ \hline
 
-\input{tablas-images/cp2/preguntasInvestigacion.tex}
+G1 & Q1 &
+\textit{¿Cuáles son los trabajos relacionados con tecnologías de virtualización basadas en contenedores (VBC) que podrían impactar positivamente proyectos de docencia, investigación y extensión?} &
+La transversalidad que ofrece la VBC, gracias a su reproducibilidad de entornos, permite estimular diferentes aristas de la sociedad. \\
+& &
+& Su naturaleza facilita el transporte de soluciones de TI, entre diferentes entornos, generando que una innovación en cualquier dominio social impacte directamente en otro. \\ \hline
+
+G2 & Q2 &
+\textit{¿Cuáles son los principales trabajos relacionados con las tecnologías de virtualización basadas en contenedores (VBC) que podrían contribuir en los diversos dominios de TI, entre las que pueden ser desarrollo de software, pensamiento computacional, computación paralela, análisis de datos, inteligencia artificial, redes computacionales, infraestructura de TI, HPC, entre otros?} &
+Se busca proporcionar una base sólida para investigadores, docentes y profesionales interesados en comprender el estado del arte actual en relación con las VBC, además del alcance y las aplicaciones de estos trabajos sin necesidad de un análisis profundo. \\ \hline
+
+\end{tabular}
+\caption{Definición de preguntas de investigación del SMS}
+\end{table}
 
 \subsubsection{Definición de métricas}
 
-\input{tablas-images/cp2/definicionMetricas.tex}
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.5} % Espaciado entre filas
+\begin{tabular}{|c|p{11cm}|}
+\hline
+\textbf{Métrica} & \textbf{Descripción} \\ \hline
+M1 & Cantidad de trabajos identificados en cada dominio de TI. \\ \hline
+M2 & Cantidad de trabajos que están incluidos en educación. \\ \hline
+M3 & Cantidad de trabajos que están incluidos en investigación. \\ \hline
+M4 & Cantidad de trabajos que están incluidos en extensión. \\ \hline
+\end{tabular}
+\caption{Definición de métricas del SMS}
+\end{table}
+
 
 \section{Búsqueda de estudios}
 
@@ -40,12 +80,10 @@ Esta etapa comprendió las siguientes secciones:
 Este trabajo combinó las estrategias de búsqueda en bases de datos y búsqueda en bola de nieve. 
 Para la estrategia de búsqueda en bases de datos, se seleccionaron las siguientes bases de datos: ACM, IEEE Xplore, Springer, Taylor \& Francis y Science Direct.
 
-\subsection*{2.2 Búsqueda en bases de datos}
-\addcontentsline{toc}{subsection}{Búsqueda en bases de datos}\label{subsec:busquedaBasesDatos}
+\subsection{Búsqueda en bases de datos}\label{subsec:busquedaBasesDatos}
 Se seleccionaron las siguientes bases de datos para este propósito: ACM, IEEE Xplore, Springer, Taylor \& Francis y Science Direct.
 
-\subsubsection*{2.2.1 Identificación de estudios mediante búsqueda en bases de datos}
-\addcontentsline{toc}{subsubsection}{Identificación de estudios mediante búsqueda en bases de datos}\label{subsubsec:identificacionEstudios}
+\subsubsection{Identificación de estudios mediante búsqueda en bases de datos}\label{subsubsec:identificacionEstudios}
 En esta etapa del proceso fue necesario establecer las palabras clave que serían útiles en las cadenas de búsqueda para cada una de las bases de datos seleccionadas. 
 Los términos consideran los elementos identificados en la etapa de planificación, para lo cual también se utilizó el modelo PICOC como guía metodológica.
 
@@ -54,8 +92,7 @@ Los términos consideran los elementos identificados en la etapa de planificaci�
 \input{tablas-images/cp2/keywords.tex}
 \input{tablas-images/cp2/criterios.tex}
 
-\subsubsection*{2.2.1.1 Búsqueda en bases de datos}
-\addcontentsline{toc}{paragraph}{2.2.1.1 Búsqueda en bases de datos}\label{par:busquedaBasesDatos}
+\subsubsection{Búsqueda en bases de datos}\label{par:busquedaBasesDatos}
 
 \begin{tcolorbox}[
   colback=gray!5, 
@@ -400,32 +437,27 @@ AND
 \end{verbatim}
 \end{tcolorbox}
 
-\subsubsection*{2.2.2 Resumen de la búsqueda en bases de datos sin criterios de inclusión/exclusión}
-\addcontentsline{toc}{subsubsection}{Resumen de la búsqueda en bases de datos sin criterios de inclusión/exclusión}\label{subsubsec:resumenBusqueda}
+\subsubsection{Resumen de la búsqueda en bases de datos sin criterios de inclusión/exclusión}\label{subsubsec:resumenBusqueda}
 Este es el resultado antes de aplicar criterios de exclusión
 
 \input{tablas-images/cp2/resumen-sin-criterios.tex}
 \input{tablas-images/cp2/bases-sin-criterio.tex}
 
-\subsubsection*{2.2.3	Aplicación de criterios de exclusión de las bases de datos}
+\subsubsection{Aplicación de criterios de exclusión de las bases de datos}
 Esta búsqueda se realizó considerando los criterios de exclusión e inclusión definidos previamente.
 
 Las cadena de búsqueda son exactamente iguales que antes, este punto se diferencia por la aplicación de 
 filtros. Para ver las capturas de pantalla veáse el apéndice B sección 2.
 
-\subsection*{2.3 Resumen de la búsqueda en bases de datos con criterios de inclusión/exclusión}
-\addcontentsline{toc}{subsection}{Resumen de la búsqueda en bases de datos con
-    criterios de inclusión/exclusión}\label{subsec:resumenBusquedaCriterios}
+\subsection{Resumen de la búsqueda en bases de datos con criterios de inclusión/exclusión}\label{subsec:resumenBusquedaCriterios}
 
 \input{tablas-images/cp2/resumen-con-criterios.tex}
 \input{tablas-images/cp2/bases-con-criterio.tex}
 
-\section*{3 Eliminación de duplicados}
-\addcontentsline{toc}{section}{Eliminación de duplicados}\label{sec:eliminacionDuplicados}
+\section{Eliminación de duplicados}\label{sec:eliminacionDuplicados}
 La eliminación de duplicados se realizó haciendo uso de la herramienta de gestión de referencias Mendeley. Luego de obtener los artículos se agregaron a Mendeley y esta herramienta se encargó de eliminar duplicados. En este punto se eliminaron 274 artículos duplicados.
 
-\section*{4 Priorización de estudios}
-\addcontentsline{toc}{section}{Priorización de estudios}\label{sec:priorizacionEstudios}
+\section{Priorización de estudios}\label{sec:priorizacionEstudios}
 
 Luego de la selección inicial de los artículos, se procedió a revisar el \textit{title}, \textit{abstract} y \textit{keywords} de cada uno. Como resultado de esta revisión, se generaron métricas de calidad para cada artículo, con el fin de priorizar aquellos más relevantes para la investigación. Las métricas utilizadas fueron las siguientes:
 
@@ -437,8 +469,7 @@ Luego de la selección inicial de los artículos, se procedió a revisar el \tex
 
 Este proceso inició con un total de 771 artículos, los cuales fueron evaluados según su alineamiento con los objetivos de la investigación. La evaluación temática permitió identificar un total de 110 artículos con una relación directa con el enfoque planteado.
 
-\section*{5 Estrategia de búsqueda usando bola de nieve}
-\addcontentsline{toc}{section}{Estrategia de búsqueda usando bola de nieve}\label{sec:bolaDeNieve}
+\section{Estrategia de búsqueda usando bola de nieve}\label{sec:bolaDeNieve}
 
 En esta etapa, se seleccionó el primer cuartil según el índice \textbf{IRRQ}, lo que resultó en un total de 24 artículos. Adicionalmente, se incluyeron dos artículos por criterio de inclusión directa, estableciendo así una línea base de \textbf{26 artículos}. 
 
@@ -448,8 +479,7 @@ Esto definió un nuevo conjunto de artículos para un proceso de selección adic
 
 Finalmente, se obtuvo un total de \textbf{116 artículos} mediante esta estrategia de búsqueda ampliada.
 
-\section*{6 Diagrama de búsqueda}
-\addcontentsline{toc}{section}{Diagrama de búsqueda}\label{sec:diagramaBusqueda}
+\section{Diagrama de búsqueda}\label{sec:diagramaBusqueda}
 
 \subsection{Usando cadenas de búsqueda}
 \input{tablas-images/cp2/diagrama-cadena-busqueda.tex}
