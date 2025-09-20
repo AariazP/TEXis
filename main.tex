@@ -43,7 +43,6 @@
 }
 
 
-
 % Marcador para la sección de Siglas
 \newcommand{\siglaref}{\hyperref[cap:siglas]{\nameref{cap:siglas}}}
 
@@ -65,6 +64,7 @@
 \newcommand{\IEC}{\hyperref[cap:siglas]{IEC}\xspace}
 \newcommand{\CS}{\hyperref[cap:siglas]{CS}\xspace}
 
+
 % Comando para capítulos SIN numeración de página (páginas especiales)
 \newcommand{\ChapterImageEmpty}[3][]{%
   \cleardoublepage
@@ -84,7 +84,7 @@
         rounded corners=6pt,
         inner xsep=10pt, inner ysep=6pt
       ] at (current page.north west)
-        {\Huge\bfseries \thechapter\quad #2\strut};
+        {\Large\bfseries \thechapter\quad #2\strut};
     \end{tikzpicture}
   }%
 }
@@ -107,7 +107,7 @@
         rounded corners=6pt,
         inner xsep=10pt, inner ysep=6pt
       ] at (current page.north west)
-        {\Huge\bfseries \thechapter\quad #2\strut};
+        {\Large\bfseries \thechapter\quad #2\strut};
     \end{tikzpicture}
   }%
 }
