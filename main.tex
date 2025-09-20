@@ -19,9 +19,30 @@
 % Configuración de encabezados y pies de página
 \pagestyle{fancy}
 \fancyhf{} % Limpia todos los encabezados y pies
-\fancyfoot[R]{\thepage} % Número de página abajo a la derecha
 \renewcommand{\headrulewidth}{0pt} % Sin línea en el encabezado
 \renewcommand{\footrulewidth}{0pt} % Sin línea en el pie
+
+% Configuración del banner inferior desde la página 1
+% Ajustes de posición en puntos (1pt ≈ 1 pixel a 72 DPI)
+\newcommand{\bannerHeight}{68.16pt} % 2.4cm = 68.16pt
+\newcommand{\bannerXOffset}{0pt} % Desplazamiento horizontal del banner
+\newcommand{\bannerYOffset}{0pt} % Desplazamiento vertical del banner
+\newcommand{\pageNumXOffset}{28.35pt} % 1cm = 28.35pt - posición X del número
+\newcommand{\pageNumYOffset}{35.05pt} % 3cm = 85.05pt - posición Y del número
+
+\fancyfoot[C]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Banner que ocupa todo el ancho de la página
+    \node[anchor=south, inner sep=0pt] at ([xshift=\bannerXOffset, yshift=\bannerYOffset]current page.south) {%
+      \includegraphics[width=\paperwidth, height=\bannerHeight]{./images/banner-inferior.png}%
+    };
+    % Número de página sobre la imagen en la esquina inferior izquierda
+    \node[anchor=south west, text=black, font=\bfseries] 
+      at ([xshift=\pageNumXOffset, yshift=\pageNumYOffset]current page.south west) {\thepage};
+  \end{tikzpicture}%
+}
+
+
 
 % Marcador para la sección de Siglas
 \newcommand{\siglaref}{\hyperref[cap:siglas]{\nameref{cap:siglas}}}
@@ -46,9 +67,10 @@
 
 % Comando para capítulos SIN numeración de página (páginas especiales)
 \newcommand{\ChapterImageEmpty}[3][]{%
-  \cleardoublepage\thispagestyle{empty}%
+  \cleardoublepage
+  \thispagestyle{fancy}%
   \refstepcounter{chapter}%
-  \begingroup
+  \AddToShipoutPictureBG*{%
     \begin{tikzpicture}[remember picture,overlay]
       % Imagen de fondo al ancho de la página
       \node[inner sep=0pt, anchor=north west] at (current page.north west)
@@ -64,14 +86,14 @@
       ] at (current page.north west)
         {\Huge\bfseries \thechapter\quad #2\strut};
     \end{tikzpicture}
-  \endgroup
+  }%
 }
 
 % Comando para capítulos CON numeración de página (capítulos normales)
 \newcommand{\ChapterImageStar}[3][]{%
   \cleardoublepage%
   \refstepcounter{chapter}%
-  \begingroup
+  \AddToShipoutPictureBG*{%
     \begin{tikzpicture}[remember picture,overlay]
       % Imagen de fondo al ancho de la página
       \node[inner sep=0pt, anchor=north west] at (current page.north west)
@@ -87,7 +109,7 @@
       ] at (current page.north west)
         {\Huge\bfseries \thechapter\quad #2\strut};
     \end{tikzpicture}
-  \endgroup
+  }%
 }
 
 \newcommand\BackgroundPic{%
