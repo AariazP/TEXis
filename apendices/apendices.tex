@@ -906,3 +906,15 @@ En esta sección se presenta el artículo de revista publicado en Journal of Inf
     \FloatBarrier\stepcounter{jisampage}
     \ifnum\value{jisampage}<35
 \repeat%
+
+\chapter{Capturas de pantalla de CEIFI}
+
+\section{Slides de CEIFI}
+\foreach \n in {1,...,16} {
+    \begin{figure}[H]
+        \centering
+        \fbox{\includegraphics[width=0.9\textwidth]{apendices/CEIFI/\n.png}}
+        \caption{Slide \n de CEIFI}
+    \end{figure}
+    \clearpage
+}

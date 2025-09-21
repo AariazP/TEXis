@@ -8,9 +8,9 @@ se realizó una revisión del estado del arte. Esta revisión se completó en di
 \subsection{Planeación}
 
 Esta etapa consistió en establecer el propósito general que se buscaba alcanzar con el \SMS\ (\textit{Systematic Mapping Study}). 
-A su vez, definió aspectos como objetivos, preguntas de investigación y métricas. Para ello, se siguió el modelo 
+A su vez, definió aspectos como objetivos ver cuadro ~\ref{tab:metas}, preguntas de investigación ver cuadro~\ref{tab:preguntas} y métricas ver cuadro~\ref{tab:metricas}. Para ello, se siguió el modelo 
 Objetivo-Pregunta-Métrica (\textit{Goal-Question-Metric}, GQM). A continuación, se definen los objetivos del \SMS\ aplicado 
-a las tecnologías de virtualización basadas en contenedores.
+a las tecnologías de virtualización basadas en contenedores en el cuadro.
 
 \subsubsection{Definición de metas para el \SMS}
 
@@ -25,6 +25,7 @@ G1 & Identificar trabajos con \VBC\ en docencia, investigación y extensión. \\
 G2 & Clasificar trabajos con \VBC\ en dominios de \TI: desarrollo software, pensamiento computacional, computación paralela, análisis datos, IA, redes, infraestructura \TI, HPC, etc. \\ \hline
 \end{tabular}
 \caption{Definición de metas del SMS}
+\label{tab:metas}
 \end{table}
 
 \subsubsection{Definición de preguntas de investigación}
@@ -46,6 +47,7 @@ Proporcionar base sólida para comprender estado del arte de \VBC\ sin análisis
 
 \end{tabular}
 \caption{Definición de preguntas de investigación del SMS}
+\label{tab:preguntas}
 \end{table}
 
 \subsubsection{Definición de métricas}
@@ -63,6 +65,7 @@ M3 & Cantidad de trabajos incluidos en investigación. \\ \hline
 M4 & Cantidad de trabajos incluidos en extensión. \\ \hline
 \end{tabular}
 \caption{Definición de métricas del SMS}
+\label{tab:metricas}
 \end{table}
 
 \section{Búsqueda de estudios}
@@ -85,7 +88,7 @@ Se seleccionaron las siguientes bases de datos para este propósito: ACM, IEEE X
 
 \subsubsection{Identificación de estudios mediante búsqueda en bases de datos}\label{subsubsec:identificacionEstudios}
 En esta etapa del proceso fue necesario establecer las palabras clave que serían útiles en las cadenas de búsqueda para cada una de las bases de datos seleccionadas. 
-Los términos consideran los elementos identificados en la etapa de planificación, para lo cual también se utilizó el modelo PICOC como guía metodológica.
+Los términos consideran los elementos identificados en la etapa de planificación, para lo cual también se utilizó el modelo PICOC ( \textit{Population}, \textit{Intervention}, \textit{Comparator}, \textit{Outcome}, and \textit{Context} ) como guía metodológica.
 
 \begin{table}[H]
 \centering
@@ -217,9 +220,11 @@ Finalmente, se obtuvo un total de \textbf{116 artículos} mediante esta estrateg
 \section{Diagrama de búsqueda}\label{sec:diagramaBusqueda}
 
 \subsection{Usando cadenas de búsqueda}
-\input{tablas-images/cp2/diagrama-cadena-busqueda.tex}
+En el diagrama~\ref{tab:tabla-diagrama-cadena-busqueda} se puede apreciar la estrategia de búsqueda de artículos por medio de base de datos, aplicando las cadenas de búsqueda, se consolidaron los resultados de distintas bases de datos para obtener un total de 6530 resultados, posteriormente y aplicando criterios de exclusión se redujo esta cantidad a menos de 1000 resultados. Adicional a los criterios de exclusión, también se hizo eliminación de artículos duplicados, 205 por parte del ~\textit{Reference Manager} (Mendeley), y 69 por parte del ~\textit{SMS-Builder} para un total de 274 artículos removidos. Finalmente, se realiza la etapa de screening, donde se leen las secciones claves de los artículos, como ~\textit{abstract}, ~\textit{keywords} e introducción, a través de esto se pudo descargar 671 artículos que no eran pertinentes para el estudio.
+\input{tablas-images/cp2/diagrama-cadena-busqueda.tex}\label{img:busqueda-bd}
 
 \subsection{Usando bola de nieve}
+Como segunda estrategia de búsqueda dentro del SMS, se aplicó la técnica de ~\textit{Snowball}, la cual consiste en extraer artículos adicionales a partir de las referencias citadas en los estudios obtenidos en la estrategia anterior y de los estudios que citan a estos. De los 110 estudios del paso anterior, se seleccionan aquellos que tengan un SCI más relevante y se agrega uno por inclusión directa, con esto se obtiene un total de 25 artículos de línea base. Aplicando snowball hacia adelante (artículos referenciados) se obtienen 87 nuevos estudios, aplicando snowball hacia atrás (artículos que referencian el artículo base) se obtienen 495, para un total de 582. Finalmente, aplicando criterios de exclusión de remoción de duplicados y aplicando la técnica de screening, se obtiene un resultado de 116 artículos incluidos por bola de nieve. Todo este proceso se puede apreciar en la gráfica~\ref{tab:tabla-diagrama-bola-nieve-busqueda}.
 \input{tablas-images/cp2/diagrama-bola-nieve-busqueda.tex}
 
 \section{Identificación de estudios}
