@@ -100,10 +100,35 @@
   }%
 }
 
+% Comando para secciones preliminares (sin numeración pero en índice)
+\newcommand{\ChapterImagePrelim}[3][]{%
+  \cleardoublepage%
+  \phantomsection%
+  \addcontentsline{toc}{chapter}{#2}%
+  \AddToShipoutPictureBG*{%
+    \begin{tikzpicture}[remember picture,overlay]
+      % Imagen de fondo al ancho de la página
+      \node[inner sep=0pt, anchor=north west] at (current page.north west)
+        {\includegraphics[width=\paperwidth]{#3}};
+      % Caja blanca que se adapta al ancho del texto
+      \node[
+        anchor=north west,
+        xshift=1.5cm, yshift=-1.0cm,
+        text=black,
+        fill=white, fill opacity=0.8,
+        rounded corners=6pt,
+        inner xsep=10pt, inner ysep=6pt
+      ] at (current page.north west)
+        {\Large\bfseries #2\strut};
+    \end{tikzpicture}
+  }%
+}
+
 % Comando para capítulos CON numeración de página (capítulos normales)
 \newcommand{\ChapterImageStar}[3][]{%
   \cleardoublepage%
   \refstepcounter{chapter}%
+  \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}#2}%
   \AddToShipoutPictureBG*{%
     \begin{tikzpicture}[remember picture,overlay]
       % Imagen de fondo al ancho de la página
@@ -175,6 +200,9 @@
 \input{capitulos/listaFiguras.tex}
 \input{capitulos/listaTablas.tex}
 
+% Reiniciar numeración de capítulos para el contenido principal
+\setcounter{chapter}{0}
+\renewcommand{\thechapter}{\arabic{chapter}}
 \input{capitulos/introduccion.tex}
 \input{capitulos/glosario.tex} 
 \input{capitulos/siglas.tex}
