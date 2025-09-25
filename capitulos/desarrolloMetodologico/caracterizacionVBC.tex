@@ -89,18 +89,21 @@ En el cuadro~\ref{tab:integracion-cloud-vbc} se describe la integración a las d
 
 \clearpage
 \section{Cuadrante Gartner}
-Para visualizar el panorama de las tecnologias de contenerización en cuanto a su relevancia en la industria, se aplicó un cuadrante gartner, el cual mide dos dimensiones, Visión y Ejecución, es decir que tan buena proyeccion puede tener la tecnologia en el futuro y que tan bien se desempeña actualmente en el corto plazo.
-
+\noindent
+La tabla~\ref{tab:cuadrante-gartner} sintetiza la clasificación de tecnologías de \VBC\ en un cuadrante de Gartner adaptado, considerando los ejes de visión (X) y capacidad de ejecución (Y). Esta representación permite identificar el posicionamiento relativo de cada tecnología en el mercado, agrupándolas en cuatro cuadrantes estratégicos: líderes, retadores, visionarios y jugadores de nicho. Con ello se facilita el análisis comparativo entre soluciones consolidadas, alternativas emergentes con alto potencial, y herramientas especializadas con menor alcance, aportando una perspectiva integral para la toma de decisiones en proyectos de investigación y aplicaciones prácticas.
+Los calculos tanto de visión como de ejecución se realizaron a partir de las métricas obtenidas en el análisis \DAR\ realizado. Se tuvieron en cuenta las características inherentes a cada tecnología, como su madurez, adopción en la industria, innovación, soporte comunitario y facilidad de integración, posteriormente se realizó un promedio ponderado de cada una de estas características para obtener un valor numérico que representara la visión y la ejecución de cada tecnología. Este promedio también se aproximó al entero superior más cercano para facilitar la interpretación en el cuadrante.
 \input{tablas-images/cp3/medicion-gartner.tex}
-
-Una vez hecha la tabla anterior, se pueden resumir los resultados en el diagrama~\ref{fig:tabla-cuadrante-gartner}, que representa el cuadrante Gartner. Se pueden ver 4 grandes grupos de tecnologías dependiendo de su nivel de visión y ejecución: Líderes, Retadores, Visionarios, Jugadores de nicho.
+\noindent
+A partir de estas valoraciones se definieron los cuadrantes, estableciendo umbrales numéricos en cada eje para su clasificación. De este modo, se consideran Líderes aquellas tecnologías con Visión $\geq$ 7 y Ejecución $\geq$ 7, caracterizadas por estar consolidadas, combinar madurez técnica con una fuerte proyección estratégica, como es el caso de Docker y Containerd. Los Retadores corresponden a soluciones con Visión $<$ 7 y Ejecución $\geq$ 7, es decir, tecnologías robustas y estables en su uso, pero con menor capacidad de innovación o proyección a futuro, como Podman y CRI-O. En el cuadrante de Visionarios se ubican aquellas con Visión $\geq$ 7 y Ejecución $<$ 7, las cuales presentan un gran potencial disruptivo, aunque aún con limitaciones de adopción masiva o falta de consolidación, como Wasm, gVisor o Firecracker. Finalmente, los Jugadores de Nicho, definidos por Visión $<$ 7 y Ejecución $<$ 7, incluyen tecnologías con baja adopción, soporte reducido o enfoques muy específicos que restringen su aplicabilidad general, como LXC, Udocker y OpenVZ.
 \input{tablas-images/cp3/cuadrante-gartner.tex}
 
 \section{Entornos de ejecución}
-En la tabla~\ref{tab:entornos-ejecucion-vbc} se puede ver los sistemas operativos en los que se ejecutan estas tecnologias, se puede ver que la mayoria de estas estan diseñadas para sistemas linux, seguido de sistemas windows y por ultimo sistemas macOS, en cuyo caso las 2 unicas tecnologias que soportan este SO son ~\textit{Docker} y ~\textit{Podman}.
+\noindent
+A continuación, en la tabla~\ref{tab:entornos-ejecucion-vbc} se describen los ambientes de ejecución de diversas tecnologías de \VBC, resaltando los sistemas operativos compatibles y los contextos de uso más comunes. Este análisis evidencia la versatilidad de las herramientas, que abarcan desde entornos de desarrollo y producción en sistemas tradicionales (Linux, Windows y macOS), hasta aplicaciones en computación de alto rendimiento (\HPC), plataformas en la nube y navegadores web. Asimismo, se observa la coexistencia de soluciones ampliamente adoptadas, como Docker o Containerd, junto con propuestas especializadas en seguridad, portabilidad o rendimiento, lo que permite identificar sus ventajas diferenciales en función de los requerimientos técnicos y organizacionales.
 \input{tablas-images/cp3/entorno-ejecucion.tex}
 
 \section{Evaluación DOFA}
-En el cuadro~\ref{tab:matriz-dofa} se define una matriz DOFA, especificando las debilidades, oportunidades, fortalezas y amenazas de las tecnologías VBC. Esto permite tener varios aspectos en cuenta a la hora de seleccionar una tecnología o realizar una implementación.
+\noindent
+En el cuadro~\ref{tab:matriz-dofa} se define una matriz DOFA, especificando las debilidades, oportunidades, fortalezas y amenazas de las tecnologías \VBC. Esto permite tener varios aspectos en cuenta a la hora de seleccionar una tecnología o realizar una implementación.
 \input{tablas-images/cp3/matriz-dofa.tex}
 \input{tablas-images/cp3/documentacion.tex}
