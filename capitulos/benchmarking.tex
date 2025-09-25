@@ -38,16 +38,16 @@ De la ejecución de las pruebas se obtuvieron las siguientes métricas de rendim
 
 \section{Análisis de los resultados}
 
-Los resultados obtenidos a partir de las pruebas permiten identificar comportamientos diferenciados entre las tecnologías de contenerización evaluadas. \textbf{Containerd} se posiciona como una de las soluciones más equilibradas, con excelente tiempo de arranque, bajo uso de CPU y buena latencia de disco, lo que lo hace ideal para entornos donde la eficiencia es prioritaria.
+Los resultados obtenidos a partir de las pruebas permiten identificar comportamientos diferenciados entre las tecnologías de contenerización evaluadas. Containerd se posiciona como una de las soluciones más equilibradas, con excelente tiempo de arranque, bajo uso de CPU y buena latencia de disco, lo que lo hace ideal para entornos de bajos recursos
 
-\textbf{LXC} mostró consistentemente el menor consumo de recursos y alto rendimiento en red, lo que lo convierte en una opción sólida para sistemas embebidos o despliegues que requieren un uso mínimo de \textit{overhead}. 
+LXC mostró consistentemente el menor consumo de recursos y alto rendimiento en red, lo que lo convierte en una opción sólida para sistemas embebidos o despliegues que requieren un uso mínimo de \textit{overhead}. 
 
-Por otro lado, \textbf{Docker} ofreció un rendimiento aceptable, pero con mayores niveles de consumo de CPU y latencia de disco, compensados por su madurez y ecosistema. 
+Por otro lado, Docker ofreció un rendimiento aceptable, pero con mayores niveles de consumo de CPU y latencia de disco, compensados por su madurez y ecosistema. 
 
-\textbf{LXD}, al estar basado en LXC, heredó parte de sus beneficios, especialmente en uso de red, aunque con un ligero incremento en el tiempo de arranque. 
+LXD, al estar basado en LXC, heredó parte de sus beneficios, especialmente en uso de red, aunque con un ligero incremento en el tiempo de arranque. 
 
-En contraste, \textbf{Podman}, si bien eficiente en uso de CPU y memoria, presentó resultados considerablemente bajos en el \textit{throughput} de red y alta latencia de disco, lo cual podría limitar su aplicación en cargas sensibles a E/S o comunicación intensiva.
+En contraste, Podman, si bien ofrece un buen uso de CPU y memoria, presentó resultados considerablemente bajos en el \textit{throughput} de red y alta latencia de disco, lo cual podría limitar su aplicación en cargas sensibles a E/S o comunicación intensiva.
 
 \vspace{0.5em}
 
-\noindent En resumen, la elección de la tecnología de contenerización debe considerar el caso de uso específico: \textbf{Containerd} y \textbf{LXC} sobresalen en eficiencia general; \textbf{Docker} y \textbf{LXD} ofrecen robustez y facilidad de integración; mientras que \textbf{Podman} puede ser más adecuado para entornos que prioricen la seguridad y compatibilidad con el modelo sin \textit{daemon}, siempre que el rendimiento de red o disco no sea crítico.
+\noindent En resumen, la elección de la tecnología de contenerización debe considerar el caso de uso específico: Containerd y LXC sobresalen por su bajo consumo de recursos; Docker y LXD ofrecen robustez y facilidad de integración; mientras que Podman puede ser más adecuado para entornos que prioricen la seguridad y compatibilidad con el modelo sin \textit{daemon}, siempre que el rendimiento de red o disco no sea crítico.
