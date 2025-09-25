@@ -2,38 +2,42 @@
 
 \mbox{}\\
 \section{Definición de las pruebas}
-
+\noindent
 Para evaluar el rendimiento de distintas tecnologías de contenerización —específicamente Docker, Podman, LXC, LXD y Containerd— se diseñó un conjunto de pruebas orientadas a medir aspectos clave del desempeño en entornos controlados. Las pruebas incluyeron el consumo de CPU y memoria RAM, el tiempo de arranque de los contenedores, el \textit{throughput} de red y la latencia de acceso a disco. 
-
 Con el objetivo de facilitar la repetibilidad y objetividad de los resultados, se desarrollaron scripts en \textit{Bash} que automatizan la ejecución de cada métrica en condiciones homogéneas. Estas pruebas permiten comparar las tecnologías evaluadas bajo criterios cuantificables y facilitar un análisis técnico de sus capacidades en escenarios reales de uso.
 
 \section{Construcción de las pruebas}
-
+\noindent
 La construcción de las pruebas se llevó a cabo mediante el desarrollo de scripts automatizados en \textit{Bash}, diseñados para ejecutarse de forma uniforme sobre cada tecnología de contenerización evaluada. Cada script fue responsable de iniciar contenedores, ejecutar cargas de trabajo específicas y recolectar métricas de rendimiento relevantes.
-
 Para medir el consumo de CPU y memoria RAM, se utilizó \texttt{pidstat}, una utilidad que permite la medición del consumo de recursos. El tiempo de arranque se determinó midiendo el intervalo entre la orden de inicio del contenedor y el momento en que estuvo completamente operativo. 
-
 Para evaluar el \textit{throughput} de red se emplearon herramientas como \texttt{iperf}, mientras que la latencia de disco fue medida utilizando \texttt{fio}. Todas las pruebas fueron ejecutadas múltiples veces para reducir el impacto de variaciones puntuales y asegurar la confiabilidad de los resultados. Los scripts fueron programados para ejecutarse 10 veces; al final se extrae un promedio y este constituye el puntaje final de la tecnología de contenerización en cuestión.
-
 En el repositorio \underline{\href{https://github.com/Anubis-1001/benchmark-tecnologias-de-contenerizacion} {\texttt{ GitHub benchmarking}}} se pueden encontrar los scripts resultantes de este proceso.
 
 \section{Resultados de las pruebas}
-
+\noindent
 Los resultados obtenidos a partir de las pruebas evidencian diferencias significativas en el rendimiento entre las tecnologías de contenerización evaluadas. Estos se pueden consultar en el archivo de Excel \underline{\href{https://docs.google.com/spreadsheets/d/1Ce37Sm3Swyfa88Ur1yQbLarq_D86obUIAGGJocgQbUE/edit?usp=sharing} {\texttt{benchmarking\_tecnologias}}}.
-
 En términos de consumo de CPU, Docker y Containerd presentan las mejores métricas; en consumo de memoria RAM, LXC y LXD mostraron un mejor uso de los recursos. En cuanto al tiempo de arranque, Containerd destacó por su velocidad, seguido de cerca por Docker, mientras que LXC presentó un arranque considerablemente más lento en comparación con las demás tecnologías.
-
 Para el \textit{throughput} de red, todas las tecnologías mostraron un desempeño comparable, siendo LXC el más destacado; no obstante, Podman quedó muy por debajo en esta métrica. Finalmente, en la medición de latencia de disco, LXD y Containerd obtuvieron los mejores resultados, lo que sugiere una gestión de E/S más directa y liviana.
-
 Estos resultados permiten establecer un panorama claro de fortalezas y debilidades de cada solución, según el tipo de carga o entorno de ejecución esperado.
 
 \section{Métricas de rendimiento}
+\noindent
+De la ejecución de las pruebas se obtuvieron las siguientes métricas de rendimiento: \\
 
-De la ejecución de las pruebas se obtuvieron las siguientes métricas de rendimiento:
-
+\noindent
+La figura~\ref{fig:tabla-metricas-cpu} muestra una comparación del porcentaje de uso de CPU. Este análisis permite observar el nivel de utilización del procesador al ejecutar cargas de trabajo bajo entornos como Docker, Containerd, LXD, LXC y Podman. Los resultados tienen contrastes significativos entre las tecnologías, destacando aquellas que logran un mayor aprovechamiento del recurso de CPU frente a otras con un desempeño relativamente inferior.
 \input{tablas-images/cp4/cpu.tex}
+
+\noindent
+La figura~\ref{fig:tabla-metricas-ram} presenta una comparación del porcentaje de uso de memoria RAM para el conjunto de tecnologías seleccionado. Este análisis permite evaluar el consumo de recursos de cada solución, considerando que un menor uso de memoria representa una ventaja en términos de escalabilidad y rendimiento en entornos de alta demanda. Los resultados muestran valores muy cercanos entre las tecnologías evaluadas, lo que sugiere un comportamiento homogéneo en este aspecto, aunque con ligeras variaciones que pueden influir en la elección según el contexto de uso.
 \input{tablas-images/cp4/ram.tex}
+
+\noindent
+La figura~\ref{fig:tabla-metricas-io} muestra las métricas de latencia en operaciones de entrada/salida (E/S) para el conjunto de tecnologías seleccionado, expresadas en microsegundos. Este indicador es fundamental para evaluar el rendimiento de aplicaciones que dependen de un acceso rápido a datos y procesos intensivos en E/S. Los resultados reflejan diferencias significativas entre las tecnologías, evidenciando desde valores muy bajos, como en LXD, hasta tiempos de respuesta considerablemente altos, como en Podman. Este contraste permite identificar cuáles soluciones resultan más adecuadas en escenarios donde el manejo de datos es un factor crítico.
 \input{tablas-images/cp4/io.tex}
+
+\noindent
+La figura~\ref{fig:tabla-metricas-throughput} presenta una comparación de las métricas de throughput (rendimiento de transferencia de datos) para el conjunto de tecnologías seleccionado, expresadas en Gbits por segundo. Este parámetro resulta clave para evaluar la capacidad de cada tecnología en la transmisión de información a través de la red, lo cual impacta directamente en el desempeño de aplicaciones distribuidas y servicios en la nube. Los resultados muestran un rendimiento consistente en tecnologías como LXC, LXD, Docker y Containerd, mientras que Podman evidencia un throughput significativamente más bajo, lo que resalta contrastes importantes en términos de consumo de red
 \input{tablas-images/cp4/throughtput.tex}
 
 \section{Análisis de los resultados}
