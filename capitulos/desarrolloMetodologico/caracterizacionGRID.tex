@@ -144,18 +144,14 @@ Los servicios esperados por el GRID se orientan al aprovisionamiento de contened
 \section{Descripción de la oportunidad}
 
 Actualmente el Grupo de Investigación en Redes, Información y Distribución (\GRID) presenta diversas necesidades y oportunidades con relación a los servicios tecnológicos que ofrece a la Universidad del Quindío, en apoyo a sus objetivos misionales de docencia, investigación y extensión.
-
 En este contexto, el \GRID\ busca identificar tecnologías emergentes que permitan potenciar su capacidad de brindar servicios tecnológicos avanzados, tanto para su propio beneficio como para la comunidad académica dentro de su ámbito de influencia.
-
-Con relación a lo anterior, las \textbf{tecnologías de virtualización basadas en procesos} se presentan como una alternativa para optimizar la gestión de recursos y servicios de tecnología informática (\TI). Aunque el \GRID\ cuenta con una infraestructura basada en máquinas virtuales, gestionadas mediante el hipervisor tipo I XCP-ng, además de iniciativas de computación \textit{Desktop Cloud}, aún requiere de instancias computacionales más livianas para ampliar su oferta de servicios computacionales dirigidos a la comunidad académica, especialmente a los estudiantes del programa de Ingeniería de Sistemas y Computación de la Universidad del Quindío.
-
-Como mencionan \textit{Sepúlveda et al.} (2022), las tecnologías de virtualización han proliferado en los últimos años y constituyen la base subyacente de infraestructuras modernas como el \textit{cloud computing}. A partir de esta proliferación, las tecnologías de \VBC\ se presentan como una alternativa que podría potenciar la gestión de los recursos relacionados con la infraestructura de \TI\ del \GRID.
-
+Con relación a lo anterior, las tecnologías de virtualización basadas en procesos se presentan como una alternativa para afinar la gestión de recursos y servicios de tecnología informática (\TI). Aunque el \GRID\ cuenta con una infraestructura basada en máquinas virtuales, gestionadas mediante el hipervisor tipo I XCP-ng, además de iniciativas de computación \textit{Desktop Cloud}, aún requiere de instancias computacionales más livianas para ampliar su oferta de servicios computacionales dirigidos a la comunidad académica, especialmente a los estudiantes del programa de Ingeniería de Sistemas y Computación de la Universidad del Quindío.
+Como mencionan~\citep{Sepulveda-Rodriguez2022}, las tecnologías de virtualización han proliferado en los últimos años y constituyen la base subyacente de infraestructuras modernas como el \textit{cloud computing}. A partir de esta proliferación, las tecnologías de \VBC\ se presentan como una alternativa que podría potenciar la gestión de los recursos relacionados con la infraestructura de \TI\ del \GRID.
 Las tecnologías de \VBC\ representan una opción de virtualización que requiere menos recursos computacionales para su operación \citep{Xavier2013}, y que, en conjunto con las máquinas virtuales ya existentes en el \GRID\, podrían constituir una oferta de servicios de \TI\ con mayor diversificación, escalabilidad, flexibilidad y mantenibilidad, para satisfacer los requerimientos del contexto académico del grupo de investigación.
 
 \section{Resumen de la entrevista con el cliente}
 
-Para comprender mejor las necesidades y expectativas del \GRID\, se realizó una entrevista con el cliente.
+Para comprender mejor las necesidades y expectativas del \GRID, se realizó una entrevista con uno de sus miembros.
 
 \begin{itemize}
   \item \textbf{Entrevistado:} Luis Eduardo Sepúlveda Rodríguez
@@ -172,7 +168,7 @@ En el minuto 1:01 se menciona que: el grupo de investigación no declara una mis
 En el minuto 1:10 se menciona que: Aunque su nombre podría llevar al sesgo de pensar que se dedica exclusivamente a la investigación, el \GRID se desarrolla en los tres pilares misionales: docencia, investigación y extensión. Participa en actividades académicas como la enseñanza en el programa de Ingeniería de Sistemas y Computación, desarrolla investigaciones mediante el método científico, y realiza actividades de proyección social y formación complementaria.
 
 \subsection{La virtualización basada en contenedores como una oportunidad}
-En el minuto 3:01 se menciona que: Las tecnologías de \VBC pueden aportar al cumplimiento de la misión institucional. Actualmente se utiliza Docker por ser un estándar de facto, no por una evaluación formal. Existen alternativas como Podman, ContainerD y LXC que también podrían apoyar los tres pilares institucionales.
+En el minuto 3:01 se menciona que: Las tecnologías de \VBC\ pueden aportar al cumplimiento de la misión institucional. Actualmente se utiliza Docker por ser un estándar \textit{de facto}, no por una evaluación formal. Existen alternativas como Podman, ContainerD y LXC que también podrían apoyar los tres pilares institucionales.
 
 \subsection{El problema de la multitud de herramientas}
 En el minuto 3:44 se menciona que: Existen muchas herramientas que podrían cumplir los objetivos institucionales. Escoger una tecnología adecuada no es trivial y requiere comprender el contexto organizacional. Por eso, este proyecto busca ofrecer una solución arquitectónica basada en \VBC\, que sirva a estudiantes y docentes para comprender el estado y las tendencias de estas tecnologías.
@@ -186,7 +182,7 @@ En el minuto 7:08 se menciona que: El \GRID\ cuenta con infraestructura de \TI\,
 \subsection{Impacto del proyecto en los campos de estudio del \GRID}
 En el minuto 14:50 se menciona que: Los pilares misionales abarcan muchas actividades. El \GRID se enfoca en áreas como desarrollo de software, pensamiento computacional, computación paralela, análisis de datos, inteligencia artificial, redes, infraestructura de \TI, y HPC.\@Este proyecto busca fortalecer esas áreas mediante el uso de tecnologías \VBC.\@
 
-\subsection{Necesidad de orquestación entre máquinas virtuales y contenedores}
+\subsection{compatibilidad entre máquinas virtuales y contenedores}
 Fuera del audio se menciona que: Actualmente los servicios se ejecutan sobre máquinas virtuales con XCP-ng. Se considera deseable —aunque no obligatorio— que la solución propuesta permita integrar contenedores con máquinas virtuales completas mediante un clúster, para maximizar el aprovechamiento de la infraestructura existente.
 
 \bigskip\noindent \textit{Nota:} Este documento es solo un resumen de la entrevista. El audio incluye una explicación adicional del mapeo SMS que no se encuentra transcrita aquí.

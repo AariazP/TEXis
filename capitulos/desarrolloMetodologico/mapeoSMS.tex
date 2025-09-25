@@ -9,7 +9,7 @@ se realizó una revisión del estado del arte. Esta revisión se completó en di
 \subsection{Planeación}
 
 Esta etapa consistió en establecer el propósito general que se buscaba alcanzar con el \SMS\ (\textit{Systematic Mapping Study}). 
-A su vez, definió aspectos como objetivos ver cuadro ~\ref{tab:metas}, preguntas de investigación ver cuadro~\ref{tab:preguntas} y métricas ver cuadro~\ref{tab:metricas}. Para ello, se siguió el modelo 
+A su vez, definió aspectos como objetivos, preguntas de investigación y métricas ver cuadros~\ref{tab:metricas},~\ref{tab:metas} y~\ref{tab:preguntas} respectivamente. Para ello, se siguió el modelo 
 Objetivo-Pregunta-Métrica (\textit{Goal-Question-Metric}, GQM). A continuación, se definen los objetivos del \SMS\ aplicado 
 a las tecnologías de virtualización basadas en contenedores en el cuadro.
 
@@ -22,8 +22,8 @@ a las tecnologías de virtualización basadas en contenedores en el cuadro.
 \begin{tabular}{|c|p{13cm}|}  % Columna más ancha (12cm)
 \hline
 \textbf{Meta} & \textbf{Descripción} \\ \hline
-G1 & Identificar trabajos con \VBC\ en docencia, investigación y extensión. \\ \hline
-G2 & Clasificar trabajos con \VBC\ en dominios de \TI: desarrollo software, pensamiento computacional, computación paralela, análisis datos, IA, redes, infraestructura \TI, HPC, etc. \\ \hline
+G1 & Identificar trabajos relacionados de \VBC\ en docencia, investigación y extensión. \\ \hline
+G2 & Clasificar trabajos relacionados de \VBC\ en dominios de \TI: desarrollo software, pensamiento computacional, computación paralela, análisis datos, IA, redes, infraestructura \TI, HPC, etc. \\ \hline
 \end{tabular}
 \caption{Definición de metas del SMS}
 \label{tab:metas}
@@ -37,15 +37,13 @@ G2 & Clasificar trabajos con \VBC\ en dominios de \TI: desarrollo software, pens
 \begin{tabular}{|c|c|p{6cm}|p{6cm}|} % Columnas más estrechas
 \hline
 \textbf{Meta} & \textbf{Pregunta} & \textbf{Descripción} & \textbf{Motivación} \\ \hline
-
 G1 & Q1 &
-\textit{¿Cuáles trabajos con \VBC\ impactan positivamente en docencia, investigación y extensión?} &
-\VBC\ ofrece transversalidad y reproducibilidad, facilitando transporte de soluciones TI entre dominios. \\ \hline
+\textit{¿Cuáles trabajos de \VBC\ impactan positivamente en docencia, investigación y extensión?} &
+La \VBC\ ofrece transversalidad y reproducibilidad, facilitando transporte de soluciones TI entre dominios. \\ \hline
 
 G2 & Q2 &
-\textit{¿Cuáles trabajos con \VBC\ contribuyen en dominios de \TI?} &
-Proporcionar base sólida para comprender estado del arte de \VBC\ sin análisis profundo. \\ \hline
-
+\textit{¿Cuáles trabajos de \VBC\ contribuyen en dominios de \TI?} &
+Proporcionar base sólida para comprender estado del arte de la \VBC\ sin análisis profundo. \\ \hline
 \end{tabular}
 \caption{Definición de preguntas de investigación del SMS}
 \label{tab:preguntas}
@@ -69,27 +67,31 @@ M4 & Cantidad de trabajos incluidos en extensión. \\ \hline
 \label{tab:metricas}
 \end{table}
 
+
+
 \section{Búsqueda de estudios}
 
+% Asegúrate de tener cargado el paquete enumitem en el preámbulo:
+% \usepackage{enumitem}
+
 Esta etapa comprendió las siguientes secciones: 
-\begin{enumerate}
-  \item Estrategia de búsqueda, ya sea independiente o combinada;
-  \item Identificación general de estudios;
-  \item Revisión de estudios; y finalmente,
+\begin{enumerate}[noitemsep, topsep=0pt, partopsep=0pt]
+  \item Estrategia de búsqueda, ya sea independiente o combinada.
+  \item Identificación general de estudios.
+  \item Revisión de estudios.
   \item Selección de estudios para incluir en el SMS.\@
 \end{enumerate}
 
 \subsection{Estrategia de búsqueda}
 
 Este trabajo combinó las estrategias de búsqueda en bases de datos y búsqueda en bola de nieve. 
-Para la estrategia de búsqueda en bases de datos, se seleccionaron las siguientes bases de datos: ACM, IEEE Xplore, Springer, Taylor \& Francis y Science Direct.
 
 \subsection{Búsqueda en bases de datos}\label{subsec:busquedaBasesDatos}
 Se seleccionaron las siguientes bases de datos para este propósito: ACM, IEEE Xplore, Springer, Taylor \& Francis y Science Direct.
 
 \subsubsection{Identificación de estudios mediante búsqueda en bases de datos}\label{subsubsec:identificacionEstudios}
 En esta etapa del proceso fue necesario establecer las palabras clave que serían útiles en las cadenas de búsqueda para cada una de las bases de datos seleccionadas. 
-Los términos consideran los elementos identificados en la etapa de planificación, para lo cual también se utilizó el modelo PICOC ( \textit{Population}, \textit{Intervention}, \textit{Comparator}, \textit{Outcome}, and \textit{Context} ) como guía metodológica.
+Los términos consideran los elementos identificados en la etapa de planificación, para lo cual también se utilizó el modelo PICOC ( \textit{Population}, \textit{Intervention}, \textit{Comparator}, \textit{Outcome}, and \textit{Context} ) como guía metodológica. El modelo PICOC se describe en el cuadro~\ref{tab:picoc-model} y las palabras clave resultantes del modelo se desarrollan en el cuadro~\ref{tab:keywords-picoc}.
 
 \begin{table}[H]
 \centering
@@ -109,7 +111,7 @@ Comparación &
 Salida & Estructura de clasificación de trabajos \VBC\ que impactan en docencia, investigación y extensión. \\ \hline
 Contexto & Docencia, investigación y extensión con apropiación de \VBC\ en \TI. \\ \hline
 \end{tabularx}
-\caption{Modelo PICOC}
+\caption{Modelo PICOC}\label{tab:picoc-model}
 \end{table}
 
 \begin{table}[H]
@@ -121,13 +123,14 @@ Contexto & Docencia, investigación y extensión con apropiación de \VBC\ en \T
 \hline
 \textbf{Población} & \textbf{Intervención} & \textbf{Comparación} & \textbf{Salida} & \textbf{Contexto} \\
 \hline
-VBC \newline Dominios de \TI Educación Investigación Extensión & Identificación \newline Clasificación & Tasa de éxito \newline Evidencia de uso & Clasificación de trabajos \newline relacionados con VBC en cada dominio de \TI & Docencia Investigación Extensión \\
+\VBC\ \newline Dominios de \TI\ Educación Investigación Extensión & Identificación \newline Clasificación & Tasa de éxito \newline Evidencia de uso & Clasificación de trabajos \newline relacionados con \VBC\ en cada dominio de \TI\ & Docencia Investigación Extensión \\
 \hline
 \end{tabular}
 \caption{Palabras clave identificadas usando el modelo PICOC}
-\label{tab:picoc}
+\label{tab:keywords-picoc}
 \end{table}
 
+Las palabras clave identificadas en el cuadro~\ref{tab:keywords-picoc} se complementaron con sinónimos y términos relacionados, los cuales se presentan en el cuadro~\ref{tab:keywords}. Estas keywords se utilizaron para construir las cadenas de búsqueda en cada base de datos.
 \begin{table}[H]
 \centering
 \scriptsize
@@ -149,6 +152,7 @@ Outreach & \IT\ Services, Technology Infrastructure, Cloud Computing \\
 \label{tab:keywords}
 \end{table}
 
+Con el objetivo de filtrar los resultados y enfocarse en estudios relevantes, se definieron criterios de inclusión y exclusión, los cuales se presentan en el cuadro~\ref{tab:criterios-inclusion-exclusion}. Estos criterios ayudaron a seleccionar artículos que se alinean con los objetivos del \SMS\ y a descartar aquellos que no aportan valor al análisis.
 \begin{table}[H]
 \centering
 \scriptsize
@@ -173,22 +177,19 @@ Idioma & Inglés & --- \\
 \end{table}
 
 \subsubsection{Búsqueda en bases de datos}\label{par:busquedaBasesDatos}
-Las cadenas de búsqueda se construyeron utilizando las palabras clave y sinónimos identificados en la tabla \ref{tab:keywords}.
-Las cadenas de búsqueda específicas para cada base de datos se encuentran en~\ref{sec:cadenas-busqueda}.
+Las cadenas de búsqueda específicas para cada base de datos se encuentran en la sección~\ref{sec:cadenas-busqueda} del apéndice.
 
-\subsubsection{Resumen de la búsqueda en bases de datos sin criterios de inclusión/exclusión}\label{subsubsec:resumenBusqueda}
-Este es el resultado antes de aplicar criterios de exclusión
+\subsubsection{Métricas de la búsqueda sin criterios de inclusión/exclusión}\label{subsubsec:resumenBusqueda}
+La Tabla~\ref{tab:bases-sin-criterio} presenta el número de publicaciones identificadas en las principales bases de datos consultadas durante la revisión inicial de literatura, antes de aplicar los criterios de inclusión y exclusión. En total se recuperaron 6.530 registros, distribuidos de la siguiente manera: ACM (189), IEEE (426), Springer (4.562), Science Direct (353) y Taylor \& Francis (1.000). Estos resultados se evidencian en el apéndice~\ref{sec:busqueda-sin-criterios}.
+La Tabla~\ref{tab:bases-sin-criterio} muestra los resultados obtenidos tras aplicar los criterios de inclusión y exclusión previamente definidos. A diferencia de la búsqueda inicial, en esta fase se utilizaron filtros específicos que redujeron significativamente la cantidad de publicaciones relevantes. En total se identificaron 976 documentos, distribuidos en las bases de datos de la siguiente manera: ACM (48), IEEE (134), Springer (592), Science Direct (46) y Taylor & Francis (156).
 
 \input{tablas-images/cp2/resumen-sin-criterios.tex}
 \input{tablas-images/cp2/bases-sin-criterio.tex}
 
-\subsubsection{Aplicación de criterios de exclusión de las bases de datos}
-Esta búsqueda se realizó considerando los criterios de exclusión e inclusión definidos previamente.
+\subsubsection{Métricas de la búsqueda con criterios de inclusión/exclusión}\label{subsec:resumenBusquedaCriterios}
+Esta búsqueda se realizó considerando los criterios de exclusión e inclusión definidos previamente. Las cadena de búsqueda son exactamente iguales que antes, este punto se diferencia por la aplicación de filtros. Para ver las capturas de pantalla veáse el apéndice~\ref{sec:busqueda-con-criterios}.
 
-Las cadena de búsqueda son exactamente iguales que antes, este punto se diferencia por la aplicación de 
-filtros. Para ver las capturas de pantalla veáse el apéndice B sección 2.
 
-\subsection{Resumen de la búsqueda en bases de datos con criterios de inclusión/exclusión}\label{subsec:resumenBusquedaCriterios}
 
 \input{tablas-images/cp2/resumen-con-criterios.tex}
 \input{tablas-images/cp2/bases-con-criterio.tex}
