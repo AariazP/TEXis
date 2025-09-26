@@ -29,7 +29,7 @@ El diseño por capas constituye una aproximación metodológica que permite desc
 El diagrama de la capa de infraestructura, de la figura~\ref{fig:infraestructura}, representa la organización física y lógica de la solución tecnológica. La red de hipervisores, agrupada en racks, se conecta a un firewall Dell, encargado de la seguridad perimetral y la gestión de la \VPN. A partir de este punto, el switch root \GRID\ distribuye el tráfico de las diferentes salas de sistemas y a un firewall complementario Sonicwall, proporcionando segmentación y control. Finalmente, la interconexión con el switch core de la Universidad del Quindío, junto con el uso de \NAT\ y una dirección pública, permite el acceso a Internet, consolidando una infraestructura que combina virtualización, seguridad y conectividad institucional.
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{tablas-images/cp6/disenio-N1.png}
+    \includegraphics[scale=0.13]{tablas-images/cp6/disenio-N1.png}
     \caption{Capa de Infraestructura}\label{fig:infraestructura}
 \end{figure}
 
@@ -42,10 +42,23 @@ La infraestructura cuenta con dos servidores que proporcionan servicios crítico
 En cuanto al stack tecnológico, cada máquina virtual se sustenta sobre Debian 12 Bookworm como sistema operativo base, utiliza k3s como motor ligero de Kubernetes para la gestión de contenedores, y hace uso de containerd como runtime de ejecución. Este diseño permite un entorno escalable, ligero y automatizable, orientado a la administración de servicios en la nube privada.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{tablas-images/cp6/disenio-N2.png}
+    \includegraphics[width=\textwidth]{tablas-images/cp6/disenio-N2-A.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{tablas-images/cp6/disenio-N2-B.png}
     \caption{Capa de Virtualización}\label{fig:virtualizacion}
 \end{figure}
 
 \subsection{Capa de aplicación}
+\noindent
+El diagrama~\ref{fig:aplicacion} ilustra la capa de aplicación de la solución, estructurada sobre un cluster de Kubernetes. En este nivel, los estudiantes y/o investigadores formulan solicitudes de recursos en archivos \.yml, los cuales son procesados por el API Server del plano de control de Kubernetes. Dicho plano, compuesto por componentes como el \textit{Scheduler}, el \textit{Controller Manager} y la base de datos distribuida etcd, se encarga de orquestar y asignar los recursos solicitados.
+Los nodos de Kubernetes ejecutan las cargas de trabajo a través de pods, que son las unidades mínimas de despliegue. Cada nodo incorpora servicios locales como Kubelet (gestión de contenedores), cAdvisor (monitoreo de métricas) y Kubeproxy (gestión del enrutamiento y balanceo de red). La interconexión entre nodos se realiza mediante plugins de red (como Flannel o Wavenet), en pro de la comunicación entre pods distribuidos.
+Finalmente, los usuarios finales acceden a las aplicaciones desplegadas en los pods, obteniendo servicios y resultados de manera transparente, mientras que el \textit{cluster} gestiona escalabilidad, balanceo y automatización de recursos.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{tablas-images/cp6/disenio-N3.png}
+    \caption{Capa de Aplicación}\label{fig:aplicacion}
+\end{figure}
 
 \section{Código fuente del sistema}
