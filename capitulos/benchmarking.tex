@@ -9,7 +9,7 @@ Con el objetivo de facilitar la repetibilidad y objetividad de los resultados, s
 \section{Construcción de las pruebas}
 \noindent
 La construcción de las pruebas se llevó a cabo mediante el desarrollo de scripts automatizados en \textit{Bash}, diseñados para ejecutarse de forma uniforme sobre cada tecnología de contenerización evaluada. Cada script fue responsable de iniciar contenedores, ejecutar cargas de trabajo específicas y recolectar métricas de rendimiento relevantes.
-Para medir el consumo de CPU y memoria RAM, se utilizó \texttt{pidstat}, una utilidad que permite la medición del consumo de recursos. El tiempo de arranque se determinó midiendo el intervalo entre la orden de inicio del contenedor y el momento en que estuvo completamente operativo. 
+Para medir el consumo de \CPU\ y memoria \RAM, se utilizó \texttt{pidstat}, una utilidad que permite la medición del consumo de recursos. El tiempo de arranque se determinó midiendo el intervalo entre la orden de inicio del contenedor y el momento en que estuvo completamente operativo. 
 Para evaluar el \textit{throughput} de red se emplearon herramientas como \texttt{iperf}, mientras que la latencia de disco fue medida utilizando \texttt{fio}. Todas las pruebas fueron ejecutadas múltiples veces para reducir el impacto de variaciones puntuales y asegurar la confiabilidad de los resultados. Los scripts fueron programados para ejecutarse 10 veces; al final se extrae un promedio y este constituye el puntaje final de la tecnología de contenerización en cuestión.
 En el repositorio \underline{\href{https://github.com/Anubis-1001/benchmark-tecnologias-de-contenerizacion} {\texttt{ GitHub benchmarking}}} se pueden encontrar los scripts resultantes de este proceso.
 
@@ -43,7 +43,7 @@ La figura~\ref{fig:tabla-metricas-throughput} presenta una comparación de las m
 \section{Análisis de los resultados}
 \noindent
 Los resultados obtenidos a partir de las pruebas permiten identificar comportamientos diferenciados entre las tecnologías de contenerización evaluadas. Containerd se posiciona como una de las soluciones más equilibradas, con excelente tiempo de arranque, bajo uso de CPU y buena latencia de disco, lo que lo hace ideal para entornos de bajos recursos.
-LXC mostró consistentemente el menor consumo de recursos y alto rendimiento en red, lo que lo convierte en una opción sólida para sistemas embebidos o despliegues que requieren un uso mínimo de \textit{overhead}. 
+LXC mostró consistentemente el menor consumo de recursos y alto rendimiento en red, lo que lo convierte en una opción adecuada para sistemas embebidos o despliegues que requieren un uso mínimo de \textit{overhead}. 
 Por otro lado, Docker ofreció un rendimiento aceptable, pero con mayores niveles de consumo de CPU y latencia de disco, compensados por su madurez y ecosistema. 
 LXD, al estar basado en LXC, heredó parte de sus beneficios, especialmente en uso de red, aunque con un ligero incremento en el tiempo de arranque.
 En contraste, Podman, si bien ofrece un buen uso de CPU y memoria, presentó resultados considerablemente bajos en el \textit{throughput} de red y alta latencia de disco, lo cual podría limitar su aplicación en cargas sensibles a E/S o comunicación intensiva.

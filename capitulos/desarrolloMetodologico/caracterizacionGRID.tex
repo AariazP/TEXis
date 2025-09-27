@@ -85,7 +85,7 @@ En la presente sección se describen las características técnicas de la infrae
 \noindent
 Los cuadros~\ref{tab:torre-hp-1},~\ref{tab:torre-2},~\ref{tab:torre-3} y~\ref{tab:torre-4} presentan las fichas técnicas de cuatro servidores tipo torre pertenecientes al inventario del Grupo de investigación. Se trata de equipos marca HP, sin modelo específico identificado, pero con características homogéneas en su configuración física y técnica: disponen de ocho puertos USB (cuatro frontales y cuatro posteriores), entradas y salidas de audio y micrófono, conexión HDMI, lector de DVD, tres interfaces Ethernet, puerto DisplayPort y conectores PS/2 para teclado y ratón. Su propósito principal es funcionar como hipervisores con XCP-ng, y se encuentran adaptados para soportar procesos de virtualización. Estos recursos, identificados con diferentes códigos de inventario y números en el \CPD\, hacen parte del \textit{cluster} actual, usados para el desarrollo de proyectos dentro del \GRID.
 \input{tablas-images/cp1/caracterizacionInfraestructura.tex}
-\clearpage
+
 \section{Caracterización de servicios del GRID}
 \noindent
 El \GRID\ ofrece una variedad de servicios tecnológicos a la comunidad académica, especialmente a los estudiantes de Ingeniería de Sistemas y Computación. Estos servicios incluyen:
@@ -96,10 +96,10 @@ Los servicios actuales del GRID se centran en la provisión de infraestructura d
 
 \begin{table}[H]
 \centering
-\renewcommand{\arraystretch}{1.2}
-\setlength{\tabcolsep}{3pt}
-\tiny
-\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{0.25\textwidth}|X|}
+\sffamily\scriptsize % Fuente sans-serif más pequeña para tablas
+\setlength{\tabcolsep}{3pt} % Espacio entre columnas ajustado
+\renewcommand{\arraystretch}{1.1} % Espaciado vertical mejorado
+\begin{tabular}{|p{0.28\textwidth}|p{0.68\textwidth}|} % Ancho más amplio
 \hline
 \textbf{NOMBRE DEL SERVICIO} & Máquinas Virtuales para estudiantes y docentes \\
 \hline
@@ -117,20 +117,20 @@ Los servicios actuales del GRID se centran en la provisión de infraestructura d
 \hline
 \textbf{IMPACTO} & Indisponibilidad afecta actividades misionales del grupo de investigación y programa de Ingeniería de sistemas. \\
 \hline
-\end{tabularx}
+\end{tabular}
 \caption{Caracterización de los servicios actuales del GRID}\label{tab:servicios-actuales}
 \end{table}
 
 \subsection{Servicios esperados}
 \noindent
-Los servicios esperados por el GRID se orientan al aprovisionamiento de contenedores a traves de tecnologias VBC. Se espera que los usuarios de distintos dominios ( educación, investigación, extensión ) puedan beneficiarse de este nuevo servicio que se especifica en el cuadro ~\ref{tab:servicios-esperados}
+Los servicios esperados por el \GRID\ se orientan al aprovisionamiento de contenedores a traves de tecnologias \VBC. Se espera que los usuarios de distintos dominios ( educación, investigación, extensión ) puedan beneficiarse de este nuevo servicio que se especifica en el cuadro ~\ref{tab:servicios-esperados}
 
 \begin{table}[H]
 \centering
-\renewcommand{\arraystretch}{1.2}
-\setlength{\tabcolsep}{3pt}
-\tiny
-\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{0.25\textwidth}|X|}
+\sffamily\scriptsize % Fuente sans-serif más pequeña para tablas
+\setlength{\tabcolsep}{3pt} % Espacio entre columnas ajustado
+\renewcommand{\arraystretch}{1.1} % Espaciado vertical mejorado
+\begin{tabular}{|p{0.28\textwidth}|p{0.68\textwidth}|} % Ancho más amplio
 \hline
 \textbf{NOMBRE DEL SERVICIO} & Ambientes computacionales basados en \VBC\\
 \hline
@@ -146,7 +146,7 @@ Los servicios esperados por el GRID se orientan al aprovisionamiento de contened
 \hline
 \textbf{IMPACTO} & Indisponibilidad afecta actividades misionales del grupo de investigación y programa de Ingeniería de sistemas. \\
 \hline
-\end{tabularx}
+\end{tabular}
 \caption{Caracterización de los servicios esperados del GRID}\label{tab:servicios-esperados}
 \end{table}
 
