@@ -85,7 +85,7 @@ El script \texttt{bootup.sh} fue diseñado para desplegar y configurar máquinas
 \input{tablas-images/cp6/src/bootup-vm.tex}
 
 \subsection{Script para desplegar y arrancar una VM desde plantilla}
-
+\noindent
 El script \texttt{bootvm} está diseñado para automatizar el despliegue y arranque de una \VM\ en un entorno XCP-ng utilizando una plantilla predefinida. Su funcionamiento se describe a continuación:
 
 \begin{enumerate}
@@ -101,3 +101,80 @@ El script \texttt{bootvm} está diseñado para automatizar el despliegue y arran
 \end{enumerate}
 
 \input{tablas-images/cp6/src/bootvm.tex}
+
+\subsection{Script para desplegar y arrancar servidores NAT}
+\noindent
+El script \texttt{boot-servers.sh} está diseñado para automatizar la creación e inicio de las máquinas virtuales principales responsables de la red \NAT\ en un entorno XCP-ng. Su funcionamiento puede dividirse en las siguientes fases:
+
+\begin{enumerate}
+    \item \textbf{Definición de variables y opciones}:  
+    Se declara una variable \texttt{BACKUP} que indica si se debe crear un servidor \NAT\ de respaldo adicional. El script utiliza \texttt{getopts} para procesar la opción \texttt{-b}, la cual, de ser especificada, activa la creación de la máquina virtual de backup.
+
+    \item \textbf{Creación de la máquina NAT principal}:  
+    Independientemente de las opciones, el script crea la \VM\ principal denominada \texttt{NAT-Master} a partir de la plantilla \texttt{nat-server}, almacenando su UUID en la variable \texttt{MASTER\_UUID}.
+
+    \item \textbf{Creación opcional del servidor de backup}:  
+    Si se activó la opción \texttt{-b}, se crea una segunda \VM\ llamada \texttt{NAT-Backup}, también a partir de la plantilla \texttt{nat-server}, y se guarda su UUID en la variable \texttt{BACKUP\_UUID}.
+
+    \item \textbf{Arranque de las máquinas virtuales}:  
+    El script inicia la \VM\ principal mediante \texttt{xe vm-start}. Se incluye una pausa de 2 segundos para permitir que la \VM\ principal complete parcialmente su arranque antes de iniciar la \VM\ de respaldo. Si existe la \VM\ de backup, también se inicia de manera automática.
+
+\end{enumerate}
+
+\input{tablas-images/cp6/src/boot-servers.tex}
+
+\subsection{Script para desplegar e inicializar un cluster K3s}
+\noindent
+El script \texttt{cluster-bootup.sh} está diseñado para automatizar la creación e inicialización de un clúster K3s sobre máquinas virtuales en XCP-ng, desplegando nodos master, worker, y opcionalmente un balanceador de carga (load balancer) y un servidor NAT de respaldo. Su funcionamiento se puede describir en varias fases:
+
+\begin{enumerate}
+    \item \textbf{Definición de variables y procesamiento de opciones}:  
+    Se establecen valores por defecto para el número de nodos \texttt{master} y \texttt{worker}, así como indicadores para la creación de un servidor NAT de respaldo (\texttt{BACKUP}) y la existencia de un load balancer (\texttt{HAS\_LB}). Las opciones \texttt{-w}, \texttt{-m} y \texttt{-b} permiten al usuario modificar estas configuraciones al ejecutar el script.
+
+    \item \textbf{Creación de servidores NAT}:  
+    Se invoca el script \texttt{boot-servers} para crear el servidor NAT principal (\texttt{NAT-Master}) y, opcionalmente, un servidor de backup, según la opción \texttt{-b} proporcionada.
+
+    \item \textbf{Creación de máquinas virtuales del clúster}:  
+    Se definen los tipos de nodos (\texttt{master}, \texttt{worker} y opcionalmente \texttt{load-balancer}) y sus cantidades respectivas. A continuación, mediante un bucle se crean las VMs correspondientes utilizando el script \texttt{bootvm}.
+
+    \item \textbf{Configuración de hostnames y archivo \texttt{/etc/hosts}}:  
+    Para cada VM creada, el script espera a que la máquina obtenga su dirección IP y luego establece de manera remota el nombre de host y actualiza el archivo \texttt{/etc/hosts} mediante SSH.
+
+    \item \textbf{Instalación de K3s}:  
+    - Se identifica la IP del nodo \texttt{master1}.  
+    - Si existe un load balancer, se utiliza su IP como punto de entrada TLS para la instalación del clúster K3s en \texttt{master1}.  
+    - Se obtiene el token del clúster para permitir que otros nodos se unan.
+
+    \item \textbf{Configuración del load balancer (opcional)}:  
+    Si se ha creado un load balancer, se instala HAProxy, se genera una configuración básica con todos los nodos master en el backend y se aplica la configuración en el servidor, reiniciando el servicio.
+
+    \item \textbf{Unión de nodos al clúster}:  
+    Finalmente, todos los nodos master adicionales y los nodos worker se unen al clúster K3s. Se espera a que cada VM tenga IP y se ejecuta de manera remota el script de K3s especificando la URL del clúster y el token previamente obtenido.
+
+\end{enumerate}
+\input{tablas-images/cp6/src/cluster-bootup.tex}
+
+\subsection{Script para limpiar el clúster K3s y eliminar VMs}
+\noindent
+El script \texttt{clean-cluster.sh} está diseñado para eliminar de manera segura todas las máquinas virtuales (VMs) asociadas a un clúster en XCP-ng, excluyendo los dominios del sistema. Puede ejecutarse de forma interactiva o automática mediante una opción de confirmación. Su funcionamiento se describe a continuación:
+
+\begin{enumerate}
+    \item \textbf{Definición de variables y procesamiento de opciones}:  
+    Se declara la variable \texttt{ASSUME\_YES}, que indica si la operación de borrado debe realizarse automáticamente sin solicitar confirmación al usuario.  
+    La opción \texttt{-y} activa este modo automático, lo que permite ejecutar el script de manera no interactiva.
+
+    \item \textbf{Confirmación interactiva}:  
+    Si no se ha especificado la opción \texttt{-y}, el script solicita al usuario confirmar la operación mediante un mensaje. Si la respuesta no coincide con alguna forma de \texttt{sí}, el script termina sin realizar cambios.
+
+    \item \textbf{Obtención de las máquinas virtuales a eliminar}:  
+    Se genera una lista de VMs mediante \texttt{xe vm-list}, filtrando únicamente los nombres de VM y excluyendo dominios del sistema (por ejemplo, aquellos que contienen la palabra \texttt{domain}).  
+
+    \item \textbf{Iteración y eliminación de cada VM}:  
+    Para cada VM encontrada:
+    \begin{itemize}
+        \item Se obtiene su UUID mediante \texttt{xe vm-list} para poder referenciarla de manera única.
+        \item La VM se apaga de forma forzada en segundo plano mediante \texttt{xe vm-shutdown} y se espera a que el proceso finalice.
+        \item Finalmente, la VM se elimina permanentemente del sistema mediante \texttt{xe vm-destroy}.
+    \end{itemize}
+\end{enumerate}
+\input{tablas-images/cp6/src/clean-cluster.tex}

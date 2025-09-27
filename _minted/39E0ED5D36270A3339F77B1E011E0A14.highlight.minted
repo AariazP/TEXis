@@ -1,0 +1,41 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} Script: boot\PYGZhy{}servers.sh}
+\PYG{c+c1}{\PYGZsh{} Descripción:}
+\PYG{c+c1}{\PYGZsh{}   Este script crea e inicia las máquinas virtuales principales}
+\PYG{c+c1}{\PYGZsh{}   de red NAT en XCP\PYGZhy{}ng. Puede crear un servidor NAT principal}
+\PYG{c+c1}{\PYGZsh{}   (Master) y, opcionalmente, un servidor de respaldo (Backup)}
+\PYG{c+c1}{\PYGZsh{}   usando plantillas predefinidas.}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{c+c1}{\PYGZsh{} Variable que indica si se debe crear el servidor de backup}
+\PYG{n+nv}{BACKUP}\PYG{o}{=}\PYG{l+m}{0}
+
+\PYG{c+c1}{\PYGZsh{} Procesar opciones:}
+\PYG{c+c1}{\PYGZsh{}   \PYGZhy{}b  → crea el servidor NAT de backup adicional}
+\PYG{k}{while}\PYG{+w}{ }\PYG{n+nb}{getopts}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}b\PYGZdq{}}\PYG{+w}{ }opt\PYG{p}{;}\PYG{+w}{ }\PYG{k}{do}
+\PYG{+w}{  }\PYG{k}{case}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}opt}\PYG{+w}{ }\PYG{k}{in}
+\PYG{+w}{    }b\PYG{o}{)}\PYG{+w}{ }\PYG{n+nv}{BACKUP}\PYG{o}{=}\PYG{l+m}{1}\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Activar creación del backup}
+\PYG{+w}{    }*\PYG{o}{)}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Usage: }\PYG{n+nv}{\PYGZdl{}0}\PYG{l+s+s2}{ [\PYGZhy{}w NUM\PYGZus{}WORKERS] [\PYGZhy{}m NUM\PYGZus{}MASTERS] [\PYGZhy{}b NAT server backup?]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{2}
+\PYG{+w}{       }\PYG{n+nb}{exit}\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{esac}
+\PYG{k}{done}
+
+\PYG{c+c1}{\PYGZsh{} Crear el servidor NAT principal (Master) a partir de la plantilla \PYGZdq{}nat\PYGZhy{}server\PYGZdq{}}
+\PYG{n+nv}{MASTER\PYGZus{}UUID}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}xe\PYG{+w}{ }vm\PYGZhy{}install\PYG{+w}{ }\PYG{n+nv}{template}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}nat\PYGZhy{}server\PYGZdq{}}\PYG{+w}{ }new\PYGZhy{}name\PYGZhy{}label\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}NAT\PYGZhy{}Master\PYGZdq{}}\PYG{k}{)}
+
+\PYG{c+c1}{\PYGZsh{} Si se indicó la opción \PYGZhy{}b, crear también el servidor de backup}
+\PYG{o}{[}\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}BACKUP}\PYG{+w}{ }\PYGZgt{}\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nv}{BACKUP\PYGZus{}UUID}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}xe\PYG{+w}{ }vm\PYGZhy{}install\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{     }\PYG{n+nv}{template}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}nat\PYGZhy{}server\PYGZdq{}}\PYG{+w}{ }new\PYGZhy{}name\PYGZhy{}label\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}NAT\PYGZhy{}Backup\PYGZdq{}}\PYG{k}{)}
+
+\PYG{c+c1}{\PYGZsh{} Iniciar la VM principal (Master)}
+xe\PYG{+w}{ }vm\PYGZhy{}start\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}MASTER\PYGZus{}UUID}
+
+\PYG{c+c1}{\PYGZsh{} Esperar 2 segundos para dar tiempo a que arranque la Master}
+sleep\PYG{+w}{ }\PYG{l+m}{2}
+
+\PYG{c+c1}{\PYGZsh{} Si se creó la VM de backup, iniciarla también}
+\PYG{o}{[}\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}BACKUP}\PYG{+w}{ }\PYGZgt{}\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }xe\PYG{+w}{ }vm\PYGZhy{}start\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}BACKUP\PYGZus{}UUID}
+\end{MintedVerbatim}

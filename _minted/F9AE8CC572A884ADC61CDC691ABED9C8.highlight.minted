@@ -1,0 +1,52 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} Script: clean\PYGZhy{}cluster.sh}
+\PYG{c+c1}{\PYGZsh{} Descripción:}
+\PYG{c+c1}{\PYGZsh{}   Este script elimina todas las máquinas virtuales (VMs) de un}
+\PYG{c+c1}{\PYGZsh{}   cluster en XCP\PYGZhy{}ng, excluyendo dominios del sistema. Puede}
+\PYG{c+c1}{\PYGZsh{}   ejecutarse de manera interactiva o automática usando la opción \PYGZhy{}y.}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{c+c1}{\PYGZsh{} Variable que indica si se debe asumir \PYGZdq{}sí\PYGZdq{} automáticamente}
+\PYG{n+nv}{ASSUME\PYGZus{}YES}\PYG{o}{=}\PYG{n+nb}{false}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} Procesar opción:}
+\PYG{c+c1}{\PYGZsh{}   \PYGZhy{}y  → Asumir \PYGZdq{}sí\PYGZdq{} automáticamente para borrar las VMs}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{k}{while}\PYG{+w}{ }\PYG{n+nb}{getopts}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}y\PYGZdq{}}\PYG{+w}{ }opt\PYG{p}{;}\PYG{+w}{ }\PYG{k}{do}
+\PYG{+w}{  }\PYG{k}{case}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}opt}\PYG{+w}{ }\PYG{k}{in}
+\PYG{+w}{    }y\PYG{o}{)}
+\PYG{+w}{      }\PYG{n+nv}{ASSUME\PYGZus{}YES}\PYG{o}{=}\PYG{n+nb}{true}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Activar borrado automático}
+\PYG{+w}{      }\PYG{p}{;}\PYG{p}{;}
+\PYG{+w}{    }*\PYG{o}{)}
+\PYG{+w}{      }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Usage: }\PYG{n+nv}{\PYGZdl{}0}\PYG{l+s+s2}{ [\PYGZhy{}y]}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{+w}{      }\PYG{n+nb}{exit}\PYG{+w}{ }\PYG{l+m}{1}
+\PYG{+w}{      }\PYG{p}{;}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{esac}
+\PYG{k}{done}
+
+\PYG{c+c1}{\PYGZsh{} Si no se asumió \PYGZdq{}sí\PYGZdq{}, pedir confirmación al usuario}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}ASSUME\PYGZus{}YES}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{+w}{ }\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{  }\PYG{n+nb}{read}\PYG{+w}{ }\PYGZhy{}p\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Are you really sure you want to clean cluster. (y/N): \PYGZdq{}}\PYG{+w}{ }resp
+\PYG{+w}{  }\PYG{o}{[}\PYG{o}{[}\PYG{+w}{ }!\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}resp}\PYG{+w}{ }\PYG{o}{=}\PYGZti{}\PYG{+w}{ }\PYG{o}{(}y\PYG{p}{|}Y\PYG{p}{|}yes\PYG{p}{|}Yes\PYG{p}{|}YES\PYG{o}{)}\PYG{+w}{ }\PYG{o}{]}\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nb}{exit}\PYG{+w}{ }\PYG{l+m}{0}
+\PYG{k}{fi}
+
+\PYG{c+c1}{\PYGZsh{} Obtener lista de VMs a eliminar, excluyendo dominios del sistema}
+\PYG{n+nv}{vms}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}xe\PYG{+w}{ }vm\PYGZhy{}list\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }name\PYGZhy{}label\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}v\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}domain\PYGZdq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}oP\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}(?\PYGZlt{}=: ).+\PYGZdq{}}\PYG{k}{)}
+
+\PYG{c+c1}{\PYGZsh{} Iterar sobre cada VM encontrada}
+\PYG{k}{for}\PYG{+w}{ }vm\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}vms}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{do}
+\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Obtener UUID de la VM}
+\PYG{+w}{  }\PYG{n+nv}{UUID}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}xe\PYG{+w}{ }vm\PYGZhy{}list\PYG{+w}{ }name\PYGZhy{}label\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}vm}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}\PYGZhy{}minimal\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }tr\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{},\PYGZsq{}}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{} \PYGZsq{}}\PYG{k}{)}
+
+\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Apagar la VM de forma forzada en segundo plano}
+\PYG{+w}{  }xe\PYG{+w}{ }vm\PYGZhy{}shutdown\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}UUID}\PYG{+w}{ }\PYG{n+nv}{force}\PYG{o}{=}\PYG{n+nb}{true}\PYG{+w}{ }\PYG{p}{\PYGZam{}}
+\PYG{+w}{  }\PYG{n+nb}{wait}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}!}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Esperar a que termine el apagado}
+
+\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Eliminar la VM del sistema}
+\PYG{+w}{  }xe\PYG{+w}{ }vm\PYGZhy{}destroy\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}UUID}
+\PYG{k}{done}
+\end{MintedVerbatim}
