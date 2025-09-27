@@ -6,7 +6,6 @@
 \titleformat{\subsubsection}
   {\normalsize\bfseries}{\thesubsubsection}{1em}{}
 
-\input{config/paquetes.tex}
 \input{config/variables.tex} 
 
 % Configuración de encabezados y pies de página
@@ -166,3 +165,33 @@
             \includegraphics[width=\paperwidth,height=\paperheight]{images/portada.png}%
             \vfill
 }}}
+
+
+
+% Definir colores estilo "Carbon"
+\definecolor{bg}{HTML}{FEFEFE}      % Fondo oscuro
+\definecolor{fg}{HTML}{3b3c3d}      % Texto principal
+\definecolor{keyword}{HTML}{C678DD} % Palabras clave (if, then, else...)
+\definecolor{string}{HTML}{98C379}  % Strings
+\definecolor{comment}{HTML}{C62828} % Comentarios
+\definecolor{number}{HTML}{000000}  % Números
+\definecolor{builtin}{HTML}{61AFEF} % Comandos (echo, ssh...)
+
+
+
+% Configuración global de minted
+\setminted{
+    fontsize=\small,
+    bgcolor=bg,
+    fontfamily=tt,
+    linenos,
+    numbersep=5pt,
+    gobble=0,
+    breaklines,
+    breakanywhere,
+    frame=none,
+    baselinestretch=1.2,
+}
+
+% Personalizar colores
+\renewcommand{\theFancyVerbLine}{\textcolor{number}{\arabic{FancyVerbLine}}}

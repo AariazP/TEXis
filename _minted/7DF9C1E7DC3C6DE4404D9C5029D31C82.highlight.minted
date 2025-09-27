@@ -1,0 +1,54 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} Script: get\PYGZhy{}ip.sh}
+\PYG{c+c1}{\PYGZsh{} Descripción:}
+\PYG{c+c1}{\PYGZsh{}   Este script obtiene la dirección IP de una máquina virtual}
+\PYG{c+c1}{\PYGZsh{}   (VM) en XCP\PYGZhy{}ng a partir de su nombre.}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{c+c1}{\PYGZsh{} Verificación de argumentos:}
+\PYG{c+c1}{\PYGZsh{} Si no se pasa al menos un argumento (nombre de la VM), se muestra}
+\PYG{c+c1}{\PYGZsh{} el uso correcto del script y se termina.}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}\PYGZsh{}}\PYG{+w}{ }\PYGZhy{}lt\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{o}{]}
+\PYG{k}{then}
+\PYG{+w}{   }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}usage: get\PYGZhy{}ip \PYGZlt{}vm\PYGZhy{}name\PYGZgt{}\PYGZdq{}}
+\PYG{+w}{   }\PYG{n+nb}{exit}\PYG{+w}{ }\PYG{l+m}{0}
+\PYG{k}{fi}
+
+\PYG{c+c1}{\PYGZsh{} Caso especial:}
+\PYG{c+c1}{\PYGZsh{} Si el nombre de la VM es \PYGZdq{}NAT\PYGZhy{}Master\PYGZdq{}, se devuelve una IP fija}
+\PYG{c+c1}{\PYGZsh{} sin necesidad de consultar nada en XCP\PYGZhy{}ng.}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}1}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{o}{=}\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}NAT\PYGZhy{}Master\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{o}{]}
+\PYG{k}{then}
+\PYG{+w}{   }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}172.30.29.2\PYGZdq{}}
+\PYG{+w}{   }\PYG{n+nb}{exit}\PYG{+w}{ }\PYG{l+m}{0}
+\PYG{k}{fi}
+
+\PYG{c+c1}{\PYGZsh{} Obtiene el UUID de la VM en XCP\PYGZhy{}ng a partir del nombre de la VM.}
+\PYG{n+nv}{VM\PYGZus{}UUID}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }xe\PYG{+w}{ }vm\PYGZhy{}list\PYG{+w}{ }name\PYGZhy{}label\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}1}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}\PYGZhy{}minimal\PYG{+w}{ }\PYG{k}{)}
+
+\PYG{c+c1}{\PYGZsh{} Obtiene las direcciones MAC de las interfaces de red (VIFs)}
+\PYG{c+c1}{\PYGZsh{} asociadas a la VM, separadas por coma.}
+\PYG{n+nv}{VM\PYGZus{}MAC}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }xe\PYG{+w}{ }vif\PYGZhy{}list\PYG{+w}{ }vm\PYGZhy{}uuid\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}VM\PYGZus{}UUID}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{n+nv}{params}\PYG{o}{=}MAC\PYG{+w}{ }\PYGZhy{}\PYGZhy{}minimal\PYG{+w}{ }\PYG{k}{)}
+
+\PYG{c+c1}{\PYGZsh{} Convierte la lista separada por comas en un arreglo de MACs.}
+\PYG{c+c1}{\PYGZsh{} Se asumen máximo dos interfaces de red.}
+\PYG{n+nv}{MACS}\PYG{o}{=}\PYG{o}{(}\PYG{+w}{ }\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}VM\PYGZus{}MAC}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }cut\PYG{+w}{ }\PYGZhy{}d,\PYG{+w}{ }\PYGZhy{}f1\PYG{+w}{ }\PYG{k}{)}\PYG{+w}{ }\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}VM\PYGZus{}MAC}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }cut\PYG{+w}{ }\PYGZhy{}d,\PYG{+w}{ }\PYGZhy{}f2\PYG{+w}{ }\PYG{k}{)}\PYG{+w}{ }\PYG{o}{)}
+
+\PYG{c+c1}{\PYGZsh{} Redirige los errores a /dev/null para evitar mostrar mensajes}
+\PYG{c+c1}{\PYGZsh{} de advertencia de ssh u otros.}
+\PYG{n+nb}{exec}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}\PYG{+w}{ }/dev/null
+
+\PYG{c+c1}{\PYGZsh{} Se conecta al servidor NAT (172.30.29.2) vía SSH usando una llave}
+\PYG{c+c1}{\PYGZsh{} privada, y ejecuta el comando `ip n` (vecinos en ARP/NDP).}
+\PYG{c+c1}{\PYGZsh{} Luego filtra las líneas que contengan alguna de las MACs de la VM}
+\PYG{c+c1}{\PYGZsh{} y extrae la primera columna (la IP asociada).}
+\PYG{n+nv}{VM\PYGZus{}IP}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }ssh\PYG{+w}{ }\PYGZhy{}i\PYG{+w}{ }\PYGZti{}/.ssh/id\PYGZus{}nat\PYGZus{}server\PYG{+w}{ }debian@172.30.29.2\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ip n | fgrep \PYGZhy{}e }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{MACS}\PYG{p}{[0]}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ \PYGZhy{}e }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{MACS}\PYG{p}{[1]}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }cut\PYG{+w}{ }\PYGZhy{}d\PYG{l+s+s2}{\PYGZdq{} \PYGZdq{}}\PYG{+w}{ }\PYGZhy{}f1\PYG{+w}{ }\PYG{k}{)}
+
+\PYG{c+c1}{\PYGZsh{} Muestra la IP obtenida sin salto de línea adicional al final.}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYGZhy{}n\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}VM\PYGZus{}IP}
+
+\end{MintedVerbatim}
