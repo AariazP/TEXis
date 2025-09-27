@@ -1,0 +1,73 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} Script: ssh\PYGZhy{}vm.sh}
+\PYG{c+c1}{\PYGZsh{} Descripción:}
+\PYG{c+c1}{\PYGZsh{}   Este script permite conectarse vía SSH a una máquina virtual}
+\PYG{c+c1}{\PYGZsh{}   en XCP\PYGZhy{}ng usando su nombre como referencia. Se puede especificar:}
+\PYG{c+c1}{\PYGZsh{}   \PYGZhy{} Si la conexión debe hacerse como root.}
+\PYG{c+c1}{\PYGZsh{}   \PYGZhy{} Un comando a ejecutar de forma remota en la VM.}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{c+c1}{\PYGZsh{} Variables iniciales}
+\PYG{n+nv}{ROOT}\PYG{o}{=}\PYG{l+m}{0}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} Indica si se usará el usuario root (1 = sí, 0 = no)}
+\PYG{n+nv}{CMD}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} Comando opcional a ejecutar en la VM}
+\PYG{n+nv}{VM}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{+w}{      }\PYG{c+c1}{\PYGZsh{} Nombre de la VM a la que se conectará}
+
+\PYG{c+c1}{\PYGZsh{} Procesar opciones iniciales:}
+\PYG{c+c1}{\PYGZsh{}   \PYGZhy{}r  → usar root como usuario.}
+\PYG{c+c1}{\PYGZsh{}   \PYGZhy{}c  → comando a ejecutar.}
+\PYG{k}{while}\PYG{+w}{ }\PYG{n+nb}{getopts}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}rc:\PYGZdq{}}\PYG{+w}{ }opt\PYG{p}{;}\PYG{+w}{ }\PYG{k}{do}
+\PYG{+w}{  }\PYG{k}{case}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}opt}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{k}{in}
+\PYG{+w}{    }r\PYG{o}{)}\PYG{+w}{ }\PYG{n+nv}{ROOT}\PYG{o}{=}\PYG{l+m}{1}\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}\PYG{+w}{                }\PYG{c+c1}{\PYGZsh{} Activar conexión como root}
+\PYG{+w}{    }c\PYG{o}{)}\PYG{+w}{ }\PYG{n+nv}{CMD}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}OPTARG}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}\PYG{+w}{          }\PYG{c+c1}{\PYGZsh{} Guardar comando remoto}
+\PYG{+w}{    }*\PYG{o}{)}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Usage: }\PYG{n+nv}{\PYGZdl{}0}\PYG{l+s+s2}{ [\PYGZhy{}r] \PYGZlt{}vm\PYGZhy{}name\PYGZgt{} [\PYGZhy{}c command]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{2}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nb}{exit}\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{esac}
+\PYG{k}{done}
+\PYG{n+nb}{shift}\PYG{+w}{ }\PYG{k}{\PYGZdl{}((}\PYG{n+nv}{OPTIND}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m}{1}\PYG{k}{))}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} Avanzar en la lista de argumentos}
+
+\PYG{c+c1}{\PYGZsh{} Validar que al menos se haya pasado el nombre de la VM}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}\PYGZsh{}}\PYG{+w}{ }\PYGZhy{}lt\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{  }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Usage: }\PYG{n+nv}{\PYGZdl{}0}\PYG{l+s+s2}{ [\PYGZhy{}r] \PYGZlt{}vm\PYGZhy{}name\PYGZgt{} [\PYGZhy{}c command]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{2}
+\PYG{+w}{  }\PYG{n+nb}{exit}\PYG{+w}{ }\PYG{l+m}{1}
+\PYG{k}{fi}
+
+\PYG{c+c1}{\PYGZsh{} Guardar nombre de la VM y avanzar}
+\PYG{n+nv}{VM}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}1}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{n+nb}{shift}\PYG{+w}{ }\PYG{l+m}{1}
+
+\PYG{c+c1}{\PYGZsh{} Reiniciar índice de opciones para procesar posibles parámetros \PYGZhy{}c después del nombre de la VM}
+\PYG{n+nv}{OPTIND}\PYG{o}{=}\PYG{l+m}{1}
+\PYG{k}{while}\PYG{+w}{ }\PYG{n+nb}{getopts}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}c:\PYGZdq{}}\PYG{+w}{ }opt\PYG{p}{;}\PYG{+w}{ }\PYG{k}{do}
+\PYG{+w}{  }\PYG{k}{case}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}opt}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{k}{in}
+\PYG{+w}{    }c\PYG{o}{)}\PYG{+w}{ }\PYG{n+nv}{CMD}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}OPTARG}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{esac}
+\PYG{k}{done}
+\PYG{n+nb}{shift}\PYG{+w}{ }\PYG{k}{\PYGZdl{}((}\PYG{n+nv}{OPTIND}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m}{1}\PYG{k}{))}
+
+\PYG{c+c1}{\PYGZsh{} Obtener la dirección IP de la VM usando el script auxiliar `get\PYGZhy{}ip`}
+\PYG{c+c1}{\PYGZsh{} (debe estar en el PATH del sistema).}
+\PYG{n+nv}{IP}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }get\PYGZhy{}ip\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}VM}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}/dev/null\PYG{+w}{ }\PYG{k}{)}
+
+\PYG{c+c1}{\PYGZsh{} Conexión SSH}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}ROOT}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}eq\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Si se especifica conexión como root}
+\PYG{+w}{  }\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYGZhy{}n\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}CMD}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Ejecutar comando remoto como root}
+\PYG{+w}{    }ssh\PYG{+w}{ }\PYGZhy{}i\PYG{+w}{ }\PYGZti{}/.ssh/id\PYGZus{}internal\PYGZus{}vm\PYG{+w}{ }root@\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}IP}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}CMD}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}/dev/null
+\PYG{+w}{  }\PYG{k}{else}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Abrir sesión interactiva como root}
+\PYG{+w}{    }ssh\PYG{+w}{ }\PYGZhy{}i\PYG{+w}{ }\PYGZti{}/.ssh/id\PYGZus{}internal\PYGZus{}vm\PYG{+w}{ }root@\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}IP}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}/dev/null
+\PYG{+w}{  }\PYG{k}{fi}
+\PYG{k}{else}
+\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Conexión como usuario por defecto (depende de la configuración SSH de la VM)}
+\PYG{+w}{  }\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYGZhy{}n\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}CMD}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Ejecutar comando remoto sin root}
+\PYG{+w}{    }ssh\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}IP}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}CMD}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}/dev/null
+\PYG{+w}{  }\PYG{k}{else}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Abrir sesión interactiva sin root}
+\PYG{+w}{    }ssh\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}IP}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}/dev/null
+\PYG{+w}{  }\PYG{k}{fi}
+\PYG{k}{fi}
+\end{MintedVerbatim}

@@ -1,0 +1,114 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} Script: bootup.sh}
+\PYG{c+c1}{\PYGZsh{} Descripción:}
+\PYG{c+c1}{\PYGZsh{}   Este script fue creado inicialmente para desplegar y configurar}
+\PYG{c+c1}{\PYGZsh{}   máquinas virtuales en XCP\PYGZhy{}ng de manera manual antes de contar}
+\PYG{c+c1}{\PYGZsh{}   con plantillas. Actualmente no se usa, pero se conserva como}
+\PYG{c+c1}{\PYGZsh{}   alternativa en caso de perder las plantillas predefinidas.}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{c+c1}{\PYGZsh{} Listar hosts disponibles}
+xe\PYG{+w}{ }host\PYGZhy{}list
+
+\PYG{c+c1}{\PYGZsh{} Obtener UUID del host principal y exportarlo como variable de entorno}
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{host\PYGZus{}uuid}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }xe\PYG{+w}{ }host\PYGZhy{}list\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}oP\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}[\PYGZbs{}d\PYGZbs{}w\PYGZhy{}]+\PYGZdq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}oP\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}.\PYGZob{}20,\PYGZcb{}\PYGZdq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }head\PYG{+w}{ }\PYGZhy{}n\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{k}{)}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{host\PYGZus{}uuid is this : \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{} }\PYG{n+nv}{\PYGZdl{}host\PYGZus{}uuid}\PYG{l+s+s2}{ \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}}\PYG{l+s+s2}{\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Listar todos los storage repositories (SR)}
+xe\PYG{+w}{ }sr\PYGZhy{}list
+xe\PYG{+w}{ }sr\PYGZhy{}list\PYG{+w}{ }name\PYGZhy{}label\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Local storage\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Listar plantillas disponibles y filtrar Debian}
+xe\PYG{+w}{ }template\PYGZhy{}list\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }Debian
+
+\PYG{c+c1}{\PYGZsh{} Definir nombre de la VM (por defecto \PYGZdq{}xeclivm\PYGZdq{} si no se pasa argumento)}
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{vm\PYGZus{}name}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{1}\PYG{k}{:\PYGZhy{}}\PYG{n+nv}{xeclivm}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Crear nueva VM a partir de la plantilla \PYGZdq{}Debian Bookworm 12\PYGZdq{}}
+xe\PYG{+w}{ }vm\PYGZhy{}install\PYG{+w}{ }\PYG{n+nv}{template}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Debian Bookworm 12\PYGZdq{}}\PYG{+w}{ }new\PYGZhy{}name\PYGZhy{}label\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{vm\PYGZus{}name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Obtener el UUID de la VM recién creada}
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{vm\PYGZus{}uuid}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }xe\PYG{+w}{ }vm\PYGZhy{}list\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}B\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}oP\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}[\PYGZbs{}d\PYGZbs{}w\PYGZhy{}]\PYGZob{}20,\PYGZcb{}\PYGZdq{}}\PYG{+w}{ }\PYG{k}{)}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{vm\PYGZus{}uuid is this : \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{} }\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}uuid}\PYG{l+s+s2}{ \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}}\PYG{l+s+s2}{\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Preparar directorio para ISO locales}
+mkdir\PYG{+w}{ }\PYGZhy{}p\PYG{+w}{ }/var/opt/xen/ISO\PYGZus{}Store
+\PYG{n+nb}{cd}\PYG{+w}{ }/var/opt/xen/ISO\PYGZus{}Store
+
+\PYG{c+c1}{\PYGZsh{} Montar un SR de tipo ISO}
+xe\PYGZhy{}mount\PYGZhy{}iso\PYGZhy{}sr\PYG{+w}{ }/run/sr\PYGZhy{}mount/bedd1ebf\PYGZhy{}c12c\PYGZhy{}875d\PYGZhy{}960c\PYGZhy{}257de20dec45/
+
+\PYG{c+c1}{\PYGZsh{} Crear un nuevo SR para almacenar ISOs locales}
+xe\PYG{+w}{ }sr\PYGZhy{}create\PYG{+w}{ }host\PYGZhy{}uuid\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}host\PYGZus{}uuid}\PYG{+w}{ }name\PYGZhy{}label\PYG{o}{=}LOCAL\PYGZus{}ISO\PYG{+w}{ }\PYG{n+nv}{type}\PYG{o}{=}iso\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{  }device\PYGZhy{}config:location\PYG{o}{=}/var/opt/xen/ISO\PYGZus{}Store\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{  }device\PYGZhy{}config:legacy\PYGZus{}mode\PYG{o}{=}\PYG{n+nb}{true}\PYG{+w}{ }content\PYGZhy{}type\PYG{o}{=}iso
+
+\PYG{c+c1}{\PYGZsh{} Listar SR de tipo ISO}
+xe\PYG{+w}{ }sr\PYGZhy{}list\PYG{+w}{ }\PYG{n+nv}{type}\PYG{o}{=}iso
+
+\PYG{c+c1}{\PYGZsh{} Obtener UUID del SR de ISOs recién creado}
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{sr\PYGZus{}iso\PYGZus{}uuid}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}xe\PYG{+w}{ }sr\PYGZhy{}list\PYG{+w}{ }\PYG{n+nv}{type}\PYG{o}{=}iso\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}B\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }LOCAL\PYGZus{}ISO\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }head\PYG{+w}{ }\PYGZhy{}n\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}oP\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}[\PYGZbs{}d\PYGZbs{}w\PYGZhy{}]+\PYGZhy{}[\PYGZbs{}w\PYGZbs{}d]+\PYGZdq{}}\PYG{k}{)}
+
+\PYG{c+c1}{\PYGZsh{} Forzar escaneo del SR de ISOs}
+xe\PYG{+w}{ }sr\PYGZhy{}scan\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}sr\PYGZus{}iso\PYGZus{}uuid}
+
+\PYG{c+c1}{\PYGZsh{} Definir nombre del ISO de instalación}
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{cd\PYGZus{}iso}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}debian\PYGZhy{}12.11.0\PYGZhy{}amd64\PYGZhy{}netinst.iso\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Obtener UUID del disco de la VM recién creada}
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{vm\PYGZus{}disk\PYGZus{}uuid}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }xe\PYG{+w}{ }vm\PYGZhy{}disk\PYGZhy{}list\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}uuid}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}B\PYG{+w}{ }\PYG{l+m}{2}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Local storage\PYGZdq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }head\PYG{+w}{ }\PYGZhy{}n\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}oP\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}[\PYGZbs{}d\PYGZbs{}w\PYGZhy{}]+\PYGZhy{}[\PYGZbs{}d\PYGZbs{}w]+\PYGZdq{}}\PYG{+w}{ }\PYG{k}{)}
+
+\PYG{c+c1}{\PYGZsh{} Obtener UUID de la red principal (xenbr0)}
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{network\PYGZus{}uuid}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }xe\PYG{+w}{ }network\PYGZhy{}list\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}B\PYG{+w}{ }\PYG{l+m}{3}\PYG{+w}{ }xenbr0\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }head\PYG{+w}{ }\PYGZhy{}n\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}oP\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}[\PYGZbs{}d\PYGZbs{}w\PYGZhy{}]+\PYGZhy{}[\PYGZbs{}d\PYGZbs{}w]+\PYGZdq{}}\PYG{+w}{ }\PYG{k}{)}
+
+\PYG{c+c1}{\PYGZsh{} Insertar ISO de instalación en la VM}
+xe\PYG{+w}{ }vm\PYGZhy{}cd\PYGZhy{}add\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}uuid}\PYG{+w}{ }cd\PYGZhy{}name\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}cd\PYGZus{}iso}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{n+nv}{device}\PYG{o}{=}\PYG{l+m}{1}
+
+\PYG{c+c1}{\PYGZsh{} Configurar política de arranque de la VM}
+xe\PYG{+w}{ }vm\PYGZhy{}param\PYGZhy{}set\PYG{+w}{ }HVM\PYGZhy{}boot\PYGZhy{}policy\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}BIOS order\PYGZdq{}}\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}uuid}
+
+\PYG{c+c1}{\PYGZsh{} Crear interfaz de red para la VM}
+xe\PYG{+w}{ }vif\PYGZhy{}create\PYG{+w}{ }vm\PYGZhy{}uuid\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}uuid}\PYG{+w}{ }network\PYGZhy{}uuid\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}network\PYGZus{}uuid}\PYG{+w}{ }\PYG{n+nv}{device}\PYG{o}{=}\PYG{l+m}{0}
+
+\PYG{c+c1}{\PYGZsh{} Configurar memoria de la VM (mínimo, máximo y dinámico)}
+xe\PYG{+w}{ }vm\PYGZhy{}memory\PYGZhy{}limits\PYGZhy{}set\PYG{+w}{ }dynamic\PYGZhy{}max\PYG{o}{=}2048MiB\PYG{+w}{ }dynamic\PYGZhy{}min\PYG{o}{=}2048MiB\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{  }static\PYGZhy{}max\PYG{o}{=}2048MiB\PYG{+w}{ }static\PYGZhy{}min\PYG{o}{=}512MiB\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}uuid}
+
+\PYG{c+c1}{\PYGZsh{} Redimensionar el disco de la VM a 20 GiB}
+xe\PYG{+w}{ }vdi\PYGZhy{}resize\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}disk\PYGZus{}uuid}\PYG{+w}{ }disk\PYGZhy{}size\PYG{o}{=}20GiB
+
+\PYG{c+c1}{\PYGZsh{} Configurar orden de arranque: disco y CD}
+xe\PYG{+w}{ }vm\PYGZhy{}param\PYGZhy{}set\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}uuid}\PYG{+w}{ }HVM\PYGZhy{}boot\PYGZhy{}params:order\PYG{o}{=}dc
+
+\PYG{c+c1}{\PYGZsh{} Crear un nuevo dispositivo virtual de CD (ejemplo con UUID fijo de VDI)}
+xe\PYG{+w}{ }vbd\PYGZhy{}create\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{  }vm\PYGZhy{}uuid\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}uuid}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{  }\PYG{n+nv}{device}\PYG{o}{=}\PYG{l+m}{3}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{  }\PYG{n+nv}{type}\PYG{o}{=}CD\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{  }vdi\PYGZhy{}uuid\PYG{o}{=}8dba583e\PYGZhy{}57df\PYGZhy{}44eb\PYGZhy{}a954\PYGZhy{}c1db24d22cc0\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{  }\PYG{n+nv}{mode}\PYG{o}{=}RO\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{  }\PYG{n+nv}{bootable}\PYG{o}{=}\PYG{n+nb}{true}
+
+\PYG{c+c1}{\PYGZsh{} Desactivar Secure Boot y forzar emulación tradicional de QEMU}
+xe\PYG{+w}{ }vm\PYGZhy{}param\PYGZhy{}set\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}uuid}\PYG{+w}{ }platform:secureboot\PYG{o}{=}\PYG{n+nb}{false}
+xe\PYG{+w}{ }vm\PYGZhy{}param\PYGZhy{}set\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}uuid}\PYG{+w}{ }platform:device\PYGZhy{}model\PYG{o}{=}qemu\PYGZhy{}traditional
+
+\PYG{c+c1}{\PYGZsh{} Ajustar parámetros de arranque a BIOS}
+xe\PYG{+w}{ }vm\PYGZhy{}param\PYGZhy{}set\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}uuid}\PYG{+w}{ }HVM\PYGZhy{}boot\PYGZhy{}policy\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}BIOS order\PYGZdq{}}
+xe\PYG{+w}{ }vm\PYGZhy{}param\PYGZhy{}set\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}uuid}\PYG{+w}{ }HVM\PYGZhy{}boot\PYGZhy{}params:firmware\PYG{o}{=}bios
+
+\PYG{c+c1}{\PYGZsh{} Expulsar cualquier CD\PYGZhy{}ROM previo}
+xe\PYG{+w}{ }vm\PYGZhy{}cd\PYGZhy{}eject\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}uuid}
+
+\PYG{c+c1}{\PYGZsh{} Insertar ISO de Guest Tools}
+xe\PYG{+w}{ }vm\PYGZhy{}cd\PYGZhy{}insert\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}uuid}\PYG{+w}{ }cd\PYGZhy{}name\PYG{o}{=}guest\PYGZhy{}tools.iso
+
+\PYG{c+c1}{\PYGZsh{} Insertar ISO de Debian en la VM (usando nombre pasado como argumento \PYGZdl{}1)}
+xe\PYG{+w}{ }vm\PYGZhy{}cd\PYGZhy{}insert\PYG{+w}{ }\PYG{n+nv}{vm}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}1}\PYG{+w}{ }cd\PYGZhy{}name\PYG{o}{=}debian\PYGZhy{}12.11.0\PYGZhy{}amd64\PYGZhy{}netinst.iso
+
+\PYG{c+c1}{\PYGZsh{} Iniciar la VM}
+xe\PYG{+w}{ }vm\PYGZhy{}start\PYG{+w}{ }\PYG{n+nv}{uuid}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}uuid}
+\end{MintedVerbatim}

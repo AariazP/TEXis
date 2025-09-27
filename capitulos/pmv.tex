@@ -1,4 +1,4 @@
-\ChapterImageStar[cap:pmv]{Producto Mínimo Viable }{./images/fondo.png}\label{cap:pmv}
+\ChapterImageStar[cap:pmv]{Producto Mínimo Viable}{./images/fondo.png}\label{cap:pmv}
 \mbox{}\\
 \section{Código fuente del sistema}
 \noindent
@@ -12,83 +12,20 @@ La figura~\ref{fig:estructura-proyecto} detalla la estructura del proyecto
 
 \subsection{Script para obtener la IP de una VM en XCP-ng}
 \noindent
-El \textit{script}~\ref{fig:get-ip}, construido en Bash tiene como propósito obtener la dirección IP asociada a una \VM\ desplegada en un entorno XCP-ng, a partir de su nombre. En primer lugar, valida que el usuario haya proporcionado al menos un argumento, correspondiente al nombre de la \VM, mostrando un mensaje de uso en caso contrario. Posteriormente, contempla una excepción para la máquina denominada \textit{NAT-Master}, devolviendo directamente la IP fija 172.30.29.2. En los demás casos, el script emplea el comando xe para obtener el identificador único (UUID) de la máquina virtual y, a partir de este, extrae las direcciones \MAC\ de sus interfaces de red. Con dichas direcciones, se conecta mediante \SSH\ a la máquina \textit{NAT-Master}, utilizando una clave previamente configurada, y consulta la tabla de vecinos de red (comando ip n) para identificar la IP correspondiente a las \MAC\ recuperadas. Finalmente, devuelve la dirección IP asociada a la \VM\ solicitada.
+El \textit{script} a continuación tiene como propósito obtener la dirección IP asociada a una \VM\ desplegada en un entorno XCP-ng, a partir de su nombre. En primer lugar, valida que el usuario haya proporcionado al menos un argumento, correspondiente al nombre de la \VM, mostrando un mensaje de uso en caso contrario. Posteriormente, contempla una excepción para la máquina denominada \textit{NAT-Master}, devolviendo directamente la IP fija 172.30.29.2. En los demás casos, el script emplea el comando xe para obtener el identificador único (UUID) de la máquina virtual y, a partir de este, extrae las direcciones \MAC\ de sus interfaces de red. Con dichas direcciones, se conecta mediante \SSH\ a la máquina \textit{NAT-Master}, utilizando una clave previamente configurada, y consulta la tabla de vecinos de red (comando ip n) para identificar la IP correspondiente a las \MAC\ recuperadas. Finalmente, devuelve la dirección IP asociada a la \VM\ solicitada. \\
 
-\begin{minted}[frame=lines,fontsize=\footnotesize,breaklines]{bash}
-#!/bin/bash
+\input{tablas-images/cp6/src/get-ip.tex}
 
-# ---------------------------------------------------------------
-# Script: get-ip.sh
-# Descripción:
-#   Este script obtiene la dirección IP de una máquina virtual 
-#   (VM) en XCP-ng a partir de su nombre.
-# ---------------------------------------------------------------
-
-# Verificación de argumentos:
-# Si no se pasa al menos un argumento (nombre de la VM), se muestra 
-# el uso correcto del script y se termina.
-if [ $# -lt 1 ]
-then
-   echo "usage: get-ip <vm-name>"
-   exit 0
-fi
-
-# Caso especial: 
-# Si el nombre de la VM es "NAT-Master", se devuelve una IP fija 
-# sin necesidad de consultar nada en XCP-ng.
-if [[ "$1" == "NAT-Master" ]]
-then
-   echo "172.30.29.2"
-   exit 0
-fi
-
-# Obtiene el UUID de la VM en XCP-ng a partir del nombre de la VM.
-VM_UUID=$( xe vm-list name-label="$1" --minimal )
-
-# Obtiene las direcciones MAC de las interfaces de red (VIFs) 
-# asociadas a la VM, separadas por coma.
-VM_MAC=$( xe vif-list vm-uuid="$VM_UUID" params=MAC --minimal )
-
-# Convierte la lista separada por comas en un arreglo de MACs. 
-# Se asumen máximo dos interfaces de red.
-MACS=( $( echo $VM_MAC | cut -d, -f1 ) $( echo $VM_MAC | cut -d, -f2 ) )
-
-# Redirige los errores a /dev/null para evitar mostrar mensajes 
-# de advertencia de ssh u otros.
-exec 2> /dev/null
-
-# Se conecta al servidor NAT (172.30.29.2) vía SSH usando una llave 
-# privada, y ejecuta el comando `ip n` (vecinos en ARP/NDP).
-# Luego filtra las líneas que contengan alguna de las MACs de la VM 
-# y extrae la primera columna (la IP asociada).
-VM_IP=$( ssh -i ~/.ssh/id_nat_server debian@172.30.29.2 \
-        "ip n | fgrep -e ${MACS[0]} -e ${MACS[1]}" | cut -d" " -f1 )
-
-# Muestra la IP obtenida sin salto de línea adicional al final.
-echo -n $VM_IP
-
-\end{minted}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{tablas-images/cp6/src/get-ip.png}
-    \caption{Script que obtiene la IP de una VM en XCP-ng}\label{fig:get-ip}
-\end{figure}
 
 \subsection{Script de configuración de red de las VMs}
 \noindent
-El \textit{script}~\ref{fig:configure-network} automatiza la creación y configuración de una red virtual en un entorno XCP-ng, permitiendo la salida a Internet para las máquinas virtuales que se conecten a ella. En primer lugar, define parámetros como el nombre de la red, el rango de direcciones IP (subred), la dirección de la puerta de enlace y la interfaz de salida hacia Internet. Luego, utiliza el comando \texttt{xe network-create} para crear la red virtual sin necesidad de un \textit{bridge} preexistente y obtiene su UUID para validarla. Una vez confirmada la red, se agrega una interfaz virtual al host con una dirección \MAC\ aleatoria. Posteriormente, se asocia al bridge correspondiente la dirección IP de la puerta de enlace definida y se activa la interfaz.
+El \textit{script} a continuación, automatiza la creación y configuración de una red virtual en un entorno XCP-ng, permitiendo la salida a Internet para las máquinas virtuales que se conecten a ella. En primer lugar, define parámetros como el nombre de la red, el rango de direcciones IP (subred), la dirección de la puerta de enlace y la interfaz de salida hacia Internet. Luego, utiliza el comando \texttt{xe network-create} para crear la red virtual sin necesidad de un \textit{bridge} preexistente y obtiene su UUID para validarla. Una vez confirmada la red, se agrega una interfaz virtual al host con una dirección \MAC\ aleatoria. Posteriormente, se asocia al bridge correspondiente la dirección IP de la puerta de enlace definida y se activa la interfaz.
 \noindent
-El \textit{script} también habilita el reenvío de paquetes IP, tanto de forma temporal como persistente en el archivo de configuración del sistema, lo que permite que el host actúe como enrutador. Seguidamente, configura reglas de \NAT\ con iptables, aplicando enmascaramiento para que las máquinas virtuales dentro de la subred puedan acceder a Internet a través de la interfaz física de salida del \textit{host}. Finalmente, contempla la persistencia de estas reglas con herramientas como \texttt{netfilter-persistent}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{tablas-images/cp6/src/red.png}
-    \caption{Script que configura la red de las VMs}\label{fig:configure-network}
-\end{figure}
+\input{tablas-images/cp6/src/red.tex}
 
 \subsection{Script de conexión SSH a una VM}
 \noindent
-El script~\ref{fig:sshvm} tiene como propósito facilitar la conexión remota por medio de \SSH\ a las diferentes \VM\ dentro de un entorno administrado, ofreciendo además la posibilidad de ejecutar comandos de forma directa en ellas. Su funcionamiento se puede dividir en las siguientes fases:
+El script a continuación, tiene como propósito facilitar la conexión remota por medio de \SSH\ a las diferentes \VM\ dentro de un entorno administrado, ofreciendo además la posibilidad de ejecutar comandos de forma directa en ellas. Su funcionamiento se puede dividir en las siguientes fases:
 
 \begin{enumerate}
     \item \textbf{Parámetros de entrada}:  
@@ -115,16 +52,10 @@ El script~\ref{fig:sshvm} tiene como propósito facilitar la conexión remota po
 
 \end{enumerate}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{tablas-images/cp6/src/ssh-vm.png}
-    \caption{Script que permite la conexión SSH a una VM}\label{fig:sshvm}
-\end{figure}
+\input{tablas-images/cp6/src/ssh-vm.tex}
 
 \subsection{Script de configuración inicial de una VM}
-
-\subsection{Explicación del script \texttt{bootup.sh}}
-
+\noindent
 El script \texttt{bootup.sh} fue diseñado para desplegar y configurar máquinas virtuales en XCP-ng de forma manual, en un contexto anterior a la creación de plantillas predefinidas. Aunque actualmente no se utiliza de manera habitual, se conserva como alternativa en caso de que las plantillas se pierdan o deba realizarse una instalación manual. A continuación, se detallan sus principales fases de ejecución:
 
 \begin{enumerate}
@@ -151,10 +82,22 @@ El script \texttt{bootup.sh} fue diseñado para desplegar y configurar máquinas
 
 \end{enumerate}
 
-En conjunto, este script constituye una solución integral para la creación de máquinas virtuales en XCP-ng sin depender de plantillas predefinidas, abarcando desde la preparación de medios de instalación hasta la configuración de red, almacenamiento, parámetros de arranque y el inicio de la máquina virtual.
+\input{tablas-images/cp6/src/bootup-vm.tex}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.2]{tablas-images/cp6/src/bootup-vm.png}
-    \caption{Script que permite la configuración inicial de una VM}\label{fig:bootup-vm}
-\end{figure}
+\subsection{Script para desplegar y arrancar una VM desde plantilla}
+
+El script \texttt{bootvm} está diseñado para automatizar el despliegue y arranque de una \VM\ en un entorno XCP-ng utilizando una plantilla predefinida. Su funcionamiento se describe a continuación:
+
+\begin{enumerate}
+    \item \textbf{Validación de argumentos}:  
+    El script comprueba que se haya proporcionado al menos un argumento, que corresponde al nombre deseado para la \VM. Si no se especifica ningún argumento, muestra un mensaje de uso correcto (\texttt{usage: bootvm <vm-name>}) y finaliza la ejecución.
+
+    \item \textbf{Instalación de la máquina virtual}:  
+    Se utiliza el comando \texttt{xe vm-install} para crear una nueva \VM\ a partir de una plantilla existente, identificada por su UUID (\texttt{0c838875-cb93-dfe3-8c36-a2f42183b434}). El nombre de la nueva \VM\ se asigna según el argumento proporcionado al script. El UUID de la \VM\ recién creada se almacena en la variable \texttt{VM\_UUID} para su uso posterior.
+
+    \item \textbf{Arranque de la VM}:  
+    Finalmente, el script inicia la máquina virtual mediante \texttt{xe vm-start}, utilizando el UUID almacenado previamente.
+
+\end{enumerate}
+
+\input{tablas-images/cp6/src/bootvm.tex}

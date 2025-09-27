@@ -1,9 +1,13 @@
 {
   "jobname": "main",
   "md5": "FAD58DE7366495DB4650CFEFAC2FCD61",
-  "timestamp": "20250927154918",
+  "timestamp": "20250927173915",
   "cachefiles": [
+    "5E783C1ECC14341B2AA35421862FDE62.highlight.minted",
     "7DF9C1E7DC3C6DE4404D9C5029D31C82.highlight.minted",
+    "A68CDE5772B5EF684E61AEBE71864B65.highlight.minted",
+    "CA95C6A5B6B2A1123E84F61F15AF648C.highlight.minted",
+    "FA85D8918012C7D2D9496B2CD610F7C6.highlight.minted",
     "_FAD58DE7366495DB4650CFEFAC2FCD61.index.minted",
     "default.style.minted"
   ]

@@ -178,10 +178,9 @@
 \definecolor{builtin}{HTML}{61AFEF} % Comandos (echo, ssh...)
 
 
-
+\setminted{fontsize=\scriptsize}
 % Configuración global de minted
 \setminted{
-    fontsize=\small,
     bgcolor=bg,
     fontfamily=tt,
     linenos,
@@ -192,6 +191,5 @@
     frame=none,
     baselinestretch=1.2,
 }
-
 % Personalizar colores
 \renewcommand{\theFancyVerbLine}{\textcolor{number}{\arabic{FancyVerbLine}}}

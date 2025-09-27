@@ -1,0 +1,69 @@
+\begin{minted}[frame=lines,
+    fontsize=\scriptsize,
+    breaklines]{bash}
+#!/bin/bash
+
+# ---------------------------------------------------------------
+# Script: red.sh
+# Descripción:
+#   Este script crea una red interna en XCP-ng, la configura con
+#   NAT para permitir que las máquinas virtuales conectadas a ella
+#   tengan salida a Internet, y habilita el reenvío de paquetes 
+#   en el host.
+# ---------------------------------------------------------------
+
+# Parámetros de configuración de la red
+NETWORK_NAME="vm-net-30"         # Nombre asignado a la red en XCP-ng
+SUBNET="172.30.30.0/24"          # Rango de direcciones IP para la red
+GATEWAY="172.30.30.1"            # Dirección IP del gateway de la red
+HOST_IF_NAME="host-vif-vmnet30"  # Nombre de la interfaz virtual del host
+OUT_INTERFACE="eth0"             # Interfaz del host que tiene salida a Internet
+
+# Crear red interna sin bridge en XCP-ng
+echo "Creando red virtual sin bridge..."
+xe network-create name-label="$NETWORK_NAME"
+
+# Obtener el UUID de la red recién creada
+NET_UUID=$(xe network-list name-label="$NETWORK_NAME" --minimal)
+
+# Validar que la red haya sido creada correctamente
+if [ -z "$NET_UUID" ]; then
+    echo "Error: no se pudo crear o encontrar la red."
+    exit 1
+fi
+
+echo "Red creada con UUID: $NET_UUID"
+
+# Crear interfaz virtual para el host en la red interna
+# Esto permite que el host actúe como gateway para las VMs
+HOST_UUID=$(xe host-list --minimal)
+
+echo "Agregando interfaz virtual al host..."
+xe vif-create network-uuid=$NET_UUID device=0 vm-uuid=$HOST_UUID MAC=random
+
+# Configurar dirección IP en el bridge creado automáticamente por Xen
+BRIDGE_IF=$(xe network-param-get param-name=bridge uuid=$NET_UUID)
+echo "Asignando IP $GATEWAY al bridge $BRIDGE_IF..."
+ip addr add $GATEWAY/24 dev $BRIDGE_IF
+ip link set dev $BRIDGE_IF up
+
+# Habilitar reenvío de paquetes IPv4 en el host
+echo "Habilitando IP forwarding..."
+sysctl -w net.ipv4.ip_forward=1
+sed -i '/^#net.ipv4.ip_forward=1/c\net.ipv4.ip_forward=1' /etc/sysctl.conf
+
+# Configurar reglas de NAT con iptables para salida a Internet
+echo "Configurando NAT con iptables..."
+iptables -t nat -A POSTROUTING -s $SUBNET -o $OUT_INTERFACE -j MASQUERADE
+iptables -A FORWARD -s $SUBNET -j ACCEPT
+
+# Guardar reglas iptables si la herramienta está disponible
+if command -v netfilter-persistent &> /dev/null; then
+    echo "Guardando reglas iptables con netfilter-persistent..."
+    netfilter-persistent save
+elif command -v iptables-save &> /dev/null; then
+    echo "Puedes guardar las reglas con: sudo iptables-save > /etc/iptables/rules.v4"
+fi
+
+echo "Configuración completada. Las VMs conectadas a '$NETWORK_NAME' con IPs en $SUBNET podrán salir a Internet vía $OUT_INTERFACE."
+\end{minted}
