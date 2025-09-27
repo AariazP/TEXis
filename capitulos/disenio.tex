@@ -2,8 +2,9 @@
 \mbox{}\\
 \section{Modelado del sistema en Archimate}
 \noindent
-ArchiMate es un lenguaje de modelado estandarizado por~\textit{The Open Group} que permite representar de manera estructurada y clara las diferentes capas de una arquitectura empresarial: negocio, aplicación y tecnología. Su propósito es brindar una visión integrada que facilite la comunicación entre los distintos actores de un proyecto y que muestre cómo los procesos de negocio, los sistemas de información y la infraestructura tecnológica se relacionan entre sí.
-En particular, ArchiMate se organiza en vistas que permiten enfocarse en aspectos específicos: la vista de negocio describe los procesos y actores implicados, la vista de aplicación se centra en los sistemas de software que apoyan esos procesos, y la vista de tecnología aborda la infraestructura que soporta todo el ecosistema. Gracias a este enfoque por capas, los diagramas ayudan a identificar dependencias, puntos de mejora y la coherencia general de la solución arquitectónica.
+ArchiMate es un lenguaje de modelado estandarizado por~\textit{The Open Group} que permite representar de manera estructurada y clara las diferentes capas de una arquitectura empresarial: negocio, aplicación y tecnología~\citep{opengroup_archimate_overview}. Su propósito es brindar una visión integrada que facilite la comunicación entre los distintos actores de un proyecto y que muestre cómo los procesos de negocio, los sistemas de información y la infraestructura tecnológica se relacionan entre sí.
+En particular, ArchiMate se organiza en vistas que permiten enfocarse en aspectos específicos: la vista de negocio describe los procesos y actores implicados, la vista de aplicación se centra en los sistemas de software que apoyan esos procesos, y la vista de tecnología aborda la infraestructura que soporta todo el ecosistema~\citep{archi_user_guide}. Gracias a este enfoque por capas, los diagramas ayudan a identificar dependencias, puntos de mejora y la coherencia general de la solución arquitectónica.
+En la guía de usuario de ArchiMate se especifica el uso y significado de cada uno de los elementos y relaciones que componen el lenguaje, facilitando la creación de modelos comprensibles, esta guía puede encontrarse \href{https://www.archimatetool.com/downloads/archi/Archi%20User%20Guide.pdf}{aquí}.
 
 \subsection{Vista de negocio}
 \noindent
@@ -62,3 +63,11 @@ Finalmente, los usuarios finales acceden a las aplicaciones desplegadas en los p
 \end{figure}
 
 \section{Código fuente del sistema}
+\noindent
+El código fuente del sistema, desarrollado en el lenguaje Bash, está disponible en el repositorio de GitHub \href{https://github.com/AariazP/TG-VBC.git}{\texttt{TG-VBC}} en la rama \texttt{scripted-solution}. Este repositorio contiene scripts para la automatización de tareas en la infraestructura de virtualización basada en contenedores, incluyendo la configuración de nodos, despliegue de \VM\ y configuración de Kubernetes. 
+La figura~\ref{fig:estructura-proyecto} detalla la estructura del proyecto
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{tablas-images/cp6/src/tree.png}
+    \caption{Estructura del proyecto}\label{fig:estructura-proyecto}
+\end{figure}
