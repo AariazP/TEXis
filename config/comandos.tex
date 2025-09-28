@@ -196,3 +196,18 @@
 }
 % Personalizar colores
 \renewcommand{\theFancyVerbLine}{\textcolor{number}{\arabic{FancyVerbLine}}}
+
+
+% Configuración específica para anexos
+\appendix
+\renewcommand{\thechapter}{\Alph{chapter}}
+\renewcommand{\chaptername}{Anexo}
+
+% Configuración de headers para anexos
+\fancypagestyle{anexos}{
+    \fancyhf{}
+    \fancyhead[L]{\leftmark}
+    \fancyhead[R]{\thepage}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
