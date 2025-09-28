@@ -1,7 +1,7 @@
 \ChapterImageStar[cap:benchmarking]{Benchmarking}{./images/fondo.png}\label{cap:benchmarking}
 
 \mbox{}\\
-\section{Descripción del escenario de pruebas}
+\section{Descripción del escenario de pruebas}\label{sec:escenario-pruebas}
 \noindent
 Las características del entorno de prueba incluyeron el uso de una máquina con especificaciones técnicas homogéneas, propendiendo  porque las diferencias en rendimiento se debieran exclusivamente a las tecnologías evaluadas y no a variaciones en el hardware o la configuración del sistema operativo, las características del entorno de prueba se detallan a continuación:\\ \\
 \noindent
@@ -52,7 +52,7 @@ Para medir el consumo de \CPU\ y memoria \RAM, se utilizó \texttt{pidstat}, una
 Para evaluar el \textit{throughput} de red se emplearon herramientas como \texttt{iperf}, mientras que la latencia de disco fue medida utilizando \texttt{fio}. Todas las pruebas fueron ejecutadas múltiples veces para reducir el impacto de variaciones puntuales y asegurar la confiabilidad de los resultados. Los scripts fueron programados para ejecutarse 10 veces; al final se extrae un promedio y este constituye el puntaje final de la tecnología de contenerización en cuestión.
 En el repositorio \underline{\href{https://github.com/Anubis-1001/benchmark-tecnologias-de-contenerizacion} {\texttt{ GitHub benchmarking}}} se pueden encontrar los scripts resultantes de este proceso.
 
-\section{Resultados de las pruebas}
+\section{Resultados de las pruebas}\label{sec:resultados-pruebas}
 \noindent
 Los resultados obtenidos a partir de las pruebas evidencian diferencias significativas en el rendimiento entre las tecnologías de contenerización evaluadas. Estos se pueden consultar en el archivo de Excel \underline{\href{https://docs.google.com/spreadsheets/d/1Ce37Sm3Swyfa88Ur1yQbLarq_D86obUIAGGJocgQbUE/edit?usp=sharing} {\texttt{benchmarking\_tecnologias}}}.
 En términos de consumo de \CPU, Docker y Containerd presentan las mejores métricas; en consumo de memoria \RAM, LXC y LXD mostraron un mejor uso de los recursos. En cuanto al tiempo de arranque, Containerd destacó por su velocidad, seguido de cerca por Docker, mientras que LXC presentó un arranque considerablemente más lento en comparación con las demás tecnologías.

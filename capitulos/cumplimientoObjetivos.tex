@@ -1,6 +1,6 @@
 \ChapterImageStar[cap:cumplimiento-objetivos]{Cumplimiento de objetivos}{./images/fondo.png}\label{cap:cumplimiento-objetivos}
 \mbox{}\\
-\section{Cumplimiento de objetivos}
+\section{Análisis del cumplimiento de los objetivos}
 \noindent
 En este capítulo se presenta un análisis del cumplimiento de los objetivos planteados al inicio del proyecto. Se evalúa cómo cada objetivo específico ha sido abordado y alcanzado a lo largo del desarrollo del trabajo.
 
@@ -12,22 +12,200 @@ En este capítulo se presenta un análisis del cumplimiento de los objetivos pla
 \hline
 \multicolumn{2}{|c|}{\textbf{Objetivo específico 1:}} \\
 \hline
-\multicolumn{2}{|p{15cm}|}{\textit{Reconocer necesidades, problemas y oportunidades con relación a la gestión de \textcolor{blue}{RSI} en los \textcolor{blue}{ETAI}}} \\
+\multicolumn{2}{|p{15cm}|}{\textit{Reconocer necesidades del \textcolor{blue}{\GRID} con relación a las tecnologías de virtualización basadas en contenedores \textcolor{blue}{\VBC}.}} \\
 \hline
 \textbf{Detalle de cumplimiento} & \textbf{Observaciones} \\
 \hline
-Ver capítulo \textcolor{blue}{9} Desarrollo Metodológico, Etapa 2: Análisis. Se realizaron procesos cuali-cuantitativos para obtener información del grupo objetivo. & 
-\textbf{Paso 1:} Reconocimiento de las instituciones pertenecientes al grupo objetivo (ver sección \textcolor{blue}{9.2.1}).
+Se efectuó una caracterización institucional del \textcolor{blue}{\GRID} en el capitulo~\textcolor{blue}{\ref{cap:caracterizacionGRID}}, en la cual se identificaron actores clave, capacidades tecnológicas, limitaciones de infraestructura y expectativas de servicios. A partir de esta información, se determinó la necesidad de contar con tecnologías de virtualización más ligeras que complementen la infraestructura basada en máquinas virtuales. &
+\textbf{Paso 1:} Se realizó el análisis de stakeholders~\textcolor{blue}{\ref{sec:stakeholders}} para identificar los actores internos y externos vinculados al proyecto.
 
-- \textbf{Formato 1}, Identificación de instituciones (apéndice \textcolor{blue}{A.1}). Identificación de la \textit{Universidad del Quindío} (sección \textcolor{blue}{9.2.1.1}) e identificación de la \textit{Universidad Tecnológica de Pereira} (sección \textcolor{blue}{9.2.1.2}).
+- \textbf{Formato 1:} Se realizó cuadros de análisis y priorización de stakeholders buscando identificar los actores clave del proyecto (\textcolor{blue}{\ref{tab:stakeholders}} y \textcolor{blue}{\ref{fig:tabla-priorizacion-stakeholders}}).
 
-\textbf{Paso 2:} Insumos para el diseño del sistema de gobierno y gestión.
+\textbf{Paso 2:} Se levantó un inventario de infraestructura tecnológica~\textcolor{blue}{\ref{sec:caracterizacion-infraestructura}}, detallando servidores y racks.
 
-- \textbf{Encuesta 1}, formulario (apéndice \textcolor{blue}{A.2}) y respuestas (apéndice \textcolor{blue}{A.3}).
+- \textbf{Plantilla:} Se hizo una caracterizacion de infraestructura que puede encontrarse en apéndice \textcolor{blue}{\ref{fig:tabla-ficha-tecnica}}.
 
-\textbf{Paso 3:} Caracterización de los \textit{ETAI}.
+\textbf{Paso 3:} Se documentaron los servicios actuales y los esperados~\textcolor{blue}{\ref{sec:caracterizacion-servicios}}, lo cual permitió contrastar brechas y oportunidades.
 
-- \textbf{Encuesta 2}, formulario (apéndice \textcolor{blue}{A.4}) y respuestas (apéndice \textcolor{blue}{A.5}). \\
+- \textbf{Plantilla:} Se diseño una plantilla de servicios que puede encontrarse en apéndice \textcolor{blue}{\ref{fig:tabla-ficha-servicios}}.
+
+\textbf{Paso 4:} Se llevó a cabo la entrevista con el cliente~\textcolor{blue}{\ref{sec:entrevista-cliente}}, que validó la pertinencia de las Tecnologías de \textcolor{blue}{\VBC} como alternativa complementaria a las máquinas virtuales. \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Cumplimiento del objetivo específico 2}
+\label{tab:cumplimiento-objetivo-2}
+\begin{tabular}{|p{6cm}|p{9cm}|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Objetivo específico 2:}} \\
+\hline
+\multicolumn{2}{|p{15cm}|}{Identificar las tecnologías de virtualización basadas en contenedores \textcolor{blue}{\VBC}} \\
+\hline
+\textbf{Detalle de cumplimiento} & \textbf{Observaciones} \\
+\hline
+Se desarrolló un estudio de mapeo sistemático (\textcolor{blue}{\SMS}) en el capítulo~\textcolor{blue}{\ref{cap:revisionLiteratura}}. Se identificaron y clasificaron 18 tecnologías de \textcolor{blue}{\VBC}, a partir del análisis de 226 estudios académicos y técnicos, lo que permitió conformar un panorama del estado del arte. &
+\textbf{Paso 1:} Definición de la estrategia de búsqueda: bases de datos académicas y la bola de nieve. Este proceso se evidencia en la sección~\textcolor{blue}{\ref{sec:estrategia-busqueda}}.
+
+- \textbf{Estrategia:} Se diseñó una estrategia de búsqueda que se detalla en las figuras \textcolor{blue}{\ref{tab:tabla-diagrama-cadena-busqueda}} y \textcolor{blue}{\ref{tab:tabla-diagrama-bola-nieve-busqueda}}.
+
+\textbf{Paso 2:} Selección de estudios relevantes mediante criterios de inclusión y exclusión. Este proceso se documenta en la sección~\textcolor{blue}{\ref{sec:priorizacionEstudios}}.
+
+- \textbf{Cadenas de búsqueda:} Se diseñaron cadenas de búsqueda que se detallan en la sección \textcolor{blue}{\ref{sec:cadenas-busqueda}} del apéndice \textcolor{blue}{\ref{apendice:busquedas-bases-datos}}.
+
+\textbf{Paso 3:} Identificación de tecnologías \textcolor{blue}{\VBC} como Docker, Podman, LXC, LXD, Containerd, Singularity, entre otras. Este proceso se detalla en la sección~\textcolor{blue}{\ref{sec:tecnologias-vbc-identificadas}}.
+
+\textbf{Paso 4:} Identificación de tecnologías de orquestación como Kubernetes, OpenShift, Docker Swarm, Nomad, entre otras. Este proceso se expone en la sección~\textcolor{blue}{\ref{sec:tecnologias-vbc-identificadas}}. \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Cumplimiento del objetivo específico 3}
+\label{tab:cumplimiento-objetivo-3}
+\begin{tabular}{|p{6cm}|p{9cm}|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Objetivo específico 3:}} \\
+\hline
+\multicolumn{2}{|p{15cm}|}{Caracterización tecnologías de virtualización basadas en contenedores.} \\
+\hline
+\textbf{Detalle de cumplimiento} & \textbf{Observaciones} \\
+\hline
+A partir de la sección \textcolor{blue}{\ref{sec:nichos-mercado}} se realizó una caracterización comparativa de las tecnologías identificadas, considerando aspectos como licencia, interfaz de uso, integración con nubes, orquestación, entornos de ejecución y soporte. Además, se construyó un cuadrante Gartner que permitió ubicar a las tecnologías según su visión y capacidad de ejecución. &
+\textbf{Paso 1:} Construcción de cuadros descriptivos con base en documentación oficial y literatura científica.
+
+- \textbf{Documentación:} Se consultó la documentación oficial de cada tecnología y se revisaron artículos científicos y técnicos que describen sus características y casos de uso. Esta información se sintetizó en cuadros comparativos que se presentan desde la sección~\textcolor{blue}{\ref{sec:nichos-mercado}}.
+
+\textbf{Paso 2:} Elaboración de cuadros comparativo de características.
+
+\textbf{Paso 3:} Construcción del cuadrante Gartner para ubicar las tecnologías en líderes, desafiantes, visionarios y jugadores de nicho.
+
+- \textbf{Cuadrante:} Este análisis se encuentra en la sección~\textcolor{blue}{\ref{fig:tabla-cuadrante-gartner}}. \\
+
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Cumplimiento del objetivo específico 4}
+\label{tab:cumplimiento-objetivo-4}
+\begin{tabular}{|p{6cm}|p{9cm}|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Objetivo específico 4:}} \\
+\hline
+\multicolumn{2}{|p{15cm}|}{Seleccionar un conjunto de tecnologías de contenedores para realizar pruebas de concepto.} \\
+\hline
+\textbf{Detalle de cumplimiento} & \textbf{Observaciones} \\
+\hline
+Se seleccionaron cinco tecnologías principales: Docker, Podman, LXC, LXD y Containerd. La selección se sustentó en su relevancia académica y práctica, así como en la frecuencia de uso reportada en la literatura. Estas fueron sometidas a benchmarking técnico en el capítulo~\ref{cap:benchmarking}. &
+\textbf{Paso 1:} Para la construcción del escenario de pruebas se creó una \VM\ en el hipervisor VirtualBox, con Debian 12 Bookworm como sistema operativo base. En esta \VM\ se instalaron las cinco tecnologías seleccionadas: Docker, Podman, LXC, LXD y Containerd. La descripción detallada de este proceso se encuentra en la sección~\textcolor{blue}{\ref{sec:escenario-pruebas}}.
+
+- \textbf{Documentación:} Se consultó la documentación oficial de cada tecnología y se revisaron artículos científicos y técnicos que describen sus características y casos de uso. Esta información se sintetizó en cuadros comparativos que se presentan desde la sección~\textcolor{blue}{\ref{sec:nichos-mercado}}.
+
+\textbf{Paso 2:} Se diseñaron pruebas de concepto para evaluar rendimiento en consumo de \CPU, \RAM, tiempo de arranque, latencia de disco y \textit{throughput} de red.
+
+-\textbf{repositorio:} Se creó un repositorio en GitHub para alojar el código y la documentación de las pruebas de concepto. Este repositorio se encuentra disponible \underline{\href{https://github.com/Anubis-1001/benchmark-tecnologias-de-contenerizacion} {Aquí}}
+
+\textbf{Paso 3:} Una vez ejecutadas las pruebas de concepto, se recopilaron y analizaron los resultados para evaluar el rendimiento de cada tecnología en diferentes escenarios.
+
+- \textbf{Resultados:} Los resultados de las pruebas de concepto se documentaron en la sección~\textcolor{blue}{\ref{sec:resultados-pruebas}} del capítulo~\textcolor{blue}{\ref{cap:benchmarking}}, además de estar disponibles en el siguiente archivo de Excel \underline{\href{https://docs.google.com/spreadsheets/d/1Ce37Sm3Swyfa88Ur1yQbLarq_D86obUIAGGJocgQbUE/edit?usp=sharing} {\texttt{benchmarking\_tecnologias}}}. \\
+
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Cumplimiento del objetivo específico 5}
+\label{tab:cumplimiento-objetivo-5}
+\begin{tabular}{|p{6cm}|p{9cm}|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Objetivo específico 5:}} \\
+\hline
+\multicolumn{2}{|p{15cm}|}{Diseñar una especificación arquitectónica para las herramientas seleccionadas.} \\
+\hline
+\textbf{Detalle de cumplimiento} & \textbf{Observaciones} \\
+\hline
+En el capítulo 11 se diseñó una arquitectura en ArchiMate que incluye la vista de negocio, vista de aplicación, vista tecnológica y una vista general. Adicionalmente, se construyó un modelo por capas (infraestructura, virtualización y aplicación) que articula la solución para el \GRID. &
+\textbf{Paso 1:} Modelado inicial en ArchiMate con vistas de negocio, aplicación y tecnología.
+
+- \textbf{Diagramas:} Se diseñaron diagramas en ArchiMate que se encuentran en la sección~\textcolor{blue}{\ref{sec:archimate-modelado}}.
+
+\textbf{Paso 2:} Definición de la arquitectura por capas.
+
+-\textbf{Arquitectura:} Se diseñó una arquitectura por capas que se encuentra en la sección~\textcolor{blue}{\ref{sec:disenio-por-capas}}.
+
+\textbf{Paso 3:} Integración de las tecnologías seleccionadas en la arquitectura (Containerd + K3S).
+
+- \textbf{Integración:} Se integraron las tecnologías seleccionadas en la arquitectura diseñada, lo cual se detalla en la sección~\textcolor{blue}{\ref{sec:virtualizacion-capa}}. \\
+
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Cumplimiento del objetivo específico 6}
+\label{tab:cumplimiento-objetivo-6}
+\begin{tabular}{|p{6cm}|p{9cm}|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Objetivo específico 6:}} \\
+\hline
+\multicolumn{2}{|p{15cm}|}{Implementar el prototipo funcional.} \\
+\hline
+\textbf{Detalle de cumplimiento} & \textbf{Observaciones} \\
+\hline
+En el capítulo 12 se implementó un \PMV en un entorno no productivo del \GRID. El prototipo incluyó la automatización de despliegues con K3S y Containerd, junto con scripts de soporte (red, SSH, inicialización, despliegue de VMs, clusterización y limpieza). &
+\textbf{Paso 1:} Implementación de scripts para la automatización de tareas.
+
+- \textbf{código:} Se desarrollaron scripts en Bash para automatizar tareas como configuración de red, acceso SSH, inicialización del entorno, despliegue de máquinas virtuales, clusterización con K3S y limpieza del sistema. Estos scripts se encuentran en la sección~\textcolor{blue}{\ref{sec:automatizacion-scripts}}.
+
+\textbf{Paso 2:} Despliegue del clúster K3S sobre Containerd en infraestructura del GRID.
+
+-\textbf{evidencia:} Se documentó el proceso de despliegue del clúster K3S sobre Containerd en la sección~\textcolor{blue}{\ref{sec:despliegue-cluster}} del capítulo~\textcolor{blue}{\ref{cap:implementacion}}. 
+
+\textbf{Paso 3:} Validación inicial de los componentes del PMV.
+
+- \textbf{Resultados:} Se realizaron pruebas de funcionalidad y rendimiento en los componentes del PMV, cuyos resultados se documentan en la sección~\textcolor{blue}{\ref{sec:resultados-pruebas}} del capítulo~\textcolor{blue}{\ref{cap:benchmarking}}. \\
+
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Cumplimiento del objetivo específico 7}
+\label{tab:cumplimiento-objetivo-7}
+\begin{tabular}{|p{6cm}|p{9cm}|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Objetivo específico 7:}} \\
+\hline
+\multicolumn{2}{|p{15cm}|}{Validar casos con relación a la necesidad del cliente.} \\
+\hline
+\textbf{Detalle de cumplimiento} & \textbf{Observaciones} \\
+\hline
+En el capítulo 11 se diseñó una arquitectura en ArchiMate que incluye la vista de negocio, vista de aplicación, vista tecnológica y una vista general. Adicionalmente, se construyó un modelo por capas (infraestructura, virtualización y aplicación) que articula la solución para el \GRID. &
+\textbf{Paso 1:} Modelado inicial en ArchiMate con vistas de negocio, aplicación y tecnología.
+
+- \textbf{Documentación:} Se consultó la documentación oficial de cada tecnología y se revisaron artículos científicos y técnicos que describen sus características y casos de uso. Esta información se sintetizó en cuadros comparativos que se presentan desde la sección~\textcolor{blue}{\ref{sec:nichos-mercado}}.
+
+\textbf{Paso 2:} Definición de la arquitectura por capas.
+
+-\textbf{repositorio:} Se creó un repositorio en GitHub para alojar el código y la documentación de las pruebas de concepto. Este repositorio se encuentra disponible \underline{\href{https://github.com/Anubis-1001/benchmark-tecnologias-de-contenerizacion} {Aquí}}
+
+\textbf{Paso 3:} Integración de las tecnologías seleccionadas en la arquitectura (Containerd + K3S).
+
+- \textbf{Resultados:} Los resultados de las pruebas de concepto se documentaron en la sección~\textcolor{blue}{\ref{sec:resultados-pruebas}} del capítulo~\textcolor{blue}{\ref{cap:benchmarking}}, además de estar disponibles en el siguiente archivo de Excel \underline{\href{https://docs.google.com/spreadsheets/d/1Ce37Sm3Swyfa88Ur1yQbLarq_D86obUIAGGJocgQbUE/edit?usp=sharing} {\texttt{benchmarking\_tecnologias}}}. \\
+
 \hline
 \end{tabular}
 \end{table}

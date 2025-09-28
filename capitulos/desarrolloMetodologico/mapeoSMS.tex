@@ -70,7 +70,7 @@ M4 & Cantidad de trabajos incluidos en extensión. \\ \hline
 
 
 
-\section{Búsqueda de estudios}
+\section{Búsqueda de estudios}\label{sec:estrategia-busqueda}
 \noindent
 % Asegúrate de tener cargado el paquete enumitem en el preámbulo:
 % \usepackage{enumitem}
@@ -240,6 +240,16 @@ Como segunda estrategia de búsqueda dentro del SMS, se aplicó la técnica de ~
 A continuación se presentan las gráficas de los resultados de la búsqueda. 
 \input{tablas-images/cp2/estudios.tex}
 
+\section{Identificación de tecnologías de \VBC}\label{sec:tecnologias-vbc-identificadas}
+\noindent
+En esta sección se presentan las tecnologías de \VBC\ y las tecnologías de orquestación identificadas en el proceso de revisión sistemática de la literatura. \\
+\noindent
+El gráfico presentado en la Figura~\ref{fig:tecnologias-vbc} expone la distribución de las tecnologías de \VBC\ identificadas en el estudio de mapeo sistemático. En él se observa que Docker es la tecnología con mayor representación, acumulando 94 menciones, lo que evidencia su posición dominante en el ecosistema. En contraste, alternativas como Podman, LXC y Containerd muestran una presencia moderada, mientras que tecnologías como OpenVZ y Hyper-V containers apenas alcanzan una mención. Este comportamiento refleja tanto la consolidación de Docker como estándar \textit{de facto} en el ámbito de los contenedores, como la coexistencia de múltiples soluciones que, aunque menos extendidas, representan enfoques relevantes para casos de uso específicos. \\
+\input{tablas-images/cp2/tecnologias-vbc.tex}
+\noindent
+La Figura~\ref{fig:tecnologias-orquestacion} muestra la distribución de las tecnologías de orquestación identificadas en el estudio de mapeo sistemático. El gráfico evidencia una clara predominancia de Kubernetes, con 67 menciones, consolidándose como la solución de referencia en la gestión de contenedores. En un segundo nivel, tecnologías como Docker Swarm (9) y Apache Mesos (5) presentan una adopción moderada, mientras que opciones como OpenShift, Docker Compose, Amazon ECS y Amazon EKS aparecen con una menor representación. Estos resultados reflejan la consolidación de Kubernetes como estándar en orquestación, a la vez que destacan la diversidad de alternativas que, aunque menos extendidas, atienden necesidades específicas en determinados contextos.
+\input{tablas-images/cp2/tecnologias-orquestacion.tex}
+
 \section{Información de la herramienta}
 
 \noindent
@@ -248,6 +258,8 @@ La herramienta utilizada para este proceso de revisión de la literatura fue \te
 \begin{center}
 \href{https://hub.docker.com/r/griduq/sms-builder}{\texttt{https://hub.docker.com/r/griduq/sms-builder}}
 \end{center}
+
+
 
 \section{Reproducibilidad del método}
 \noindent

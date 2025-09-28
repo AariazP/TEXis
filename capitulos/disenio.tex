@@ -1,6 +1,6 @@
 \ChapterImageStar[cap:disenio]{Diseño de la solución}{./images/fondo.png}\label{cap:disenio}
 \mbox{}\\
-\section{Modelado del sistema en Archimate}
+\section{Modelado del sistema en Archimate}\label{sec:archimate-modelado}
 \noindent
 ArchiMate es un lenguaje de modelado estandarizado por~\textit{The Open Group} que permite representar de manera estructurada y clara las diferentes capas de una arquitectura empresarial: negocio, aplicación y tecnología~\citep{opengroup_archimate_overview}. Su propósito es brindar una visión integrada que facilite la comunicación entre los distintos actores de un proyecto y que muestre cómo los procesos de negocio, los sistemas de información y la infraestructura tecnológica se relacionan entre sí.
 En particular, ArchiMate se organiza en vistas que permiten enfocarse en aspectos específicos: la vista de negocio describe los procesos y actores implicados, la vista de aplicación se centra en los sistemas de software que apoyan esos procesos, y la vista de tecnología aborda la infraestructura que soporta todo el ecosistema~\citep{archi_user_guide}. Gracias a este enfoque por capas, los diagramas ayudan a identificar dependencias, puntos de mejora y la coherencia general de la solución arquitectónica.
@@ -22,7 +22,7 @@ En el anexo~\ref{sec:archimate-elementos} se especifica el uso y significado de 
 \noindent
 \input{tablas-images/cp6/vista-general.tex}
 
-\section{Diseño por capas de la solución}
+\section{Diseño por capas de la solución}\label{sec:disenio-por-capas}
 \noindent
 El diseño por capas constituye una aproximación metodológica que permite descomponer sistemas complejos en niveles de abstracción claramente diferenciados, facilitando así tanto la comprensión como la gestión de los distintos componentes que integran una solución tecnológica~\citep{Spray2023}. En este contexto, la arquitectura se estructura en tres niveles fundamentales: la capa de infraestructura, que provee los recursos físicos y de red necesarios para el funcionamiento del sistema; la capa de virtualización, que abstrae dichos recursos mediante hipervisores y clústeres de orquestación, posibilitando la ejecución flexible de máquinas virtuales y contenedores; y la capa de aplicación, donde se materializan los servicios y procesos que consumen directamente los usuarios finales. Esta organización jerárquica incentiva a una separación de responsabilidades y una mayor escalabilidad, sino que también favorece la resiliencia, la reutilización de componentes y la alineación con principios de arquitectura empresarial como los propuestos en TOGAF y ArchiMate.
 \subsection{Capa de infraestructura}
@@ -34,7 +34,7 @@ El diagrama de la capa de infraestructura, de la figura~\ref{fig:infraestructura
     \caption{Capa de Infraestructura}\label{fig:infraestructura}
 \end{figure}
 
-\subsection{Capa de virtualización}
+\subsection{Capa de virtualización}\label{sec:virtualizacion-capa}
 \noindent
 El diagrama~\ref{fig:virtualizacion} ilustra la capa de virtualización de la solución, en la cual se abstraen los recursos físicos mediante hipervisores para conformar un cluster de Kubernetes (k8s). Sobre el hipervisor tipo 1 (XCP-ng) se despliega una red de máquinas virtuales organizadas en dos grupos: los nodos maestros, responsables de la orquestación y administración del \textit{cluster}, y los nodos \textit{workers}, dedicados a la ejecución de cargas de trabajo y contenedores.
 \noindent

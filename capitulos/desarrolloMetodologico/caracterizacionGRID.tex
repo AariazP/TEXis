@@ -3,7 +3,7 @@
 El Grupo de Investigación en Redes, Información y Distribución (\GRID) de la Universidad del Quindío se enmarca en los objetivos misionales de la institución: educación, investigación y extensión. Su propósito central es impulsar el desarrollo a través de proyectos de investigación aplicada, formación académica y transferencia de conocimiento. En particular, el \GRID\ busca ofrecer servicios tecnológicos avanzados a la comunidad académica, con énfasis en los estudiantes de Ingeniería de Sistemas y Computación, quienes encuentran en este grupo un espacio de formación e innovación en temas de infraestructura, software y tecnologías emergentes.\\
 La caracterización del \GRID\ resulta esencial para comprender su estructura, capacidades y necesidades en relación con la adopción de tecnologías de virtualización basadas en contenedores (\VBC). A continuación, se presenta un análisis de los diferentes aspectos que definen el contexto institucional y tecnológico del grupo.
 
-\section{Análisis de stakeholders del GRID}
+\section{Análisis de stakeholders del GRID}\label{sec:stakeholders}
 \noindent
 Con el fin de identificar los actores internos y externos que influyen en el desarrollo de las actividades del grupo, se realizó un análisis de \textit{stakeholders}. Este ejercicio permitió reconocer los diferentes intereses, roles y niveles de influencia que cada actor tiene en relación con la posible implementación de una solución de virtualización por contenedores. Los principales \textit{stakeholders} identificados incluyen: investigadores del grupo, estudiantes de pregrado y posgrado, docentes de la Facultad de Ingeniería, y en un nivel más amplio, la comunidad académica de la Universidad del Quindío.\\
 La tabla~\ref{tab:stakeholders} presenta el análisis de los principales interesados en la adopción de tecnologías de virtualización dentro del contexto institucional. Se identifican actores internos y externos, especificando su rol, el tipo de relación con el proyecto, el nivel de impacto esperado, así como su poder de influencia, interés y compromiso frente a la iniciativa. Este análisis permite reconocer que el Grupo de Investigación \GRID\ constituye el beneficiario principal y el decisor estratégico, mientras que los docentes y estudiantes de Ingeniería de Sistemas representan usuarios clave y finales que validarán la utilidad de la solución en actividades académicas y de investigación. A nivel institucional, el programa de ingeniería de sistemas y computación actúa como facilitador de recursos y lineamientos, mientras que los proveedores de tecnología aportan las herramientas de virtualización requeridas. De forma complementaria, los investigadores externos y otros grupos de investigación pueden beneficiarse indirectamente de los resultados, y el sector empresarial se perfila como un potencial socio estratégico si percibe ventajas competitivas en la solución.
@@ -78,7 +78,7 @@ y extensión mediante la especificación de una arquitectura de tecnologías de
 virtualización basada en contenedores (\VBC). 
 Este trabajo se enfoca en la identificación de una tecnología de contenerización que \textbf{agregue valor a los procesos del grupo}, beneficiando a docentes, estudiantes y cualquier parte interesada que participe en los proyectos y actividades desarrolladas por este grupo de investigación.
 
-\section{Caracterización de la infraestructura tecnológica del GRID}
+\section{Caracterización de la infraestructura tecnológica del GRID}\label{sec:caracterizacion-infraestructura}
 \noindent
 En la presente sección se describen las características técnicas de la infraestructura tecnológica del \GRID\ disponible para temas de virtualización. Esta caracterización se construyó usando una \href{https://docs.google.com/spreadsheets/d/14NBv72ucVTrLqGIldYdIsjdBGt3QlgwcblcVRis-DaQ/edit?usp=sharing}{macro} que permite facilitar la recolección de información técnica de los servidores y equipos de cómputo disponibles en el \GRID.\\
 
@@ -86,7 +86,7 @@ En la presente sección se describen las características técnicas de la infrae
 Los cuadros~\ref{tab:torre-hp-1},~\ref{tab:torre-2},~\ref{tab:torre-3} y~\ref{tab:torre-4} presentan las fichas técnicas de cuatro servidores tipo torre pertenecientes al inventario del Grupo de investigación. Se trata de equipos marca HP, sin modelo específico identificado, pero con características homogéneas en su configuración física y técnica: disponen de ocho puertos USB (cuatro frontales y cuatro posteriores), entradas y salidas de audio y micrófono, conexión HDMI, lector de DVD, tres interfaces Ethernet, puerto DisplayPort y conectores PS/2 para teclado y ratón. Su propósito principal es funcionar como hipervisores con XCP-ng, y se encuentran adaptados para soportar procesos de virtualización. Estos recursos, identificados con diferentes códigos de inventario y números en el \CPD\, hacen parte del \textit{cluster} actual, usados para el desarrollo de proyectos dentro del \GRID.
 \input{tablas-images/cp1/caracterizacionInfraestructura.tex}
 
-\section{Caracterización de servicios del GRID}
+\section{Caracterización de servicios del GRID}\label{sec:caracterizacion-servicios}
 \noindent
 El \GRID\ ofrece una variedad de servicios tecnológicos a la comunidad académica, especialmente a los estudiantes de Ingeniería de Sistemas y Computación. Estos servicios incluyen:
 
@@ -158,7 +158,7 @@ Con relación a lo anterior, las tecnologías de virtualización basadas en proc
 Como mencionan~\citep{Sepulveda-Rodriguez2022}, las tecnologías de virtualización han proliferado en los últimos años y constituyen la base subyacente de infraestructuras modernas como el \textit{cloud computing}. A partir de esta proliferación, las tecnologías de \VBC\ se presentan como una alternativa que podría potenciar la gestión de los recursos relacionados con la infraestructura de \TI\ del \GRID.
 Las tecnologías de \VBC\ representan una opción de virtualización que requiere menos recursos computacionales para su operación \citep{Xavier2013}, y que, en conjunto con las máquinas virtuales ya existentes en el \GRID\, podrían constituir una oferta de servicios de \TI\ con mayor diversificación, escalabilidad, flexibilidad y mantenibilidad, para satisfacer los requerimientos del contexto académico del grupo de investigación.
 
-\section{Resumen de la entrevista con el cliente}
+\section{Resumen de la entrevista con el cliente}\label{sec:entrevista-cliente}
 \noindent
 Para comprender mejor las necesidades y expectativas del \GRID, se realizó una entrevista con uno de sus miembros.
 

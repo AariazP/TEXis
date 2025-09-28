@@ -9,7 +9,8 @@ La figura~\ref{fig:estructura-proyecto} detalla la estructura del proyecto
     \caption{Estructura del proyecto}\label{fig:estructura-proyecto}
 \end{figure}
 
-\section{Código fuente}
+\section{Código fuente}\label{sec:automatizacion-scripts}
+\noindent
 El código fuente del sistema, desarrollado en el lenguaje Bash, está disponible en el repositorio de GitHub \href{https://github.com/AariazP/TG-VBC.git}{\texttt{TG-VBC}} en la rama \texttt{scripted-solution}. Este repositorio contiene scripts para la automatización de tareas en la infraestructura de virtualización basada en contenedores, incluyendo la configuración de nodos, despliegue de \VM\ y configuración de Kubernetes. 
 
 \subsection{Script para obtener la IP de una \VM\ en XCP ng}
@@ -181,3 +182,8 @@ El script \texttt{clean-cluster.sh} está diseñado para eliminar de manera segu
 \end{enumerate}
 
 \input{tablas-images/cp6/src/clean-cluster.tex}
+
+
+\section{Despliegue del clúster K3s}\label{sec:despliegue-cluster}
+\noindent
+El despliegue del clúster K3s se realizó utilizando el script \texttt{cluster-bootup.sh}, el cual automatiza la creación e inicialización de un clúster K3s sobre máquinas virtuales en XCP-ng. En este caso, se optó por crear un clúster con 2 nodos \texttt{master} y 2 nodos \texttt{worker}, sin incluir un servidor de respaldo ni un balanceador de carga. El comando utilizado fue el siguiente:
