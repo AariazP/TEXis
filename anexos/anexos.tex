@@ -1,8 +1,11 @@
-%--------------------------------------------------------------------------------% Aplicar estilo de página para anexos
-\pagestyle{anexos}
 
-% Inicio de los anexos
-\anexos
+
+% Configuración específica para anexos (continuando después de apéndices)
+\renewcommand{\thechapter}{\Alph{chapter}}
+\renewcommand{\chaptername}{Anexo}
+
+% Aplicar estilo de página para anexos
+\pagestyle{anexos}
 
 %--------------------------------------------------------------------------------
 \FloatBarrier

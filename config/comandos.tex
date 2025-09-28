@@ -198,12 +198,7 @@
 \renewcommand{\theFancyVerbLine}{\textcolor{number}{\arabic{FancyVerbLine}}}
 
 
-% Configuración específica para anexos
-\appendix
-\renewcommand{\thechapter}{\Alph{chapter}}
-\renewcommand{\chaptername}{Anexo}
-
-% Configuración de headers para anexos
+% Configuración de headers para anexos (definida aquí, aplicada en anexos.tex)
 \fancypagestyle{anexos}{
     \fancyhf{}
     \fancyhead[L]{\leftmark}
