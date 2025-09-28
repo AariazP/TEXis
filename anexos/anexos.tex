@@ -1,15 +1,32 @@
 
 
-% Configuración específica para anexos (continuando después de apéndices)
-\renewcommand{\thechapter}{\Alph{chapter}}
-\renewcommand{\chaptername}{Anexo}
+% Configuración específica para anexos (contador completamente independiente)
+\newcounter{anexo} % Crear un contador específico para anexos
+\setcounter{anexo}{0} % Inicializar en 0
+\renewcommand{\theanexo}{\Alph{anexo}} % Formato alfabético para anexos
+
+% Redefinir el formato del capítulo para que muestre "Anexo" correctamente
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{Anexo\ \theanexo}{20pt}{\Huge}
 
 % Aplicar estilo de página para anexos
 \pagestyle{anexos}
 
 %--------------------------------------------------------------------------------
 \FloatBarrier
-\chapter{Elementos en ArchiMate}\label{anexo:archimate-elementos}
+\cleardoublepage
+\refstepcounter{anexo} % Incrementar el contador de anexo
+\phantomsection
+\addcontentsline{toc}{chapter}{Anexo \theanexo: Elementos en ArchiMate}
+
+% Mostrar manualmente el título del anexo
+{\centering \normalfont\huge\bfseries Anexo \theanexo \par}
+\vspace{20pt}
+{\centering \Huge\bfseries Elementos en ArchiMate \par}
+\vspace{40pt}
+
+\label{anexo:archimate-elementos}
+\markboth{Anexo \theanexo: Elementos en ArchiMate}{Anexo \theanexo: Elementos en ArchiMate}
 
 % Introducción al anexo
 Este anexo presenta una descripción detallada de los elementos y relaciones del lenguaje de modelado ArchiMate, proporcionando una referencia completa para la comprensión y aplicación de este estándar en arquitectura empresarial.
