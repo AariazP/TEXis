@@ -1,5 +1,45 @@
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{apendices/ex-yml/yml-ex.png}
-    \caption{Ejemplo de solicitud de recursos tecnológicos \.yml}\label{fig:ap-ejemplo-yml}
-\end{figure}
+\begin{minted}[frame=lines,
+    fontsize=\scriptsize,
+    breaklines]{yaml}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: generic-deployment
+  labels:
+    app: generic-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: generic-app
+  template:
+    metadata:
+      labels:
+        app: generic-app
+    spec:
+      containers:
+        - name: generic-container
+          image: nginx:1.25
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 20
+      restartPolicy: Always
+\end{minted}

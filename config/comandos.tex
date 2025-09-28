@@ -202,7 +202,19 @@
 \fancypagestyle{anexos}{
     \fancyhf{}
     \fancyhead[L]{\leftmark}
-    \fancyhead[R]{\thepage}
+    % Sin número de página en header (ya está en el banner inferior)
     \renewcommand{\headrulewidth}{0.4pt}
     \renewcommand{\footrulewidth}{0pt}
+    % Agregar el mismo banner inferior que las otras páginas
+    \fancyfoot[C]{%
+      \begin{tikzpicture}[remember picture, overlay]
+        % Banner que ocupa todo el ancho de la página
+        \node[anchor=south, inner sep=0pt] at ([xshift=\bannerXOffset, yshift=\bannerYOffset]current page.south) {%
+          \includegraphics[width=\paperwidth, height=\bannerHeight]{./images/banner-inferior.png}%
+        };
+        % Número de página sobre la imagen en la esquina inferior izquierda
+        \node[anchor=south west, text=black, font=\bfseries] 
+          at ([xshift=\pageNumXOffset, yshift=\pageNumYOffset]current page.south west) {\thepage};
+      \end{tikzpicture}%
+    }
 }
