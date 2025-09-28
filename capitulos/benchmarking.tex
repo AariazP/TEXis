@@ -3,7 +3,46 @@
 \mbox{}\\
 \section{Descripción del escenario de pruebas}
 \noindent
+Las características del entorno de prueba incluyeron el uso de una máquina con especificaciones técnicas homogéneas, propendiendo  porque las diferencias en rendimiento se debieran exclusivamente a las tecnologías evaluadas y no a variaciones en el hardware o la configuración del sistema operativo, las características del entorno de prueba se detallan a continuación:\\ \\
+\noindent
+En la Figura~\ref{fig:CPU-benchmarking} se presenta la información correspondiente al procesador utilizado en el entorno de \textit{benchmarking}, obtenida mediante el comando \texttt{lscpu}. En ella se evidencia que la arquitectura de la CPU es x86\_64, con soporte para operaciones en 32 y 64 bits, y direcciones de memoria de 39 bits físicos y 48 bits virtuales. Asimismo, se observa que el procesador corresponde a un Intel Core i7-5600U CPU de 2.60GHz, perteneciente a la familia de procesadores de Intel, lo cual permite contar con un recurso de hardware adecuado para la ejecución de pruebas de rendimiento bajo condiciones controladas.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{apendices/ENV-BENCH/CPU.png}
+    \caption{CPU del entorno de \textit{benchmarking}}\label{fig:CPU-benchmarking}
+\end{figure}
 
+\noindent
+En la Figura~\ref{fig:RAM-benchmarking} se muestra el estado de la memoria principal del entorno de benchmarking, obtenido mediante el comando free -h. Se observa que el sistema cuenta con un total de 1.9 GiB de RAM, de los cuales aproximadamente 572 MiB se encuentran en uso, mientras que 956 MiB permanecen libres. Adicionalmente, se dispone de 596 MiB utilizados por el sistema como memoria intermedia y de caché, dejando un total de 1.3 GiB disponibles para ejecución de procesos. Estos valores permiten dimensionar la capacidad del entorno y evaluar su idoneidad para la ejecución de las pruebas experimentales.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{apendices/ENV-BENCH/RAM.png}
+    \caption{RAM del entorno de \textit{benchmarking}}\label{fig:RAM-benchmarking}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{apendices/ENV-BENCH/DISCO.png}
+    \caption{Disco del entorno de \textit{benchmarking}}\label{fig:DISK-benchmarking}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{apendices/ENV-BENCH/FS.png}
+    \caption{Sistema de archivos del entorno de \textit{benchmarking}}\label{fig:FS-benchmarking}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{apendices/ENV-BENCH/OS.png}
+    \caption{Sistema operativo del entorno de \textit{benchmarking}}\label{fig:OS-benchmarking}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{apendices/ENV-BENCH/interfaces.png}
+    \caption{Interfaces de red del entorno de \textit{benchmarking}}\label{fig:INTERFACES-benchmarking}
+\end{figure}
 
 \section{Definición de las pruebas}
 \noindent
@@ -13,7 +52,6 @@ Con el objetivo de facilitar la repetibilidad y objetividad de los resultados, s
 \section{Construcción de las pruebas}
 \noindent
 La construcción de las pruebas se llevó a cabo mediante el desarrollo de scripts automatizados en \textit{Bash}, diseñados para ejecutarse de forma uniforme sobre cada tecnología de contenerización evaluada. Cada script fue responsable de iniciar contenedores, ejecutar cargas de trabajo específicas y recolectar métricas de rendimiento relevantes.
-Las características del entorno de prueba incluyeron el uso de una máquina con especificaciones técnicas homogéneas, propendiendo  porque las diferencias en rendimiento se debieran exclusivamente a las tecnologías evaluadas y no a variaciones en el hardware o la configuración del sistema operativo, las características del entorno de prueba pueden encontrarse en el apéndice~\ref{sec:env-benchmarking}.
 Para medir el consumo de \CPU\ y memoria \RAM, se utilizó \texttt{pidstat}, una utilidad que permite la medición del consumo de recursos. El tiempo de arranque se determinó midiendo el intervalo entre la orden de inicio del contenedor y el momento en que estuvo completamente operativo. 
 Para evaluar el \textit{throughput} de red se emplearon herramientas como \texttt{iperf}, mientras que la latencia de disco fue medida utilizando \texttt{fio}. Todas las pruebas fueron ejecutadas múltiples veces para reducir el impacto de variaciones puntuales y asegurar la confiabilidad de los resultados. Los scripts fueron programados para ejecutarse 10 veces; al final se extrae un promedio y este constituye el puntaje final de la tecnología de contenerización en cuestión.
 En el repositorio \underline{\href{https://github.com/Anubis-1001/benchmark-tecnologias-de-contenerizacion} {\texttt{ GitHub benchmarking}}} se pueden encontrar los scripts resultantes de este proceso.

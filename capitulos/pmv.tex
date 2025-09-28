@@ -1,8 +1,7 @@
 \ChapterImageStar[cap:pmv]{Producto Mínimo Viable}{./images/fondo.png}\label{cap:pmv}
 \mbox{}\\
-\section{Código fuente del sistema}
+\section{Estructura del proyecto}
 \noindent
-El código fuente del sistema, desarrollado en el lenguaje Bash, está disponible en el repositorio de GitHub \href{https://github.com/AariazP/TG-VBC.git}{\texttt{TG-VBC}} en la rama \texttt{scripted-solution}. Este repositorio contiene scripts para la automatización de tareas en la infraestructura de virtualización basada en contenedores, incluyendo la configuración de nodos, despliegue de \VM\ y configuración de Kubernetes. 
 La figura~\ref{fig:estructura-proyecto} detalla la estructura del proyecto
 \begin{figure}[H]
     \centering
@@ -10,20 +9,23 @@ La figura~\ref{fig:estructura-proyecto} detalla la estructura del proyecto
     \caption{Estructura del proyecto}\label{fig:estructura-proyecto}
 \end{figure}
 
-\subsection{Script para obtener la IP de una VM en XCP-ng}
+\section{Código fuente}
+El código fuente del sistema, desarrollado en el lenguaje Bash, está disponible en el repositorio de GitHub \href{https://github.com/AariazP/TG-VBC.git}{\texttt{TG-VBC}} en la rama \texttt{scripted-solution}. Este repositorio contiene scripts para la automatización de tareas en la infraestructura de virtualización basada en contenedores, incluyendo la configuración de nodos, despliegue de \VM\ y configuración de Kubernetes. 
+
+\subsection{Script para obtener la IP de una \VM\ en XCP ng}
 \noindent
 El \textit{script} a continuación tiene como propósito obtener la dirección IP asociada a una \VM\ desplegada en un entorno XCP-ng, a partir de su nombre. En primer lugar, valida que el usuario haya proporcionado al menos un argumento, correspondiente al nombre de la \VM, mostrando un mensaje de uso en caso contrario. Posteriormente, contempla una excepción para la máquina denominada \textit{NAT-Master}, devolviendo directamente la IP fija 172.30.29.2. En los demás casos, el script emplea el comando xe para obtener el identificador único (UUID) de la máquina virtual y, a partir de este, extrae las direcciones \MAC\ de sus interfaces de red. Con dichas direcciones, se conecta mediante \SSH\ a la máquina \textit{NAT-Master}, utilizando una clave previamente configurada, y consulta la tabla de vecinos de red (comando ip n) para identificar la IP correspondiente a las \MAC\ recuperadas. Finalmente, devuelve la dirección IP asociada a la \VM\ solicitada. \\
 
 \input{tablas-images/cp6/src/get-ip.tex}
 
 
-\subsection{Script de configuración de red de las VMs}
+\subsection{Script de configuración de red de las \VM}
 \noindent
 El \textit{script} a continuación, automatiza la creación y configuración de una red virtual en un entorno XCP-ng, permitiendo la salida a Internet para las máquinas virtuales que se conecten a ella. En primer lugar, define parámetros como el nombre de la red, el rango de direcciones IP (subred), la dirección de la puerta de enlace y la interfaz de salida hacia Internet. Luego, utiliza el comando \texttt{xe network-create} para crear la red virtual sin necesidad de un \textit{bridge} preexistente y obtiene su UUID para validarla. Una vez confirmada la red, se agrega una interfaz virtual al host con una dirección \MAC\ aleatoria. Posteriormente, se asocia al bridge correspondiente la dirección IP de la puerta de enlace definida y se activa la interfaz.
 \noindent
 \input{tablas-images/cp6/src/red.tex}
 
-\subsection{Script de conexión SSH a una VM}
+\subsection{Script de conexión SSH a una \VM}
 \noindent
 El script a continuación, tiene como propósito facilitar la conexión remota por medio de \SSH\ a las diferentes \VM\ dentro de un entorno administrado, ofreciendo además la posibilidad de ejecutar comandos de forma directa en ellas. Su funcionamiento se puede dividir en las siguientes fases:
 
@@ -54,7 +56,7 @@ El script a continuación, tiene como propósito facilitar la conexión remota p
 
 \input{tablas-images/cp6/src/ssh-vm.tex}
 
-\subsection{Script de configuración inicial de una VM}
+\subsection{Script de configuración inicial de una \VM}
 \noindent
 El script \texttt{bootup.sh} fue diseñado para desplegar y configurar máquinas virtuales en XCP-ng de forma manual, en un contexto anterior a la creación de plantillas predefinidas. Aunque actualmente no se utiliza de manera habitual, se conserva como alternativa en caso de que las plantillas se pierdan o deba realizarse una instalación manual. A continuación, se detallan sus principales fases de ejecución:
 
@@ -84,7 +86,7 @@ El script \texttt{bootup.sh} fue diseñado para desplegar y configurar máquinas
 
 \input{tablas-images/cp6/src/bootup-vm.tex}
 
-\subsection{Script para desplegar y arrancar una VM desde plantilla}
+\subsection{Script para desplegar y arrancar una \VM\ desde plantilla}
 \noindent
 El script \texttt{bootvm} está diseñado para automatizar el despliegue y arranque de una \VM\ en un entorno XCP-ng utilizando una plantilla predefinida. Su funcionamiento se describe a continuación:
 
@@ -102,7 +104,7 @@ El script \texttt{bootvm} está diseñado para automatizar el despliegue y arran
 
 \input{tablas-images/cp6/src/bootvm.tex}
 
-\subsection{Script para desplegar y arrancar servidores NAT}
+\subsection{Script para desplegar y arrancar servidores \NAT}
 \noindent
 El script \texttt{boot-servers.sh} está diseñado para automatizar la creación e inicio de las máquinas virtuales principales responsables de la red \NAT\ en un entorno XCP-ng. Su funcionamiento puede dividirse en las siguientes fases:
 
@@ -154,9 +156,9 @@ El script \texttt{cluster-bootup.sh} está diseñado para automatizar la creaci�
 \end{enumerate}
 \input{tablas-images/cp6/src/cluster-bootup.tex}
 
-\subsection{Script para limpiar el clúster K3s y eliminar VMs}
+\subsection{Script para limpiar el clúster K3s y eliminar \VM}
 \noindent
-El script \texttt{clean-cluster.sh} está diseñado para eliminar de manera segura todas las máquinas virtuales (VMs) asociadas a un clúster en XCP-ng, excluyendo los dominios del sistema. Puede ejecutarse de forma interactiva o automática mediante una opción de confirmación. Su funcionamiento se describe a continuación:
+El script \texttt{clean-cluster.sh} está diseñado para eliminar de manera segura todas las \VM\ asociadas a un clúster en XCP-ng, excluyendo los dominios del sistema. Puede ejecutarse de forma interactiva o automática mediante una opción de confirmación. Su funcionamiento se describe a continuación:
 
 \begin{enumerate}
     \item \textbf{Definición de variables y procesamiento de opciones}:  
@@ -177,4 +179,5 @@ El script \texttt{clean-cluster.sh} está diseñado para eliminar de manera segu
         \item Finalmente, la VM se elimina permanentemente del sistema mediante \texttt{xe vm-destroy}.
     \end{itemize}
 \end{enumerate}
+
 \input{tablas-images/cp6/src/clean-cluster.tex}
