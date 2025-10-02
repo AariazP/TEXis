@@ -1,3 +1,5 @@
+Este manifiesto en \texttt{YAML} define un \texttt{Pod} en Kubernetes llamado \texttt{backup-pod}, cuyo propósito principal es proporcionar un contenedor auxiliar para realizar pruebas o tareas de respaldo de datos. El pod utiliza una imagen ligera basada en Alpine Linux, que se mantiene en ejecución de manera pasiva gracias al comando \texttt{sleep 3600}. Además, el contenedor monta un volumen persistente a la ruta \texttt{/data}, el cual está asociado a un \texttt{PersistentVolumeClaim} llamado \texttt{your-pvc}, asegurando así la persistencia y disponibilidad de los datos entre ejecuciones.
+
 \begin{minted}[frame=lines,
     fontsize=\scriptsize,
     breaklines]{yaml}

@@ -1,0 +1,41 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} Script: upload\PYGZus{}yaml.sh}
+\PYG{c+c1}{\PYGZsh{} Descripción:}
+\PYG{c+c1}{\PYGZsh{}   Este script transfiere archivos YAML a un nodo específico}
+\PYG{c+c1}{\PYGZsh{}   en un clúster y aplica los manifiestos con kubectl.}
+\PYG{c+c1}{\PYGZsh{}   Pasos:}
+\PYG{c+c1}{\PYGZsh{}     1. Obtiene la IP del nodo usando `get\PYGZhy{}ip`.}
+\PYG{c+c1}{\PYGZsh{}     2. Copia cada archivo YAML al nodo vía `scp`.}
+\PYG{c+c1}{\PYGZsh{}     3. Ejecuta `kubectl apply \PYGZhy{}f` en el nodo para aplicar}
+\PYG{c+c1}{\PYGZsh{}        los cambios y luego elimina el archivo remoto.}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{c+c1}{\PYGZsh{} Redirigir errores a /dev/null para evitar mensajes innecesarios.}
+\PYG{n+nb}{exec}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}\PYG{+w}{ }/dev/null
+
+\PYG{c+c1}{\PYGZsh{} Guardar el primer argumento como nombre del nodo}
+\PYG{n+nv}{NODE}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}1}\PYG{l+s+s2}{\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Eliminar el primer argumento (nombre del nodo) y dejar solo los archivos}
+\PYG{n+nb}{shift}
+
+\PYG{c+c1}{\PYGZsh{} Obtener la dirección IP del nodo a partir de su nombre}
+\PYG{n+nv}{IP}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }get\PYGZhy{}ip\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}NODE}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{k}{)}
+
+\PYG{c+c1}{\PYGZsh{} Recorrer cada archivo recibido como argumento}
+\PYG{k}{for}\PYG{+w}{ }FILE\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}@}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{do}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Obtener solo el nombre del archivo (sin ruta)}
+\PYG{+w}{    }\PYG{n+nv}{FILENAME}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }basename\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}FILE}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{k}{)}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Copiar el archivo al nodo remoto en el directorio actual (\PYGZti{})}
+\PYG{+w}{    }scp\PYG{+w}{ }\PYGZhy{}i\PYG{+w}{ }\PYGZti{}/.ssh/id\PYGZus{}internal\PYGZus{}vm\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}FILE}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }root@\PYG{n+nv}{\PYGZdl{}IP}:./
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Conectarse al nodo y aplicar el manifiesto con kubectl}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Luego eliminar el archivo del nodo para mantener limpieza}
+\PYG{+w}{    }ssh\PYG{+w}{ }\PYGZhy{}i\PYG{+w}{ }\PYGZti{}/.ssh/id\PYGZus{}internal\PYGZus{}vm\PYG{+w}{ }root@\PYG{n+nv}{\PYGZdl{}IP}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{kubectl apply \PYGZhy{}f }\PYG{n+nv}{\PYGZdl{}FILENAME}\PYG{l+s+s2}{ \PYGZam{}\PYGZam{} rm }\PYG{n+nv}{\PYGZdl{}FILENAME}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{k}{done}
+\end{MintedVerbatim}

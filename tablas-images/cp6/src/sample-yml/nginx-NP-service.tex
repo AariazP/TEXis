@@ -1,3 +1,5 @@
+Este manifiesto en \texttt{YAML} define un recurso \texttt{Service} de tipo \texttt{NodePort} en Kubernetes, llamado \texttt{nginx-nodeport}. Su objetivo es exponer las aplicaciones etiquetadas con \texttt{app: nginx} hacia el exterior del clúster, permitiendo el acceso al puerto \texttt{80} del contenedor a través del puerto \texttt{30080} en los nodos del clúster. De esta forma, cualquier petición dirigida al puerto \texttt{30080} de un nodo será redirigida al puerto interno \texttt{80} de los pods correspondientes, facilitando el acceso externo al servicio.
+
 \begin{minted}[frame=lines,
     fontsize=\scriptsize,
     breaklines]{yaml}

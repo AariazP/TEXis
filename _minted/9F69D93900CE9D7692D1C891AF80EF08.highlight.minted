@@ -1,0 +1,78 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+\PYG{n+nb}{set}\PYG{+w}{ }\PYGZhy{}euo\PYG{+w}{ }pipefail\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Manejo estricto de errores, variables indefinidas y pipes}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} Función: usage}
+\PYG{c+c1}{\PYGZsh{} Descripción:}
+\PYG{c+c1}{\PYGZsh{}   Muestra el modo de uso del script y las opciones disponibles.}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+usage\PYG{o}{(}\PYG{o}{)}\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Usage: vbc \PYGZlt{}domain\PYGZgt{} \PYGZlt{}subcommand\PYGZgt{} [args...]\PYGZdq{}}
+\PYG{+w}{    }\PYG{n+nb}{echo}
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Domains:\PYGZdq{}}
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}  vm        create | ping | list | ssh | get\PYGZhy{}ip\PYGZdq{}}
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}  cluster   create | clean | upload | backup\PYGZdq{}}
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}  kubectl   (no subcommands yet, passes directly)\PYGZdq{}}
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}  console   (no subcommands yet, passes directly)\PYGZdq{}}
+\PYG{+w}{    }\PYG{n+nb}{exit}\PYG{+w}{ }\PYG{l+m}{1}
+\PYG{o}{\PYGZcb{}}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} MAIN}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{c+c1}{\PYGZsh{} Validar número mínimo de argumentos}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}\PYGZsh{}}\PYG{+w}{ }\PYGZhy{}lt\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{o}{]}\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{    }usage
+\PYG{k}{fi}
+
+\PYG{n+nv}{DOMAIN}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}1}\PYG{+w}{          }\PYG{c+c1}{\PYGZsh{} Primer argumento: dominio de operación}
+\PYG{n+nv}{SUBCMD}\PYG{o}{=}\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{2}\PYG{k}{:\PYGZhy{}}\PYG{l+s+si}{\PYGZcb{}}\PYG{+w}{      }\PYG{c+c1}{\PYGZsh{} Segundo argumento: subcomando (opcional)}
+
+\PYG{n+nb}{shift}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} Eliminar el dominio de la lista de argumentos}
+\PYG{o}{[}\PYG{o}{[}\PYG{+w}{ }\PYGZhy{}n\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}SUBCMD}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nb}{shift}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Eliminar también el subcomando si está presente}
+
+\PYG{c+c1}{\PYGZsh{} Evaluar dominio principal}
+\PYG{k}{case}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}DOMAIN}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{k}{in}
+\PYG{+w}{  }vm\PYG{o}{)}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Subcomandos para la gestión de VMs}
+\PYG{+w}{    }\PYG{k}{case}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}SUBCMD}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{k}{in}
+\PYG{+w}{      }create\PYG{o}{)}\PYG{+w}{   }bootvm\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}@}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} Crear VM}
+\PYG{+w}{      }ping\PYG{o}{)}\PYG{+w}{     }get\PYGZhy{}vm\PYG{+w}{ }\PYGZhy{}p\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}@}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Verificar disponibilidad de VM}
+\PYG{+w}{      }list\PYG{o}{)}\PYG{+w}{     }get\PYGZhy{}vm\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}\PYG{+w}{                }\PYG{c+c1}{\PYGZsh{} Listar VMs}
+\PYG{+w}{      }ssh\PYG{o}{)}\PYG{+w}{      }ssh\PYGZhy{}vm\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}@}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} Conexión SSH a VM}
+\PYG{+w}{      }get\PYGZhy{}ip\PYG{o}{)}\PYG{+w}{   }get\PYGZhy{}ip\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}@}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} Obtener IP de VM}
+\PYG{+w}{      }*\PYG{o}{)}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Unknown vm subcommand: }\PYG{n+nv}{\PYGZdl{}SUBCMD}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{+w}{ }usage\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{esac}
+\PYG{+w}{    }\PYG{p}{;}\PYG{p}{;}
+
+\PYG{+w}{  }cluster\PYG{o}{)}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Subcomandos para gestión del clúster}
+\PYG{+w}{    }\PYG{k}{case}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}SUBCMD}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{k}{in}
+\PYG{+w}{      }create\PYG{o}{)}\PYG{+w}{   }cluster\PYGZhy{}bootup\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}@}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Inicializar clúster}
+\PYG{+w}{      }clean\PYG{o}{)}\PYG{+w}{    }clean\PYGZhy{}cluster\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}@}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Limpiar clúster}
+\PYG{+w}{      }upload\PYG{o}{)}\PYG{+w}{   }upload\PYGZus{}yaml\PYG{+w}{ }\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }get\PYGZhy{}vm\PYG{+w}{ }\PYGZhy{}a\PYG{+w}{ }\PYGZhy{}n\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }master\PYG{+w}{ }\PYG{k}{)}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}@}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Subir manifiestos}
+\PYG{+w}{      }backup\PYG{o}{)}\PYG{+w}{   }backup\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}@}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} Crear copia de respaldo}
+\PYG{+w}{      }*\PYG{o}{)}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Unknown cluster subcommand: }\PYG{n+nv}{\PYGZdl{}SUBCMD}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{+w}{ }usage\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{esac}
+\PYG{+w}{    }\PYG{p}{;}\PYG{p}{;}
+
+\PYG{+w}{  }kubectl\PYG{o}{)}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Pasar directamente el comando kubectl a un nodo master vía SSH}
+\PYG{+w}{    }ssh\PYGZhy{}vm\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }get\PYGZhy{}vm\PYG{+w}{ }\PYGZhy{}a\PYG{+w}{ }\PYGZhy{}n\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }master\PYG{+w}{ }\PYG{k}{)}\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{kubectl }\PYG{n+nv}{\PYGZdl{}SUBCMD}\PYG{l+s+s2}{ }\PYG{n+nv}{\PYGZdl{}@}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{+w}{    }\PYG{p}{;}\PYG{p}{;}
+
+\PYG{+w}{  }console\PYG{o}{)}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Pasar comandos directamente al gestor de consola}
+\PYG{+w}{    }console\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}@}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{+w}{    }\PYG{p}{;}\PYG{p}{;}
+
+\PYG{+w}{  }*\PYG{o}{)}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} En caso de dominio no reconocido}
+\PYG{+w}{    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Unknown domain: }\PYG{n+nv}{\PYGZdl{}DOMAIN}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{+w}{    }usage
+\PYG{+w}{    }\PYG{p}{;}\PYG{p}{;}
+\PYG{k}{esac}
+\end{MintedVerbatim}

@@ -50,5 +50,4 @@
 
 \PYG{c+c1}{\PYGZsh{} Muestra la IP obtenida sin salto de línea adicional al final.}
 \PYG{n+nb}{echo}\PYG{+w}{ }\PYGZhy{}n\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}VM\PYGZus{}IP}
-
 \end{MintedVerbatim}

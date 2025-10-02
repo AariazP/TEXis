@@ -1,0 +1,114 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} Script: backup\PYGZhy{}resource.sh}
+\PYG{c+c1}{\PYGZsh{} Descripción:}
+\PYG{c+c1}{\PYGZsh{}   Este script permite realizar respaldos de recursos en un}
+\PYG{c+c1}{\PYGZsh{}   clúster de Kubernetes desde un entorno XCP\PYGZhy{}ng. Soporta tres}
+\PYG{c+c1}{\PYGZsh{}   modos de respaldo:}
+\PYG{c+c1}{\PYGZsh{}     \PYGZhy{} PVC    : copia el contenido de un PersistentVolumeClaim.}
+\PYG{c+c1}{\PYGZsh{}     \PYGZhy{} Pod    : copia una ruta arbitraria desde un Pod.}
+\PYG{c+c1}{\PYGZsh{}     \PYGZhy{} Folder : copia una carpeta directamente desde el nodo host.}
+\PYG{c+c1}{\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{}   El resultado se empaqueta en un archivo .tar con sello temporal}
+\PYG{c+c1}{\PYGZsh{}   y se transfiere mediante scp al sistema local.}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{c+c1}{\PYGZsh{} Limpieza automática: elimina el archivo temporal si se interrumpe el script (Ctrl+C)}
+\PYG{n+nb}{trap}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}rm \PYGZhy{}f exporter\PYGZus{}file.yaml\PYGZdq{}}\PYG{+w}{ }SIGINT
+
+\PYG{c+c1}{\PYGZsh{} Modo por defecto: pvc}
+\PYG{n+nv}{MODE}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}pvc\PYGZdq{}}
+\PYG{n+nv}{TARGET}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}
+\PYG{n+nv}{POD}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}
+\PYG{n+nv}{FOLDER}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Procesar argumentos con getopts:}
+\PYG{c+c1}{\PYGZsh{}   \PYGZhy{}p \PYGZlt{}pod\PYGZgt{}     → respaldo desde un pod:ruta}
+\PYG{c+c1}{\PYGZsh{}   \PYGZhy{}f \PYGZlt{}folder\PYGZgt{}  → respaldo desde una carpeta del host}
+\PYG{k}{while}\PYG{+w}{ }\PYG{n+nb}{getopts}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}p:f:\PYGZdq{}}\PYG{+w}{ }opt\PYG{p}{;}\PYG{+w}{ }\PYG{k}{do}
+\PYG{+w}{  }\PYG{k}{case}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}opt}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{k}{in}
+\PYG{+w}{    }p\PYG{o}{)}\PYG{+w}{ }\PYG{n+nv}{MODE}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}pod\PYGZdq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nv}{POD}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}OPTARG}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}\PYG{+w}{          }\PYG{c+c1}{\PYGZsh{} backup desde un pod específico}
+\PYG{+w}{    }f\PYG{o}{)}\PYG{+w}{ }\PYG{n+nv}{MODE}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}folder\PYGZdq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{n+nv}{FOLDER}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}OPTARG}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{;}\PYG{p}{;}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} backup desde carpeta en nodo}
+\PYG{+w}{  }\PYG{k}{esac}
+\PYG{k}{done}
+\PYG{n+nb}{shift}\PYG{+w}{ }\PYG{k}{\PYGZdl{}((}\PYG{n+nv}{OPTIND}\PYG{o}{\PYGZhy{}}\PYG{l+m}{1}\PYG{k}{))}
+
+\PYG{c+c1}{\PYGZsh{} Seleccionar nodo maestro (usando helper get\PYGZhy{}vm)}
+\PYG{n+nv}{NODE}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }get\PYGZhy{}vm\PYG{+w}{ }\PYGZhy{}a\PYG{+w}{ }\PYGZhy{}n\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }master\PYG{+w}{ }\PYG{k}{)}\PYG{l+s+s2}{\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Primer argumento: nombre del PVC a respaldar}
+\PYG{n+nv}{PVC}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}1}\PYG{l+s+s2}{\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Sello temporal para identificar los respaldos}
+\PYG{n+nv}{DATE}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }date\PYG{+w}{ }+\PYGZpc{}Y\PYGZhy{}\PYGZpc{}m\PYGZhy{}\PYGZpc{}d\PYGZhy{}\PYGZpc{}H\PYGZhy{}\PYGZpc{}M\PYGZhy{}\PYGZpc{}S\PYGZhy{}\PYGZpc{}s\PYG{+w}{ }\PYG{k}{)}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} Modo PVC: se crea un pod temporal que monta el PVC y exporta su contenido}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}MODE}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{o}{=}\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}pvc\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Crear definición YAML para pod temporal \PYGZdq{}exporter\PYGZdq{}}
+\PYG{+w}{  }cat\PYG{+w}{ }\PYG{l+s}{\PYGZlt{}\PYGZlt{}EOF \PYGZgt{} exporter\PYGZus{}file.yaml}
+\PYG{l+s}{apiVersion: v1}
+\PYG{l+s}{kind: Pod}
+\PYG{l+s}{metadata:}
+\PYG{l+s}{  name: exporter}
+\PYG{l+s}{spec:}
+\PYG{l+s}{  containers:}
+\PYG{l+s}{  \PYGZhy{} name: exporter}
+\PYG{l+s}{    image: alpine}
+\PYG{l+s}{    command: [\PYGZdq{}sleep\PYGZdq{}, \PYGZdq{}3600\PYGZdq{}]}
+\PYG{l+s}{    volumeMounts:}
+\PYG{l+s}{    \PYGZhy{} mountPath: /data}
+\PYG{l+s}{      name: export\PYGZhy{}pvc}
+\PYG{l+s}{  volumes:}
+\PYG{l+s}{  \PYGZhy{} name: export\PYGZhy{}pvc}
+\PYG{l+s}{    persistentVolumeClaim:}
+\PYG{l+s}{      claimName: \PYGZdl{}\PYGZob{}PVC\PYGZcb{}}
+\PYG{l+s}{EOF}
+
+\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Subir definición YAML al nodo maestro}
+\PYG{+w}{  }upload\PYGZus{}yaml\PYG{+w}{ }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{NODE}\PYG{l+s+si}{\PYGZcb{}}\PYG{+w}{ }exporter\PYGZus{}file.yaml
+
+\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Esperar hasta que el pod esté en estado Running}
+\PYG{+w}{  }\PYG{k}{while}\PYG{+w}{ }\PYG{o}{[}\PYG{o}{[}\PYG{+w}{ }\PYG{k}{\PYGZdl{}(}ssh\PYGZhy{}vm\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{NODE}\PYG{l+s+si}{\PYGZcb{}}\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}kubectl get pod/exporter \PYGZhy{}o jsonpath=\PYGZsq{}\PYGZob{}.status.phase\PYGZcb{}\PYGZsq{}\PYGZdq{}}\PYG{k}{)}\PYG{+w}{ }!\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Running\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{do}
+\PYG{+w}{    }sleep\PYG{+w}{ }\PYG{l+m}{1}
+\PYG{+w}{  }\PYG{k}{done}
+
+\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Copiar datos del pod y empaquetar en archivo tar}
+\PYG{+w}{  }\PYG{n+nv}{FILENAME}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{/tmp/backup\PYGZhy{}}\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{DATE}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZhy{}pvc.tar}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{+w}{  }ssh\PYGZhy{}vm\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{NODE}\PYG{l+s+si}{\PYGZcb{}}\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{kubectl cp exporter:/data ./backup\PYGZhy{}}\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{DATE}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{+w}{  }ssh\PYGZhy{}vm\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{NODE}\PYG{l+s+si}{\PYGZcb{}}\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}kubectl delete pod/exporter\PYGZdq{}}
+\PYG{+w}{  }ssh\PYGZhy{}vm\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{NODE}\PYG{l+s+si}{\PYGZcb{}}\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{tar \PYGZhy{}cvf }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{FILENAME}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ ./backup\PYGZhy{}}\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{DATE}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} Modo POD: copia una ruta arbitraria desde un Pod específico}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{k}{elif}\PYG{+w}{ }\PYG{o}{[}\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}MODE}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{o}{=}\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}pod\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{  }\PYG{n+nv}{FILENAME}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{/tmp/backup\PYGZhy{}}\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{DATE}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZhy{}pod.tar}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{+w}{  }ssh\PYGZhy{}vm\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{NODE}\PYG{l+s+si}{\PYGZcb{}}\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{kubectl cp }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{POD}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ ./backup\PYGZhy{}}\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{DATE}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{+w}{  }ssh\PYGZhy{}vm\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{NODE}\PYG{l+s+si}{\PYGZcb{}}\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{tar \PYGZhy{}cvf }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{FILENAME}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ ./backup\PYGZhy{}}\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{DATE}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} Modo FOLDER: copia directamente una carpeta de un nodo}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{k}{elif}\PYG{+w}{ }\PYG{o}{[}\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}MODE}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{o}{=}\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}folder\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{o}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{then}
+\PYG{+w}{  }\PYG{n+nv}{FILENAME}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{/tmp/backup\PYGZhy{}}\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{DATE}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZhy{}node.tar}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Separar nodo y ruta (ejemplo: nodo:/path)}
+\PYG{+w}{  }\PYG{n+nv}{NODE}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}FOLDER}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }cut\PYG{+w}{ }\PYGZhy{}d\PYG{l+s+s2}{\PYGZdq{}:\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}f1\PYG{+w}{ }\PYG{k}{)}
+\PYG{+w}{  }\PYG{n+nv}{FOLDER}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}FOLDER}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }cut\PYG{+w}{ }\PYGZhy{}d\PYG{l+s+s2}{\PYGZdq{}:\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}f2\PYG{+w}{ }\PYG{k}{)}
+\PYG{+w}{  }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{++++++ }\PYG{n+nv}{\PYGZdl{}NODE}\PYG{l+s+s2}{ ++++ }\PYG{n+nv}{\PYGZdl{}FOLDER}\PYG{l+s+s2}{ +++}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{+w}{  }ssh\PYGZhy{}vm\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{NODE}\PYG{l+s+si}{\PYGZcb{}}\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{tar \PYGZhy{}cvf }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{FILENAME}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{FOLDER}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{k}{fi}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} Transferir archivo tar al host local mediante scp}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nb}{exec}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}/dev/null
+scp\PYG{+w}{ }\PYGZhy{}i\PYG{+w}{ }\PYGZti{}/.ssh/id\PYGZus{}internal\PYGZus{}vm\PYG{+w}{ }root@\PYG{k}{\PYGZdl{}(}get\PYGZhy{}ip\PYG{+w}{ }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{NODE}\PYG{l+s+si}{\PYGZcb{}}\PYG{k}{)}:\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{FILENAME}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }./
+
+\PYG{c+c1}{\PYGZsh{} Eliminar YAML temporal en caso de existir}
+rm\PYG{+w}{ }\PYGZhy{}f\PYG{+w}{ }exporter\PYGZus{}file.yaml
+
+\end{MintedVerbatim}

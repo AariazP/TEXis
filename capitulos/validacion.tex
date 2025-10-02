@@ -2,7 +2,64 @@
 \mbox{}\\
 \noindent
 En este capítulo se detalla el proceso de validación de la solución propuesta, que incluye tanto pruebas técnicas como la aceptación por parte del cliente. 
-\section{Pruebas de validacion técnica}
+\section{Pruebas de validacion técnica}\label{sec:functional-tests}
+
+%=========================functional-test/backup=========================
+\subsection{functional-test/backup}
+\noindent
+La siguiente sección presenta los distintos manifiestos y scripts que conforman la estrategia de creación de respaldo en Kubernetes. Cada archivo cumple un rol específico dentro del despliegue, desde la definición del pod y sus volúmenes. A continuación, se describen brevemente los archivos incluidos en este paquete:
+\subsubsection{deployment.yaml}
+\noindent
+\input{tablas-images/cp6/src/functional-test/backup/deployment.tex}
+\subsubsection{pv.yaml}
+\noindent
+\input{tablas-images/cp6/src/functional-test/backup/pv.tex}
+\subsubsection{service.yaml}
+\noindent
+\input{tablas-images/cp6/src/functional-test/backup/service.tex}
+\subsubsection{writer-pod.yaml}
+\noindent
+\input{tablas-images/cp6/src/functional-test/backup/writer-pod.tex}
+\subsubsection{run-tests.sh}
+\noindent
+\input{tablas-images/cp6/src/functional-test/backup/run-tests.tex}
+
+
+%=========================functional-test/cluster-bootup=========================
+
+\subsection{functional-test/cluster-bootup}
+\noindent
+
+\subsubsection{run-tests.sh}
+\noindent
+\input{tablas-images/cp6/src/functional-test/cluster-bootup/run-tests.tex}
+
+
+%=========================functional-test/get-ip=========================
+
+\subsection{functional-test/get-ip}
+\noindent
+
+\subsubsection{run-tests.sh}
+\noindent
+\input{tablas-images/cp6/src/functional-test/get-ip/run-tests.tex}
+
+
+
+%=========================functional-test/aplicar-yml=========================/
+
+\subsection{functional-test/upload-yaml}
+
+\subsubsection{test-deployment.yaml}
+\noindent
+\input{tablas-images/cp6/src/functional-test/upload-yaml/test-deployment.tex}
+
+
+\subsubsection{run-tests.sh}
+\noindent
+\input{tablas-images/cp6/src/functional-test/upload-yaml/run-tests.tex}
+
+
 
 \section{Aceptación de la solución por parte del cliente}
 

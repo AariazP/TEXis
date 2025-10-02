@@ -1,8 +1,25 @@
+El siguiente script denominado \texttt{console.sh} implementa una interfaz en modo texto interactiva para la gestión de un cluster K3s. Utiliza la herramienta \texttt{whiptail} para mostrar menús, cuadros de entrada y listas de selección que permiten al usuario ejecutar operaciones comunes de forma sencilla. Entre sus funcionalidades se incluyen: subir archivos \texttt{YAML} a un nodo, limpiar el cluster eliminando las \VM, realizar respaldos en diferentes modalidades \texttt{(PVC, Pod o nodo)}, agregar nuevas \VM\ al cluster, establecer conexiones SSH con nodos específicos y desplegar un cluster completo definiendo el número de masters, workers y la opción de incluir un \NAT\ de respaldo. Este enfoque mejora la usabilidad al abstraer comandos complejos en un menú amigable que guía al usuario en cada paso.
+
 \begin{minted}[frame=lines,
     fontsize=\scriptsize,
     breaklines]{bash}
 #!/bin/bash
 
+# ---------------------------------------------------------------
+# Script: console.sh
+# Descripción:
+#   Proporciona una interfaz de menús en modo texto para la 
+#   gestión de un cluster K3s en XCP-ng mediante la herramienta
+#   'whiptail'. Permite ejecutar operaciones comunes como:
+#   - Subir archivos YAML
+#   - Limpiar el cluster
+#   - Realizar backups
+#   - Agregar nuevas VMs
+#   - Conectar por SSH
+#   - Inicializar el cluster
+# ---------------------------------------------------------------
+
+# Banner ASCII mostrado en el menú principal
 read -r -d '' BANNER <<'EOF'
 +-------------------------------------------------------+
 |  _____ _____  _____ _____      __      ______   _____ |
@@ -13,14 +30,15 @@ read -r -d '' BANNER <<'EOF'
 | \_____|_|  \_\_____|_____/         \/   |____/ \_____||
 |                                                       |
 +-------------------------------------------------------+
-
 EOF
 
+# Configuración de colores para whiptail
 export NEWT_COLORS='
 root=white,blue'
 
+# Bucle principal del menú
 while true; do
-    # Main menu with whiptail
+    # Menú principal con whiptail
     choice=$(whiptail --title "Menú Principal" \
         --menu "$BANNER\nSeleccione una opción:" 30 62 10 \
         "1" "Subir archivo" \
@@ -39,22 +57,21 @@ while true; do
     fi
 
     case $choice in
+        # Subir archivo YAML a un nodo
         "1")
             node=$(whiptail --inputbox "Ingrese el nodo:" 10 60 3>&1 1>&2 2>&3)
-
-	    [ $? -ne 0 ] && continue
-
+            [ $? -ne 0 ] && continue
             file=$(whiptail --inputbox "Ingrese el archivo:" 10 60 3>&1 1>&2 2>&3)
-
-	    [ $? -ne 0 ] && continue
-
+            [ $? -ne 0 ] && continue
             echo "Ejecutando: upload_yaml $node $file"
             upload_yaml "$node" "$file"
             ;;
+        # Limpiar cluster
         "2")
             echo "Ejecutando: clean-cluster"
             clean-cluster
             ;;
+        # Opciones de backup
         "3")
             backup_choice=$(whiptail --title "Opciones de Backup" \
                 --menu "Seleccione el tipo de backup:" 20 60 10 \
@@ -62,53 +79,54 @@ while true; do
                 "2" "Backup para Pod" \
                 "3" "Backup para Nodo" \
                 3>&1 1>&2 2>&3)
-
-	    [ $? -ne 0 ] && continue
+            [ $? -ne 0 ] && continue
 
             case $backup_choice in
                 "1")
                     pvc=$(whiptail --inputbox "Ingrese el PVC:" 10 60 3>&1 1>&2 2>&3)
-		    [ $? -ne 0 ] && continue
+                    [ $? -ne 0 ] && continue
                     echo "Ejecutando: backup-pvc $pvc"
                     backup "$pvc"
                     ;;
                 "2")
                     pod_route=$(whiptail --inputbox "Ingrese el pod-route:" 10 60 3>&1 1>&2 2>&3)
-		    [ $? -ne 0 ] && continue
+                    [ $? -ne 0 ] && continue
                     echo "Ejecutando: backup-pod $pod_route"
                     backup -p "$pod_route"
                     ;;
                 "3")
                     carpeta=$(whiptail --inputbox "Ingrese la carpeta:" 10 60 3>&1 1>&2 2>&3)
-		    [ $? -ne 0 ] && continue
+                    [ $? -ne 0 ] && continue
                     echo "Ejecutando: backup-nodo $carpeta"
                     backup -f "$carpeta"
                     ;;
             esac
             ;;
+        # Agregar VM al cluster
         "4")
             vm_name=$(whiptail --inputbox "Ingrese el nombre de la VM:" 10 60 3>&1 1>&2 2>&3)
-	    [ $? -ne 0 ] && continue
+            [ $? -ne 0 ] && continue
             echo "Ejecutando: bootvm -j $vm_name"
             bootvm -j "$vm_name"
             ;;
+        # Conexión SSH a una VM
         "5")
             vm_name=$(whiptail --inputbox "Ingrese el nombre de la VM:" 10 60 3>&1 1>&2 2>&3)
-	    [ $? -ne 0 ] && continue
+            [ $? -ne 0 ] && continue
             echo "Ejecutando: ssh-vm $vm_name"
             ssh-vm "$vm_name"
             ;;
+        # Inicialización de un cluster completo
         "6")
             masters=$(whiptail --inputbox "Ingrese la cantidad de masters:" 10 60 3>&1 1>&2 2>&3)
-	    [ $? -ne 0 ] && continue
+            [ $? -ne 0 ] && continue
             workers=$(whiptail --inputbox "Ingrese la cantidad de workers:" 10 60 3>&1 1>&2 2>&3)
-	    [ $? -ne 0 ] && continue
-	    nat_backup=$(whiptail --title "Opciones adicionales" \
-	       --checklist "Seleccione si desea agregar NAT-Backup:" 15 60 5 \
-	       "1" "Agregar NAT-Backup" OFF \
-	       3>&1 1>&2 2>&3 )
-
-	    [ $? -ne 0 ] && continue
+            [ $? -ne 0 ] && continue
+            nat_backup=$(whiptail --title "Opciones adicionales" \
+               --checklist "Seleccione si desea agregar NAT-Backup:" 15 60 5 \
+               "1" "Agregar NAT-Backup" OFF \
+               3>&1 1>&2 2>&3 )
+            [ $? -ne 0 ] && continue
 
             [ $nat_backup -eq 1 ] && nat_backup="-b"
 

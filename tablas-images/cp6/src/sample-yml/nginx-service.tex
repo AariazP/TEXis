@@ -1,3 +1,5 @@
+El recurso \texttt{Service} en Kubernetes permite exponer aplicaciones desplegadas dentro del clúster, asegurando una comunicación estable entre pods y otros componentes. En este caso, el servicio denominado \texttt{nginx-service} está configurado con el tipo \texttt{ClusterIP}, lo que significa que será accesible únicamente desde dentro del clúster. Su selector utiliza la etiqueta \texttt{app: nginx} para dirigir el tráfico hacia los pods gestionados por el \texttt{Deployment} de Nginx. El puerto expuesto es el \texttt{80}, el cual redirige al mismo \texttt{targetPort} dentro de los contenedores.
+
 \begin{minted}[frame=lines,
     fontsize=\scriptsize,
     breaklines]{yaml}

@@ -1,6 +1,21 @@
 \begin{MintedVerbatim}[commandchars=\\\{\}]
 \PYG{c+ch}{\PYGZsh{}!/bin/bash}
 
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} Script: console.sh}
+\PYG{c+c1}{\PYGZsh{} Descripción:}
+\PYG{c+c1}{\PYGZsh{}   Proporciona una interfaz de menús en modo texto para la}
+\PYG{c+c1}{\PYGZsh{}   gestión de un cluster K3s en XCP\PYGZhy{}ng mediante la herramienta}
+\PYG{c+c1}{\PYGZsh{}   \PYGZsq{}whiptail\PYGZsq{}. Permite ejecutar operaciones comunes como:}
+\PYG{c+c1}{\PYGZsh{}   \PYGZhy{} Subir archivos YAML}
+\PYG{c+c1}{\PYGZsh{}   \PYGZhy{} Limpiar el cluster}
+\PYG{c+c1}{\PYGZsh{}   \PYGZhy{} Realizar backups}
+\PYG{c+c1}{\PYGZsh{}   \PYGZhy{} Agregar nuevas VMs}
+\PYG{c+c1}{\PYGZsh{}   \PYGZhy{} Conectar por SSH}
+\PYG{c+c1}{\PYGZsh{}   \PYGZhy{} Inicializar el cluster}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{c+c1}{\PYGZsh{} Banner ASCII mostrado en el menú principal}
 \PYG{n+nb}{read}\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }\PYGZhy{}d\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{+w}{ }BANNER\PYG{+w}{ }\PYG{l+s}{\PYGZlt{}\PYGZlt{}\PYGZsq{}EOF\PYGZsq{}}
 \PYG{l+s}{+\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}+}
 \PYG{l+s}{|  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{} \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{} \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}      \PYGZus{}\PYGZus{}      \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}   \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{} |}
@@ -11,14 +26,15 @@
 \PYG{l+s}{| \PYGZbs{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}|\PYGZus{}|  \PYGZbs{}\PYGZus{}\PYGZbs{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}|\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}/         \PYGZbs{}/   |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}/ \PYGZbs{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||}
 \PYG{l+s}{|                                                       |}
 \PYG{l+s}{+\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}+}
-
 \PYG{l+s}{EOF}
 
+\PYG{c+c1}{\PYGZsh{} Configuración de colores para whiptail}
 \PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{NEWT\PYGZus{}COLORS}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}
 \PYG{l+s+s1}{root=white,blue\PYGZsq{}}
 
+\PYG{c+c1}{\PYGZsh{} Bucle principal del menú}
 \PYG{k}{while}\PYG{+w}{ }true\PYG{p}{;}\PYG{+w}{ }\PYG{k}{do}
-\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Main menu with whiptail}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Menú principal con whiptail}
 \PYG{+w}{    }\PYG{n+nv}{choice}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}whiptail\PYG{+w}{ }\PYGZhy{}\PYGZhy{}title\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Menú Principal\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
 \PYG{+w}{        }\PYGZhy{}\PYGZhy{}menu\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}BANNER}\PYG{l+s+s2}{\PYGZbs{}nSeleccione una opción:}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{30}\PYG{+w}{ }\PYG{l+m}{62}\PYG{+w}{ }\PYG{l+m}{10}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
 \PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}1\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Subir archivo\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
@@ -37,22 +53,21 @@
 \PYG{+w}{    }\PYG{k}{fi}
 
 \PYG{+w}{    }\PYG{k}{case}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}choice}\PYG{+w}{ }\PYG{k}{in}
+\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Subir archivo YAML a un nodo}
 \PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}1\PYGZdq{}}\PYG{o}{)}
 \PYG{+w}{            }\PYG{n+nv}{node}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}whiptail\PYG{+w}{ }\PYGZhy{}\PYGZhy{}inputbox\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Ingrese el nodo:\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{10}\PYG{+w}{ }\PYG{l+m}{60}\PYG{+w}{ }\PYG{l+m}{3}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{1}\PYG{+w}{ }\PYG{l+m}{1}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{2}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{3}\PYG{k}{)}
-
-\PYG{+w}{	    }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
-
+\PYG{+w}{            }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
 \PYG{+w}{            }\PYG{n+nv}{file}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}whiptail\PYG{+w}{ }\PYGZhy{}\PYGZhy{}inputbox\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Ingrese el archivo:\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{10}\PYG{+w}{ }\PYG{l+m}{60}\PYG{+w}{ }\PYG{l+m}{3}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{1}\PYG{+w}{ }\PYG{l+m}{1}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{2}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{3}\PYG{k}{)}
-
-\PYG{+w}{	    }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
-
+\PYG{+w}{            }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
 \PYG{+w}{            }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Ejecutando: upload\PYGZus{}yaml }\PYG{n+nv}{\PYGZdl{}node}\PYG{l+s+s2}{ }\PYG{n+nv}{\PYGZdl{}file}\PYG{l+s+s2}{\PYGZdq{}}
 \PYG{+w}{            }upload\PYGZus{}yaml\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}node}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}file}\PYG{l+s+s2}{\PYGZdq{}}
 \PYG{+w}{            }\PYG{p}{;}\PYG{p}{;}
+\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Limpiar cluster}
 \PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}2\PYGZdq{}}\PYG{o}{)}
 \PYG{+w}{            }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Ejecutando: clean\PYGZhy{}cluster\PYGZdq{}}
 \PYG{+w}{            }clean\PYGZhy{}cluster
 \PYG{+w}{            }\PYG{p}{;}\PYG{p}{;}
+\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Opciones de backup}
 \PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}3\PYGZdq{}}\PYG{o}{)}
 \PYG{+w}{            }\PYG{n+nv}{backup\PYGZus{}choice}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}whiptail\PYG{+w}{ }\PYGZhy{}\PYGZhy{}title\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Opciones de Backup\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
 \PYG{+w}{                }\PYGZhy{}\PYGZhy{}menu\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Seleccione el tipo de backup:\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{20}\PYG{+w}{ }\PYG{l+m}{60}\PYG{+w}{ }\PYG{l+m}{10}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
@@ -60,53 +75,54 @@
 \PYG{+w}{                }\PYG{l+s+s2}{\PYGZdq{}2\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Backup para Pod\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
 \PYG{+w}{                }\PYG{l+s+s2}{\PYGZdq{}3\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Backup para Nodo\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
 \PYG{+w}{                }\PYG{l+m}{3}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{1}\PYG{+w}{ }\PYG{l+m}{1}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{2}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{3}\PYG{k}{)}
-
-\PYG{+w}{	    }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
+\PYG{+w}{            }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
 
 \PYG{+w}{            }\PYG{k}{case}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}backup\PYGZus{}choice}\PYG{+w}{ }\PYG{k}{in}
 \PYG{+w}{                }\PYG{l+s+s2}{\PYGZdq{}1\PYGZdq{}}\PYG{o}{)}
 \PYG{+w}{                    }\PYG{n+nv}{pvc}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}whiptail\PYG{+w}{ }\PYGZhy{}\PYGZhy{}inputbox\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Ingrese el PVC:\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{10}\PYG{+w}{ }\PYG{l+m}{60}\PYG{+w}{ }\PYG{l+m}{3}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{1}\PYG{+w}{ }\PYG{l+m}{1}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{2}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{3}\PYG{k}{)}
-\PYG{+w}{		    }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
+\PYG{+w}{                    }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
 \PYG{+w}{                    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Ejecutando: backup\PYGZhy{}pvc }\PYG{n+nv}{\PYGZdl{}pvc}\PYG{l+s+s2}{\PYGZdq{}}
 \PYG{+w}{                    }backup\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}pvc}\PYG{l+s+s2}{\PYGZdq{}}
 \PYG{+w}{                    }\PYG{p}{;}\PYG{p}{;}
 \PYG{+w}{                }\PYG{l+s+s2}{\PYGZdq{}2\PYGZdq{}}\PYG{o}{)}
 \PYG{+w}{                    }\PYG{n+nv}{pod\PYGZus{}route}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}whiptail\PYG{+w}{ }\PYGZhy{}\PYGZhy{}inputbox\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Ingrese el pod\PYGZhy{}route:\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{10}\PYG{+w}{ }\PYG{l+m}{60}\PYG{+w}{ }\PYG{l+m}{3}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{1}\PYG{+w}{ }\PYG{l+m}{1}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{2}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{3}\PYG{k}{)}
-\PYG{+w}{		    }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
+\PYG{+w}{                    }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
 \PYG{+w}{                    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Ejecutando: backup\PYGZhy{}pod }\PYG{n+nv}{\PYGZdl{}pod\PYGZus{}route}\PYG{l+s+s2}{\PYGZdq{}}
 \PYG{+w}{                    }backup\PYG{+w}{ }\PYGZhy{}p\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}pod\PYGZus{}route}\PYG{l+s+s2}{\PYGZdq{}}
 \PYG{+w}{                    }\PYG{p}{;}\PYG{p}{;}
 \PYG{+w}{                }\PYG{l+s+s2}{\PYGZdq{}3\PYGZdq{}}\PYG{o}{)}
 \PYG{+w}{                    }\PYG{n+nv}{carpeta}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}whiptail\PYG{+w}{ }\PYGZhy{}\PYGZhy{}inputbox\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Ingrese la carpeta:\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{10}\PYG{+w}{ }\PYG{l+m}{60}\PYG{+w}{ }\PYG{l+m}{3}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{1}\PYG{+w}{ }\PYG{l+m}{1}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{2}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{3}\PYG{k}{)}
-\PYG{+w}{		    }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
+\PYG{+w}{                    }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
 \PYG{+w}{                    }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Ejecutando: backup\PYGZhy{}nodo }\PYG{n+nv}{\PYGZdl{}carpeta}\PYG{l+s+s2}{\PYGZdq{}}
 \PYG{+w}{                    }backup\PYG{+w}{ }\PYGZhy{}f\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}carpeta}\PYG{l+s+s2}{\PYGZdq{}}
 \PYG{+w}{                    }\PYG{p}{;}\PYG{p}{;}
 \PYG{+w}{            }\PYG{k}{esac}
 \PYG{+w}{            }\PYG{p}{;}\PYG{p}{;}
+\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Agregar VM al cluster}
 \PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}4\PYGZdq{}}\PYG{o}{)}
 \PYG{+w}{            }\PYG{n+nv}{vm\PYGZus{}name}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}whiptail\PYG{+w}{ }\PYGZhy{}\PYGZhy{}inputbox\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Ingrese el nombre de la VM:\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{10}\PYG{+w}{ }\PYG{l+m}{60}\PYG{+w}{ }\PYG{l+m}{3}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{1}\PYG{+w}{ }\PYG{l+m}{1}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{2}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{3}\PYG{k}{)}
-\PYG{+w}{	    }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
+\PYG{+w}{            }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
 \PYG{+w}{            }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Ejecutando: bootvm \PYGZhy{}j }\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}name}\PYG{l+s+s2}{\PYGZdq{}}
 \PYG{+w}{            }bootvm\PYG{+w}{ }\PYGZhy{}j\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}name}\PYG{l+s+s2}{\PYGZdq{}}
 \PYG{+w}{            }\PYG{p}{;}\PYG{p}{;}
+\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Conexión SSH a una VM}
 \PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}5\PYGZdq{}}\PYG{o}{)}
 \PYG{+w}{            }\PYG{n+nv}{vm\PYGZus{}name}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}whiptail\PYG{+w}{ }\PYGZhy{}\PYGZhy{}inputbox\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Ingrese el nombre de la VM:\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{10}\PYG{+w}{ }\PYG{l+m}{60}\PYG{+w}{ }\PYG{l+m}{3}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{1}\PYG{+w}{ }\PYG{l+m}{1}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{2}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{3}\PYG{k}{)}
-\PYG{+w}{	    }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
+\PYG{+w}{            }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
 \PYG{+w}{            }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Ejecutando: ssh\PYGZhy{}vm }\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}name}\PYG{l+s+s2}{\PYGZdq{}}
 \PYG{+w}{            }ssh\PYGZhy{}vm\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}vm\PYGZus{}name}\PYG{l+s+s2}{\PYGZdq{}}
 \PYG{+w}{            }\PYG{p}{;}\PYG{p}{;}
+\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Inicialización de un cluster completo}
 \PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}6\PYGZdq{}}\PYG{o}{)}
 \PYG{+w}{            }\PYG{n+nv}{masters}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}whiptail\PYG{+w}{ }\PYGZhy{}\PYGZhy{}inputbox\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Ingrese la cantidad de masters:\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{10}\PYG{+w}{ }\PYG{l+m}{60}\PYG{+w}{ }\PYG{l+m}{3}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{1}\PYG{+w}{ }\PYG{l+m}{1}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{2}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{3}\PYG{k}{)}
-\PYG{+w}{	    }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
+\PYG{+w}{            }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
 \PYG{+w}{            }\PYG{n+nv}{workers}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}whiptail\PYG{+w}{ }\PYGZhy{}\PYGZhy{}inputbox\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Ingrese la cantidad de workers:\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{10}\PYG{+w}{ }\PYG{l+m}{60}\PYG{+w}{ }\PYG{l+m}{3}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{1}\PYG{+w}{ }\PYG{l+m}{1}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{2}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{3}\PYG{k}{)}
-\PYG{+w}{	    }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
-\PYG{+w}{	    }\PYG{n+nv}{nat\PYGZus{}backup}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}whiptail\PYG{+w}{ }\PYGZhy{}\PYGZhy{}title\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Opciones adicionales\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
-\PYG{+w}{	       }\PYGZhy{}\PYGZhy{}checklist\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Seleccione si desea agregar NAT\PYGZhy{}Backup:\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{15}\PYG{+w}{ }\PYG{l+m}{60}\PYG{+w}{ }\PYG{l+m}{5}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
-\PYG{+w}{	       }\PYG{l+s+s2}{\PYGZdq{}1\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Agregar NAT\PYGZhy{}Backup\PYGZdq{}}\PYG{+w}{ }OFF\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
-\PYG{+w}{	       }\PYG{l+m}{3}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{1}\PYG{+w}{ }\PYG{l+m}{1}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{2}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{3}\PYG{+w}{ }\PYG{k}{)}
-
-\PYG{+w}{	    }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
+\PYG{+w}{            }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
+\PYG{+w}{            }\PYG{n+nv}{nat\PYGZus{}backup}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}whiptail\PYG{+w}{ }\PYGZhy{}\PYGZhy{}title\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Opciones adicionales\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{               }\PYGZhy{}\PYGZhy{}checklist\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Seleccione si desea agregar NAT\PYGZhy{}Backup:\PYGZdq{}}\PYG{+w}{ }\PYG{l+m}{15}\PYG{+w}{ }\PYG{l+m}{60}\PYG{+w}{ }\PYG{l+m}{5}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{               }\PYG{l+s+s2}{\PYGZdq{}1\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Agregar NAT\PYGZhy{}Backup\PYGZdq{}}\PYG{+w}{ }OFF\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{               }\PYG{l+m}{3}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{1}\PYG{+w}{ }\PYG{l+m}{1}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{2}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}\PYG{p}{\PYGZam{}}\PYG{l+m}{3}\PYG{+w}{ }\PYG{k}{)}
+\PYG{+w}{            }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}?}\PYG{+w}{ }\PYGZhy{}ne\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{k}{continue}
 
 \PYG{+w}{            }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}nat\PYGZus{}backup}\PYG{+w}{ }\PYGZhy{}eq\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nv}{nat\PYGZus{}backup}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}\PYGZhy{}b\PYGZdq{}}
 

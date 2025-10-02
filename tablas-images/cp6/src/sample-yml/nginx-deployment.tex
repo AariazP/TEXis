@@ -1,3 +1,5 @@
+Este manifiesto en \texttt{YAML} define un \texttt{Deployment} en Kubernetes llamado \texttt{nginx-deployment}, cuya función es desplegar y gestionar un conjunto de réplicas del servidor web Nginx. En este caso, se especifica que el despliegue debe mantener tres instancias (\texttt{replicas: 3}) del contenedor basado en la imagen \texttt{nginx:1.25}. Cada contenedor expone el puerto \texttt{80}, permitiendo servir tráfico HTTP. El uso de etiquetas (\texttt{app: nginx}) facilita la selección y organización de los recursos asociados a este despliegue.
+
 \begin{minted}[frame=lines,
     fontsize=\scriptsize,
     breaklines]{yaml}

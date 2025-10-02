@@ -1,3 +1,5 @@
+El script \texttt{cluster-bootup.sh} constituye una herramienta integral de automatización para la creación y configuración del clúster de K3s sobre el hipervisor \textit{XCP-ng}. El proceso inicia con la definición de parámetros como el número de nodos \texttt{master}, la cantidad de \texttt{workers}, y la posibilidad de incluir un servidor NAT de respaldo o un balanceador de carga. Posteriormente, el script despliega las máquinas virtuales necesarias, configurando en cada una los \textit{hostnames}, direcciones IP y, en caso de que exista un balanceador de carga, el servicio \texttt{HAProxy} para distribuir el tráfico hacia los nodos maestros.  
+Una vez inicializado el primer \texttt{master}, se obtiene el token de unión al clúster y se procede a añadir el resto de los nodos, ya sean maestros adicionales o workers. La automatización contempla la sincronización de tiempos de espera para que cada nodo disponga de una dirección IP válida antes de proceder con su configuración.
 \begin{minted}[frame=lines,
     fontsize=\scriptsize,
     breaklines]{bash}

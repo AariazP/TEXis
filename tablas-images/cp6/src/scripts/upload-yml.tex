@@ -1,18 +1,45 @@
+El siguiente script recibe como argumento el nombre de un nodo y una lista de archivos YAML locales. Primero obtiene la dirección IP del nodo especificado mediante el script auxiliar \texttt{get-ip}. Posteriormente, transfiere los archivos al nodo usando \texttt{scp} y ejecuta en la máquina remota el comando \texttt{kubectl apply -f} para aplicar los manifiestos en el clúster de Kubernetes. Finalmente, elimina los archivos temporales en el nodo para mantener la limpieza del sistema.
+
 \begin{minted}[frame=lines,
     fontsize=\scriptsize,
     breaklines]{bash}
 #!/bin/bash
 
+# ---------------------------------------------------------------
+# Script: upload_yaml.sh
+# Descripción:
+#   Este script transfiere archivos YAML a un nodo específico 
+#   en un clúster y aplica los manifiestos con kubectl.
+#   Pasos:
+#     1. Obtiene la IP del nodo usando `get-ip`.
+#     2. Copia cada archivo YAML al nodo vía `scp`.
+#     3. Ejecuta `kubectl apply -f` en el nodo para aplicar
+#        los cambios y luego elimina el archivo remoto.
+# ---------------------------------------------------------------
+
+# Redirigir errores a /dev/null para evitar mensajes innecesarios.
 exec 2> /dev/null
 
+# Guardar el primer argumento como nombre del nodo
 NODE="$1"
-shift   # remove node name from arguments
 
+# Eliminar el primer argumento (nombre del nodo) y dejar solo los archivos
+shift
+
+# Obtener la dirección IP del nodo a partir de su nombre
 IP=$( get-ip "$NODE" )
 
+# Recorrer cada archivo recibido como argumento
 for FILE in "$@"; do
+    # Obtener solo el nombre del archivo (sin ruta)
     FILENAME=$( basename "$FILE" )
+
+    # Copiar el archivo al nodo remoto en el directorio actual (~)
     scp -i ~/.ssh/id_internal_vm "$FILE" root@$IP:./
-    ssh -i ~/.ssh/id_internal_vm root@$IP "kubectl apply -f $FILENAME && rm $FILENAME"
+
+    # Conectarse al nodo y aplicar el manifiesto con kubectl
+    # Luego eliminar el archivo del nodo para mantener limpieza
+    ssh -i ~/.ssh/id_internal_vm root@$IP \
+        "kubectl apply -f $FILENAME && rm $FILENAME"
 done
 \end{minted}

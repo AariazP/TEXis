@@ -1,3 +1,5 @@
+El script \texttt{boot-servers.sh} tiene como finalidad automatizar la creación e inicialización de máquinas virtuales, específicamente servidores que cumplen el rol de red \texttt{NAT}. El funcionamiento contempla dos escenarios: la creación de un servidor NAT principal (\textit{Master}) y, de manera opcional, un servidor de respaldo (\textit{Backup}) a partir de una plantilla predefinida denominada \texttt{nat-server}. Una vez creadas las máquinas virtuales, el script procede a encenderlas utilizando las utilidades nativas de XCP-ng,  permitiendo que la infraestructura de red NAT esté disponible.
+
 \begin{minted}[frame=lines,
     fontsize=\scriptsize,
     breaklines]{bash}

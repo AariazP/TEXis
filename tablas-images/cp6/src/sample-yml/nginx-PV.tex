@@ -1,3 +1,5 @@
+El siguiente manifiesto en \texttt{YAML} define un recurso \texttt{PersistentVolume} (PV) en Kubernetes, denominado \texttt{pv-sample}. Este volumen proporciona un almacenamiento de \texttt{1Gi} con modo de acceso \texttt{ReadWriteOnce}, lo cual permite que un único nodo lo monte en modo lectura y escritura. La política de recuperación establecida es \texttt{Retain}, lo que significa que los datos no serán eliminados automáticamente cuando el volumen quede liberado. Además, se especifica una clase de almacenamiento manual (\texttt{manual}) y un \texttt{hostPath} que apunta al directorio \texttt{/mnt/data} del nodo anfitrión, vinculando el almacenamiento físico del host con el clúster.
+
 \begin{minted}[frame=lines,
     fontsize=\scriptsize,
     breaklines]{yaml}

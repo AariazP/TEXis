@@ -1,3 +1,5 @@
+El recurso \texttt{PersistentVolumeClaim} (PVC) en Kubernetes actúa como una solicitud de almacenamiento por parte de una aplicación dentro del clúster. En este caso, el PVC denominado \texttt{pvc-sample} solicita un volumen con capacidad de \texttt{1Gi}, en modo de acceso \texttt{ReadWriteOnce}, lo cual permite que solo un nodo lo monte con permisos de lectura y escritura al mismo tiempo. Este reclamo hace uso de la clase de almacenamiento \texttt{manual}, lo que asegura su vinculación con el \texttt{PersistentVolume} previamente definido que comparte las mismas características.
+
 \begin{minted}[frame=lines,
     fontsize=\scriptsize,
     breaklines]{yaml}

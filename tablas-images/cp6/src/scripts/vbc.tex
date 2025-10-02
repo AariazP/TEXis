@@ -1,66 +1,80 @@
+El siguiente script implementa un comando principal denominado \texttt{vbc}, que funciona como una interfaz centralizada para la gestión de \VM, clústeres y operaciones auxiliares. Su diseño modular permite agrupar diferentes dominios de comandos: \texttt{vm} (máquinas virtuales), \texttt{cluster} (operaciones sobre el clúster), \texttt{kubectl} (comandos pasados directamente al gestor de Kubernetes) y \texttt{console} (operaciones de consola). De esta forma, el script facilita la administración de recursos a través de una única herramienta, estandarizando la interacción con las distintas funciones ya implementadas en scripts auxiliares.
+
 \begin{minted}[frame=lines,
     fontsize=\scriptsize,
     breaklines]{bash}
-
 #!/bin/bash
 
-set -euo pipefail
+set -euo pipefail  # Manejo estricto de errores, variables indefinidas y pipes
 
-# Usage helper
+# ---------------------------------------------------------------
+# Función: usage
+# Descripción:
+#   Muestra el modo de uso del script y las opciones disponibles.
+# ---------------------------------------------------------------
 usage() {
     echo "Usage: vbc <domain> <subcommand> [args...]"
     echo
     echo "Domains:"
     echo "  vm        create | ping | list | ssh | get-ip"
-    echo "  cluster   create | clean"
+    echo "  cluster   create | clean | upload | backup"
     echo "  kubectl   (no subcommands yet, passes directly)"
     echo "  console   (no subcommands yet, passes directly)"
     exit 1
 }
 
+# ---------------------------------------------------------------
+# MAIN
+# ---------------------------------------------------------------
 
-# ---------- MAIN ----------
+# Validar número mínimo de argumentos
 if [[ $# -lt 1 ]]; then
     usage
 fi
 
-DOMAIN=$1
-SUBCMD=${2:-}
+DOMAIN=$1          # Primer argumento: dominio de operación
+SUBCMD=${2:-}      # Segundo argumento: subcomando (opcional)
 
-shift # drop domain
-[[ -n "$SUBCMD" ]] && shift # drop subcommand if present
+shift              # Eliminar el dominio de la lista de argumentos
+[[ -n "$SUBCMD" ]] && shift # Eliminar también el subcomando si está presente
 
+# Evaluar dominio principal
 case "$DOMAIN" in
   vm)
+    # Subcomandos para la gestión de VMs
     case "$SUBCMD" in
-      create)   bootvm "$@" ;;
-      ping)     get-vm -p "$@" ;;
-      list)     get-vm;;
-      ssh)      ssh-vm "$@" ;;
-      get-ip)   get-ip "$@" ;;
+      create)   bootvm "$@" ;;           # Crear VM
+      ping)     get-vm -p "$@" ;;        # Verificar disponibilidad de VM
+      list)     get-vm ;;                # Listar VMs
+      ssh)      ssh-vm "$@" ;;           # Conexión SSH a VM
+      get-ip)   get-ip "$@" ;;           # Obtener IP de VM
       *) echo "Unknown vm subcommand: $SUBCMD"; usage ;;
     esac
     ;;
 
   cluster)
+    # Subcomandos para gestión del clúster
     case "$SUBCMD" in
-      create)   cluster-bootup "$@" ;;
-      clean)    clean-cluster "$@" ;;
-      upload)   upload_yaml $( get-vm -a -n 1 master ) "$@" ;;
-      backup)   backup "$@" ;;
+      create)   cluster-bootup "$@" ;;   # Inicializar clúster
+      clean)    clean-cluster "$@" ;;    # Limpiar clúster
+      upload)   upload_yaml $( get-vm -a -n 1 master ) "$@" ;; # Subir manifiestos
+      backup)   backup "$@" ;;           # Crear copia de respaldo
       *) echo "Unknown cluster subcommand: $SUBCMD"; usage ;;
     esac
     ;;
 
   kubectl)
+    # Pasar directamente el comando kubectl a un nodo master vía SSH
     ssh-vm -r $( get-vm -a -n 1 master ) -c "kubectl $SUBCMD $@"
     ;;
 
   console)
+    # Pasar comandos directamente al gestor de consola
     console "$@"
     ;;
 
   *)
+    # En caso de dominio no reconocido
     echo "Unknown domain: $DOMAIN"
     usage
     ;;

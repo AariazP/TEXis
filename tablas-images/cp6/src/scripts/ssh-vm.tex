@@ -1,3 +1,5 @@
+El siguiente script está diseñado para simplificar la conexión remota vía \texttt{SSH} a \VM\ desplegadas, utilizando como referencia únicamente el nombre de la \VM. Para ello, hace uso de un script auxiliar (\texttt{get-ip}) que obtiene la dirección \IP\ asociada a la máquina. Este script permite dos funcionalidades principales: (i) establecer la conexión con la \VM\ bajo el usuario predeterminado de la configuración \SSH, o con privilegios de \texttt{root} si se especifica la opción correspondiente; y (ii) ejecutar comandos remotos directamente sobre la \VM, sin necesidad de abrir una sesión interactiva.
+
 \begin{minted}[frame=lines,
     fontsize=\scriptsize,
     breaklines]{bash}
@@ -17,9 +19,9 @@ ROOT=0     # Indica si se usará el usuario root (1 = sí, 0 = no)
 CMD=""     # Comando opcional a ejecutar en la VM
 VM=""      # Nombre de la VM a la que se conectará
 
-# Procesar opciones iniciales: 
-#   -r  → usar root como usuario.
-#   -c  → comando a ejecutar.
+# Procesar opciones iniciales:
+#   -r → usar root como usuario.
+#   -c → comando a ejecutar.
 while getopts "rc:" opt; do
   case "$opt" in
     r) ROOT=1 ;;                # Activar conexión como root

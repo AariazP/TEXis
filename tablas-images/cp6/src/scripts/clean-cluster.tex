@@ -1,3 +1,4 @@
+El script \texttt{clean-cluster.sh} tiene como propósito eliminar de manera masiva todas las máquinas virtuales del clúster, exceptuando aquellas clasificadas como dominios del sistema. Su diseño contempla dos modos de ejecución: (i) interactivo, donde el usuario debe confirmar explícitamente la eliminación, y (ii) automático, activado con la opción \texttt{-y}, que asume confirmación afirmativa sin solicitar intervención. Para ello, el script recorre todas las máquinas virtuales identificadas, las apaga forzadamente y posteriormente ejecuta su destrucción.
 \begin{minted}[frame=lines,
     fontsize=\scriptsize,
     breaklines]{bash}

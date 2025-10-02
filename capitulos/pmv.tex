@@ -2,7 +2,7 @@
 \mbox{}\\
 \section{Estructura del proyecto}
 \noindent
-La figura~\ref{fig:estructura-proyecto} detalla la estructura del proyecto
+La figura~\ref{fig:estructura-proyecto} detalla la estructura del proyecto, el directorio functional-tests contiene los scripts y manifiestos utilizados para la validación técnica de la solución propuesta, el código fuente de esta validación puede encontrarse en la sección~\ref{sec:functional-tests}. 
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.48\textwidth}
@@ -31,88 +31,15 @@ Este paquete contiene scripts de configuración y utilidades para la gestión de
 \noindent
 \input{tablas-images/cp6/src/config/config.tex}
 
-%=========================functional-test/backup=========================
-\subsection{functional-test/backup}
-\noindent
-La siguiente sección presenta los distintos manifiestos y scripts que conforman la estrategia de creación de respaldo en Kubernetes. Cada archivo cumple un rol específico dentro del despliegue, desde la definición del pod y sus volúmenes. A continuación, se describen brevemente los archivos incluidos en este paquete:
-\subsubsection{deployment.yaml}
-\noindent
-\input{tablas-images/cp6/src/functional-test/backup/deployment.tex}
-\subsubsection{pv.yaml}
-\noindent
-\input{tablas-images/cp6/src/functional-test/backup/pv.tex}
-\subsubsection{service.yaml}
-\noindent
-\input{tablas-images/cp6/src/functional-test/backup/service.tex}
-\subsubsection{writer-pod.yaml}
-\noindent
-\input{tablas-images/cp6/src/functional-test/backup/writer-pod.tex}
-\subsubsection{run-tests.sh}
-\noindent
-\input{tablas-images/cp6/src/functional-test/backup/run-tests.tex}
-
-
-%=========================functional-test/cluster-bootup=========================
-
-\subsection{functional-test/cluster-bootup}
-\noindent
-
-\subsubsection{run-tests.sh}
-\noindent
-\input{tablas-images/cp6/src/functional-test/cluster-bootup/run-tests.tex}
-
-
-%=========================functional-test/get-ip=========================
-
-\subsection{functional-test/get-ip}
-\noindent
-
-\subsubsection{run-tests.sh}
-\noindent
-\input{tablas-images/cp6/src/functional-test/get-ip/run-tests.tex}
-
-
-
-%=========================functional-test/aplicar-yml=========================/
-
-\subsection{functional-test/upload-yaml}
-
-\subsubsection{test-deployment.yaml}
-\noindent
-\input{tablas-images/cp6/src/functional-test/upload-yaml/test-deployment.tex}
-
-
-\subsubsection{run-tests.sh}
-\noindent
-\input{tablas-images/cp6/src/functional-test/upload-yaml/run-tests.tex}
-
-
-
-
-
+%=========================SAMPLE-YAML=========================
 
 \subsection{sample-yaml}
 \noindent
+Los archivos en formato \texttt{YAML} presentados en esta sección son ejemplos utilizados en diferentes contextos del PMV, incluyendo la configuración de pods, despliegues, servicios y volúmenes persistentes en Kubernetes. Estos manifiestos sirven como referencia para la creación y gestión de recursos dentro del clúster, facilitando la implementación de aplicaciones y servicios de manera eficiente y estructurada.
+Se pueden encontrar en el apéndice~\ref{apendice:yaml-pmv}.
 
-\subsubsection{backup-pod.yml}
-\noindent
-\input{tablas-images/cp6/src/sample-yml/backup-pod.tex}
 
-\subsubsection{nginx-deployment.yml}
-\input{tablas-images/cp6/src/sample-yml/nginx-deployment.tex}
-
-\subsubsection{nginx-NP-service.yml}
-\input{tablas-images/cp6/src/sample-yml/nginx-NP-service.tex}
-
-\subsubsection{nginx-PV.yml}
-\input{tablas-images/cp6/src/sample-yml/nginx-PV.tex}
-
-\subsubsection{nginx-PVC.yml}
-\input{tablas-images/cp6/src/sample-yml/nginx-PVC.tex}
-
-\subsubsection{nginx-service.yml}
-\input{tablas-images/cp6/src/sample-yml/nginx-service.tex}
-
+%=========================SCRIPTS=========================
 \subsection{Scripts}
 
 \subsection{backup.sh}

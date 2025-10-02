@@ -1,3 +1,5 @@
+El script \texttt{get-ip.sh} tiene como finalidad obtener de manera automática la dirección IP de una \VM\, partiendo únicamente de su nombre. Para ello, se conecta al servidor \NAT\ a través de \texttt{SSH} utilizando una llave privada, consulta la tabla ARP mediante el comando \texttt{ip n}, y filtra las entradas que coinciden con las direcciones MAC asociadas a la \VM. De esta forma, el script permite resolver dinámicamente la IP de la \VM.
+
 \begin{minted}[frame=lines,
     fontsize=\scriptsize,
     breaklines]{bash}
@@ -52,5 +54,4 @@ VM_IP=$( ssh -i ~/.ssh/id_nat_server debian@172.30.29.2 \
 
 # Muestra la IP obtenida sin salto de línea adicional al final.
 echo -n $VM_IP
-
 \end{minted}
