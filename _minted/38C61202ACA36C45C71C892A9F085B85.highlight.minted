@@ -1,0 +1,13 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{apiVersion}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{v1}\PYG{+w}{                }\PYG{c+c1}{\PYGZsh{} Versión de la API de Kubernetes para recursos básicos}
+\PYG{n+nt}{kind}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{PersistentVolume}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Tipo de recurso: PersistentVolume (PV)}
+\PYG{n+nt}{metadata}\PYG{p}{:}
+\PYG{+w}{  }\PYG{n+nt}{name}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{nginx\PYGZhy{}pv}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} Nombre asignado al volumen persistente}
+\PYG{n+nt}{spec}\PYG{p}{:}
+\PYG{+w}{  }\PYG{n+nt}{capacity}\PYG{p}{:}
+\PYG{+w}{    }\PYG{n+nt}{storage}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{1Gi}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} Capacidad de almacenamiento asignada al volumen}
+\PYG{+w}{  }\PYG{n+nt}{accessModes}\PYG{p}{:}
+\PYG{+w}{    }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{ReadWriteOnce}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} Permite acceso de lectura/escritura desde un solo nodo}
+\PYG{+w}{  }\PYG{n+nt}{hostPath}\PYG{p}{:}\PYG{+w}{                    }\PYG{c+c1}{\PYGZsh{} Define un path físico en el nodo (útil en pruebas locales)}
+\PYG{+w}{    }\PYG{n+nt}{path}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{/mnt/data/nginx}\PYG{+w}{      }\PYG{c+c1}{\PYGZsh{} Ruta en el sistema de archivos del nodo donde se almacena el volumen}
+\end{MintedVerbatim}

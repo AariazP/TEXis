@@ -1,0 +1,40 @@
+Este script en bash automatiza el proceso de validación funcional de un entorno de Kubernetes desplegado en un clúster virtual. Primero realiza el arranque de las máquinas virtuales del clúster y carga los archivos \texttt{.yaml} necesarios para el despliegue de recursos (deployment, volúmenes persistentes, servicio y un pod de prueba denominado \texttt{writer-pod}). Luego, espera hasta que dicho pod se encuentre en estado \texttt{Running}, tras lo cual se ejecutan comandos dentro de él para crear archivos de prueba en el volumen asociado. Finalmente, el script realiza respaldos tanto a nivel del volumen persistente \texttt{(PVC)} como directamente desde el pod, verificando la integración de la capa de almacenamiento con las aplicaciones en ejecución.
+
+\begin{minted}[frame=lines,
+    fontsize=\scriptsize,
+    breaklines]{bash}
+#!/bin/bash
+
+# Muestra mensaje de inicio de arranque de VMs del clúster
+echo "======= Booting vms ======="
+cluster-bootup -m 1 -w 2   # Inicia 1 master y 2 workers
+
+# Sube los manifiestos .yaml al nodo master
+echo "====== Uploadindg .yaml files ========"
+upload_yaml master1 deployment.yaml
+upload_yaml master1 pvc.yaml
+upload_yaml master1 pv.yaml
+upload_yaml master1 service.yaml
+upload_yaml master1 writer-pod.yaml
+
+# Verifica el estado del pod hasta que esté en Running
+echo "======= modyfing files ========"
+while ! ssh-vm -r master1 -c "kubectl get pod/writer-pod" | grep -q Running 
+do
+   sleep 1
+done
+
+# Escribe un archivo de prueba en el volumen persistente
+ssh-vm -r master1 -c "kubectl exec writer-pod -- sh -c 'echo functional test for backup > /data/dummy_file.txt'"
+
+# Realiza respaldo del PVC asociado
+echo "====== backing up for pvc ======="
+backup nginx-pvc
+
+# Escribe un archivo de prueba directamente en el pod
+echo "====== backing up for pod ======="
+ssh-vm -r master1 -c "kubectl exec writer-pod -- sh -c 'echo functional test for backup in a pod > /data/dummy_file_pod.txt'"
+
+# Realiza respaldo a nivel de pod, copiando datos desde /data
+backup -p writer-pod:/data
+\end{minted}

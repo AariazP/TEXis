@@ -1,0 +1,36 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+\PYG{c+c1}{\PYGZsh{} Muestra mensaje de inicio de arranque de VMs del clúster}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}======= Booting vms =======\PYGZdq{}}
+cluster\PYGZhy{}bootup\PYG{+w}{ }\PYGZhy{}m\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYGZhy{}w\PYG{+w}{ }\PYG{l+m}{2}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Inicia 1 master y 2 workers}
+
+\PYG{c+c1}{\PYGZsh{} Sube los manifiestos .yaml al nodo master}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}====== Uploadindg .yaml files ========\PYGZdq{}}
+upload\PYGZus{}yaml\PYG{+w}{ }master1\PYG{+w}{ }deployment.yaml
+upload\PYGZus{}yaml\PYG{+w}{ }master1\PYG{+w}{ }pvc.yaml
+upload\PYGZus{}yaml\PYG{+w}{ }master1\PYG{+w}{ }pv.yaml
+upload\PYGZus{}yaml\PYG{+w}{ }master1\PYG{+w}{ }service.yaml
+upload\PYGZus{}yaml\PYG{+w}{ }master1\PYG{+w}{ }writer\PYGZhy{}pod.yaml
+
+\PYG{c+c1}{\PYGZsh{} Verifica el estado del pod hasta que esté en Running}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}======= modyfing files ========\PYGZdq{}}
+\PYG{k}{while}\PYG{+w}{ }!\PYG{+w}{ }ssh\PYGZhy{}vm\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }master1\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}kubectl get pod/writer\PYGZhy{}pod\PYGZdq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}q\PYG{+w}{ }Running
+\PYG{k}{do}
+\PYG{+w}{   }sleep\PYG{+w}{ }\PYG{l+m}{1}
+\PYG{k}{done}
+
+\PYG{c+c1}{\PYGZsh{} Escribe un archivo de prueba en el volumen persistente}
+ssh\PYGZhy{}vm\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }master1\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}kubectl exec writer\PYGZhy{}pod \PYGZhy{}\PYGZhy{} sh \PYGZhy{}c \PYGZsq{}echo functional test for backup \PYGZgt{} /data/dummy\PYGZus{}file.txt\PYGZsq{}\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Realiza respaldo del PVC asociado}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}====== backing up for pvc =======\PYGZdq{}}
+backup\PYG{+w}{ }nginx\PYGZhy{}pvc
+
+\PYG{c+c1}{\PYGZsh{} Escribe un archivo de prueba directamente en el pod}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}====== backing up for pod =======\PYGZdq{}}
+ssh\PYGZhy{}vm\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }master1\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}kubectl exec writer\PYGZhy{}pod \PYGZhy{}\PYGZhy{} sh \PYGZhy{}c \PYGZsq{}echo functional test for backup in a pod \PYGZgt{} /data/dummy\PYGZus{}file\PYGZus{}pod.txt\PYGZsq{}\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Realiza respaldo a nivel de pod, copiando datos desde /data}
+backup\PYG{+w}{ }\PYGZhy{}p\PYG{+w}{ }writer\PYGZhy{}pod:/data
+\end{MintedVerbatim}

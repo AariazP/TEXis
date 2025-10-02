@@ -1,0 +1,18 @@
+\begin{minted}[frame=lines,
+    fontsize=\scriptsize,
+    breaklines]{bash}
+#!/bin/bash
+
+exec 2> /dev/null
+
+NODE="$1"
+shift   # remove node name from arguments
+
+IP=$( get-ip "$NODE" )
+
+for FILE in "$@"; do
+    FILENAME=$( basename "$FILE" )
+    scp -i ~/.ssh/id_internal_vm "$FILE" root@$IP:./
+    ssh -i ~/.ssh/id_internal_vm root@$IP "kubectl apply -f $FILENAME && rm $FILENAME"
+done
+\end{minted}

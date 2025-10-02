@@ -1,0 +1,28 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{apiVersion}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{apps/v1}\PYG{+w}{             }\PYG{c+c1}{\PYGZsh{} Versión de la API de Kubernetes utilizada para el recurso}
+\PYG{n+nt}{kind}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{Deployment}\PYG{+w}{                }\PYG{c+c1}{\PYGZsh{} Tipo de recurso: Deployment (gestiona pods y réplicas)}
+\PYG{n+nt}{metadata}\PYG{p}{:}
+\PYG{+w}{  }\PYG{n+nt}{name}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{nginx\PYGZhy{}deployment}\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Nombre asignado al Deployment}
+\PYG{n+nt}{spec}\PYG{p}{:}
+\PYG{+w}{  }\PYG{n+nt}{replicas}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{1}\PYG{+w}{                   }\PYG{c+c1}{\PYGZsh{} Número de réplicas del pod}
+\PYG{+w}{  }\PYG{n+nt}{selector}\PYG{p}{:}
+\PYG{+w}{    }\PYG{n+nt}{matchLabels}\PYG{p}{:}
+\PYG{+w}{      }\PYG{n+nt}{app}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{nginx}\PYG{+w}{                }\PYG{c+c1}{\PYGZsh{} Selector para identificar los pods asociados}
+\PYG{+w}{  }\PYG{n+nt}{template}\PYG{p}{:}\PYG{+w}{                     }\PYG{c+c1}{\PYGZsh{} Plantilla que define cómo serán los pods}
+\PYG{+w}{    }\PYG{n+nt}{metadata}\PYG{p}{:}
+\PYG{+w}{      }\PYG{n+nt}{labels}\PYG{p}{:}
+\PYG{+w}{        }\PYG{n+nt}{app}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{nginx}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} Etiquetas aplicadas al pod}
+\PYG{+w}{    }\PYG{n+nt}{spec}\PYG{p}{:}
+\PYG{+w}{      }\PYG{n+nt}{containers}\PYG{p}{:}
+\PYG{+w}{        }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{name}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{nginx}\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} Nombre del contenedor}
+\PYG{+w}{          }\PYG{n+nt}{image}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{nginx:stable}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Imagen de Docker utilizada}
+\PYG{+w}{          }\PYG{n+nt}{ports}\PYG{p}{:}
+\PYG{+w}{            }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{containerPort}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{80}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Puerto expuesto por el contenedor (HTTP)}
+\PYG{+w}{          }\PYG{n+nt}{volumeMounts}\PYG{p}{:}
+\PYG{+w}{            }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{name}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{nginx\PYGZhy{}storage}
+\PYG{+w}{              }\PYG{n+nt}{mountPath}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{/usr/share/nginx/html}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Montaje del volumen para archivos estáticos}
+\PYG{+w}{      }\PYG{n+nt}{volumes}\PYG{p}{:}
+\PYG{+w}{        }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{name}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{nginx\PYGZhy{}storage}
+\PYG{+w}{          }\PYG{n+nt}{persistentVolumeClaim}\PYG{p}{:}
+\PYG{+w}{            }\PYG{n+nt}{claimName}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{nginx\PYGZhy{}pvc}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Reclamo de volumen persistente asociado}
+\end{MintedVerbatim}

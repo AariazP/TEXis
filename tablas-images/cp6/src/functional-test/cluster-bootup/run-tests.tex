@@ -1,0 +1,50 @@
+Este script en \texttt{bash} implementa un conjunto de pruebas funcionales automatizadas para verificar la correcta creación de clústeres virtuales mediante el uso de la herramienta \texttt{cluster-bootup}. Se evalúan tres configuraciones distintas: un clúster con un maestro y un trabajador, un clúster con dos maestros y un trabajador, y finalmente una variante que además incluye un servidor \texttt{NAT-Backup}. El script compara los resultados esperados con los obtenidos tras el despliegue de las máquinas virtuales, contabilizando las pruebas superadas y limpiando el clúster al finalizar cada verificación. De esta forma, se garantiza la reproducibilidad y consistencia en los entornos de prueba.  
+
+\begin{minted}[frame=lines,
+    fontsize=\scriptsize,
+    breaklines]{bash}
+#!/bin/bash
+
+# Contador de pruebas exitosas
+SUCCEDEED_TESTS=0
+
+# Función de verificación: compara valores esperados con resultados
+check(){
+     echo +++++++++++++++++strings+++++++++++++++++++++++++
+     echo $2
+     echo $3
+     if [[ "$2" == "$3" ]]
+     then
+        echo "Test for $1 succedeed"
+        SUCCEDEED_TESTS=$(( $SUCCEDEED_TESTS + 1 ))
+        return 0
+     fi
+
+     echo "Test for $1 failed"
+     return 1
+}
+
+# ===== Primera prueba: 1 master, 1 worker =====
+export EXPECTED_RESULT=" master1 NAT-Master worker1"
+cluster-bootup -m 1 -w 1
+export RESULT=$( get-vm | sort | tr -d '\n')
+check  "1 master 1 worker" "$EXPECTED_RESULT" "$RESULT"
+clean-cluster -y
+
+# ===== Segunda prueba: 2 masters, 1 worker =====
+export EXPECTED_RESULT=" load-balancer1 master1 master2 NAT-Master worker1"
+cluster-bootup -m 2 -w 1
+export RESULT=$( get-vm | sort | tr -d '\n')
+check  "2 master 1 worker" "$EXPECTED_RESULT" "$RESULT"
+clean-cluster -y
+
+# ===== Tercera prueba: 2 masters, 1 worker, 1 NAT Backup =====
+export EXPECTED_RESULT=" load-balancer1 master1 master2 NAT-Backup NAT-Master worker1"
+cluster-bootup -m 2 -w 1 -b
+export RESULT=$( get-vm | sort | tr -d '\n')
+check  "2 master 1 worker 1 NAT Backup" "$EXPECTED_RESULT" "$RESULT"
+clean-cluster -y
+
+# Reporte final de pruebas
+echo "${SUCCEDEED_TESTS}/3 tests succeeded"
+\end{minted}

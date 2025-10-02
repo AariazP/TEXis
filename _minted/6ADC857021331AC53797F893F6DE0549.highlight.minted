@@ -1,0 +1,46 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+\PYG{c+c1}{\PYGZsh{} Contador de pruebas exitosas}
+\PYG{n+nv}{SUCCEDEED\PYGZus{}TESTS}\PYG{o}{=}\PYG{l+m}{0}
+
+\PYG{c+c1}{\PYGZsh{} Función de verificación: compara valores esperados con resultados}
+check\PYG{o}{(}\PYG{o}{)}\PYG{o}{\PYGZob{}}
+\PYG{+w}{     }\PYG{n+nb}{echo}\PYG{+w}{ }+++++++++++++++++strings+++++++++++++++++++++++++
+\PYG{+w}{     }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}2}
+\PYG{+w}{     }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}3}
+\PYG{+w}{     }\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}2}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{o}{=}\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}3}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{o}{]}
+\PYG{+w}{     }\PYG{k}{then}
+\PYG{+w}{        }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Test for }\PYG{n+nv}{\PYGZdl{}1}\PYG{l+s+s2}{ succedeed}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{+w}{        }\PYG{n+nv}{SUCCEDEED\PYGZus{}TESTS}\PYG{o}{=}\PYG{k}{\PYGZdl{}((}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}SUCCEDEED\PYGZus{}TESTS}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{k}{))}
+\PYG{+w}{        }\PYG{k}{return}\PYG{+w}{ }\PYG{l+m}{0}
+\PYG{+w}{     }\PYG{k}{fi}
+
+\PYG{+w}{     }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Test for }\PYG{n+nv}{\PYGZdl{}1}\PYG{l+s+s2}{ failed}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{+w}{     }\PYG{k}{return}\PYG{+w}{ }\PYG{l+m}{1}
+\PYG{o}{\PYGZcb{}}
+
+\PYG{c+c1}{\PYGZsh{} ===== Primera prueba: 1 master, 1 worker =====}
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{EXPECTED\PYGZus{}RESULT}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{} master1 NAT\PYGZhy{}Master worker1\PYGZdq{}}
+cluster\PYGZhy{}bootup\PYG{+w}{ }\PYGZhy{}m\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYGZhy{}w\PYG{+w}{ }\PYG{l+m}{1}
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{RESULT}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }get\PYGZhy{}vm\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }sort\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }tr\PYG{+w}{ }\PYGZhy{}d\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}}\PYG{k}{)}
+check\PYG{+w}{  }\PYG{l+s+s2}{\PYGZdq{}1 master 1 worker\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}EXPECTED\PYGZus{}RESULT}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}RESULT}\PYG{l+s+s2}{\PYGZdq{}}
+clean\PYGZhy{}cluster\PYG{+w}{ }\PYGZhy{}y
+
+\PYG{c+c1}{\PYGZsh{} ===== Segunda prueba: 2 masters, 1 worker =====}
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{EXPECTED\PYGZus{}RESULT}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{} load\PYGZhy{}balancer1 master1 master2 NAT\PYGZhy{}Master worker1\PYGZdq{}}
+cluster\PYGZhy{}bootup\PYG{+w}{ }\PYGZhy{}m\PYG{+w}{ }\PYG{l+m}{2}\PYG{+w}{ }\PYGZhy{}w\PYG{+w}{ }\PYG{l+m}{1}
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{RESULT}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }get\PYGZhy{}vm\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }sort\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }tr\PYG{+w}{ }\PYGZhy{}d\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}}\PYG{k}{)}
+check\PYG{+w}{  }\PYG{l+s+s2}{\PYGZdq{}2 master 1 worker\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}EXPECTED\PYGZus{}RESULT}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}RESULT}\PYG{l+s+s2}{\PYGZdq{}}
+clean\PYGZhy{}cluster\PYG{+w}{ }\PYGZhy{}y
+
+\PYG{c+c1}{\PYGZsh{} ===== Tercera prueba: 2 masters, 1 worker, 1 NAT Backup =====}
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{EXPECTED\PYGZus{}RESULT}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{} load\PYGZhy{}balancer1 master1 master2 NAT\PYGZhy{}Backup NAT\PYGZhy{}Master worker1\PYGZdq{}}
+cluster\PYGZhy{}bootup\PYG{+w}{ }\PYGZhy{}m\PYG{+w}{ }\PYG{l+m}{2}\PYG{+w}{ }\PYGZhy{}w\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYGZhy{}b
+\PYG{n+nb}{export}\PYG{+w}{ }\PYG{n+nv}{RESULT}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{+w}{ }get\PYGZhy{}vm\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }sort\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }tr\PYG{+w}{ }\PYGZhy{}d\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}}\PYG{k}{)}
+check\PYG{+w}{  }\PYG{l+s+s2}{\PYGZdq{}2 master 1 worker 1 NAT Backup\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}EXPECTED\PYGZus{}RESULT}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}RESULT}\PYG{l+s+s2}{\PYGZdq{}}
+clean\PYGZhy{}cluster\PYG{+w}{ }\PYGZhy{}y
+
+\PYG{c+c1}{\PYGZsh{} Reporte final de pruebas}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{SUCCEDEED\PYGZus{}TESTS}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{/3 tests succeeded}\PYG{l+s+s2}{\PYGZdq{}}
+\end{MintedVerbatim}

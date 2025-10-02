@@ -1,0 +1,34 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+\PYG{c+c1}{\PYGZsh{} Inicia el clúster con:}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{} 1 worker}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{} 2 masters}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{} servidor NAT de respaldo (\PYGZhy{}b)}
+cluster\PYGZhy{}bootup\PYG{+w}{ }\PYGZhy{}w\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYGZhy{}m\PYG{+w}{ }\PYG{l+m}{2}\PYG{+w}{ }\PYGZhy{}b
+
+\PYG{c+c1}{\PYGZsh{} Breve pausa para dar tiempo a que arranquen las VMs}
+sleep\PYG{+w}{ }\PYG{l+m}{2}
+
+\PYG{c+c1}{\PYGZsh{} Contador de pruebas exitosas}
+\PYG{n+nv}{SUCCESS\PYGZus{}TEST\PYGZus{}COUNT}\PYG{o}{=}\PYG{l+m}{0}
+
+\PYG{c+c1}{\PYGZsh{} Verificación de IPs según el rol de cada VM}
+get\PYGZhy{}ip\PYG{+w}{ }master1\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYG{l+m}{192}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Test for master succedeed\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{  }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nv}{SUCCESS\PYGZus{}TEST\PYGZus{}COUNT}\PYG{o}{=}\PYG{k}{\PYGZdl{}((}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}SUCCESS\PYGZus{}TEST\PYGZus{}COUNT}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{k}{))}
+
+get\PYGZhy{}ip\PYG{+w}{ }worker1\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYG{l+m}{192}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Test for worker succedeed\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{  }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nv}{SUCCESS\PYGZus{}TEST\PYGZus{}COUNT}\PYG{o}{=}\PYG{k}{\PYGZdl{}((}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}SUCCESS\PYGZus{}TEST\PYGZus{}COUNT}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{k}{))}
+
+get\PYGZhy{}ip\PYG{+w}{ }load\PYGZhy{}balancer\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYG{l+m}{192}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Test for load\PYGZhy{}balancer succedeed\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{  }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nv}{SUCCESS\PYGZus{}TEST\PYGZus{}COUNT}\PYG{o}{=}\PYG{k}{\PYGZdl{}((}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}SUCCESS\PYGZus{}TEST\PYGZus{}COUNT}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{k}{))}
+
+get\PYGZhy{}ip\PYG{+w}{ }NAT\PYGZhy{}Master\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYG{l+m}{172}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Test for NAT\PYGZhy{}Master succedeed\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{  }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nv}{SUCCESS\PYGZus{}TEST\PYGZus{}COUNT}\PYG{o}{=}\PYG{k}{\PYGZdl{}((}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}SUCCESS\PYGZus{}TEST\PYGZus{}COUNT}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{k}{))}
+
+get\PYGZhy{}ip\PYG{+w}{ }NAT\PYGZhy{}Backup\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYG{l+m}{172}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Test for NAT\PYGZhy{}Backup succedeed\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{  }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nv}{SUCCESS\PYGZus{}TEST\PYGZus{}COUNT}\PYG{o}{=}\PYG{k}{\PYGZdl{}((}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}SUCCESS\PYGZus{}TEST\PYGZus{}COUNT}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{k}{))}
+
+\PYG{c+c1}{\PYGZsh{} Resultado final de las pruebas}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}SUCCESS\PYGZus{}TEST\PYGZus{}COUNT}\PYG{l+s+s2}{/5 tests succedeed}\PYG{l+s+s2}{\PYGZdq{}}
+\end{MintedVerbatim}

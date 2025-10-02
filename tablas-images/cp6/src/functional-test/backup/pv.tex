@@ -1,0 +1,22 @@
+El siguiente manifiesto en \texttt{YAML} define un recurso de tipo \texttt{PersistentVolume} (PV) en Kubernetes, 
+el cual representa una pieza de almacenamiento en el clúster que puede ser reclamada por los pods mediante 
+un \texttt{PersistentVolumeClaim} (PVC). En este caso, el volumen tiene una capacidad de \texttt{1Gi}, con 
+modo de acceso \texttt{ReadWriteOnce}, lo que significa que puede ser montado en modo lectura y escritura por 
+un único nodo al mismo tiempo. La configuración utiliza un \texttt{hostPath}, lo que enlaza el volumen a una 
+ruta del sistema de archivos del nodo anfitrión (\texttt{/mnt/data/nginx}).
+
+\begin{minted}[frame=lines,
+    fontsize=\scriptsize,
+    breaklines]{yaml}
+apiVersion: v1                # Versión de la API de Kubernetes para recursos básicos
+kind: PersistentVolume         # Tipo de recurso: PersistentVolume (PV)
+metadata:
+  name: nginx-pv               # Nombre asignado al volumen persistente
+spec:
+  capacity:
+    storage: 1Gi               # Capacidad de almacenamiento asignada al volumen
+  accessModes:
+    - ReadWriteOnce            # Permite acceso de lectura/escritura desde un solo nodo
+  hostPath:                    # Define un path físico en el nodo (útil en pruebas locales)
+    path: /mnt/data/nginx      # Ruta en el sistema de archivos del nodo donde se almacena el volumen
+\end{minted}

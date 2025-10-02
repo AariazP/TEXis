@@ -1,0 +1,15 @@
+\begin{minted}[frame=lines,
+    fontsize=\scriptsize,
+    breaklines]{yaml}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-sample
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: manual
+  resources:
+    requests:
+      storage: 1Gi
+\end{minted}

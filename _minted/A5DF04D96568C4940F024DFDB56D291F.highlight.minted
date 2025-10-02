@@ -1,0 +1,19 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+
+\PYG{c+c1}{\PYGZsh{}!/bin/bash}
+
+\PYG{c+c1}{\PYGZsh{} Levanta un clúster con:}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{} 1 nodo master}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{} 1 nodo worker}
+cluster\PYGZhy{}bootup\PYG{+w}{ }\PYGZhy{}m\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYGZhy{}w\PYG{+w}{ }\PYG{l+m}{1}
+
+\PYG{c+c1}{\PYGZsh{} Sube y aplica el archivo YAML al nodo master1}
+upload\PYGZus{}yaml\PYG{+w}{ }master1\PYG{+w}{ }test\PYGZhy{}deployment.yaml
+
+\PYG{c+c1}{\PYGZsh{} Verifica que el pod asociado al despliegue \PYGZdq{}nginx\PYGZhy{}deployment\PYGZdq{} esté corriendo.}
+\PYG{c+c1}{\PYGZsh{} Si aparece en la lista de pods, la prueba es exitosa, de lo contrario falla.}
+ssh\PYGZhy{}vm\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }master1\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}kubectl get pods\PYGZdq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}q\PYG{+w}{ }nginx\PYGZhy{}deployment\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{    }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Test succedeed\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{    }\PYG{o}{||}\PYG{+w}{ }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Test failed\PYGZdq{}}
+
+\end{MintedVerbatim}

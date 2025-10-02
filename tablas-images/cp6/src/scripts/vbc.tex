@@ -1,0 +1,68 @@
+\begin{minted}[frame=lines,
+    fontsize=\scriptsize,
+    breaklines]{bash}
+
+#!/bin/bash
+
+set -euo pipefail
+
+# Usage helper
+usage() {
+    echo "Usage: vbc <domain> <subcommand> [args...]"
+    echo
+    echo "Domains:"
+    echo "  vm        create | ping | list | ssh | get-ip"
+    echo "  cluster   create | clean"
+    echo "  kubectl   (no subcommands yet, passes directly)"
+    echo "  console   (no subcommands yet, passes directly)"
+    exit 1
+}
+
+
+# ---------- MAIN ----------
+if [[ $# -lt 1 ]]; then
+    usage
+fi
+
+DOMAIN=$1
+SUBCMD=${2:-}
+
+shift # drop domain
+[[ -n "$SUBCMD" ]] && shift # drop subcommand if present
+
+case "$DOMAIN" in
+  vm)
+    case "$SUBCMD" in
+      create)   bootvm "$@" ;;
+      ping)     get-vm -p "$@" ;;
+      list)     get-vm;;
+      ssh)      ssh-vm "$@" ;;
+      get-ip)   get-ip "$@" ;;
+      *) echo "Unknown vm subcommand: $SUBCMD"; usage ;;
+    esac
+    ;;
+
+  cluster)
+    case "$SUBCMD" in
+      create)   cluster-bootup "$@" ;;
+      clean)    clean-cluster "$@" ;;
+      upload)   upload_yaml $( get-vm -a -n 1 master ) "$@" ;;
+      backup)   backup "$@" ;;
+      *) echo "Unknown cluster subcommand: $SUBCMD"; usage ;;
+    esac
+    ;;
+
+  kubectl)
+    ssh-vm -r $( get-vm -a -n 1 master ) -c "kubectl $SUBCMD $@"
+    ;;
+
+  console)
+    console "$@"
+    ;;
+
+  *)
+    echo "Unknown domain: $DOMAIN"
+    usage
+    ;;
+esac
+\end{minted}

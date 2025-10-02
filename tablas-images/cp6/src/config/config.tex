@@ -1,0 +1,17 @@
+El siguiente script en \textit{bash} tiene como finalidad modificar la tabla de enrutamiento del sistema mediante la adición de una ruta estática. 
+De esta manera, se define un camino específico para que los paquetes dirigidos a la red \texttt{192.168.100.0/24} sean encaminados a través de la 
+puerta de enlace \texttt{172.30.29.2}, utilizando la interfaz de red \texttt{xenbr0}. 
+Este tipo de configuración es común en entornos de virtualización como Xen o XCP-ng, donde los bridges de red permiten interconectar  máquinas virtuales con la red física.
+
+\begin{minted}[frame=lines,
+    fontsize=\scriptsize,
+    breaklines]{bash}
+#!/bin/bash
+
+# Agrega una ruta estática a la tabla de enrutamiento del sistema.
+# En este caso, se está indicando que para llegar a la red 192.168.100.0/24 
+# (es decir, todas las IP desde 192.168.100.1 hasta 192.168.100.254 con máscara /24),
+# el tráfico debe enviarse a través de la puerta de enlace 172.30.29.2,
+# utilizando la interfaz de red xenbr0 (un bridge, normalmente en entornos con Xen o XCP-ng).
+sudo ip route add 192.168.100.0/24 via 172.30.29.2 dev xenbr0
+\end{minted}

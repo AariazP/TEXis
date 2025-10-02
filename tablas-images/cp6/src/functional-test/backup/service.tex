@@ -1,0 +1,16 @@
+Este archivo YAML define un recurso \texttt{PersistentVolumeClaim (PVC)}, que permite a los pods solicitar almacenamiento persistente de acuerdo con lo especificado en un \texttt{PersistentVolume (PV)} previamente configurado. En este caso, el PVC solicita \texttt{1~GiB} de almacenamiento con modo de acceso \texttt{ReadWriteOnce}, lo que significa que solo un nodo podrá montar el volumen en modo lectura y escritura de manera simultánea. El PVC funciona como una capa intermedia entre los pods y el PV, desacoplando la aplicación de los detalles específicos de la infraestructura de almacenamiento.
+
+\begin{minted}[frame=lines,
+    fontsize=\scriptsize,
+    breaklines]{yaml}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nginx-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+\end{minted}

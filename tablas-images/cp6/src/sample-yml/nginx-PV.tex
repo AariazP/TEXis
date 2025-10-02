@@ -1,0 +1,17 @@
+\begin{minted}[frame=lines,
+    fontsize=\scriptsize,
+    breaklines]{yaml}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-sample
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  hostPath:
+    path: "/mnt/data"
+\end{minted}

@@ -1,0 +1,18 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{apiVersion}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{v1}
+\PYG{n+nt}{kind}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{Pod}
+\PYG{n+nt}{metadata}\PYG{p}{:}
+\PYG{+w}{  }\PYG{n+nt}{name}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{writer\PYGZhy{}pod}
+\PYG{n+nt}{spec}\PYG{p}{:}
+\PYG{+w}{  }\PYG{n+nt}{containers}\PYG{p}{:}
+\PYG{+w}{    }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{name}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{writer}
+\PYG{+w}{      }\PYG{n+nt}{image}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{busybox}
+\PYG{+w}{      }\PYG{n+nt}{command}\PYG{p}{:}\PYG{+w}{ }\PYG{p+pIndicator}{[}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{sleep}\PYG{l+s}{\PYGZdq{}}\PYG{p+pIndicator}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{3600}\PYG{l+s}{\PYGZdq{}}\PYG{+w}{ }\PYG{p+pIndicator}{]}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} mantiene el pod activo}
+\PYG{+w}{      }\PYG{n+nt}{volumeMounts}\PYG{p}{:}
+\PYG{+w}{        }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{mountPath}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{/data}\PYG{+w}{          }\PYG{c+c1}{\PYGZsh{} directorio donde se montará el PVC}
+\PYG{+w}{          }\PYG{n+nt}{name}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{nginx\PYGZhy{}storage}
+\PYG{+w}{  }\PYG{n+nt}{volumes}\PYG{p}{:}
+\PYG{+w}{    }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{n+nt}{name}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{nginx\PYGZhy{}storage}
+\PYG{+w}{      }\PYG{n+nt}{persistentVolumeClaim}\PYG{p}{:}
+\PYG{+w}{        }\PYG{n+nt}{claimName}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{nginx\PYGZhy{}pvc}\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} vínculo al PVC previamente creado}
+\end{MintedVerbatim}

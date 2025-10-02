@@ -1,0 +1,23 @@
+Este script en \texttt{bash} realiza una prueba funcional básica sobre un clúster recién creado. Primero levanta la infraestructura mínima con un nodo maestro y un nodo trabajador. Luego, transfiere y aplica en el maestro un archivo \texttt{YAML} que define un despliegue de prueba (\texttt{test-deployment.yaml}). Finalmente, el script comprueba si el despliegue denominado \texttt{nginx-deployment} se encuentra en ejecución mediante el comando \texttt{kubectl get pods}. Si se detecta correctamente, se imprime un mensaje de éxito; en caso contrario, se muestra un mensaje de fallo.  
+
+\begin{minted}[frame=lines,
+    fontsize=\scriptsize,
+    breaklines]{bash}
+
+#!/bin/bash
+
+# Levanta un clúster con:
+# - 1 nodo master
+# - 1 nodo worker
+cluster-bootup -m 1 -w 1
+
+# Sube y aplica el archivo YAML al nodo master1
+upload_yaml master1 test-deployment.yaml
+
+# Verifica que el pod asociado al despliegue "nginx-deployment" esté corriendo.
+# Si aparece en la lista de pods, la prueba es exitosa, de lo contrario falla.
+ssh-vm -r master1 -c "kubectl get pods" | grep -q nginx-deployment \
+    && echo "Test succedeed" \
+    || echo "Test failed"
+
+\end{minted}

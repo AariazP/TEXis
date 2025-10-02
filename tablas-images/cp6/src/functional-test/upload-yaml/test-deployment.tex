@@ -1,0 +1,27 @@
+Este archivo en formato \texttt{YAML} define un objeto de tipo \texttt{Deployment} en Kubernetes para desplegar una instancia de Nginx. El despliegue crea un único pod (\texttt{replicas: 1}) que utiliza la imagen estable de Nginx y expone el puerto 80 para atender solicitudes HTTP. Además, mediante la sección \texttt{selector} y las etiquetas (\texttt{labels}), se asegura la asociación entre el \texttt{Deployment} y los pods que administra, garantizando que Kubernetes mantenga en ejecución la cantidad definida de réplicas.
+
+\begin{minted}[frame=lines,
+    fontsize=\scriptsize,
+    breaklines]{yaml}
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:stable
+          ports:
+            - containerPort: 80
+
+\end{minted}

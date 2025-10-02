@@ -1,0 +1,32 @@
+El siguiente manifiesto en formato \texttt{YAML} define un recurso de tipo \texttt{Deployment} en Kubernetes para la aplicación \texttt{nginx}. Este despliegue solicita que exista al menos una réplica en ejecución, gestionada automáticamente por el controlador de Kubernetes. Además, se especifican etiquetas para la selección de pods, la imagen utilizada del contenedor, los puertos expuestos y un volumen persistente que se monta en el directorio \texttt{/usr/share/nginx/html}, el cual permite servir archivos estáticos de manera persistente.
+
+\begin{minted}[frame=lines,
+    fontsize=\scriptsize,
+    breaklines]{yaml}
+apiVersion: apps/v1             # Versión de la API de Kubernetes utilizada para el recurso
+kind: Deployment                # Tipo de recurso: Deployment (gestiona pods y réplicas)
+metadata:
+  name: nginx-deployment        # Nombre asignado al Deployment
+spec:
+  replicas: 1                   # Número de réplicas del pod
+  selector:
+    matchLabels:
+      app: nginx                # Selector para identificar los pods asociados
+  template:                     # Plantilla que define cómo serán los pods
+    metadata:
+      labels:
+        app: nginx              # Etiquetas aplicadas al pod
+    spec:
+      containers:
+        - name: nginx           # Nombre del contenedor
+          image: nginx:stable   # Imagen de Docker utilizada
+          ports:
+            - containerPort: 80 # Puerto expuesto por el contenedor (HTTP)
+          volumeMounts:
+            - name: nginx-storage
+              mountPath: /usr/share/nginx/html  # Montaje del volumen para archivos estáticos
+      volumes:
+        - name: nginx-storage
+          persistentVolumeClaim:
+            claimName: nginx-pvc # Reclamo de volumen persistente asociado
+\end{minted}

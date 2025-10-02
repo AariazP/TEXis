@@ -5,7 +5,17 @@
 La figura~\ref{fig:estructura-proyecto} detalla la estructura del proyecto
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.2]{tablas-images/cp6/src/tree.png}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[scale=0.35]{tablas-images/cp6/src/tree-1.png}
+        \subcaption{Parte 1}\label{fig:estructura-proyecto-1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[scale=0.35]{tablas-images/cp6/src/tree-2.png}
+        \subcaption{Parte 2}\label{fig:estructura-proyecto-2}
+    \end{minipage}
     \caption{Estructura del proyecto}\label{fig:estructura-proyecto}
 \end{figure}
 
@@ -13,179 +23,138 @@ La figura~\ref{fig:estructura-proyecto} detalla la estructura del proyecto
 \noindent
 El código fuente del sistema, desarrollado en el lenguaje Bash, está disponible en el repositorio de GitHub \href{https://github.com/AariazP/TG-VBC.git}{\texttt{TG-VBC}} en la rama \texttt{scripted-solution}. Este repositorio contiene scripts para la automatización de tareas en la infraestructura de virtualización basada en contenedores, incluyendo la configuración de nodos, despliegue de \VM\ y configuración de Kubernetes. 
 
-\subsection{Script para obtener la IP de una \VM\ en XCP ng}
+\subsection{Config}
 \noindent
-El \textit{script} a continuación tiene como propósito obtener la dirección IP asociada a una \VM\ desplegada en un entorno XCP-ng, a partir de su nombre. En primer lugar, valida que el usuario haya proporcionado al menos un argumento, correspondiente al nombre de la \VM, mostrando un mensaje de uso en caso contrario. Posteriormente, contempla una excepción para la máquina denominada \textit{NAT-Master}, devolviendo directamente la IP fija 172.30.29.2. En los demás casos, el script emplea el comando xe para obtener el identificador único (UUID) de la máquina virtual y, a partir de este, extrae las direcciones \MAC\ de sus interfaces de red. Con dichas direcciones, se conecta mediante \SSH\ a la máquina \textit{NAT-Master}, utilizando una clave previamente configurada, y consulta la tabla de vecinos de red (comando ip n) para identificar la IP correspondiente a las \MAC\ recuperadas. Finalmente, devuelve la dirección IP asociada a la \VM\ solicitada. \\
-
-\input{tablas-images/cp6/src/get-ip.tex}
-
-
-\subsection{Script de configuración de red de las \VM}
+Este paquete contiene scripts de configuración y utilidades para la gestión de máquinas virtuales en un entorno XCP-ng.
+%=========================CONFIG=========================
+\subsubsection{Config.sh}
 \noindent
-El \textit{script} a continuación, automatiza la creación y configuración de una red virtual en un entorno XCP-ng, permitiendo la salida a Internet para las máquinas virtuales que se conecten a ella. En primer lugar, define parámetros como el nombre de la red, el rango de direcciones IP (subred), la dirección de la puerta de enlace y la interfaz de salida hacia Internet. Luego, utiliza el comando \texttt{xe network-create} para crear la red virtual sin necesidad de un \textit{bridge} preexistente y obtiene su UUID para validarla. Una vez confirmada la red, se agrega una interfaz virtual al host con una dirección \MAC\ aleatoria. Posteriormente, se asocia al bridge correspondiente la dirección IP de la puerta de enlace definida y se activa la interfaz.
+\input{tablas-images/cp6/src/config/config.tex}
+
+%=========================functional-test/backup=========================
+\subsection{functional-test/backup}
 \noindent
-\input{tablas-images/cp6/src/red.tex}
-
-\subsection{Script de conexión SSH a una \VM}
+La siguiente sección presenta los distintos manifiestos y scripts que conforman la estrategia de creación de respaldo en Kubernetes. Cada archivo cumple un rol específico dentro del despliegue, desde la definición del pod y sus volúmenes. A continuación, se describen brevemente los archivos incluidos en este paquete:
+\subsubsection{deployment.yaml}
 \noindent
-El script a continuación, tiene como propósito facilitar la conexión remota por medio de \SSH\ a las diferentes \VM\ dentro de un entorno administrado, ofreciendo además la posibilidad de ejecutar comandos de forma directa en ellas. Su funcionamiento se puede dividir en las siguientes fases:
-
-\begin{enumerate}
-    \item \textbf{Parámetros de entrada}:  
-    El script admite dos opciones principales:
-    \begin{itemize}
-        \item \texttt{-r}: establece que la conexión debe realizarse como el usuario \texttt{root}.
-        \item \texttt{-c <comando>}: permite especificar un comando a ejecutar directamente en la máquina virtual, en lugar de iniciar una sesión interactiva.
-    \end{itemize}
-    Además, es obligatorio proporcionar el nombre de la \VM como argumento principal.
-
-    \item \textbf{Procesamiento de opciones}:  
-    Se emplea el comando \texttt{getopts} para interpretar los parámetros recibidos. En caso de que los argumentos no cumplan con el formato esperado, se muestra un mensaje de uso correcto y el programa termina.
-
-    \item \textbf{Resolución de la dirección IP de la \VM}:  
-    A través de la función auxiliar \texttt{get-ip}, el script obtiene la dirección IP asociada a la máquina virtual especificada. Los mensajes de error se redirigen a \texttt{/dev/null} para mantener una salida limpia.
-
-    \item \textbf{Conexión mediante SSH}:  
-    Existen dos escenarios:
-    \begin{itemize}
-        \item Si se activó la opción \texttt{-r}, la conexión se establece como el usuario \texttt{root}, utilizando una clave privada almacenada en \texttt{\~{}/.ssh/id\_internal\_vm}.
-        \item En caso contrario, la conexión se realiza con el usuario por defecto, sin especificar clave adicional.
-    \end{itemize}
-    En ambos casos, si se definió un comando con la opción \texttt{-c}, este será ejecutado de inmediato en la máquina virtual. De lo contrario, se abrirá una sesión \SSH\ interactiva.
-
-\end{enumerate}
-
-\input{tablas-images/cp6/src/ssh-vm.tex}
-
-\subsection{Script de configuración inicial de una \VM}
+\input{tablas-images/cp6/src/functional-test/backup/deployment.tex}
+\subsubsection{pv.yaml}
 \noindent
-El script \texttt{bootup.sh} fue diseñado para desplegar y configurar máquinas virtuales en XCP-ng de forma manual, en un contexto anterior a la creación de plantillas predefinidas. Aunque actualmente no se utiliza de manera habitual, se conserva como alternativa en caso de que las plantillas se pierdan o deba realizarse una instalación manual. A continuación, se detallan sus principales fases de ejecución:
-
-\begin{enumerate}
-    \item \textbf{Identificación del entorno}:  
-    En primer lugar, el script lista los hosts disponibles mediante \texttt{xe host-list} y obtiene el UUID del host principal, exportándolo como variable de entorno. Posteriormente, muestra los repositorios de almacenamiento (SR) y las plantillas de sistema operativo, filtrando aquellas relacionadas con Debian.
-
-    \item \textbf{Creación de la máquina virtual}:  
-    Se define el nombre de la \VM\ (por defecto \texttt{xeclivm} si no se pasa argumento) y se crea una nueva instancia a partir de la plantilla \texttt{Debian Bookworm 12}. A continuación, se obtiene el UUID de la \VM\ recién creada para su uso posterior.
-
-    \item \textbf{Gestión de medios de instalación}:  
-    Se prepara un directorio local para almacenar imágenes ISO, se crea un SR de tipo ISO y se obtiene su UUID. Tras forzar un escaneo de dicho repositorio, se selecciona el archivo ISO de instalación de Debian que se utilizará para la instalación de la \VM.
-
-    \item \textbf{Configuración de almacenamiento y red}:  
-    El script localiza el disco virtual asociado a la \VM\ y lo redimensiona a 20~GiB. Asimismo, identifica el UUID de la red principal (\texttt{xenbr0}) y crea una interfaz de red para la máquina virtual.
-
-    \item \textbf{Parámetros de hardware y arranque}:  
-    Se configuran los límites de memoria de la \VM\ (mínimos y máximos) y la política de arranque mediante \BIOS. También se desactiva \textit{Secure Boot}, se fuerza el modelo tradicional de QEMU y se definen los dispositivos de arranque (disco y CD).  
-
-    \item \textbf{Gestión de dispositivos de CD-ROM}:  
-    Se expulsan posibles medios previos y se insertan las ISOs necesarias, incluyendo tanto \texttt{guest-tools.iso} como la ISO de Debian especificada. Esto permite que la \VM\ disponga de los medios de instalación y herramientas complementarias.
-
-    \item \textbf{Inicio de la máquina virtual}:  
-    Finalmente, la \VM\ se arranca utilizando el UUID generado durante su creación, completando el proceso de despliegue.
-
-\end{enumerate}
-
-\input{tablas-images/cp6/src/bootup-vm.tex}
-
-\subsection{Script para desplegar y arrancar una \VM\ desde plantilla}
+\input{tablas-images/cp6/src/functional-test/backup/pv.tex}
+\subsubsection{service.yaml}
 \noindent
-El script \texttt{bootvm} está diseñado para automatizar el despliegue y arranque de una \VM\ en un entorno XCP-ng utilizando una plantilla predefinida. Su funcionamiento se describe a continuación:
-
-\begin{enumerate}
-    \item \textbf{Validación de argumentos}:  
-    El script comprueba que se haya proporcionado al menos un argumento, que corresponde al nombre deseado para la \VM. Si no se especifica ningún argumento, muestra un mensaje de uso correcto (\texttt{usage: bootvm <vm-name>}) y finaliza la ejecución.
-
-    \item \textbf{Instalación de la máquina virtual}:  
-    Se utiliza el comando \texttt{xe vm-install} para crear una nueva \VM\ a partir de una plantilla existente, identificada por su UUID (\texttt{0c838875-cb93-dfe3-8c36-a2f42183b434}). El nombre de la nueva \VM\ se asigna según el argumento proporcionado al script. El UUID de la \VM\ recién creada se almacena en la variable \texttt{VM\_UUID} para su uso posterior.
-
-    \item \textbf{Arranque de la \VM}:  
-    Finalmente, el script inicia la máquina virtual mediante \texttt{xe vm-start}, utilizando el UUID almacenado previamente.
-
-\end{enumerate}
-
-\input{tablas-images/cp6/src/bootvm.tex}
-
-\subsection{Script para desplegar y arrancar servidores \NAT}
+\input{tablas-images/cp6/src/functional-test/backup/service.tex}
+\subsubsection{writer-pod.yaml}
 \noindent
-El script \texttt{boot-servers.sh} está diseñado para automatizar la creación e inicio de las máquinas virtuales principales responsables de la red \NAT\ en un entorno XCP-ng. Su funcionamiento puede dividirse en las siguientes fases:
-
-\begin{enumerate}
-    \item \textbf{Definición de variables y opciones}:  
-    Se declara una variable \texttt{BACKUP} que indica si se debe crear un servidor \NAT\ de respaldo adicional. El script utiliza \texttt{getopts} para procesar la opción \texttt{-b}, la cual, de ser especificada, activa la creación de la máquina virtual de backup.
-
-    \item \textbf{Creación de la máquina \NAT\ principal}:  
-    Independientemente de las opciones, el script crea la \VM\ principal denominada \texttt{NAT-Master} a partir de la plantilla \texttt{nat-server}, almacenando su UUID en la variable \texttt{MASTER\_UUID}.
-
-    \item \textbf{Creación opcional del servidor de backup}:  
-    Si se activó la opción \texttt{-b}, se crea una segunda \VM\ llamada \texttt{NAT-Backup}, también a partir de la plantilla \texttt{nat-server}, y se guarda su UUID en la variable \texttt{BACKUP\_UUID}.
-
-    \item \textbf{Arranque de las máquinas virtuales}:  
-    El script inicia la \VM\ principal mediante \texttt{xe vm-start}. Se incluye una pausa de 2 segundos para permitir que la \VM\ principal complete parcialmente su arranque antes de iniciar la \VM\ de respaldo. Si existe la \VM\ de backup, también se inicia de manera automática.
-
-\end{enumerate}
-
-\input{tablas-images/cp6/src/boot-servers.tex}
-
-\subsection{Script para desplegar e inicializar un cluster K3s}
+\input{tablas-images/cp6/src/functional-test/backup/writer-pod.tex}
+\subsubsection{run-tests.sh}
 \noindent
-El script \texttt{cluster-bootup.sh} está diseñado para automatizar la creación e inicialización de un clúster K3s sobre máquinas virtuales en XCP-ng, desplegando nodos master, worker, y opcionalmente un balanceador de carga (load balancer) y un servidor \NAT\ de respaldo. Su funcionamiento se puede describir en varias fases:
+\input{tablas-images/cp6/src/functional-test/backup/run-tests.tex}
 
-\begin{enumerate}
-    \item \textbf{Definición de variables y procesamiento de opciones}:  
-    Se establecen valores por defecto para el número de nodos \texttt{master} y \texttt{worker}, así como indicadores para la creación de un servidor NAT de respaldo (\texttt{BACKUP}) y la existencia de un load balancer (\texttt{HAS\_LB}). Las opciones \texttt{-w}, \texttt{-m} y \texttt{-b} permiten al usuario modificar estas configuraciones al ejecutar el script.
 
-    \item \textbf{Creación de servidores \NAT}:  
-    Se invoca el script \texttt{boot-servers} para crear el servidor NAT principal (\texttt{NAT-Master}) y, opcionalmente, un servidor de backup, según la opción \texttt{-b} proporcionada.
+%=========================functional-test/cluster-bootup=========================
 
-    \item \textbf{Creación de máquinas virtuales del clúster}:  
-    Se definen los tipos de nodos (\texttt{master}, \texttt{worker} y opcionalmente \texttt{load-balancer}) y sus cantidades respectivas. A continuación, mediante un bucle se crean las \VM\ correspondientes utilizando el script \texttt{bootvm}.
-
-    \item \textbf{Configuración de hostnames y archivo \texttt{/etc/hosts}}:  
-    Para cada \VM\ creada, el script espera a que la máquina obtenga su dirección IP y luego establece de manera remota el nombre de host y actualiza el archivo \texttt{/etc/hosts} mediante SSH.
-
-    \item \textbf{Instalación de K3s}:  \\
-    --- Se identifica la IP del nodo \texttt{master1}.  \\
-    --- Si existe un load balancer, se utiliza su IP como punto de entrada TLS para la instalación del clúster K3s en \texttt{master1}.  \\
-    --- Se obtiene el token del clúster para permitir que otros nodos se unan.
-
-    \item \textbf{Configuración del load balancer (opcional)}:  
-    Si se ha creado un load balancer, se instala HAProxy, se genera una configuración básica con todos los nodos master en el backend y se aplica la configuración en el servidor, reiniciando el servicio.
-
-    \item \textbf{Unión de nodos al clúster}:  
-    Finalmente, todos los nodos master adicionales y los nodos worker se unen al clúster K3s. Se espera a que cada \VM\ tenga IP y se ejecuta de manera remota el script de K3s especificando la URL del clúster y el token previamente obtenido.
-
-\end{enumerate}
-\input{tablas-images/cp6/src/cluster-bootup.tex}
-
-\subsection{Script para limpiar el clúster K3s y eliminar \VM}
+\subsection{functional-test/cluster-bootup}
 \noindent
-El script \texttt{clean-cluster.sh} está diseñado para eliminar de manera segura todas las \VM\ asociadas a un clúster en XCP-ng, excluyendo los dominios del sistema. Puede ejecutarse de forma interactiva o automática mediante una opción de confirmación. Su funcionamiento se describe a continuación:
 
-\begin{enumerate}
-    \item \textbf{Definición de variables y procesamiento de opciones}:  
-    Se declara la variable \texttt{ASSUME\_YES}, que indica si la operación de borrado debe realizarse automáticamente sin solicitar confirmación al usuario.  
-    La opción \texttt{-y} activa este modo automático, lo que permite ejecutar el script de manera no interactiva.
-
-    \item \textbf{Confirmación interactiva}:  
-    Si no se ha especificado la opción \texttt{-y}, el script solicita al usuario confirmar la operación mediante un mensaje. Si la respuesta no coincide con alguna forma de \texttt{sí}, el script termina sin realizar cambios.
-
-    \item \textbf{Obtención de las máquinas virtuales a eliminar}:  
-    Se genera una lista de VMs mediante \texttt{xe vm-list}, filtrando únicamente los nombres de \VM\ y excluyendo dominios del sistema (por ejemplo, aquellos que contienen la palabra \texttt{domain}).  
-
-    \item \textbf{Iteración y eliminación de cada \VM}:  
-    Para cada \VM\ encontrada:
-    \begin{itemize}
-        \item Se obtiene su UUID mediante \texttt{xe vm-list} para poder referenciarla de manera única.
-        \item La \VM\ se apaga de forma forzada en segundo plano mediante \texttt{xe vm-shutdown} y se espera a que el proceso finalice.
-        \item Finalmente, la \VM\ se elimina permanentemente del sistema mediante \texttt{xe vm-destroy}.
-    \end{itemize}
-\end{enumerate}
-
-\input{tablas-images/cp6/src/clean-cluster.tex}
-
-
-\section{Despliegue del clúster K3s}\label{sec:despliegue-cluster}
+\subsubsection{run-tests.sh}
 \noindent
-El despliegue del clúster K3s se realizó utilizando el script \texttt{cluster-bootup.sh}, el cual automatiza la creación e inicialización de un clúster K3s sobre máquinas virtuales en XCP-ng. En este caso, se optó por crear un clúster con 2 nodos \texttt{master} y 2 nodos \texttt{worker}, sin incluir un servidor de respaldo ni un balanceador de carga. El comando utilizado fue el siguiente:
+\input{tablas-images/cp6/src/functional-test/cluster-bootup/run-tests.tex}
 
-\section{Solicitud de recursos al cluster}\label{sec:solicitud-recurso}
+
+%=========================functional-test/get-ip=========================
+
+\subsection{functional-test/get-ip}
+\noindent
+
+\subsubsection{run-tests.sh}
+\noindent
+\input{tablas-images/cp6/src/functional-test/get-ip/run-tests.tex}
+
+
+
+%=========================functional-test/aplicar-yml=========================/
+
+\subsection{functional-test/upload-yaml}
+
+\subsubsection{test-deployment.yaml}
+\noindent
+\input{tablas-images/cp6/src/functional-test/upload-yaml/test-deployment.tex}
+
+
+\subsubsection{run-tests.sh}
+\noindent
+\input{tablas-images/cp6/src/functional-test/upload-yaml/run-tests.tex}
+
+
+
+
+
+
+\subsection{sample-yaml}
+\noindent
+
+\subsubsection{backup-pod.yml}
+\noindent
+\input{tablas-images/cp6/src/sample-yml/backup-pod.tex}
+
+\subsubsection{nginx-deployment.yml}
+\input{tablas-images/cp6/src/sample-yml/nginx-deployment.tex}
+
+\subsubsection{nginx-NP-service.yml}
+\input{tablas-images/cp6/src/sample-yml/nginx-NP-service.tex}
+
+\subsubsection{nginx-PV.yml}
+\input{tablas-images/cp6/src/sample-yml/nginx-PV.tex}
+
+\subsubsection{nginx-PVC.yml}
+\input{tablas-images/cp6/src/sample-yml/nginx-PVC.tex}
+
+\subsubsection{nginx-service.yml}
+\input{tablas-images/cp6/src/sample-yml/nginx-service.tex}
+
+\subsection{Scripts}
+
+\subsection{backup.sh}
+\noindent
+\input{tablas-images/cp6/src/scripts/backup.tex}
+
+\subsection{boot-servers.sh}
+\noindent
+\input{tablas-images/cp6/src/scripts/boot-servers.tex}
+
+\subsection{bootvm.sh}
+\noindent
+\input{tablas-images/cp6/src/scripts/bootvm.tex}
+
+\subsection{clean-cluster.sh}
+\noindent
+\input{tablas-images/cp6/src/scripts/clean-cluster.tex}
+
+\subsection{cluster-bootup.sh}
+\noindent
+\input{tablas-images/cp6/src/scripts/cluster-bootup.tex}
+
+\subsection{console.sh}
+\noindent
+\input{tablas-images/cp6/src/scripts/console.tex}
+
+\subsection{get-ip.sh}
+\noindent
+\input{tablas-images/cp6/src/scripts/get-ip.tex}
+
+\subsection{get-vm.sh}
+\noindent
+\input{tablas-images/cp6/src/scripts/get-vm.tex}
+
+\subsection{ssh-vm.sh}
+\noindent
+\input{tablas-images/cp6/src/scripts/ssh-vm.tex}
+
+\subsection{upload-yaml.sh}
+\noindent
+\input{tablas-images/cp6/src/scripts/upload-yml.tex}
+
+\subsection{vbc.sh}
+\noindent
+\input{tablas-images/cp6/src/scripts/vbc.tex}

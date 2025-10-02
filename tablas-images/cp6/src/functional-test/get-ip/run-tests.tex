@@ -1,0 +1,38 @@
+Este script en \texttt{bash} realiza una serie de pruebas para validar la correcta creación de un clúster con dos nodos maestros, un nodo trabajador, un balanceador de carga y un servidor \texttt{NAT-Backup}. Tras ejecutar el despliegue mediante la función \texttt{cluster-bootup}, el script verifica que cada máquina virtual reciba la dirección IP correspondiente a su rol: los maestros, el trabajador y el balanceador de carga dentro de la red \texttt{192.x.x.x}, mientras que los servidores NAT deben ubicarse en la subred \texttt{172.x.x.x}. Cada prueba exitosa incrementa un contador, y al final se presenta un resumen del total de pruebas superadas.  
+
+\begin{minted}[frame=lines,
+    fontsize=\scriptsize,
+    breaklines]{bash}
+#!/bin/bash
+
+# Inicia el clúster con:
+# - 1 worker
+# - 2 masters
+# - servidor NAT de respaldo (-b)
+cluster-bootup -w 1 -m 2 -b
+
+# Breve pausa para dar tiempo a que arranquen las VMs
+sleep 2
+
+# Contador de pruebas exitosas
+SUCCESS_TEST_COUNT=0
+
+# Verificación de IPs según el rol de cada VM
+get-ip master1 | grep 192 && echo "Test for master succedeed" \
+  && SUCCESS_TEST_COUNT=$(( $SUCCESS_TEST_COUNT + 1 ))
+
+get-ip worker1 | grep 192 && echo "Test for worker succedeed" \
+  && SUCCESS_TEST_COUNT=$(( $SUCCESS_TEST_COUNT + 1 ))
+
+get-ip load-balancer | grep 192 && echo "Test for load-balancer succedeed" \
+  && SUCCESS_TEST_COUNT=$(( $SUCCESS_TEST_COUNT + 1 ))
+
+get-ip NAT-Master | grep 172 && echo "Test for NAT-Master succedeed" \
+  && SUCCESS_TEST_COUNT=$(( $SUCCESS_TEST_COUNT + 1 ))
+
+get-ip NAT-Backup | grep 172 && echo "Test for NAT-Backup succedeed" \
+  && SUCCESS_TEST_COUNT=$(( $SUCCESS_TEST_COUNT + 1 ))
+
+# Resultado final de las pruebas
+echo "$SUCCESS_TEST_COUNT/5 tests succedeed"
+\end{minted}

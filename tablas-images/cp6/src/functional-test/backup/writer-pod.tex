@@ -1,0 +1,22 @@
+Este manifiesto define un \texttt{Pod} denominado \texttt{writer-pod}, cuyo propósito es servir como contenedor de prueba para validar la persistencia de datos en Kubernetes. El pod utiliza la imagen ligera \texttt{busybox}, ejecutándose en segundo plano mediante el comando \texttt{sleep} para mantenerse activo. Además, monta un volumen persistente a través del \texttt{PersistentVolumeClaim} \texttt{nginx-pvc}, asignando la ruta interna \texttt{/data}. De esta manera, cualquier dato escrito en dicho directorio dentro del pod se almacenará en el volumen persistente, permitiendo comprobar la correcta configuración de la capa de almacenamiento.
+
+\begin{minted}[frame=lines,
+    fontsize=\scriptsize,
+    breaklines]{yaml}
+apiVersion: v1
+kind: Pod
+metadata:
+  name: writer-pod
+spec:
+  containers:
+    - name: writer
+      image: busybox
+      command: [ "sleep", "3600" ]  # mantiene el pod activo
+      volumeMounts:
+        - mountPath: /data          # directorio donde se montará el PVC
+          name: nginx-storage
+  volumes:
+    - name: nginx-storage
+      persistentVolumeClaim:
+        claimName: nginx-pvc        # vínculo al PVC previamente creado
+\end{minted}

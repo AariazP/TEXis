@@ -1,0 +1,10 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/bin/bash}
+
+\PYG{c+c1}{\PYGZsh{} Agrega una ruta estática a la tabla de enrutamiento del sistema.}
+\PYG{c+c1}{\PYGZsh{} En este caso, se está indicando que para llegar a la red 192.168.100.0/24}
+\PYG{c+c1}{\PYGZsh{} (es decir, todas las IP desde 192.168.100.1 hasta 192.168.100.254 con máscara /24),}
+\PYG{c+c1}{\PYGZsh{} el tráfico debe enviarse a través de la puerta de enlace 172.30.29.2,}
+\PYG{c+c1}{\PYGZsh{} utilizando la interfaz de red xenbr0 (un bridge, normalmente en entornos con Xen o XCP\PYGZhy{}ng).}
+sudo\PYG{+w}{ }ip\PYG{+w}{ }route\PYG{+w}{ }add\PYG{+w}{ }\PYG{l+m}{192}.168.100.0/24\PYG{+w}{ }via\PYG{+w}{ }\PYG{l+m}{172}.30.29.2\PYG{+w}{ }dev\PYG{+w}{ }xenbr0
+\end{MintedVerbatim}
