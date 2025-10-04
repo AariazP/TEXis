@@ -1,0 +1,15 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{apiVersion}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{v1}
+\PYG{n+nt}{kind}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{PersistentVolume}
+\PYG{n+nt}{metadata}\PYG{p}{:}
+\PYG{+w}{  }\PYG{n+nt}{name}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{pv\PYGZhy{}sample}
+\PYG{n+nt}{spec}\PYG{p}{:}
+\PYG{+w}{  }\PYG{n+nt}{capacity}\PYG{p}{:}
+\PYG{+w}{    }\PYG{n+nt}{storage}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{1Gi}
+\PYG{+w}{  }\PYG{n+nt}{accessModes}\PYG{p}{:}
+\PYG{+w}{    }\PYG{p+pIndicator}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{ReadWriteOnce}
+\PYG{+w}{  }\PYG{n+nt}{persistentVolumeReclaimPolicy}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{Retain}
+\PYG{+w}{  }\PYG{n+nt}{storageClassName}\PYG{p}{:}\PYG{+w}{ }\PYG{l+lScalar+lScalarPlain}{manual}
+\PYG{+w}{  }\PYG{n+nt}{hostPath}\PYG{p}{:}
+\PYG{+w}{    }\PYG{n+nt}{path}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{/mnt/data}\PYG{l+s}{\PYGZdq{}}
+\end{MintedVerbatim}
