@@ -36,7 +36,7 @@ El diagrama de la capa de infraestructura, de la figura~\ref{fig:infraestructura
 
 \subsection{Capa de virtualización}\label{sec:virtualizacion-capa}
 \noindent
-El diagrama~\ref{fig:virtualizacion} ilustra la capa de virtualización de la solución, en la cual se abstraen los recursos físicos mediante hipervisores para conformar un cluster de Kubernetes (k8s). Sobre el hipervisor tipo 1 (XCP-ng) se despliega una red de máquinas virtuales organizadas en dos grupos: los nodos maestros, responsables de la orquestación y administración del \textit{cluster}, y los nodos \textit{workers}, dedicados a la ejecución de cargas de trabajo y contenedores.
+El diagrama~\ref{fig:virtualizacion} ilustra la capa de virtualización de la solución, en la cual se abstraen los recursos físicos mediante hipervisores para conformar un cluster de Kubernetes (k8s). Sobre el hipervisor tipo 1 (Xcp-ng) se despliega una red de máquinas virtuales organizadas en dos grupos: los nodos maestros, responsables de la orquestación y administración del \textit{cluster}, y los nodos \textit{workers}, dedicados a la ejecución de cargas de trabajo y contenedores.
 \noindent
 La infraestructura cuenta con dos servidores que proporcionan servicios críticos como \NAT, \textit{firewall}, DHCP y \textit{failover}, proporcionando redundancia y continuidad operativa. El esquema de red (192.168.100.0/24) se conecta mediante \textit{Network Address Translation} hacia la red de hipervisores (172.30.29.1), integrando los recursos virtualizados con la capa de infraestructura subyacente.
 \noindent

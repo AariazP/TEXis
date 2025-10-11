@@ -4,7 +4,7 @@ En este capítulo se detalla el proceso de validación de la solución propuesta
 \section{Pruebas de validacion técnica}\label{sec:functional-tests}
 
 %=========================functional-test/backup=========================
-\subsection{functional-test/backup}
+\subsection{functional-test/backup}\label{sec:functional-test-backup}
 \noindent
 La siguiente sección presenta los distintos manifiestos y scripts que conforman la estrategia de creación de respaldo en Kubernetes. Cada archivo cumple un rol específico dentro del despliegue, desde la definición del pod y sus volúmenes. A continuación, se describen brevemente los archivos incluidos en este paquete:
 \subsubsection{deployment.yaml}
@@ -47,7 +47,7 @@ La siguiente sección presenta los distintos manifiestos y scripts que conforman
 
 %=========================functional-test/aplicar-yml=========================/
 
-\subsection{functional-test/upload-yaml}
+\subsection{functional-test/upload-yaml}\label{sec:functional-test-upload-yaml}
 
 \subsubsection{test-deployment.yaml}
 \noindent
@@ -64,8 +64,29 @@ La siguiente sección presenta los distintos manifiestos y scripts que conforman
 Se han documentado y registrado las pruebas técnicas realizadas para validar la solución propuesta. Esta documentación son elementos audiovisuales que evidencian la correcta implementación y funcionamiento de los componentes desarrollados. Esta Demostración puede encontrarse en el siguiente enlace: \href{https://drive.google.com/drive/folders/1UgpmFmz7E2uYxv_FCGCpYArZDIMc0nxv?usp=sharing}{aquí}
 
 
-\section{Aceptación de la solución por parte del cliente}
+\section{Aceptación de la solución por parte del cliente}\label{sec:aceptacion-solucion}
 \noindent
-En la reunión de 
-
+El día 10 de octubre se realizó la reunión formal de aceptación de la solución arquitectónica con el docente Luis Eduardo Sepúlveda Rodríguez, representante del \GRID\ para esta solución y principal \textit{stakeholder}. Durante esta sesión, se presentaron de manera integral los resultados de la investigación, los cuales demostraron cómo la solución propuesta, basada en la tecnología Containerd y el orquestador K3S. El docente representante, en su calidad de cliente, validó que el \PMV\ implementado satisface los requerimientos académicos y de investigación identificados, resaltando su reproducibilidad, el bajo consumo de recursos y su compatibilidad con la infraestructura existente de Xcp-ng. En consecuencia, se procedió a la aceptación oficial de la solución, certificando que cumple con los objetivos planteados, marcando así un hito significativo en la culminación exitosa del proyecto de tesis. En la figura~\ref{fig:aceptacion-solucion} se muestra una captura de pantalla de la reunión de aceptación.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.2]{tablas-images/cp6/aceptacion-solucion.png}
+    \caption{Captura de pantalla de la reunión de aceptación de la solución}\label{fig:aceptacion-solucion}
+\end{figure}
+\noindent
+Además en el siguiente enlace se puede encontrar la grabación completa de la reunión de aceptación: \href{https://drive.google.com/file/d/1vEsmobYR2ZNxxkTWbN93kyu06ydDNxWd/view?usp=sharing}{aquí}.
 \section{Conclusiones de la validación}
+\noindent
+La validación del \PMV\ permitió corroborar de manera práctica 
+y reproducible la solución arquitectónica implementada. Las pruebas 
+funcionales automatizadas ---abarcando la creación de clústeres (\texttt{cluster-bootup}), 
+la asignación de direcciones IP (\texttt{get-ip}), la gestión de despliegues (\texttt{upload-yaml}) 
+y la estrategia de respaldos (\texttt{functional-test/backup})--- demostraron que el sistema 
+es capaz de operar en un entorno controlado. Específicamente, 
+se validó la correcta integración de los componentes clave (Containerd y K3S) con la 
+infraestructura existente del GRID, verificando la persistencia de datos, la orquestación 
+de contenedores y la automatización de tareas críticas mediante scripts en Bash y manifiestos YAML. 
+La ejecución exitosa de estos casos de prueba, junto con la aceptación formal del docente 
+representante, confirma que el \PMV\ no solo satisface los requisitos técnicos y funcionales 
+identificados, sino que también se alinea con las necesidades académicas e investigativas 
+del GRID, consolidando así la viabilidad de la propuesta como una base sólida para la 
+expansión de servicios de virtualización en la Universidad del Quindío.

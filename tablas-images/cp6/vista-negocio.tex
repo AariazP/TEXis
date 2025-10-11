@@ -6,7 +6,7 @@ El diagrama~\ref{fig:vista-cooperacion-actores} representa a los distintos actor
     \caption{Vista de Cooperación de Actores}\label{fig:vista-cooperacion-actores}
 \end{figure}
 \noindent
-La figura~\ref{fig:vista-cooperacion-negocio} describe los procesos que permiten atender solicitudes de recursos tecnológicos. Estas solicitudes de recursos son descritos en archivos \texttt{.yml}, un ejemplo de solicitud puede verse en el apéndice~\ref{fig:ap-ejemplo-yml}, como contenedores, servicios o ingresos. Se observa cómo el investigador o grupo \GRID\ registra una solicitud, pasa por validaciones, asignación de recursos (\CPU, \RAM, \GPU\ y almacenamiento) y finalmente se despliega el contenedor. También se contempla la liberación de recursos cuando dejan de usarse. El diagrama integra servicios como autenticación, orquestación de contenedores y repositorios de imágenes, evidenciando cómo se coordinan los distintos procesos de negocio buscando el cumplimiento de objetivos misionales.
+La figura~\ref{fig:vista-cooperacion-negocio} describe los procesos que permiten atender solicitudes de recursos tecnológicos. Estas solicitudes de recursos son descritos en archivos \texttt{.yml}, un ejemplo de solicitud puede verse en el apéndice~\ref{apendice:solicitud-recursos-yaml}, como contenedores, servicios o ingresos. Se observa cómo el investigador o grupo \GRID\ registra una solicitud, pasa por validaciones, asignación de recursos (\CPU, \RAM, \GPU\ y almacenamiento) y finalmente se despliega el contenedor. También se contempla la liberación de recursos cuando dejan de usarse. El diagrama integra servicios como autenticación, orquestación de contenedores y repositorios de imágenes, evidenciando cómo se coordinan los distintos procesos de negocio buscando el cumplimiento de objetivos misionales.
 
 \begin{figure}[H]
     \centering
@@ -14,7 +14,7 @@ La figura~\ref{fig:vista-cooperacion-negocio} describe los procesos que permiten
     \caption{Vista de Cooperación de Negocio}\label{fig:vista-cooperacion-negocio}
 \end{figure}
 \noindent
-El diagrama~\ref{fig:vista-productos-negocio} ilustra cómo los investigadores y estudiantes acceden a los recursos de cómputo bajo un marco regulado por políticas de uso y respaldado por un \SLA. Muestra el flujo desde la solicitud hasta la ejecución de los contenedores, buscando la trazabilidad y control en el consumo de infraestructura.
+El diagrama~\ref{fig:vista-productos-negocio} ilustra cómo los investigadores y estudiantes acceden a los recursos de cómputo bajo un marco regulado por políticas de uso y respaldado por un acuerdo de nivel de nivel de servicio (\SLA, por sus siglas en inglés). Muestra el flujo desde la solicitud hasta la ejecución de los contenedores, buscando la trazabilidad y control en el consumo de infraestructura.
 
 \begin{figure}[H]
     \centering
